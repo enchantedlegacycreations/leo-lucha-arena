@@ -289,6 +289,23 @@
       ],
       "format": "esm"
     },
+    "node_modules/zod/v4/core/registries.js": {
+      "bytes": 1512,
+      "imports": [
+      ],
+      "format": "esm"
+    },
+    "node_modules/zod/v4/core/to-json-schema.js": {
+      "bytes": 17006,
+      "imports": [
+        {
+          "path": "node_modules/zod/v4/core/registries.js",
+          "kind": "import-statement",
+          "original": "./registries.js"
+        }
+      ],
+      "format": "esm"
+    },
     "node_modules/zod/v4/core/util.js": {
       "bytes": 22018,
       "imports": [
@@ -320,23 +337,6 @@
           "kind": "import-statement",
           "original": "./util.js"
         }
-      ],
-      "format": "esm"
-    },
-    "node_modules/zod/v4/core/to-json-schema.js": {
-      "bytes": 17006,
-      "imports": [
-        {
-          "path": "node_modules/zod/v4/core/registries.js",
-          "kind": "import-statement",
-          "original": "./registries.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "node_modules/zod/v4/core/registries.js": {
-      "bytes": 1512,
-      "imports": [
       ],
       "format": "esm"
     },
