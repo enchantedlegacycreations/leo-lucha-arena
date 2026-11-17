@@ -1,0 +1,14 @@
+# Render Blueprint — Leo's Lucha Learning Arena (free tier test deploy).
+# After the service is created, its address will be
+# https://leo-lucha-arena.onrender.com — then add the custom domain
+# play.enchantedlegacycreations.com (see README.md, step 4).
+services:
+  - type: web
+    name: leo-lucha-arena
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production

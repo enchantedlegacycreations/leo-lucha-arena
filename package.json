@@ -1,0 +1,14 @@
+{
+  "name": "leo-lucha-arena-standalone",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run server.ts"
+  },
+  "dependencies": {
+    "@hatch/space-sdk": "file:./sdk",
+    "@libsql/client": "0.14.0",
+    "drizzle-orm": "0.45.2",
+    "zod": "4.4.3"
+  }
+}

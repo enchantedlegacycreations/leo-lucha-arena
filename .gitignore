@@ -1,0 +1,4 @@
+node_modules/
+space/app.db-wal
+space/app.db-shm
+space/blobs/
