@@ -9446,15 +9446,25 @@ var Actions = {
     }
   }),
   getRoster: defineAction({
-    description: "Return the full student roster with saved game states (teacher session required).",
-    request: object({ teacherToken: teacherTokenField }),
-    response: object({ students: array(studentOut) }),
+    description: "Return the student roster with saved game states. Requires a valid teacher session (linked emails included) or the current class code; any other caller gets an empty roster with authorized:false.",
+    request: object({ teacherToken: teacherTokenField, classCode: string2().max(12).optional() }),
+    response: object({ authorized: boolean2(), students: array(studentOut) }),
     async handler(ctx, args) {
-      await ensureRoster(ctx);
       const db = ctx.db();
-      const rows = await db.select().from(students).orderBy(asc(students.name));
       const teacher = await isTeacher(ctx, args.teacherToken);
+      let authorized = teacher;
+      if (!authorized && args.classCode) {
+        const codeRows = await db.select().from(meta2).where(eq(meta2.key, "class_code"));
+        const want = (codeRows[0]?.value ?? "").trim().toUpperCase();
+        const got = args.classCode.trim().toUpperCase().replace(/[\s-]/g, "");
+        authorized = !!want && got === want;
+      }
+      if (!authorized)
+        return { authorized: false, students: [] };
+      await ensureRoster(ctx);
+      const rows = await db.select().from(students).orderBy(asc(students.name));
       return {
+        authorized: true,
         students: rows.map((r) => {
           const state = parseState(r.stateJson);
           if (!teacher)
@@ -9490,23 +9500,28 @@ var Actions = {
   googleSignIn: defineAction({
     description: "Sign a student in with their Google identity and return their roster record and saved state.",
     request: object({ email: string2().min(3).max(120) }),
-    response: object({ kind: _enum(["student", "teacher", "none"]), studentId: string2() }),
+    response: object({ kind: _enum(["student", "teacher", "none"]), studentId: string2(), student: studentOut.nullable() }),
     async handler(ctx, args) {
       const email = args.email.trim().toLowerCase();
       const db = ctx.db();
       const trow = await db.select().from(meta2).where(eq(meta2.key, "teacher_google_email"));
       if (email && trow[0]?.value && trow[0].value.trim().toLowerCase() === email) {
-        return { kind: "none", studentId: "" };
+        return { kind: "none", studentId: "", student: null };
       }
       await ensureRoster(ctx);
       const rows = await db.select().from(students);
       for (const r of rows) {
         const st = parseState(r.stateJson);
         if (st.googleEmail && st.googleEmail.trim().toLowerCase() === email) {
-          return { kind: "student", studentId: r.id };
+          st.googleEmail = "";
+          return {
+            kind: "student",
+            studentId: r.id,
+            student: { id: r.id, name: r.name, groupName: r.groupName, badgeColor: r.badgeColor, state: st }
+          };
         }
       }
-      return { kind: "none", studentId: "" };
+      return { kind: "none", studentId: "", student: null };
     }
   }),
   linkGoogleAccount: defineAction({
