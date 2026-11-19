@@ -40571,5 +40571,4730 @@
   "voice": "avocado_v2:MAI_01",
   "speed": 95,
   "file": "clips/emo_b10_q2c1_en.mp3"
+ },
+ {
+  "id": "ln_piclock_es",
+  "lang": "es",
+  "say": "¡Toca tu dibujo secreto!",
+  "show": "¡Toca tu dibujo secreto!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_piclock_es.mp3"
+ },
+ {
+  "id": "ln_piclock_en",
+  "lang": "en",
+  "say": "Tap your secret picture!",
+  "show": "Tap your secret picture!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_piclock_en.mp3"
+ },
+ {
+  "id": "en_w_ant",
+  "lang": "en",
+  "say": "ant",
+  "show": "ant",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_ant.mp3"
+ },
+ {
+  "id": "en_w_cow",
+  "lang": "en",
+  "say": "cow",
+  "show": "cow",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_cow.mp3"
+ },
+ {
+  "id": "en_w_duck",
+  "lang": "en",
+  "say": "duck",
+  "show": "duck",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_duck.mp3"
+ },
+ {
+  "id": "en_w_elk",
+  "lang": "en",
+  "say": "elk",
+  "show": "elk",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_elk.mp3"
+ },
+ {
+  "id": "en_w_frog",
+  "lang": "en",
+  "say": "frog",
+  "show": "frog",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_frog.mp3"
+ },
+ {
+  "id": "en_w_grapes",
+  "lang": "en",
+  "say": "grapes",
+  "show": "grapes",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_grapes.mp3"
+ },
+ {
+  "id": "en_w_horse",
+  "lang": "en",
+  "say": "horse",
+  "show": "horse",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_horse.mp3"
+ },
+ {
+  "id": "en_w_insect",
+  "lang": "en",
+  "say": "insect",
+  "show": "insect",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_insect.mp3"
+ },
+ {
+  "id": "en_w_juice",
+  "lang": "en",
+  "say": "juice",
+  "show": "juice",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_juice.mp3"
+ },
+ {
+  "id": "en_w_koala",
+  "lang": "en",
+  "say": "koala",
+  "show": "koala",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_koala.mp3"
+ },
+ {
+  "id": "en_w_lemon",
+  "lang": "en",
+  "say": "lemon",
+  "show": "lemon",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_lemon.mp3"
+ },
+ {
+  "id": "en_w_monkey",
+  "lang": "en",
+  "say": "monkey",
+  "show": "monkey",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_monkey.mp3"
+ },
+ {
+  "id": "en_w_nose",
+  "lang": "en",
+  "say": "nose",
+  "show": "nose",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_nose.mp3"
+ },
+ {
+  "id": "en_w_orange",
+  "lang": "en",
+  "say": "orange",
+  "show": "orange",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_orange.mp3"
+ },
+ {
+  "id": "en_w_panda",
+  "lang": "en",
+  "say": "panda",
+  "show": "panda",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_panda.mp3"
+ },
+ {
+  "id": "en_w_quilt",
+  "lang": "en",
+  "say": "quilt",
+  "show": "quilt",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_quilt.mp3"
+ },
+ {
+  "id": "en_w_rabbit",
+  "lang": "en",
+  "say": "rabbit",
+  "show": "rabbit",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_rabbit.mp3"
+ },
+ {
+  "id": "en_w_snake",
+  "lang": "en",
+  "say": "snake",
+  "show": "snake",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_snake.mp3"
+ },
+ {
+  "id": "en_w_violin",
+  "lang": "en",
+  "say": "violin",
+  "show": "violin",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_violin.mp3"
+ },
+ {
+  "id": "en_w_wolf",
+  "lang": "en",
+  "say": "wolf",
+  "show": "wolf",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_wolf.mp3"
+ },
+ {
+  "id": "en_w_yarn",
+  "lang": "en",
+  "say": "yarn",
+  "show": "yarn",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_yarn.mp3"
+ },
+ {
+  "id": "en_w_zoo",
+  "lang": "en",
+  "say": "zoo",
+  "show": "zoo",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_zoo.mp3"
+ },
+ {
+  "id": "en_w_bat",
+  "lang": "en",
+  "say": "bat",
+  "show": "bat",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_bat.mp3"
+ },
+ {
+  "id": "en_w_cap",
+  "lang": "en",
+  "say": "cap",
+  "show": "cap",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_cap.mp3"
+ },
+ {
+  "id": "en_w_fan",
+  "lang": "en",
+  "say": "fan",
+  "show": "fan",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_fan.mp3"
+ },
+ {
+  "id": "en_w_jet",
+  "lang": "en",
+  "say": "jet",
+  "show": "jet",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_jet.mp3"
+ },
+ {
+  "id": "en_w_kid",
+  "lang": "en",
+  "say": "kid",
+  "show": "kid",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_kid.mp3"
+ },
+ {
+  "id": "en_w_lip",
+  "lang": "en",
+  "say": "lip",
+  "show": "lip",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_lip.mp3"
+ },
+ {
+  "id": "en_w_mop",
+  "lang": "en",
+  "say": "mop",
+  "show": "mop",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_mop.mp3"
+ },
+ {
+  "id": "en_w_nut",
+  "lang": "en",
+  "say": "nut",
+  "show": "nut",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_nut.mp3"
+ },
+ {
+  "id": "en_w_rug",
+  "lang": "en",
+  "say": "rug",
+  "show": "rug",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_rug.mp3"
+ },
+ {
+  "id": "en_w_zip",
+  "lang": "en",
+  "say": "zip",
+  "show": "zip",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_zip.mp3"
+ },
+ {
+  "id": "en_w_shell",
+  "lang": "en",
+  "say": "shell",
+  "show": "shell",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_shell.mp3"
+ },
+ {
+  "id": "en_w_wash",
+  "lang": "en",
+  "say": "wash",
+  "show": "wash",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_wash.mp3"
+ },
+ {
+  "id": "en_w_chick",
+  "lang": "en",
+  "say": "chick",
+  "show": "chick",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_chick.mp3"
+ },
+ {
+  "id": "en_w_cheese",
+  "lang": "en",
+  "say": "cheese",
+  "show": "cheese",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_cheese.mp3"
+ },
+ {
+  "id": "en_w_three",
+  "lang": "en",
+  "say": "three",
+  "show": "three",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_three.mp3"
+ },
+ {
+  "id": "en_w_teeth",
+  "lang": "en",
+  "say": "teeth",
+  "show": "teeth",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_teeth.mp3"
+ },
+ {
+  "id": "en_w_wheel",
+  "lang": "en",
+  "say": "wheel",
+  "show": "wheel",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_wheel.mp3"
+ },
+ {
+  "id": "en_w_white",
+  "lang": "en",
+  "say": "white",
+  "show": "white",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_white.mp3"
+ },
+ {
+  "id": "en_w_blow",
+  "lang": "en",
+  "say": "blow",
+  "show": "blow",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_blow.mp3"
+ },
+ {
+  "id": "en_w_blend",
+  "lang": "en",
+  "say": "blend",
+  "show": "blend",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_blend.mp3"
+ },
+ {
+  "id": "en_w_clean",
+  "lang": "en",
+  "say": "clean",
+  "show": "clean",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_clean.mp3"
+ },
+ {
+  "id": "en_w_floor",
+  "lang": "en",
+  "say": "floor",
+  "show": "floor",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_floor.mp3"
+ },
+ {
+  "id": "en_w_stone",
+  "lang": "en",
+  "say": "stone",
+  "show": "stone",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_stone.mp3"
+ },
+ {
+  "id": "en_w_stamp",
+  "lang": "en",
+  "say": "stamp",
+  "show": "stamp",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_stamp.mp3"
+ },
+ {
+  "id": "en_w_snail",
+  "lang": "en",
+  "say": "snail",
+  "show": "snail",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_snail.mp3"
+ },
+ {
+  "id": "en_w_tail",
+  "lang": "en",
+  "say": "tail",
+  "show": "tail",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_tail.mp3"
+ },
+ {
+  "id": "en_w_tray",
+  "lang": "en",
+  "say": "tray",
+  "show": "tray",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_tray.mp3"
+ },
+ {
+  "id": "en_w_gray",
+  "lang": "en",
+  "say": "gray",
+  "show": "gray",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_gray.mp3"
+ },
+ {
+  "id": "en_w_feet",
+  "lang": "en",
+  "say": "feet",
+  "show": "feet",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_feet.mp3"
+ },
+ {
+  "id": "en_w_leaf",
+  "lang": "en",
+  "say": "leaf",
+  "show": "leaf",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_leaf.mp3"
+ },
+ {
+  "id": "en_w_eat",
+  "lang": "en",
+  "say": "eat",
+  "show": "eat",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_eat.mp3"
+ },
+ {
+  "id": "en_w_road",
+  "lang": "en",
+  "say": "road",
+  "show": "road",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_road.mp3"
+ },
+ {
+  "id": "en_w_lie",
+  "lang": "en",
+  "say": "lie",
+  "show": "lie",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_lie.mp3"
+ },
+ {
+  "id": "en_w_cried",
+  "lang": "en",
+  "say": "cried",
+  "show": "cried",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_cried.mp3"
+ },
+ {
+  "id": "en_w_true",
+  "lang": "en",
+  "say": "true",
+  "show": "true",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_true.mp3"
+ },
+ {
+  "id": "en_w_clue",
+  "lang": "en",
+  "say": "clue",
+  "show": "clue",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_clue.mp3"
+ },
+ {
+  "id": "en_w_jar",
+  "lang": "en",
+  "say": "jar",
+  "show": "jar",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_jar.mp3"
+ },
+ {
+  "id": "en_w_paper",
+  "lang": "en",
+  "say": "paper",
+  "show": "paper",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_paper.mp3"
+ },
+ {
+  "id": "en_w_first",
+  "lang": "en",
+  "say": "first",
+  "show": "first",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_first.mp3"
+ },
+ {
+  "id": "en_w_shirt",
+  "lang": "en",
+  "say": "shirt",
+  "show": "shirt",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_shirt.mp3"
+ },
+ {
+  "id": "en_w_storm",
+  "lang": "en",
+  "say": "storm",
+  "show": "storm",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_storm.mp3"
+ },
+ {
+  "id": "en_w_short",
+  "lang": "en",
+  "say": "short",
+  "show": "short",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_short.mp3"
+ },
+ {
+  "id": "en_w_hurt",
+  "lang": "en",
+  "say": "hurt",
+  "show": "hurt",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_hurt.mp3"
+ },
+ {
+  "id": "en_w_purple",
+  "lang": "en",
+  "say": "purple",
+  "show": "purple",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_purple.mp3"
+ },
+ {
+  "id": "en_sent_5",
+  "lang": "en",
+  "say": "A big frog sits on a log.",
+  "show": "A big frog sits on a log.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_sent_5.mp3"
+ },
+ {
+  "id": "en_sent_6",
+  "lang": "en",
+  "say": "The crab is red and fast.",
+  "show": "The crab is red and fast.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_sent_6.mp3"
+ },
+ {
+  "id": "en_sent_7",
+  "lang": "en",
+  "say": "I see a nest in the tall tree.",
+  "show": "I see a nest in the tall tree.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_sent_7.mp3"
+ },
+ {
+  "id": "en_sent_8",
+  "lang": "en",
+  "say": "The duck swims in the pond.",
+  "show": "The duck swims in the pond.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_sent_8.mp3"
+ },
+ {
+  "id": "en_sent_9",
+  "lang": "en",
+  "say": "A plum and a fig are in the box.",
+  "show": "A plum and a fig are in the box.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_sent_9.mp3"
+ },
+ {
+  "id": "en_fpass_6",
+  "lang": "en",
+  "say": "Pip is a little pup. Pip digs in the mud. Pip digs and digs. A big bone is in the mud!",
+  "show": "Pip is a little pup. Pip digs in the mud. Pip digs and digs. A big bone is in the mud!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fpass_6.mp3"
+ },
+ {
+  "id": "en_fq_6_0",
+  "lang": "en",
+  "say": "What does Pip find in the mud?",
+  "show": "What does Pip find in the mud?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fq_6_0.mp3"
+ },
+ {
+  "id": "en_fch_6_0_0",
+  "lang": "en",
+  "say": "a bone",
+  "show": "a bone",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_6_0_0.mp3"
+ },
+ {
+  "id": "en_fch_6_0_1",
+  "lang": "en",
+  "say": "a ball",
+  "show": "a ball",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_6_0_1.mp3"
+ },
+ {
+  "id": "en_fch_6_0_2",
+  "lang": "en",
+  "say": "a fish",
+  "show": "a fish",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_6_0_2.mp3"
+ },
+ {
+  "id": "en_fpass_7",
+  "lang": "en",
+  "say": "June has a kite. The kite is red and blue. June runs fast. Up, up goes the kite!",
+  "show": "June has a kite. The kite is red and blue. June runs fast. Up, up goes the kite!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fpass_7.mp3"
+ },
+ {
+  "id": "en_fq_7_0",
+  "lang": "en",
+  "say": "What color is the kite?",
+  "show": "What color is the kite?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fq_7_0.mp3"
+ },
+ {
+  "id": "en_fch_7_0_0",
+  "lang": "en",
+  "say": "green",
+  "show": "green",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_7_0_0.mp3"
+ },
+ {
+  "id": "en_fch_7_0_1",
+  "lang": "en",
+  "say": "red and blue",
+  "show": "red and blue",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_7_0_1.mp3"
+ },
+ {
+  "id": "en_fch_7_0_2",
+  "lang": "en",
+  "say": "pink",
+  "show": "pink",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_7_0_2.mp3"
+ },
+ {
+  "id": "en_fpass_8",
+  "lang": "en",
+  "say": "A frog sits on a log. The frog jumps in the pond. Splash! The frog can swim and swim.",
+  "show": "A frog sits on a log. The frog jumps in the pond. Splash! The frog can swim and swim.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fpass_8.mp3"
+ },
+ {
+  "id": "en_fq_8_0",
+  "lang": "en",
+  "say": "Where does the frog jump?",
+  "show": "Where does the frog jump?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fq_8_0.mp3"
+ },
+ {
+  "id": "en_fch_8_0_0",
+  "lang": "en",
+  "say": "in a cup",
+  "show": "in a cup",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_8_0_0.mp3"
+ },
+ {
+  "id": "en_fch_8_0_1",
+  "lang": "en",
+  "say": "in the grass",
+  "show": "in the grass",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_8_0_1.mp3"
+ },
+ {
+  "id": "en_fch_8_0_2",
+  "lang": "en",
+  "say": "in the pond",
+  "show": "in the pond",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_8_0_2.mp3"
+ },
+ {
+  "id": "en_fpass_9",
+  "lang": "en",
+  "say": "Max feeds the hens. The hens peck, peck, peck. Max looks in the nest. A brown egg is in the nest!",
+  "show": "Max feeds the hens. The hens peck, peck, peck. Max looks in the nest. A brown egg is in the nest!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fpass_9.mp3"
+ },
+ {
+  "id": "en_fq_9_0",
+  "lang": "en",
+  "say": "What does Max find in the nest?",
+  "show": "What does Max find in the nest?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fq_9_0.mp3"
+ },
+ {
+  "id": "en_fch_9_0_0",
+  "lang": "en",
+  "say": "a brown egg",
+  "show": "a brown egg",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_9_0_0.mp3"
+ },
+ {
+  "id": "en_fch_9_0_1",
+  "lang": "en",
+  "say": "a red rock",
+  "show": "a red rock",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_9_0_1.mp3"
+ },
+ {
+  "id": "en_fch_9_0_2",
+  "lang": "en",
+  "say": "a green leaf",
+  "show": "a green leaf",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_9_0_2.mp3"
+ },
+ {
+  "id": "en_fpass_10",
+  "lang": "en",
+  "say": "Lily is in bed. Lily reads a big book. Mom turns off the light. Good night, Lily!",
+  "show": "Lily is in bed. Lily reads a big book. Mom turns off the light. Good night, Lily!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fpass_10.mp3"
+ },
+ {
+  "id": "en_fq_10_0",
+  "lang": "en",
+  "say": "What does Lily do in bed?",
+  "show": "What does Lily do in bed?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fq_10_0.mp3"
+ },
+ {
+  "id": "en_fch_10_0_0",
+  "lang": "en",
+  "say": "She eats cake",
+  "show": "She eats cake",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_10_0_0.mp3"
+ },
+ {
+  "id": "en_fch_10_0_1",
+  "lang": "en",
+  "say": "She reads a book",
+  "show": "She reads a book",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_10_0_1.mp3"
+ },
+ {
+  "id": "en_fch_10_0_2",
+  "lang": "en",
+  "say": "She plays ball",
+  "show": "She plays ball",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_10_0_2.mp3"
+ },
+ {
+  "id": "en_fpass_11",
+  "lang": "en",
+  "say": "Ben and Zoe ride the bus. The bus goes up the hill. The bus stops. Ben and Zoe get off at the park.",
+  "show": "Ben and Zoe ride the bus. The bus goes up the hill. The bus stops. Ben and Zoe get off at the park.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fpass_11.mp3"
+ },
+ {
+  "id": "en_fq_11_0",
+  "lang": "en",
+  "say": "Where does the bus stop?",
+  "show": "Where does the bus stop?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fq_11_0.mp3"
+ },
+ {
+  "id": "en_fch_11_0_0",
+  "lang": "en",
+  "say": "at the lake",
+  "show": "at the lake",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_11_0_0.mp3"
+ },
+ {
+  "id": "en_fch_11_0_1",
+  "lang": "en",
+  "say": "at the school",
+  "show": "at the school",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_11_0_1.mp3"
+ },
+ {
+  "id": "en_fch_11_0_2",
+  "lang": "en",
+  "say": "at the park",
+  "show": "at the park",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_fch_11_0_2.mp3"
+ },
+ {
+  "id": "en_cpass_6",
+  "lang": "en",
+  "say": "Bees live in a hive by the big oak tree. All day, they fly from flower to flower. The bees make sweet honey in the hive. Mr. Park takes care of the bees. He always leaves honey for the bees to eat.",
+  "show": "Bees live in a hive by the big oak tree. All day, they fly from flower to flower. The bees make sweet honey in the hive. Mr. Park takes care of the bees. He always leaves honey for the bees to eat.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cpass_6.mp3"
+ },
+ {
+  "id": "en_cq_6_0",
+  "lang": "en",
+  "say": "Where do the bees live?",
+  "show": "Where do the bees live?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_6_0.mp3"
+ },
+ {
+  "id": "en_cch_6_0_0",
+  "lang": "en",
+  "say": "in a hive by an oak tree",
+  "show": "in a hive by an oak tree",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_6_0_0.mp3"
+ },
+ {
+  "id": "en_cch_6_0_1",
+  "lang": "en",
+  "say": "in a box by the sea",
+  "show": "in a box by the sea",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_6_0_1.mp3"
+ },
+ {
+  "id": "en_cch_6_0_2",
+  "lang": "en",
+  "say": "in a cave on a hill",
+  "show": "in a cave on a hill",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_6_0_2.mp3"
+ },
+ {
+  "id": "en_cq_6_1",
+  "lang": "en",
+  "say": "Why does Mr. Park leave honey for the bees?",
+  "show": "Why does Mr. Park leave honey for the bees?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_6_1.mp3"
+ },
+ {
+  "id": "en_cch_6_1_0",
+  "lang": "en",
+  "say": "So the bees have food",
+  "show": "So the bees have food",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_6_1_0.mp3"
+ },
+ {
+  "id": "en_cch_6_1_1",
+  "lang": "en",
+  "say": "So the bees will fly away",
+  "show": "So the bees will fly away",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_6_1_1.mp3"
+ },
+ {
+  "id": "en_cch_6_1_2",
+  "lang": "en",
+  "say": "So the bees can sleep",
+  "show": "So the bees can sleep",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_6_1_2.mp3"
+ },
+ {
+  "id": "en_cpass_7",
+  "lang": "en",
+  "say": "Mrs. Chen brings the mail to our street. She walks in the sun and in the rain. Every day, she puts letters in the boxes. The kids wave and say thank you. Mrs. Chen smiles and waves back.",
+  "show": "Mrs. Chen brings the mail to our street. She walks in the sun and in the rain. Every day, she puts letters in the boxes. The kids wave and say thank you. Mrs. Chen smiles and waves back.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cpass_7.mp3"
+ },
+ {
+  "id": "en_cq_7_0",
+  "lang": "en",
+  "say": "What does Mrs. Chen bring?",
+  "show": "What does Mrs. Chen bring?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_7_0.mp3"
+ },
+ {
+  "id": "en_cch_7_0_0",
+  "lang": "en",
+  "say": "pizza",
+  "show": "pizza",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_7_0_0.mp3"
+ },
+ {
+  "id": "en_cch_7_0_1",
+  "lang": "en",
+  "say": "the mail",
+  "show": "the mail",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_7_0_1.mp3"
+ },
+ {
+  "id": "en_cch_7_0_2",
+  "lang": "en",
+  "say": "flowers",
+  "show": "flowers",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_7_0_2.mp3"
+ },
+ {
+  "id": "en_cq_7_1",
+  "lang": "en",
+  "say": "Why do the kids say thank you?",
+  "show": "Why do the kids say thank you?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_7_1.mp3"
+ },
+ {
+  "id": "en_cch_7_1_0",
+  "lang": "en",
+  "say": "Because she gives them candy",
+  "show": "Because she gives them candy",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_7_1_0.mp3"
+ },
+ {
+  "id": "en_cch_7_1_1",
+  "lang": "en",
+  "say": "Because she brings their mail every day",
+  "show": "Because she brings their mail every day",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_7_1_1.mp3"
+ },
+ {
+  "id": "en_cch_7_1_2",
+  "lang": "en",
+  "say": "Because she reads them a story",
+  "show": "Because she reads them a story",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_7_1_2.mp3"
+ },
+ {
+  "id": "en_cpass_8",
+  "lang": "en",
+  "say": "A little turtle wants to cross the road. Cars go fast, zoom, zoom! Rosa sees the turtle and stops. She picks it up with care. She puts the turtle in the grass, safe and sound.",
+  "show": "A little turtle wants to cross the road. Cars go fast, zoom, zoom! Rosa sees the turtle and stops. She picks it up with care. She puts the turtle in the grass, safe and sound.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cpass_8.mp3"
+ },
+ {
+  "id": "en_cq_8_0",
+  "lang": "en",
+  "say": "What does the turtle want to do?",
+  "show": "What does the turtle want to do?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_8_0.mp3"
+ },
+ {
+  "id": "en_cch_8_0_0",
+  "lang": "en",
+  "say": "cross the road",
+  "show": "cross the road",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_8_0_0.mp3"
+ },
+ {
+  "id": "en_cch_8_0_1",
+  "lang": "en",
+  "say": "climb a tree",
+  "show": "climb a tree",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_8_0_1.mp3"
+ },
+ {
+  "id": "en_cch_8_0_2",
+  "lang": "en",
+  "say": "swim in a lake",
+  "show": "swim in a lake",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_8_0_2.mp3"
+ },
+ {
+  "id": "en_cq_8_1",
+  "lang": "en",
+  "say": "Why does Rosa pick up the turtle?",
+  "show": "Why does Rosa pick up the turtle?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_8_1.mp3"
+ },
+ {
+  "id": "en_cch_8_1_0",
+  "lang": "en",
+  "say": "To keep it as a pet",
+  "show": "To keep it as a pet",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_8_1_0.mp3"
+ },
+ {
+  "id": "en_cch_8_1_1",
+  "lang": "en",
+  "say": "To help it cross safely",
+  "show": "To help it cross safely",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_8_1_1.mp3"
+ },
+ {
+  "id": "en_cch_8_1_2",
+  "lang": "en",
+  "say": "To give it a bath",
+  "show": "To give it a bath",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_8_1_2.mp3"
+ },
+ {
+  "id": "en_cpass_9",
+  "lang": "en",
+  "say": "Grandpa and Elena make bread together. Grandpa puts flour in a big bowl. Elena stirs and stirs. They wait for the bread to rise. Soon the warm bread is ready, and it smells so good!",
+  "show": "Grandpa and Elena make bread together. Grandpa puts flour in a big bowl. Elena stirs and stirs. They wait for the bread to rise. Soon the warm bread is ready, and it smells so good!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cpass_9.mp3"
+ },
+ {
+  "id": "en_cq_9_0",
+  "lang": "en",
+  "say": "What do Grandpa and Elena make?",
+  "show": "What do Grandpa and Elena make?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_9_0.mp3"
+ },
+ {
+  "id": "en_cch_9_0_0",
+  "lang": "en",
+  "say": "a cake",
+  "show": "a cake",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_9_0_0.mp3"
+ },
+ {
+  "id": "en_cch_9_0_1",
+  "lang": "en",
+  "say": "soup",
+  "show": "soup",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_9_0_1.mp3"
+ },
+ {
+  "id": "en_cch_9_0_2",
+  "lang": "en",
+  "say": "bread",
+  "show": "bread",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_9_0_2.mp3"
+ },
+ {
+  "id": "en_cq_9_1",
+  "lang": "en",
+  "say": "Why do they wait?",
+  "show": "Why do they wait?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_9_1.mp3"
+ },
+ {
+  "id": "en_cch_9_1_0",
+  "lang": "en",
+  "say": "For the bread to rise",
+  "show": "For the bread to rise",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_9_1_0.mp3"
+ },
+ {
+  "id": "en_cch_9_1_1",
+  "lang": "en",
+  "say": "For the rain to stop",
+  "show": "For the rain to stop",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_9_1_1.mp3"
+ },
+ {
+  "id": "en_cch_9_1_2",
+  "lang": "en",
+  "say": "For the bus to come",
+  "show": "For the bus to come",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_9_1_2.mp3"
+ },
+ {
+  "id": "en_cpass_10",
+  "lang": "en",
+  "say": "The lighthouse stands by the sea. At night, its light shines bright and turns, turns, turns. The light shows the ships where the rocks are. The ships stay safe and sail home.",
+  "show": "The lighthouse stands by the sea. At night, its light shines bright and turns, turns, turns. The light shows the ships where the rocks are. The ships stay safe and sail home.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cpass_10.mp3"
+ },
+ {
+  "id": "en_cq_10_0",
+  "lang": "en",
+  "say": "Where does the lighthouse stand?",
+  "show": "Where does the lighthouse stand?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_10_0.mp3"
+ },
+ {
+  "id": "en_cch_10_0_0",
+  "lang": "en",
+  "say": "by the sea",
+  "show": "by the sea",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_10_0_0.mp3"
+ },
+ {
+  "id": "en_cch_10_0_1",
+  "lang": "en",
+  "say": "on a farm",
+  "show": "on a farm",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_10_0_1.mp3"
+ },
+ {
+  "id": "en_cch_10_0_2",
+  "lang": "en",
+  "say": "in the snow",
+  "show": "in the snow",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_10_0_2.mp3"
+ },
+ {
+  "id": "en_cq_10_1",
+  "lang": "en",
+  "say": "Why does the light shine at night?",
+  "show": "Why does the light shine at night?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_10_1.mp3"
+ },
+ {
+  "id": "en_cch_10_1_0",
+  "lang": "en",
+  "say": "To help the ships stay safe",
+  "show": "To help the ships stay safe",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_10_1_0.mp3"
+ },
+ {
+  "id": "en_cch_10_1_1",
+  "lang": "en",
+  "say": "To wake up the fish",
+  "show": "To wake up the fish",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_10_1_1.mp3"
+ },
+ {
+  "id": "en_cch_10_1_2",
+  "lang": "en",
+  "say": "To light up the beach for a party",
+  "show": "To light up the beach for a party",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_10_1_2.mp3"
+ },
+ {
+  "id": "en_cpass_11",
+  "lang": "en",
+  "say": "Our class goes to the park with big bags. We pick up cans, cups, and paper. Ben finds a lost ball under a bench. Now the park is clean. The birds sing in the clean park.",
+  "show": "Our class goes to the park with big bags. We pick up cans, cups, and paper. Ben finds a lost ball under a bench. Now the park is clean. The birds sing in the clean park.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cpass_11.mp3"
+ },
+ {
+  "id": "en_cq_11_0",
+  "lang": "en",
+  "say": "What does the class pick up?",
+  "show": "What does the class pick up?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_11_0.mp3"
+ },
+ {
+  "id": "en_cch_11_0_0",
+  "lang": "en",
+  "say": "flowers and leaves",
+  "show": "flowers and leaves",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_11_0_0.mp3"
+ },
+ {
+  "id": "en_cch_11_0_1",
+  "lang": "en",
+  "say": "cans, cups, and paper",
+  "show": "cans, cups, and paper",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_11_0_1.mp3"
+ },
+ {
+  "id": "en_cch_11_0_2",
+  "lang": "en",
+  "say": "rocks and sticks",
+  "show": "rocks and sticks",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_11_0_2.mp3"
+ },
+ {
+  "id": "en_cq_11_1",
+  "lang": "en",
+  "say": "Why does the class clean the park?",
+  "show": "Why does the class clean the park?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cq_11_1.mp3"
+ },
+ {
+  "id": "en_cch_11_1_0",
+  "lang": "en",
+  "say": "To find a lost ball",
+  "show": "To find a lost ball",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_11_1_0.mp3"
+ },
+ {
+  "id": "en_cch_11_1_1",
+  "lang": "en",
+  "say": "To keep the park clean for everyone",
+  "show": "To keep the park clean for everyone",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_11_1_1.mp3"
+ },
+ {
+  "id": "en_cch_11_1_2",
+  "lang": "en",
+  "say": "To look for treasure",
+  "show": "To look for treasure",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_cch_11_1_2.mp3"
+ },
+ {
+  "id": "es_fpass_6",
+  "lang": "es",
+  "say": "Tito tiene un perro. El perro se llama Sol. Sol corre en el patio. Sol duerme en una caja grande.",
+  "show": "Tito tiene un perro. El perro se llama Sol. Sol corre en el patio. Sol duerme en una caja grande.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fpass_6.mp3"
+ },
+ {
+  "id": "es_fq_6_0",
+  "lang": "es",
+  "say": "¿Cómo se llama el perro?",
+  "show": "¿Cómo se llama el perro?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fq_6_0.mp3"
+ },
+ {
+  "id": "es_fch_6_0_0",
+  "lang": "es",
+  "say": "Luna",
+  "show": "Luna",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_6_0_0.mp3"
+ },
+ {
+  "id": "es_fch_6_0_1",
+  "lang": "es",
+  "say": "Sol",
+  "show": "Sol",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_6_0_1.mp3"
+ },
+ {
+  "id": "es_fch_6_0_2",
+  "lang": "es",
+  "say": "Pato",
+  "show": "Pato",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_6_0_2.mp3"
+ },
+ {
+  "id": "es_fpass_7",
+  "lang": "es",
+  "say": "La vaca come pasto verde. La vaca da leche. Mamá pone la leche en un vaso. ¡La leche es rica!",
+  "show": "La vaca come pasto verde. La vaca da leche. Mamá pone la leche en un vaso. ¡La leche es rica!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fpass_7.mp3"
+ },
+ {
+  "id": "es_fq_7_0",
+  "lang": "es",
+  "say": "¿Qué da la vaca?",
+  "show": "¿Qué da la vaca?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fq_7_0.mp3"
+ },
+ {
+  "id": "es_fch_7_0_0",
+  "lang": "es",
+  "say": "huevos",
+  "show": "huevos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_7_0_0.mp3"
+ },
+ {
+  "id": "es_fch_7_0_1",
+  "lang": "es",
+  "say": "lana",
+  "show": "lana",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_7_0_1.mp3"
+ },
+ {
+  "id": "es_fch_7_0_2",
+  "lang": "es",
+  "say": "leche",
+  "show": "leche",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_7_0_2.mp3"
+ },
+ {
+  "id": "es_fpass_8",
+  "lang": "es",
+  "say": "Pablo pinta un barco. El barco es azul y blanco. Pablo pone el barco en el agua. ¡El barco flota!",
+  "show": "Pablo pinta un barco. El barco es azul y blanco. Pablo pone el barco en el agua. ¡El barco flota!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fpass_8.mp3"
+ },
+ {
+  "id": "es_fq_8_0",
+  "lang": "es",
+  "say": "¿De qué color es el barco?",
+  "show": "¿De qué color es el barco?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fq_8_0.mp3"
+ },
+ {
+  "id": "es_fch_8_0_0",
+  "lang": "es",
+  "say": "azul y blanco",
+  "show": "azul y blanco",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_8_0_0.mp3"
+ },
+ {
+  "id": "es_fch_8_0_1",
+  "lang": "es",
+  "say": "rojo y negro",
+  "show": "rojo y negro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_8_0_1.mp3"
+ },
+ {
+  "id": "es_fch_8_0_2",
+  "lang": "es",
+  "say": "verde y rosa",
+  "show": "verde y rosa",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_8_0_2.mp3"
+ },
+ {
+  "id": "es_fpass_9",
+  "lang": "es",
+  "say": "La gallina pone un huevo. El huevo es blanco y redondo. Un día, el huevo se abre. ¡Sale un pollito!",
+  "show": "La gallina pone un huevo. El huevo es blanco y redondo. Un día, el huevo se abre. ¡Sale un pollito!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fpass_9.mp3"
+ },
+ {
+  "id": "es_fq_9_0",
+  "lang": "es",
+  "say": "¿Qué sale del huevo?",
+  "show": "¿Qué sale del huevo?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fq_9_0.mp3"
+ },
+ {
+  "id": "es_fch_9_0_0",
+  "lang": "es",
+  "say": "un pato",
+  "show": "un pato",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_9_0_0.mp3"
+ },
+ {
+  "id": "es_fch_9_0_1",
+  "lang": "es",
+  "say": "un pollito",
+  "show": "un pollito",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_9_0_1.mp3"
+ },
+ {
+  "id": "es_fch_9_0_2",
+  "lang": "es",
+  "say": "un sapo",
+  "show": "un sapo",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_9_0_2.mp3"
+ },
+ {
+  "id": "es_fpass_10",
+  "lang": "es",
+  "say": "Mina sube la loma con su papá. En la loma hay una casa. En la casa vive su tía Rosa. La tía Rosa les da pan.",
+  "show": "Mina sube la loma con su papá. En la loma hay una casa. En la casa vive su tía Rosa. La tía Rosa les da pan.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fpass_10.mp3"
+ },
+ {
+  "id": "es_fq_10_0",
+  "lang": "es",
+  "say": "¿Quién vive en la casa?",
+  "show": "¿Quién vive en la casa?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fq_10_0.mp3"
+ },
+ {
+  "id": "es_fch_10_0_0",
+  "lang": "es",
+  "say": "su abuela",
+  "show": "su abuela",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_10_0_0.mp3"
+ },
+ {
+  "id": "es_fch_10_0_1",
+  "lang": "es",
+  "say": "su maestra",
+  "show": "su maestra",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_10_0_1.mp3"
+ },
+ {
+  "id": "es_fch_10_0_2",
+  "lang": "es",
+  "say": "su tía Rosa",
+  "show": "su tía Rosa",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_10_0_2.mp3"
+ },
+ {
+  "id": "es_fpass_11",
+  "lang": "es",
+  "say": "El mono vive en un palo alto. El mono come una banana. El mono salta de palo en palo. El mono ríe: ¡ji, ji, ji!",
+  "show": "El mono vive en un palo alto. El mono come una banana. El mono salta de palo en palo. El mono ríe: ¡ji, ji, ji!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fpass_11.mp3"
+ },
+ {
+  "id": "es_fq_11_0",
+  "lang": "es",
+  "say": "¿Qué come el mono?",
+  "show": "¿Qué come el mono?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fq_11_0.mp3"
+ },
+ {
+  "id": "es_fch_11_0_0",
+  "lang": "es",
+  "say": "una banana",
+  "show": "una banana",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_11_0_0.mp3"
+ },
+ {
+  "id": "es_fch_11_0_1",
+  "lang": "es",
+  "say": "una pera",
+  "show": "una pera",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_11_0_1.mp3"
+ },
+ {
+  "id": "es_fch_11_0_2",
+  "lang": "es",
+  "say": "un queso",
+  "show": "un queso",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_fch_11_0_2.mp3"
+ },
+ {
+  "id": "es_cpass_6",
+  "lang": "es",
+  "say": "Sara va a la biblioteca de su barrio. Sara busca un libro de animales. La bibliotecaria la ayuda a buscar. Sara lee el libro en una mesa. Al fin, Sara pide el libro para su casa.",
+  "show": "Sara va a la biblioteca de su barrio. Sara busca un libro de animales. La bibliotecaria la ayuda a buscar. Sara lee el libro en una mesa. Al fin, Sara pide el libro para su casa.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cpass_6.mp3"
+ },
+ {
+  "id": "es_cq_6_0",
+  "lang": "es",
+  "say": "¿Qué busca Sara?",
+  "show": "¿Qué busca Sara?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_6_0.mp3"
+ },
+ {
+  "id": "es_cch_6_0_0",
+  "lang": "es",
+  "say": "un libro de animales",
+  "show": "un libro de animales",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_6_0_0.mp3"
+ },
+ {
+  "id": "es_cch_6_0_1",
+  "lang": "es",
+  "say": "un libro de cocina",
+  "show": "un libro de cocina",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_6_0_1.mp3"
+ },
+ {
+  "id": "es_cch_6_0_2",
+  "lang": "es",
+  "say": "una pelota roja",
+  "show": "una pelota roja",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_6_0_2.mp3"
+ },
+ {
+  "id": "es_cq_6_1",
+  "lang": "es",
+  "say": "¿Por qué pide Sara el libro para su casa?",
+  "show": "¿Por qué pide Sara el libro para su casa?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_6_1.mp3"
+ },
+ {
+  "id": "es_cch_6_1_0",
+  "lang": "es",
+  "say": "Para seguir leyendo en su casa",
+  "show": "Para seguir leyendo en su casa",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_6_1_0.mp3"
+ },
+ {
+  "id": "es_cch_6_1_1",
+  "lang": "es",
+  "say": "Para dar el libro a su perro",
+  "show": "Para dar el libro a su perro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_6_1_1.mp3"
+ },
+ {
+  "id": "es_cch_6_1_2",
+  "lang": "es",
+  "say": "Para poner flores en el libro",
+  "show": "Para poner flores en el libro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_6_1_2.mp3"
+ },
+ {
+  "id": "es_cpass_7",
+  "lang": "es",
+  "say": "Don Luis vende fruta en el mercado. Vende mangos, peras y uvas. Una niña compra tres mangos para su mamá. Don Luis pone la fruta en una bolsa. La niña dice: ¡gracias!",
+  "show": "Don Luis vende fruta en el mercado. Vende mangos, peras y uvas. Una niña compra tres mangos para su mamá. Don Luis pone la fruta en una bolsa. La niña dice: ¡gracias!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cpass_7.mp3"
+ },
+ {
+  "id": "es_cq_7_0",
+  "lang": "es",
+  "say": "¿Qué vende Don Luis?",
+  "show": "¿Qué vende Don Luis?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_7_0.mp3"
+ },
+ {
+  "id": "es_cch_7_0_0",
+  "lang": "es",
+  "say": "zapatos",
+  "show": "zapatos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_7_0_0.mp3"
+ },
+ {
+  "id": "es_cch_7_0_1",
+  "lang": "es",
+  "say": "fruta",
+  "show": "fruta",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_7_0_1.mp3"
+ },
+ {
+  "id": "es_cch_7_0_2",
+  "lang": "es",
+  "say": "libros",
+  "show": "libros",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_7_0_2.mp3"
+ },
+ {
+  "id": "es_cq_7_1",
+  "lang": "es",
+  "say": "¿Para quién son los mangos?",
+  "show": "¿Para quién son los mangos?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_7_1.mp3"
+ },
+ {
+  "id": "es_cch_7_1_0",
+  "lang": "es",
+  "say": "para su maestra",
+  "show": "para su maestra",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_7_1_0.mp3"
+ },
+ {
+  "id": "es_cch_7_1_1",
+  "lang": "es",
+  "say": "para su perro",
+  "show": "para su perro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_7_1_1.mp3"
+ },
+ {
+  "id": "es_cch_7_1_2",
+  "lang": "es",
+  "say": "para su mamá",
+  "show": "para su mamá",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_7_1_2.mp3"
+ },
+ {
+  "id": "es_cpass_8",
+  "lang": "es",
+  "say": "Hoy, Nora y su papá van en tren a la ciudad. El tren pasa por el río y por las lomas. Nora mira por la ventana. ¡Qué rápido va el tren! Al fin, llegan a la ciudad.",
+  "show": "Hoy, Nora y su papá van en tren a la ciudad. El tren pasa por el río y por las lomas. Nora mira por la ventana. ¡Qué rápido va el tren! Al fin, llegan a la ciudad.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cpass_8.mp3"
+ },
+ {
+  "id": "es_cq_8_0",
+  "lang": "es",
+  "say": "¿En qué van Nora y su papá?",
+  "show": "¿En qué van Nora y su papá?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_8_0.mp3"
+ },
+ {
+  "id": "es_cch_8_0_0",
+  "lang": "es",
+  "say": "en tren",
+  "show": "en tren",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_8_0_0.mp3"
+ },
+ {
+  "id": "es_cch_8_0_1",
+  "lang": "es",
+  "say": "en barco",
+  "show": "en barco",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_8_0_1.mp3"
+ },
+ {
+  "id": "es_cch_8_0_2",
+  "lang": "es",
+  "say": "en bicicleta",
+  "show": "en bicicleta",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_8_0_2.mp3"
+ },
+ {
+  "id": "es_cq_8_1",
+  "lang": "es",
+  "say": "¿Por qué mira Nora por la ventana?",
+  "show": "¿Por qué mira Nora por la ventana?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_8_1.mp3"
+ },
+ {
+  "id": "es_cch_8_1_0",
+  "lang": "es",
+  "say": "Porque busca a su gato",
+  "show": "Porque busca a su gato",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_8_1_0.mp3"
+ },
+ {
+  "id": "es_cch_8_1_1",
+  "lang": "es",
+  "say": "Porque quiere ver el río y las lomas",
+  "show": "Porque quiere ver el río y las lomas",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_8_1_1.mp3"
+ },
+ {
+  "id": "es_cch_8_1_2",
+  "lang": "es",
+  "say": "Porque tiene sueño",
+  "show": "Porque tiene sueño",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_8_1_2.mp3"
+ },
+ {
+  "id": "es_cpass_9",
+  "lang": "es",
+  "say": "Es la primera vez que Tomás ve la nieve. La nieve cae suave y blanca. Tomás toca la nieve con la mano. ¡Está muy fría! Tomás ríe y hace una bola de nieve.",
+  "show": "Es la primera vez que Tomás ve la nieve. La nieve cae suave y blanca. Tomás toca la nieve con la mano. ¡Está muy fría! Tomás ríe y hace una bola de nieve.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cpass_9.mp3"
+ },
+ {
+  "id": "es_cq_9_0",
+  "lang": "es",
+  "say": "¿Qué ve Tomás por primera vez?",
+  "show": "¿Qué ve Tomás por primera vez?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_9_0.mp3"
+ },
+ {
+  "id": "es_cch_9_0_0",
+  "lang": "es",
+  "say": "la lluvia",
+  "show": "la lluvia",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_9_0_0.mp3"
+ },
+ {
+  "id": "es_cch_9_0_1",
+  "lang": "es",
+  "say": "el mar",
+  "show": "el mar",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_9_0_1.mp3"
+ },
+ {
+  "id": "es_cch_9_0_2",
+  "lang": "es",
+  "say": "la nieve",
+  "show": "la nieve",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_9_0_2.mp3"
+ },
+ {
+  "id": "es_cq_9_1",
+  "lang": "es",
+  "say": "¿Cómo sabe Tomás que la nieve está fría?",
+  "show": "¿Cómo sabe Tomás que la nieve está fría?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_9_1.mp3"
+ },
+ {
+  "id": "es_cch_9_1_0",
+  "lang": "es",
+  "say": "Porque la toca con la mano",
+  "show": "Porque la toca con la mano",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_9_1_0.mp3"
+ },
+ {
+  "id": "es_cch_9_1_1",
+  "lang": "es",
+  "say": "Porque se la come",
+  "show": "Porque se la come",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_9_1_1.mp3"
+ },
+ {
+  "id": "es_cch_9_1_2",
+  "lang": "es",
+  "say": "Porque su papá se lo dice",
+  "show": "Porque su papá se lo dice",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_9_1_2.mp3"
+ },
+ {
+  "id": "es_cpass_10",
+  "lang": "es",
+  "say": "Los niños del barrio juegan fútbol en el parque. Ana pasa el balón a Luis. Luis corre y patea. ¡Gol! Todos los niños saltan y ríen. Al fin, toman agua y descansan.",
+  "show": "Los niños del barrio juegan fútbol en el parque. Ana pasa el balón a Luis. Luis corre y patea. ¡Gol! Todos los niños saltan y ríen. Al fin, toman agua y descansan.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cpass_10.mp3"
+ },
+ {
+  "id": "es_cq_10_0",
+  "lang": "es",
+  "say": "¿A qué juegan los niños?",
+  "show": "¿A qué juegan los niños?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_10_0.mp3"
+ },
+ {
+  "id": "es_cch_10_0_0",
+  "lang": "es",
+  "say": "a las escondidas",
+  "show": "a las escondidas",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_10_0_0.mp3"
+ },
+ {
+  "id": "es_cch_10_0_1",
+  "lang": "es",
+  "say": "fútbol",
+  "show": "fútbol",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_10_0_1.mp3"
+ },
+ {
+  "id": "es_cch_10_0_2",
+  "lang": "es",
+  "say": "a saltar la cuerda",
+  "show": "a saltar la cuerda",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_10_0_2.mp3"
+ },
+ {
+  "id": "es_cq_10_1",
+  "lang": "es",
+  "say": "¿Por qué saltan y ríen los niños?",
+  "show": "¿Por qué saltan y ríen los niños?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_10_1.mp3"
+ },
+ {
+  "id": "es_cch_10_1_0",
+  "lang": "es",
+  "say": "Porque Luis hace un gol",
+  "show": "Porque Luis hace un gol",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_10_1_0.mp3"
+ },
+ {
+  "id": "es_cch_10_1_1",
+  "lang": "es",
+  "say": "Porque empieza a llover",
+  "show": "Porque empieza a llover",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_10_1_1.mp3"
+ },
+ {
+  "id": "es_cch_10_1_2",
+  "lang": "es",
+  "say": "Porque ven un perro",
+  "show": "Porque ven un perro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_10_1_2.mp3"
+ },
+ {
+  "id": "es_cpass_11",
+  "lang": "es",
+  "say": "La clase va de paseo al río. La maestra dice: miren los peces. Los peces son chicos y de colores. Un pez salta: ¡plaf! Los niños miran y no tocan el agua.",
+  "show": "La clase va de paseo al río. La maestra dice: miren los peces. Los peces son chicos y de colores. Un pez salta: ¡plaf! Los niños miran y no tocan el agua.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cpass_11.mp3"
+ },
+ {
+  "id": "es_cq_11_0",
+  "lang": "es",
+  "say": "¿Qué miran los niños en el río?",
+  "show": "¿Qué miran los niños en el río?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_11_0.mp3"
+ },
+ {
+  "id": "es_cch_11_0_0",
+  "lang": "es",
+  "say": "barcos grandes",
+  "show": "barcos grandes",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_11_0_0.mp3"
+ },
+ {
+  "id": "es_cch_11_0_1",
+  "lang": "es",
+  "say": "peces de colores",
+  "show": "peces de colores",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_11_0_1.mp3"
+ },
+ {
+  "id": "es_cch_11_0_2",
+  "lang": "es",
+  "say": "una tortuga",
+  "show": "una tortuga",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_11_0_2.mp3"
+ },
+ {
+  "id": "es_cq_11_1",
+  "lang": "es",
+  "say": "¿Por qué miran los niños sin tocar el agua?",
+  "show": "¿Por qué miran los niños sin tocar el agua?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cq_11_1.mp3"
+ },
+ {
+  "id": "es_cch_11_1_0",
+  "lang": "es",
+  "say": "Porque cuidan a los peces",
+  "show": "Porque cuidan a los peces",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_11_1_0.mp3"
+ },
+ {
+  "id": "es_cch_11_1_1",
+  "lang": "es",
+  "say": "Porque el agua está muy lejos",
+  "show": "Porque el agua está muy lejos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_11_1_1.mp3"
+ },
+ {
+  "id": "es_cch_11_1_2",
+  "lang": "es",
+  "say": "Porque buscan una pelota",
+  "show": "Porque buscan una pelota",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/es_cch_11_1_2.mp3"
+ },
+ {
+  "id": "op_en_divided",
+  "lang": "en",
+  "say": "divided by",
+  "show": "divided by",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/op_en_divided.mp3"
+ },
+ {
+  "id": "op_es_entre",
+  "lang": "es",
+  "say": "entre",
+  "show": "entre",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/op_es_entre.mp3"
+ },
+ {
+  "id": "ln_joincode_es",
+  "lang": "es",
+  "say": "Mira el proyector, escribe las 4 letras",
+  "show": "Mira el proyector 👀 → escribe las 4 letras",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_joincode_es.mp3"
+ },
+ {
+  "id": "ln_joincode_en",
+  "lang": "en",
+  "say": "Look at the projector, type the 4 letters",
+  "show": "Look at the projector 👀 → type the 4 letters",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_joincode_en.mp3"
+ },
+ {
+  "id": "ln_waitteacher_es",
+  "lang": "es",
+  "say": "Tu maestro todavía no ha empezado el juego — ¡espera un momentito!",
+  "show": "Tu maestro todavía no ha empezado el juego — ¡espera un momentito!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_waitteacher_es.mp3"
+ },
+ {
+  "id": "ln_waitteacher_en",
+  "lang": "en",
+  "say": "Your teacher hasn't started the game yet — hang tight!",
+  "show": "Your teacher hasn't started the game yet — hang tight!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_waitteacher_en.mp3"
+ },
+ {
+  "id": "ln_door_reading_en",
+  "lang": "en",
+  "say": "Reading. Phonics Forest.",
+  "show": "Reading. Phonics Forest.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_reading_en.mp3"
+ },
+ {
+  "id": "ln_door_reading_es",
+  "lang": "es",
+  "say": "Lectura. Bosque de Fonética.",
+  "show": "Lectura. Bosque de Fonética.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_reading_es.mp3"
+ },
+ {
+  "id": "ln_door_math_en",
+  "lang": "en",
+  "say": "Math. Math Highlands.",
+  "show": "Math. Math Highlands.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_math_en.mp3"
+ },
+ {
+  "id": "ln_door_math_es",
+  "lang": "es",
+  "say": "Matemáticas. Las Tierras Altas de los Números.",
+  "show": "Matemáticas. Las Tierras Altas de los Números.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_math_es.mp3"
+ },
+ {
+  "id": "ln_door_lands_en",
+  "lang": "en",
+  "say": "The Lands. The map of all the worlds.",
+  "show": "The Lands. The map of all the worlds.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_lands_en.mp3"
+ },
+ {
+  "id": "ln_door_lands_es",
+  "lang": "es",
+  "say": "Las Tierras. El mapa de todos los mundos.",
+  "show": "Las Tierras. El mapa de todos los mundos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_lands_es.mp3"
+ },
+ {
+  "id": "ln_door_ring_en",
+  "lang": "en",
+  "say": "El Cuadrilátero. Word battles — 1-on-1 and class battles.",
+  "show": "El Cuadrilátero. Word battles — 1-on-1 and class battles.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_ring_en.mp3"
+ },
+ {
+  "id": "ln_door_ring_es",
+  "lang": "es",
+  "say": "El Cuadrilátero. Batallas de palabras — 1 contra 1 y de clase.",
+  "show": "El Cuadrilátero. Batallas de palabras — 1 contra 1 y de clase.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_ring_es.mp3"
+ },
+ {
+  "id": "ln_door_tesoro_en",
+  "lang": "en",
+  "say": "La Lucha del Tesoro. The class's live game — chests and gold vs El Atajo.",
+  "show": "La Lucha del Tesoro. The class's live game — chests & gold vs El Atajo.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_tesoro_en.mp3"
+ },
+ {
+  "id": "ln_door_tesoro_es",
+  "lang": "es",
+  "say": "La Lucha del Tesoro. El juego en vivo de la clase — cofres y oro contra El Atajo.",
+  "show": "La Lucha del Tesoro. El juego en vivo de la clase — cofres y oro contra El Atajo.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_tesoro_es.mp3"
+ },
+ {
+  "id": "ln_door_clasico_en",
+  "lang": "en",
+  "say": "Classic Mode. The class's live quiz — answer and earn points.",
+  "show": "Classic Mode. The class's live quiz — answer and earn points.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_clasico_en.mp3"
+ },
+ {
+  "id": "ln_door_clasico_es",
+  "lang": "es",
+  "say": "Modo Clásico. El quiz en vivo de la clase — responde y gana puntos.",
+  "show": "Modo Clásico. El quiz en vivo de la clase — responde y gana puntos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_clasico_es.mp3"
+ },
+ {
+  "id": "ln_door_carrera_en",
+  "lang": "en",
+  "say": "Race to the Ring. The class's live race — and everyone reaches the ring!",
+  "show": "Race to the Ring. The class's live race — and everyone reaches the ring!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_carrera_en.mp3"
+ },
+ {
+  "id": "ln_door_carrera_es",
+  "lang": "es",
+  "say": "Carrera al Ring. La carrera en vivo de la clase — ¡y todos llegan al ring!",
+  "show": "Carrera al Ring. La carrera en vivo de la clase — ¡y todos llegan al ring!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_carrera_es.mp3"
+ },
+ {
+  "id": "ln_door_library_en",
+  "lang": "en",
+  "say": "The Library. Leh-oh's books.",
+  "show": "The Library. Leo's books.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_library_en.mp3"
+ },
+ {
+  "id": "ln_door_library_es",
+  "lang": "es",
+  "say": "La Biblioteca. Los libros de Leo.",
+  "show": "La Biblioteca. Los libros de Leo.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_library_es.mp3"
+ },
+ {
+  "id": "ln_door_music_en",
+  "lang": "en",
+  "say": "Music Corner. Free piano and xylophone.",
+  "show": "Music Corner. Free piano & xylophone.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_music_en.mp3"
+ },
+ {
+  "id": "ln_door_music_es",
+  "lang": "es",
+  "say": "Rincón de Música. Piano y xilófono libres.",
+  "show": "Rincón de Música. Piano y xilófono libres.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_music_es.mp3"
+ },
+ {
+  "id": "ln_door_atelier_en",
+  "lang": "en",
+  "say": "My Luchador. Masks, suits and gear with your Rayos.",
+  "show": "My Luchador. Masks, suits & gear with your Rayos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_atelier_en.mp3"
+ },
+ {
+  "id": "ln_door_atelier_es",
+  "lang": "es",
+  "say": "Mi Luchador. Máscaras, trajes y equipo con tus Rayos.",
+  "show": "Mi Luchador. Máscaras, trajes y equipo con tus Rayos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_atelier_es.mp3"
+ },
+ {
+  "id": "ln_door_companions_en",
+  "lang": "en",
+  "say": "My Companions. Earn a companion by playing.",
+  "show": "My Companions. Earn a companion by playing.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_companions_en.mp3"
+ },
+ {
+  "id": "ln_door_companions_es",
+  "lang": "es",
+  "say": "Mis Compañeros. Gana un compañero jugando.",
+  "show": "Mis Compañeros. Gana un compañero jugando.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_companions_es.mp3"
+ },
+ {
+  "id": "ln_door_games_en",
+  "lang": "en",
+  "say": "Games Land. Atrapa Rayos lives here!",
+  "show": "Games Land. Atrapa Rayos lives here!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_games_en.mp3"
+ },
+ {
+  "id": "ln_door_games_es",
+  "lang": "es",
+  "say": "Tierra de Juegos. ¡Atrapa Rayos vive aquí!",
+  "show": "Tierra de Juegos. ¡Atrapa Rayos vive aquí!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_games_es.mp3"
+ },
+ {
+  "id": "ln_games_solo_en",
+  "lang": "en",
+  "say": "Solo Lucha Battle! You against a Rudo in the ring! Pick your move, answer to land it… and you never lose: sah-SAH always gives you a second wind!",
+  "show": "Solo Lucha Battle! YOU against a Rudo in the ring! Pick your move, answer to land it… and you never lose: Zazá always gives you a second wind!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_solo_en.mp3"
+ },
+ {
+  "id": "ln_games_solo_es",
+  "lang": "es",
+  "say": "¡Lucha en Solitario! ¡TÚ contra un Rudo en el ring! Elige tu movimiento, contesta para pegarle… y nunca pierdes: ¡Zazá siempre te da un segundo aire!",
+  "show": "¡Lucha en Solitario! ¡TÚ contra un Rudo en el ring! Elige tu movimiento, contesta para pegarle… y nunca pierdes: ¡Zazá siempre te da un segundo aire!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_solo_es.mp3"
+ },
+ {
+  "id": "ln_games_tesoro_en",
+  "lang": "en",
+  "say": "La Lucha del Tesoro. Your class's live game: your teacher launches it, you join with the code, answer, open chests… and all the gold races El Atajo's pile!",
+  "show": "La Lucha del Tesoro. Your class's LIVE game: your teacher launches it, you join with the code, answer, open chests… and all the gold races El Atajo's pile!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_tesoro_en.mp3"
+ },
+ {
+  "id": "ln_games_tesoro_es",
+  "lang": "es",
+  "say": "La Lucha del Tesoro. El juego en vivo de tu clase: tu maestro lo lanza, te unes con el código, respondes, abres cofres… ¡y todo el oro va contra la montaña de El Atajo!",
+  "show": "La Lucha del Tesoro. El juego EN VIVO de tu clase: tu maestro lo lanza, te unes con el código, respondes, abres cofres… ¡y todo el oro va contra la montaña de El Atajo!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_tesoro_es.mp3"
+ },
+ {
+  "id": "ln_games_clasico_en",
+  "lang": "en",
+  "say": "Classic Mode. Your class's live quiz: your teacher launches it, you join with the code and answer on your own screen. Every correct answer earns points and the whole class grows together!",
+  "show": "Classic Mode. Your class's LIVE quiz: your teacher launches it, you join with the code and answer on your own screen. Every correct answer earns points and the whole class grows together!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_clasico_en.mp3"
+ },
+ {
+  "id": "ln_games_clasico_es",
+  "lang": "es",
+  "say": "Modo Clásico. El quiz en vivo de tu clase: tu maestro lo lanza, te unes con el código y respondes en tu pantalla. ¡Cada acierto suma puntos y toda la clase crece junta!",
+  "show": "Modo Clásico. El QUIZ en vivo de tu clase: tu maestro lo lanza, te unes con el código y respondes en tu pantalla. ¡Cada acierto suma puntos y toda la clase crece junta!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_clasico_es.mp3"
+ },
+ {
+  "id": "ln_games_carrera_en",
+  "lang": "en",
+  "say": "Race to the Ring. Your class's live race: every correct answer runs your luchador toward the ring… and at the end everyone finishes — nobody is left behind!",
+  "show": "Race to the Ring. Your class's LIVE race: every correct answer runs YOUR luchador toward the ring… and at the end EVERYONE finishes — nobody is left behind!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_carrera_en.mp3"
+ },
+ {
+  "id": "ln_games_carrera_es",
+  "lang": "es",
+  "say": "Carrera al Ring. La carrera en vivo de tu clase: cada acierto hace correr a tu luchador hacia el ring… ¡y al final todos llegan, nadie se queda atrás!",
+  "show": "Carrera al Ring. La CARRERA en vivo de tu clase: cada acierto hace correr a TU luchador hacia el ring… ¡y al final TODOS llegan, nadie se queda atrás!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_carrera_es.mp3"
+ },
+ {
+  "id": "ln_games_atrapa_en",
+  "lang": "en",
+  "say": "Atrapa Rayos. Catch bolts with Leh-oh, level up, build streaks… and watch out — La Niebla chases you now!",
+  "show": "Atrapa Rayos. Catch bolts with Leo, level up, build streaks… and watch out — La Niebla chases you now!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_atrapa_en.mp3"
+ },
+ {
+  "id": "ln_games_atrapa_es",
+  "lang": "es",
+  "say": "Atrapa Rayos. Atrapa los rayos con Leo, sube de nivel, haz rachas… ¡y cuidado con La Niebla, que ahora te persigue!",
+  "show": "Atrapa Rayos. Atrapa los rayos con Leo, sube de nivel, haz rachas… ¡y cuidado con La Niebla, que ahora te persigue!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_atrapa_es.mp3"
+ },
+ {
+  "id": "ln_games_teatro_en",
+  "lang": "en",
+  "say": "The Theater. Earn videos by playing! All 11 Lessons with Leh-oh and sah-SAH: vowels, colors, sounds, word families, rhymes, numbers and shapes — our own videos, bilingual and safe.",
+  "show": "The Theater. Earn videos by playing! All 11 Lessons with Leo & Zazá: vowels, colors, sounds, word families, rhymes, numbers and shapes — our own videos, bilingual and safe.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_teatro_en.mp3"
+ },
+ {
+  "id": "ln_games_teatro_es",
+  "lang": "es",
+  "say": "El Teatro. ¡Gana videos jugando! Las 11 Lecciones con Leo y Zazá: vocales, colores, sonidos, familias, rimas, números y formas — nuestros propios videos, bilingües y seguros.",
+  "show": "El Teatro. ¡Gana videos jugando! Las 11 Lecciones con Leo y Zazá: vocales, colores, sonidos, familias, rimas, números y formas — nuestros propios videos, bilingües y seguros.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_teatro_es.mp3"
+ },
+ {
+  "id": "ln_hero_assignment_en",
+  "lang": "en",
+  "say": "Play next: your teacher's assignment!",
+  "show": "Play next: your teacher's assignment!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_assignment_en.mp3"
+ },
+ {
+  "id": "ln_hero_assignment_es",
+  "lang": "es",
+  "say": "¡A jugar! ¡La tarea de tu maestro!",
+  "show": "¡A jugar! ¡La tarea de tu maestro!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_assignment_es.mp3"
+ },
+ {
+  "id": "ln_hero_reading_en",
+  "lang": "en",
+  "say": "Play next: Reading in the Phonics Forest!",
+  "show": "Play next: Reading in the Phonics Forest!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_reading_en.mp3"
+ },
+ {
+  "id": "ln_hero_reading_es",
+  "lang": "es",
+  "say": "¡A jugar! ¡Lectura en el Bosque de Fonética!",
+  "show": "¡A jugar! ¡Lectura en el Bosque de Fonética!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_reading_es.mp3"
+ },
+ {
+  "id": "ln_hero_math_en",
+  "lang": "en",
+  "say": "Play next: Math, in the Math Highlands!",
+  "show": "Play next: Math in the Math Highlands!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_math_en.mp3"
+ },
+ {
+  "id": "ln_hero_math_es",
+  "lang": "es",
+  "say": "¡A jugar! ¡Matemáticas en las Tierras Altas de los Números!",
+  "show": "¡A jugar! ¡Matemáticas en las Tierras Altas de los Números!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_math_es.mp3"
+ },
+ {
+  "id": "ln_hero_fastfacts_en",
+  "lang": "en",
+  "say": "Play next: Fast Facts in El Cuadrilátero!",
+  "show": "Play next: Fast Facts in El Cuadrilátero!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_fastfacts_en.mp3"
+ },
+ {
+  "id": "ln_hero_fastfacts_es",
+  "lang": "es",
+  "say": "¡A jugar! ¡Datos Rápidos en El Cuadrilátero!",
+  "show": "¡A jugar! ¡Datos Rápidos en El Cuadrilátero!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_fastfacts_es.mp3"
+ },
+ {
+  "id": "ln_hero_sighten_en",
+  "lang": "en",
+  "say": "Play next: English Sight Words in El Cuadrilátero!",
+  "show": "Play next: English Sight Words in El Cuadrilátero!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_sighten_en.mp3"
+ },
+ {
+  "id": "ln_hero_sighten_es",
+  "lang": "es",
+  "say": "¡A jugar! ¡Palabras en Inglés en El Cuadrilátero!",
+  "show": "¡A jugar! ¡Palabras en Inglés en El Cuadrilátero!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_sighten_es.mp3"
+ },
+ {
+  "id": "ln_hero_sightes_en",
+  "lang": "en",
+  "say": "Play next: Spanish Sight Words in El Cuadrilátero!",
+  "show": "Play next: Spanish Sight Words in El Cuadrilátero!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_sightes_en.mp3"
+ },
+ {
+  "id": "ln_hero_sightes_es",
+  "lang": "es",
+  "say": "¡A jugar! ¡Palabras en Español en El Cuadrilátero!",
+  "show": "¡A jugar! ¡Palabras en Español en El Cuadrilátero!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_sightes_es.mp3"
+ },
+ {
+  "id": "ln_hero_celebrate_en",
+  "lang": "en",
+  "say": "You did it! You finished everything! Pick any door below and play your favorites!",
+  "show": "You did it! You finished everything! Pick any door below and play your favorites!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_hero_celebrate_en.mp3"
+ },
+ {
+  "id": "ln_hero_celebrate_es",
+  "lang": "es",
+  "say": "¡Lo lograste! ¡Terminaste todo! ¡Elige cualquier puerta de abajo y juega tus favoritos!",
+  "show": "¡Lo lograste! ¡Terminaste todo! ¡Elige cualquier puerta de abajo y juega tus favoritos!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_hero_celebrate_es.mp3"
+ },
+ {
+  "id": "ln_checkin_today_en",
+  "lang": "en",
+  "say": "How do you feel today?",
+  "show": "How do you feel today?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_checkin_today_en.mp3"
+ },
+ {
+  "id": "ln_checkin_today_es",
+  "lang": "es",
+  "say": "¿Cómo te sientes hoy?",
+  "show": "¿Cómo te sientes hoy?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_checkin_today_es.mp3"
+ },
+ {
+  "id": "ln_games_together_en",
+  "lang": "en",
+  "say": "Play Together! A grown-up and a luchador on one screen: the grown-up reads out loud, the luchador answers. Teamwork!",
+  "show": "Play Together! A grown-up and a luchador on one screen: the grown-up reads out loud, the luchador answers. Teamwork!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_games_together_en.mp3"
+ },
+ {
+  "id": "ln_games_together_es",
+  "lang": "es",
+  "say": "¡Jugar juntos! Un adulto y un luchador en una pantalla: el adulto lee en voz alta, el luchador responde. ¡Trabajo en equipo!",
+  "show": "¡Jugar juntos! Un adulto y un luchador en una pantalla: el adulto lee en voz alta, el luchador responde. ¡Trabajo en equipo!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_games_together_es.mp3"
+ },
+ {
+  "id": "ln_together_welcome_en",
+  "lang": "en",
+  "say": "Welcome to Play Together! Grown-ups read the questions out loud, and luchadores answer. Let's play together!",
+  "show": "Welcome to Play Together! Grown-ups read the questions out loud, and luchadores answer. Let's play together!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_together_welcome_en.mp3"
+ },
+ {
+  "id": "ln_together_welcome_es",
+  "lang": "es",
+  "say": "¡Bienvenidos a Jugar Juntos! Los adultos leen las preguntas en voz alta y los luchadores responden. ¡A jugar juntos!",
+  "show": "¡Bienvenidos a Jugar Juntos! Los adultos leen las preguntas en voz alta y los luchadores responden. ¡A jugar juntos!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_together_welcome_es.mp3"
+ },
+ {
+  "id": "ln_together_read_en",
+  "lang": "en",
+  "say": "Grown-up, read this out loud!",
+  "show": "Grown-up, read this out loud!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_together_read_en.mp3"
+ },
+ {
+  "id": "ln_together_read_es",
+  "lang": "es",
+  "say": "¡Adulto, lee esto, en voz alta!",
+  "show": "¡Adulto, lee esto en voz alta!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_together_read_es.mp3"
+ },
+ {
+  "id": "ln_together_team_0_en",
+  "lang": "en",
+  "say": "Great teamwork!",
+  "show": "Great teamwork!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_together_team_0_en.mp3"
+ },
+ {
+  "id": "ln_together_team_0_es",
+  "lang": "es",
+  "say": "¡Buen trabajo en equipo!",
+  "show": "¡Buen trabajo en equipo!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_together_team_0_es.mp3"
+ },
+ {
+  "id": "ln_together_team_1_en",
+  "lang": "en",
+  "say": "You two make a great team!",
+  "show": "You two make a great team!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_together_team_1_en.mp3"
+ },
+ {
+  "id": "ln_together_team_1_es",
+  "lang": "es",
+  "say": "¡Ustedes dos forman un gran equipo!",
+  "show": "¡Ustedes dos forman un gran equipo!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_together_team_1_es.mp3"
+ },
+ {
+  "id": "ln_together_team_2_en",
+  "lang": "en",
+  "say": "Reading together, learning together!",
+  "show": "Reading together, learning together!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_together_team_2_en.mp3"
+ },
+ {
+  "id": "ln_together_team_2_es",
+  "lang": "es",
+  "say": "¡Leyendo juntos, aprendiendo juntos!",
+  "show": "¡Leyendo juntos, aprendiendo juntos!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_together_team_2_es.mp3"
+ },
+ {
+  "id": "ln_together_done_en",
+  "lang": "en",
+  "say": "Great playing together! Thank you, grown-up — see you next time!",
+  "show": "Great playing together! Thank you, grown-up — see you next time!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_together_done_en.mp3"
+ },
+ {
+  "id": "ln_together_done_es",
+  "lang": "es",
+  "say": "¡Qué bien jugaron juntos! Gracias, adulto — ¡hasta la próxima!",
+  "show": "¡Qué bien jugaron juntos! Gracias, adulto — ¡hasta la próxima!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_together_done_es.mp3"
+ },
+ {
+  "id": "out_tortoise_p0_en",
+  "lang": "en",
+  "say": "Hare was very fast. He loved to run, and he loved to brag.",
+  "show": "Hare was very fast. He loved to run, and he loved to brag.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_p0_en.mp3"
+ },
+ {
+  "id": "out_tortoise_p0_es",
+  "lang": "es",
+  "say": "La liebre era muy rápida. Le encantaba correr y le encantaba presumir.",
+  "show": "La liebre era muy rápida. Le encantaba correr y le encantaba presumir.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_p0_es.mp3"
+ },
+ {
+  "id": "out_tortoise_p1_en",
+  "lang": "en",
+  "say": "“You are so slow, Tortoise!” laughed Hare.",
+  "show": "“You are so slow, Tortoise!” laughed Hare.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_p1_en.mp3"
+ },
+ {
+  "id": "out_tortoise_p1_es",
+  "lang": "es",
+  "say": "—¡Eres muy lenta, Tortuga! —se rio la liebre.",
+  "show": "—¡Eres muy lenta, Tortuga! —se rio la liebre.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_p1_es.mp3"
+ },
+ {
+  "id": "out_tortoise_p2_en",
+  "lang": "en",
+  "say": "“Let’s race,” said Tortoise. “Slow and steady, step by step.”",
+  "show": "“Let’s race,” said Tortoise. “Slow and steady, step by step.”",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_p2_en.mp3"
+ },
+ {
+  "id": "out_tortoise_p2_es",
+  "lang": "es",
+  "say": "—Corramos una carrera —dijo la tortuga—. Lenta pero segura, paso a paso.",
+  "show": "—Corramos una carrera —dijo la tortuga—. Lenta pero segura, paso a paso.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_p2_es.mp3"
+ },
+ {
+  "id": "out_tortoise_p3_en",
+  "lang": "en",
+  "say": "Hare ran fast, fast, fast! Then he stopped under a tree for a nap.",
+  "show": "Hare ran fast, fast, fast! Then he stopped under a tree for a nap.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_p3_en.mp3"
+ },
+ {
+  "id": "out_tortoise_p3_es",
+  "lang": "es",
+  "say": "La liebre corrió rápido, ¡rápido, rápido! Después se detuvo bajo un árbol a dormir una siesta.",
+  "show": "La liebre corrió rápido, ¡rápido, rápido! Después se detuvo bajo un árbol a dormir una siesta.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_p3_es.mp3"
+ },
+ {
+  "id": "out_tortoise_p4_en",
+  "lang": "en",
+  "say": "Tortoise walked and walked. She did not stop. She passed the sleeping Hare.",
+  "show": "Tortoise walked and walked. She did not stop. She passed the sleeping Hare.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_p4_en.mp3"
+ },
+ {
+  "id": "out_tortoise_p4_es",
+  "lang": "es",
+  "say": "La tortuga caminó y caminó. No se detuvo. Pasó junto a la liebre dormida.",
+  "show": "La tortuga caminó y caminó. No se detuvo. Pasó junto a la liebre dormida.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_p4_es.mp3"
+ },
+ {
+  "id": "out_tortoise_p5_en",
+  "lang": "en",
+  "say": "Tortoise won the race! Slow and steady wins the race.",
+  "show": "Tortoise won the race! Slow and steady wins the race.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_p5_en.mp3"
+ },
+ {
+  "id": "out_tortoise_p5_es",
+  "lang": "es",
+  "say": "¡La tortuga ganó la carrera! Lento pero seguro se gana la carrera.",
+  "show": "¡La tortuga ganó la carrera! Lento pero seguro se gana la carrera.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_p5_es.mp3"
+ },
+ {
+  "id": "out_tortoise_w0_en",
+  "lang": "en",
+  "say": "tortoise",
+  "show": "tortoise",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_w0_en.mp3"
+ },
+ {
+  "id": "out_tortoise_w0_es",
+  "lang": "es",
+  "say": "tortuga",
+  "show": "tortuga",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_w0_es.mp3"
+ },
+ {
+  "id": "out_tortoise_w1_en",
+  "lang": "en",
+  "say": "hare",
+  "show": "hare",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_w1_en.mp3"
+ },
+ {
+  "id": "out_tortoise_w1_es",
+  "lang": "es",
+  "say": "liebre",
+  "show": "liebre",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_w1_es.mp3"
+ },
+ {
+  "id": "out_tortoise_w2_en",
+  "lang": "en",
+  "say": "race",
+  "show": "race",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_w2_en.mp3"
+ },
+ {
+  "id": "out_tortoise_w2_es",
+  "lang": "es",
+  "say": "carrera",
+  "show": "carrera",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_w2_es.mp3"
+ },
+ {
+  "id": "out_tortoise_w3_en",
+  "lang": "en",
+  "say": "fast",
+  "show": "fast",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_w3_en.mp3"
+ },
+ {
+  "id": "out_tortoise_w3_es",
+  "lang": "es",
+  "say": "rápido",
+  "show": "rápido",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_w3_es.mp3"
+ },
+ {
+  "id": "out_tortoise_w4_en",
+  "lang": "en",
+  "say": "slow",
+  "show": "slow",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_w4_en.mp3"
+ },
+ {
+  "id": "out_tortoise_w4_es",
+  "lang": "es",
+  "say": "lento",
+  "show": "lento",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_w4_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q0_en",
+  "lang": "en",
+  "say": "Who won the race?",
+  "show": "Who won the race?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q0_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q0_es",
+  "lang": "es",
+  "say": "¿Quién ganó la carrera?",
+  "show": "¿Quién ganó la carrera?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q0_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q0c0_en",
+  "lang": "en",
+  "say": "The tortoise",
+  "show": "The tortoise",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q0c0_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q0c0_es",
+  "lang": "es",
+  "say": "La tortuga",
+  "show": "La tortuga",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q0c0_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q0c1_en",
+  "lang": "en",
+  "say": "The hare",
+  "show": "The hare",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q0c1_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q0c1_es",
+  "lang": "es",
+  "say": "La liebre",
+  "show": "La liebre",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q0c1_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q0c2_en",
+  "lang": "en",
+  "say": "The fox",
+  "show": "The fox",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q0c2_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q0c2_es",
+  "lang": "es",
+  "say": "El zorro",
+  "show": "El zorro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q0c2_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q1_en",
+  "lang": "en",
+  "say": "What did Hare do in the middle of the race?",
+  "show": "What did Hare do in the middle of the race?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q1_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q1_es",
+  "lang": "es",
+  "say": "¿Qué hizo la liebre en medio de la carrera?",
+  "show": "¿Qué hizo la liebre en medio de la carrera?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q1_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q1c0_en",
+  "lang": "en",
+  "say": "He took a nap",
+  "show": "He took a nap",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q1c0_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q1c0_es",
+  "lang": "es",
+  "say": "Durmió una siesta",
+  "show": "Durmió una siesta",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q1c0_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q1c1_en",
+  "lang": "en",
+  "say": "He drank some water",
+  "show": "He drank some water",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q1c1_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q1c1_es",
+  "lang": "es",
+  "say": "Tomó un poco de agua",
+  "show": "Tomó un poco de agua",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q1c1_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q1c2_en",
+  "lang": "en",
+  "say": "He went home",
+  "show": "He went home",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q1c2_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q1c2_es",
+  "lang": "es",
+  "say": "¡Se fue a su casa!",
+  "show": "Se fue a su casa",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q1c2_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q2_en",
+  "lang": "en",
+  "say": "What does this story teach us?",
+  "show": "What does this story teach us?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q2_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q2_es",
+  "lang": "es",
+  "say": "¿Qué nos enseña este cuento?",
+  "show": "¿Qué nos enseña este cuento?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q2_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q2c0_en",
+  "lang": "en",
+  "say": "Keep going, step by step",
+  "show": "Keep going, step by step",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q2c0_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q2c0_es",
+  "lang": "es",
+  "say": "Sigue adelante, paso a paso",
+  "show": "Sigue adelante, paso a paso",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q2c0_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q2c1_en",
+  "lang": "en",
+  "say": "Always run very fast",
+  "show": "Always run very fast",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q2c1_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q2c1_es",
+  "lang": "es",
+  "say": "Corre siempre muy rápido",
+  "show": "Corre siempre muy rápido",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q2c1_es.mp3"
+ },
+ {
+  "id": "out_tortoise_q2c2_en",
+  "lang": "en",
+  "say": "Naps win races",
+  "show": "Naps win races",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_tortoise_q2c2_en.mp3"
+ },
+ {
+  "id": "out_tortoise_q2c2_es",
+  "lang": "es",
+  "say": "Las siestas ganan carreras",
+  "show": "Las siestas ganan carreras",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_tortoise_q2c2_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_p0_en",
+  "lang": "en",
+  "say": "A big lion slept under a tree.",
+  "show": "A big lion slept under a tree.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_p0_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_p0_es",
+  "lang": "es",
+  "say": "Un león grande dormía bajo un árbol.",
+  "show": "Un león grande dormía bajo un árbol.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_p0_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_p1_en",
+  "lang": "en",
+  "say": "A little mouse ran over his paw. “ROAR!” said the lion.",
+  "show": "A little mouse ran over his paw. “ROAR!” said the lion.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_p1_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_p1_es",
+  "lang": "es",
+  "say": "Un ratoncito corrió sobre su pata. —¡GRRR! —rugió el león.",
+  "show": "Un ratoncito corrió sobre su pata. —¡GRRR! —rugió el león.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_p1_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_p2_en",
+  "lang": "en",
+  "say": "“Please let me go,” said Mouse. “One day I can help you!”",
+  "show": "“Please let me go,” said Mouse. “One day I can help you!”",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_p2_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_p2_es",
+  "lang": "es",
+  "say": "—Por favor, déjame ir —dijo el ratón—. ¡Un día yo podré ayudarte!",
+  "show": "—Por favor, déjame ir —dijo el ratón—. ¡Un día yo podré ayudarte!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_p2_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_p3_en",
+  "lang": "en",
+  "say": "The lion laughed, but he let the little mouse go.",
+  "show": "The lion laughed, but he let the little mouse go.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_p3_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_p3_es",
+  "lang": "es",
+  "say": "El león se rio, pero dejó ir al ratoncito.",
+  "show": "El león se rio, pero dejó ir al ratoncito.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_p3_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_p4_en",
+  "lang": "en",
+  "say": "Later, the lion was trapped in a big net. He could not get out!",
+  "show": "Later, the lion was trapped in a big net. He could not get out!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_p4_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_p4_es",
+  "lang": "es",
+  "say": "Después, el león quedó atrapado en una red grande. ¡No podía salir!",
+  "show": "Después, el león quedó atrapado en una red grande. ¡No podía salir!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_p4_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_p5_en",
+  "lang": "en",
+  "say": "Mouse chewed and chewed the ropes. The lion was free! Little friends can be big helpers.",
+  "show": "Mouse chewed and chewed the ropes. The lion was free! Little friends can be big helpers.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_p5_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_p5_es",
+  "lang": "es",
+  "say": "El ratón mordió y mordió las cuerdas. ¡El león quedó libre! Los amigos pequeños pueden ser grandes ayudantes.",
+  "show": "El ratón mordió y mordió las cuerdas. ¡El león quedó libre! Los amigos pequeños pueden ser grandes ayudantes.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_p5_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_w0_en",
+  "lang": "en",
+  "say": "lion",
+  "show": "lion",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_w0_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_w0_es",
+  "lang": "es",
+  "say": "león",
+  "show": "león",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_w0_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_w1_en",
+  "lang": "en",
+  "say": "mouse",
+  "show": "mouse",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_w1_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_w1_es",
+  "lang": "es",
+  "say": "ratón",
+  "show": "ratón",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_w1_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_w2_en",
+  "lang": "en",
+  "say": "net",
+  "show": "net",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_w2_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_w2_es",
+  "lang": "es",
+  "say": "red",
+  "show": "red",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_w2_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_w3_en",
+  "lang": "en",
+  "say": "rope",
+  "show": "rope",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_w3_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_w3_es",
+  "lang": "es",
+  "say": "cuerda",
+  "show": "cuerda",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_w3_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_w4_en",
+  "lang": "en",
+  "say": "help",
+  "show": "help",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_w4_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_w4_es",
+  "lang": "es",
+  "say": "ayudar",
+  "show": "ayudar",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_w4_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0_en",
+  "lang": "en",
+  "say": "Who helped the lion get free?",
+  "show": "Who helped the lion get free?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q0_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0_es",
+  "lang": "es",
+  "say": "¿Quién ayudó al león a liberarse?",
+  "show": "¿Quién ayudó al león a liberarse?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q0_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0c0_en",
+  "lang": "en",
+  "say": "The little mouse",
+  "show": "The little mouse",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q0c0_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0c0_es",
+  "lang": "es",
+  "say": "El ratoncito",
+  "show": "El ratoncito",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q0c0_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0c1_en",
+  "lang": "en",
+  "say": "A bird",
+  "show": "A bird",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q0c1_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0c1_es",
+  "lang": "es",
+  "say": "Un pájaro",
+  "show": "Un pájaro",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q0c1_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0c2_en",
+  "lang": "en",
+  "say": "The wind",
+  "show": "The wind",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q0c2_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q0c2_es",
+  "lang": "es",
+  "say": "El viento",
+  "show": "El viento",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q0c2_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1_en",
+  "lang": "en",
+  "say": "Why did the lion let the mouse go?",
+  "show": "Why did the lion let the mouse go?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q1_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1_es",
+  "lang": "es",
+  "say": "¿Por qué el león dejó ir al ratón?",
+  "show": "¿Por qué el león dejó ir al ratón?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q1_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1c0_en",
+  "lang": "en",
+  "say": "The mouse promised to help one day",
+  "show": "The mouse promised to help one day",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q1c0_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1c0_es",
+  "lang": "es",
+  "say": "El ratón prometió ayudar un día",
+  "show": "El ratón prometió ayudar un día",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q1c0_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1c1_en",
+  "lang": "en",
+  "say": "The mouse ran away fast",
+  "show": "The mouse ran away fast",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q1c1_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1c1_es",
+  "lang": "es",
+  "say": "El ratón se escapó corriendo",
+  "show": "El ratón se escapó corriendo",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q1c1_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1c2_en",
+  "lang": "en",
+  "say": "The lion was not hungry",
+  "show": "The lion was not hungry",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q1c2_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q1c2_es",
+  "lang": "es",
+  "say": "El león no tenía hambre",
+  "show": "El león no tenía hambre",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q1c2_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2_en",
+  "lang": "en",
+  "say": "What does this story teach us?",
+  "show": "What does this story teach us?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q2_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2_es",
+  "lang": "es",
+  "say": "¿Qué nos enseña este cuento?",
+  "show": "¿Qué nos enseña este cuento?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q2_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2c0_en",
+  "lang": "en",
+  "say": "Even little friends can help",
+  "show": "Even little friends can help",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q2c0_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2c0_es",
+  "lang": "es",
+  "say": "Hasta los amigos pequeños pueden ayudar",
+  "show": "Hasta los amigos pequeños pueden ayudar",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q2c0_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2c1_en",
+  "lang": "en",
+  "say": "Big is always better",
+  "show": "Big is always better",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q2c1_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2c1_es",
+  "lang": "es",
+  "say": "Lo grande siempre es mejor",
+  "show": "Lo grande siempre es mejor",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q2c1_es.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2c2_en",
+  "lang": "en",
+  "say": "Never go to sleep",
+  "show": "Never go to sleep",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_lionmouse_q2c2_en.mp3"
+ },
+ {
+  "id": "out_lionmouse_q2c2_es",
+  "lang": "es",
+  "say": "Nunca duermas",
+  "show": "Nunca duermas",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_lionmouse_q2c2_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_p0_en",
+  "lang": "en",
+  "say": "A young shepherd watched the sheep on the hill.",
+  "show": "A young shepherd watched the sheep on the hill.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_p0_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_p0_es",
+  "lang": "es",
+  "say": "Un pastorcito cuidaba las ovejas en la colina.",
+  "show": "Un pastorcito cuidaba las ovejas en la colina.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_p0_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_p1_en",
+  "lang": "en",
+  "say": "He was bored. “Wolf! Wolf!” he cried. “The wolf is coming!”",
+  "show": "He was bored. “Wolf! Wolf!” he cried. “The wolf is coming!”",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_p1_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_p1_es",
+  "lang": "es",
+  "say": "Estaba aburrido. —¡El lobo! ¡El lobo! —gritó—. ¡Viene el lobo!",
+  "show": "Estaba aburrido. —¡El lobo! ¡El lobo! —gritó—. ¡Viene el lobo!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_p1_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_p2_en",
+  "lang": "en",
+  "say": "The people ran to help. But there was no wolf! The boy laughed.",
+  "show": "The people ran to help. But there was no wolf! The boy laughed.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_p2_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_p2_es",
+  "lang": "es",
+  "say": "La gente corrió a ayudar. ¡Pero no había ningún lobo! El pastorcito se rio.",
+  "show": "La gente corrió a ayudar. ¡Pero no había ningún lobo! El pastorcito se rio.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_p2_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_p3_en",
+  "lang": "en",
+  "say": "The next day he cried again: “Wolf! Wolf!” The people ran. No wolf again!",
+  "show": "The next day he cried again: “Wolf! Wolf!” The people ran. No wolf again!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_p3_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_p3_es",
+  "lang": "es",
+  "say": "Al día siguiente gritó otra vez: —¡El lobo! ¡El lobo! La gente corrió. ¡Otra vez no había lobo!",
+  "show": "Al día siguiente gritó otra vez: —¡El lobo! ¡El lobo! La gente corrió. ¡Otra vez no había lobo!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_p3_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_p4_en",
+  "lang": "en",
+  "say": "Then one day, a real wolf came! “Wolf! Wolf! Help!” cried the boy.",
+  "show": "Then one day, a real wolf came! “Wolf! Wolf! Help!” cried the boy.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_p4_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_p4_es",
+  "lang": "es",
+  "say": "Entonces, un día, ¡vino un lobo de verdad! —¡El lobo! ¡Ayuda! —gritó el pastorcito.",
+  "show": "Entonces, un día, ¡vino un lobo de verdad! —¡El lobo! ¡Ayuda! —gritó el pastorcito.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_p4_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_p5_en",
+  "lang": "en",
+  "say": "But no one came. No one believed him. Always tell the truth.",
+  "show": "But no one came. No one believed him. Always tell the truth.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_p5_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_p5_es",
+  "lang": "es",
+  "say": "Pero nadie vino. Nadie le creyó. Di siempre la verdad.",
+  "show": "Pero nadie vino. Nadie le creyó. Di siempre la verdad.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_p5_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_w0_en",
+  "lang": "en",
+  "say": "wolf",
+  "show": "wolf",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_w0_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_w0_es",
+  "lang": "es",
+  "say": "lobo",
+  "show": "lobo",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_w0_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_w1_en",
+  "lang": "en",
+  "say": "sheep",
+  "show": "sheep",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_w1_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_w1_es",
+  "lang": "es",
+  "say": "oveja",
+  "show": "oveja",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_w1_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_w2_en",
+  "lang": "en",
+  "say": "shepherd",
+  "show": "shepherd",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_w2_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_w2_es",
+  "lang": "es",
+  "say": "pastor",
+  "show": "pastor",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_w2_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_w3_en",
+  "lang": "en",
+  "say": "truth",
+  "show": "truth",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_w3_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_w3_es",
+  "lang": "es",
+  "say": "verdad",
+  "show": "verdad",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_w3_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_w4_en",
+  "lang": "en",
+  "say": "lie",
+  "show": "lie",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_w4_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_w4_es",
+  "lang": "es",
+  "say": "mentira",
+  "show": "mentira",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_w4_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0_en",
+  "lang": "en",
+  "say": "Why did the people stop coming?",
+  "show": "Why did the people stop coming?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q0_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0_es",
+  "lang": "es",
+  "say": "¿Por qué la gente dejó de venir?",
+  "show": "¿Por qué la gente dejó de venir?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q0_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0c0_en",
+  "lang": "en",
+  "say": "The boy lied many times",
+  "show": "The boy lied many times",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q0c0_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0c0_es",
+  "lang": "es",
+  "say": "El pastorcito mintió muchas veces",
+  "show": "El pastorcito mintió muchas veces",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q0c0_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0c1_en",
+  "lang": "en",
+  "say": "They were sleeping",
+  "show": "They were sleeping",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q0c1_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0c1_es",
+  "lang": "es",
+  "say": "Estaban durmiendo",
+  "show": "Estaban durmiendo",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q0c1_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0c2_en",
+  "lang": "en",
+  "say": "They moved away",
+  "show": "They moved away",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q0c2_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q0c2_es",
+  "lang": "es",
+  "say": "Se mudaron lejos",
+  "show": "Se mudaron lejos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q0c2_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1_en",
+  "lang": "en",
+  "say": "What came at the end of the story?",
+  "show": "What came at the end of the story?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q1_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1_es",
+  "lang": "es",
+  "say": "¿Qué vino al final del cuento?",
+  "show": "¿Qué vino al final del cuento?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q1_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1c0_en",
+  "lang": "en",
+  "say": "A real wolf",
+  "show": "A real wolf",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q1c0_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1c0_es",
+  "lang": "es",
+  "say": "Un lobo de verdad",
+  "show": "Un lobo de verdad",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q1c0_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1c1_en",
+  "lang": "en",
+  "say": "A big storm",
+  "show": "A big storm",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q1c1_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1c1_es",
+  "lang": "es",
+  "say": "Una tormenta grande",
+  "show": "Una tormenta grande",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q1c1_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1c2_en",
+  "lang": "en",
+  "say": "More sheep",
+  "show": "More sheep",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q1c2_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q1c2_es",
+  "lang": "es",
+  "say": "Más ovejas",
+  "show": "Más ovejas",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q1c2_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2_en",
+  "lang": "en",
+  "say": "What does this story teach us?",
+  "show": "What does this story teach us?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q2_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2_es",
+  "lang": "es",
+  "say": "¿Qué nos enseña este cuento?",
+  "show": "¿Qué nos enseña este cuento?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q2_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2c0_en",
+  "lang": "en",
+  "say": "Always tell the truth",
+  "show": "Always tell the truth",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q2c0_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2c0_es",
+  "lang": "es",
+  "say": "Di siempre la verdad",
+  "show": "Di siempre la verdad",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q2c0_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2c1_en",
+  "lang": "en",
+  "say": "Shout very loud",
+  "show": "Shout very loud",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q2c1_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2c1_es",
+  "lang": "es",
+  "say": "Grita muy fuerte",
+  "show": "Grita muy fuerte",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q2c1_es.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2c2_en",
+  "lang": "en",
+  "say": "Never help friends",
+  "show": "Never help friends",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_wolfboy_q2c2_en.mp3"
+ },
+ {
+  "id": "out_wolfboy_q2c2_es",
+  "lang": "es",
+  "say": "Nunca ayudes a tus amigos",
+  "show": "Nunca ayudes a tus amigos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_wolfboy_q2c2_es.mp3"
+ },
+ {
+  "id": "out_antgrass_p0_en",
+  "lang": "en",
+  "say": "All summer, Grasshopper sang and played in the sun.",
+  "show": "All summer, Grasshopper sang and played in the sun.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_p0_en.mp3"
+ },
+ {
+  "id": "out_antgrass_p0_es",
+  "lang": "es",
+  "say": "Todo el verano, la cigarra cantó y jugó bajo el sol.",
+  "show": "Todo el verano, la cigarra cantó y jugó bajo el sol.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_p0_es.mp3"
+ },
+ {
+  "id": "out_antgrass_p1_en",
+  "lang": "en",
+  "say": "Ant worked and worked. She carried food to her home.",
+  "show": "Ant worked and worked. She carried food to her home.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_p1_en.mp3"
+ },
+ {
+  "id": "out_antgrass_p1_es",
+  "lang": "es",
+  "say": "La hormiga trabajó y trabajó. Llevó comida a su casa.",
+  "show": "La hormiga trabajó y trabajó. Llevó comida a su casa.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_p1_es.mp3"
+ },
+ {
+  "id": "out_antgrass_p2_en",
+  "lang": "en",
+  "say": "“Come and sing with me!” said Grasshopper. “Winter is far away.”",
+  "show": "“Come and sing with me!” said Grasshopper. “Winter is far away.”",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_p2_en.mp3"
+ },
+ {
+  "id": "out_antgrass_p2_es",
+  "lang": "es",
+  "say": "—¡Ven a cantar conmigo! —dijo la cigarra—. El invierno está lejos.",
+  "show": "—¡Ven a cantar conmigo! —dijo la cigarra—. El invierno está lejos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_p2_es.mp3"
+ },
+ {
+  "id": "out_antgrass_p3_en",
+  "lang": "en",
+  "say": "But Ant kept working. “I am getting ready for winter,” she said.",
+  "show": "But Ant kept working. “I am getting ready for winter,” she said.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_p3_en.mp3"
+ },
+ {
+  "id": "out_antgrass_p3_es",
+  "lang": "es",
+  "say": "Pero la hormiga siguió trabajando. —Me preparo para el invierno —dijo.",
+  "show": "Pero la hormiga siguió trabajando. —Me preparo para el invierno —dijo.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_p3_es.mp3"
+ },
+ {
+  "id": "out_antgrass_p4_en",
+  "lang": "en",
+  "say": "Then winter came. Snow covered everything. Grasshopper was cold and hungry.",
+  "show": "Then winter came. Snow covered everything. Grasshopper was cold and hungry.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_p4_en.mp3"
+ },
+ {
+  "id": "out_antgrass_p4_es",
+  "lang": "es",
+  "say": "Después llegó el invierno. La nieve cubrió todo. La cigarra tenía frío y hambre.",
+  "show": "Después llegó el invierno. La nieve cubrió todo. La cigarra tenía frío y hambre.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_p4_es.mp3"
+ },
+ {
+  "id": "out_antgrass_p5_en",
+  "lang": "en",
+  "say": "Ant shared her food with Grasshopper. Work first, then play — and share with friends.",
+  "show": "Ant shared her food with Grasshopper. Work first, then play — and share with friends.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_p5_en.mp3"
+ },
+ {
+  "id": "out_antgrass_p5_es",
+  "lang": "es",
+  "say": "La hormiga compartió su comida con la cigarra. Primero el trabajo, después el juego… y a compartir con los amigos.",
+  "show": "La hormiga compartió su comida con la cigarra. Primero el trabajo, después el juego… y a compartir con los amigos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_p5_es.mp3"
+ },
+ {
+  "id": "out_antgrass_w0_en",
+  "lang": "en",
+  "say": "ant",
+  "show": "ant",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_w0_en.mp3"
+ },
+ {
+  "id": "out_antgrass_w0_es",
+  "lang": "es",
+  "say": "hormiga",
+  "show": "hormiga",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_w0_es.mp3"
+ },
+ {
+  "id": "out_antgrass_w1_en",
+  "lang": "en",
+  "say": "grasshopper",
+  "show": "grasshopper",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_w1_en.mp3"
+ },
+ {
+  "id": "out_antgrass_w1_es",
+  "lang": "es",
+  "say": "cigarra",
+  "show": "cigarra",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_w1_es.mp3"
+ },
+ {
+  "id": "out_antgrass_w2_en",
+  "lang": "en",
+  "say": "summer",
+  "show": "summer",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_w2_en.mp3"
+ },
+ {
+  "id": "out_antgrass_w2_es",
+  "lang": "es",
+  "say": "verano",
+  "show": "verano",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_w2_es.mp3"
+ },
+ {
+  "id": "out_antgrass_w3_en",
+  "lang": "en",
+  "say": "winter",
+  "show": "winter",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_w3_en.mp3"
+ },
+ {
+  "id": "out_antgrass_w3_es",
+  "lang": "es",
+  "say": "invierno",
+  "show": "invierno",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_w3_es.mp3"
+ },
+ {
+  "id": "out_antgrass_w4_en",
+  "lang": "en",
+  "say": "share",
+  "show": "share",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_w4_en.mp3"
+ },
+ {
+  "id": "out_antgrass_w4_es",
+  "lang": "es",
+  "say": "compartir",
+  "show": "compartir",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_w4_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q0_en",
+  "lang": "en",
+  "say": "What did Ant do all summer?",
+  "show": "What did Ant do all summer?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q0_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q0_es",
+  "lang": "es",
+  "say": "¿Qué hizo la hormiga todo el verano?",
+  "show": "¿Qué hizo la hormiga todo el verano?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q0_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q0c0_en",
+  "lang": "en",
+  "say": "She worked and saved food",
+  "show": "She worked and saved food",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q0c0_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q0c0_es",
+  "lang": "es",
+  "say": "Trabajó y guardó comida",
+  "show": "Trabajó y guardó comida",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q0c0_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q0c1_en",
+  "lang": "en",
+  "say": "She sang songs",
+  "show": "She sang songs",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q0c1_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q0c1_es",
+  "lang": "es",
+  "say": "Cantó canciones",
+  "show": "Cantó canciones",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q0c1_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q0c2_en",
+  "lang": "en",
+  "say": "She slept all day",
+  "show": "She slept all day",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q0c2_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q0c2_es",
+  "lang": "es",
+  "say": "Durmió todo el día",
+  "show": "Durmió todo el día",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q0c2_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q1_en",
+  "lang": "en",
+  "say": "What happened when winter came?",
+  "show": "What happened when winter came?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q1_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q1_es",
+  "lang": "es",
+  "say": "¿Qué pasó cuando llegó el invierno?",
+  "show": "¿Qué pasó cuando llegó el invierno?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q1_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q1c0_en",
+  "lang": "en",
+  "say": "Grasshopper was cold and hungry",
+  "show": "Grasshopper was cold and hungry",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q1c0_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q1c0_es",
+  "lang": "es",
+  "say": "La cigarra tenía frío y hambre",
+  "show": "La cigarra tenía frío y hambre",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q1c0_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q1c1_en",
+  "lang": "en",
+  "say": "Grasshopper found lots of food",
+  "show": "Grasshopper found lots of food",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q1c1_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q1c1_es",
+  "lang": "es",
+  "say": "La cigarra encontró mucha comida",
+  "show": "La cigarra encontró mucha comida",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q1c1_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q1c2_en",
+  "lang": "en",
+  "say": "The sun came out",
+  "show": "The sun came out",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q1c2_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q1c2_es",
+  "lang": "es",
+  "say": "Salió el sol",
+  "show": "Salió el sol",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q1c2_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q2_en",
+  "lang": "en",
+  "say": "What does this story teach us?",
+  "show": "What does this story teach us?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q2_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q2_es",
+  "lang": "es",
+  "say": "¿Qué nos enseña este cuento?",
+  "show": "¿Qué nos enseña este cuento?",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q2_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q2c0_en",
+  "lang": "en",
+  "say": "Work first, then play",
+  "show": "Work first, then play",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q2c0_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q2c0_es",
+  "lang": "es",
+  "say": "Primero el trabajo, después el juego",
+  "show": "Primero el trabajo, después el juego",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q2c0_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q2c1_en",
+  "lang": "en",
+  "say": "Never work at all",
+  "show": "Never work at all",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q2c1_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q2c1_es",
+  "lang": "es",
+  "say": "No trabajes nunca",
+  "show": "No trabajes nunca",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q2c1_es.mp3"
+ },
+ {
+  "id": "out_antgrass_q2c2_en",
+  "lang": "en",
+  "say": "Sing all day long",
+  "show": "Sing all day long",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/out_antgrass_q2c2_en.mp3"
+ },
+ {
+  "id": "out_antgrass_q2c2_es",
+  "lang": "es",
+  "say": "Canta todo el día",
+  "show": "Canta todo el día",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/out_antgrass_q2c2_es.mp3"
+ },
+ {
+  "id": "ln_outside_in_en",
+  "lang": "en",
+  "say": "Outside Books! Stories from far away, and doors to even more books. Tap a cover and read!",
+  "show": "Outside Books! Stories from far away, and doors to even more books. Tap a cover and read!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_outside_in_en.mp3"
+ },
+ {
+  "id": "ln_outside_in_es",
+  "lang": "es",
+  "say": "¡Libros de afuera! Cuentos de lugares lejanos y puertas a muchos más libros. ¡Toca una portada y lee!",
+  "show": "¡Libros de afuera! Cuentos de lugares lejanos y puertas a muchos más libros. ¡Toca una portada y lee!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_outside_in_es.mp3"
+ },
+ {
+  "id": "ln_radio_in_en",
+  "lang": "en",
+  "say": "Radio Leh-oh! Read the page out loud, then hear yourself!",
+  "show": "Radio Leo! Read the page out loud, then hear yourself!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_radio_in_en.mp3"
+ },
+ {
+  "id": "ln_radio_in_es",
+  "lang": "es",
+  "say": "¡Radio Leo! ¡Lee la página en voz alta y luego escúchate!",
+  "show": "¡Radio Leo! ¡Lee la página en voz alta y luego escúchate!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_radio_in_es.mp3"
+ },
+ {
+  "id": "ln_radio_you_en",
+  "lang": "en",
+  "say": "That's you! Great reading!",
+  "show": "That's you! Great reading!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_radio_you_en.mp3"
+ },
+ {
+  "id": "ln_radio_you_es",
+  "lang": "es",
+  "say": "¡Esa es tu voz! ¡Qué bien lees!",
+  "show": "¡Esa es tu voz! ¡Qué bien lees!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_radio_you_es.mp3"
+ },
+ {
+  "id": "ln_radio_mic_en",
+  "lang": "en",
+  "say": "The microphone didn't cooperate. Ask your teacher for help.",
+  "show": "The microphone didn't cooperate. Ask your teacher for help.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_radio_mic_en.mp3"
+ },
+ {
+  "id": "ln_radio_mic_es",
+  "lang": "es",
+  "say": "El micrófono no quiso cooperar. Pide ayuda a tu maestro.",
+  "show": "El micrófono no quiso cooperar. Pide ayuda a tu maestro.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_radio_mic_es.mp3"
+ },
+ {
+  "id": "ln_goal_meter_en",
+  "lang": "en",
+  "say": "Our class goal! Every correct answer helps our whole class. Almost there!",
+  "show": "Our class goal! Every correct answer helps our whole class. Almost there!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_goal_meter_en.mp3"
+ },
+ {
+  "id": "ln_goal_meter_es",
+  "lang": "es",
+  "say": "¡La meta de nuestra clase! Cada respuesta correcta ayuda a toda la clase. ¡Ya casi llegamos!",
+  "show": "¡La meta de nuestra clase! Cada respuesta correcta ayuda a toda la clase. ¡Ya casi llegamos!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_goal_meter_es.mp3"
+ },
+ {
+  "id": "ln_goal_party_en",
+  "lang": "en",
+  "say": "We did it, class! We reached our goal — together!",
+  "show": "We did it, class! We reached our goal — together!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_goal_party_en.mp3"
+ },
+ {
+  "id": "ln_goal_party_es",
+  "lang": "es",
+  "say": "¡Lo logramos! ¡Llegamos a la meta, toda la clase junta!",
+  "show": "¡Lo logramos! ¡Llegamos a la meta, toda la clase junta!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_goal_party_es.mp3"
+ },
+ {
+  "id": "ln_belt_cert_en",
+  "lang": "en",
+  "say": "Congratulations! You earned a new belt! We are so proud of you!",
+  "show": "Congratulations! You earned a new belt! We are so proud of you!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_belt_cert_en.mp3"
+ },
+ {
+  "id": "ln_belt_cert_es",
+  "lang": "es",
+  "say": "¡Felicidades! ¡Ganaste un cinturón nuevo! ¡Estamos muy orgullosos de ti!",
+  "show": "¡Felicidades! ¡Ganaste un cinturón nuevo! ¡Estamos muy orgullosos de ti!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_belt_cert_es.mp3"
+ },
+ {
+  "id": "ln_peek_title_en",
+  "lang": "en",
+  "say": "Your luchador's progress!",
+  "show": "Your luchador's progress!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_title_en.mp3"
+ },
+ {
+  "id": "ln_peek_title_es",
+  "lang": "es",
+  "say": "¡El progreso de tu luchador!",
+  "show": "¡El progreso de tu luchador!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_title_es.mp3"
+ },
+ {
+  "id": "ln_peek_points_en",
+  "lang": "en",
+  "say": "Points and lightning bolts!",
+  "show": "Points and lightning bolts!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_points_en.mp3"
+ },
+ {
+  "id": "ln_peek_points_es",
+  "lang": "es",
+  "say": "¡Puntos y rayos!",
+  "show": "¡Puntos y rayos!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_points_es.mp3"
+ },
+ {
+  "id": "ln_peek_belts_en",
+  "lang": "en",
+  "say": "Belts earned!",
+  "show": "Belts earned!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_belts_en.mp3"
+ },
+ {
+  "id": "ln_peek_belts_es",
+  "lang": "es",
+  "say": "¡Cinturones ganados!",
+  "show": "¡Cinturones ganados!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_belts_es.mp3"
+ },
+ {
+  "id": "ln_peek_battles_en",
+  "lang": "en",
+  "say": "Battles won!",
+  "show": "Battles won!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_battles_en.mp3"
+ },
+ {
+  "id": "ln_peek_battles_es",
+  "lang": "es",
+  "say": "¡Batallas ganadas!",
+  "show": "¡Batallas ganadas!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_battles_es.mp3"
+ },
+ {
+  "id": "ln_peek_working_en",
+  "lang": "en",
+  "say": "What we're working on now!",
+  "show": "What we're working on now!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_working_en.mp3"
+ },
+ {
+  "id": "ln_peek_working_es",
+  "lang": "es",
+  "say": "¡En lo que estamos trabajando ahora!",
+  "show": "¡En lo que estamos trabajando ahora!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_working_es.mp3"
+ },
+ {
+  "id": "ln_peek_books_en",
+  "lang": "en",
+  "say": "Books read!",
+  "show": "Books read!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_books_en.mp3"
+ },
+ {
+  "id": "ln_peek_books_es",
+  "lang": "es",
+  "say": "Libros leídos.",
+  "show": "¡Libros leídos!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_books_es.mp3"
+ },
+ {
+  "id": "ln_peek_nopicture_en",
+  "lang": "en",
+  "say": "Your luchador's secret picture is not set up yet. The Maestro will help set it up at school first. Then you can peek at their progress!",
+  "show": "Your luchador's secret picture is not set up yet. The Maestro will help set it up at school first. Then you can peek at their progress!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_peek_nopicture_en.mp3"
+ },
+ {
+  "id": "ln_peek_nopicture_es",
+  "lang": "es",
+  "say": "El dibujo secreto de tu luchador todavía no está listo. El Maestro ayudará a crearlo primero en la escuela. ¡Y luego podrán ver su progreso!",
+  "show": "El dibujo secreto de tu luchador todavía no está listo. El Maestro ayudará a crearlo primero en la escuela. ¡Y luego podrán ver su progreso!",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_peek_nopicture_es.mp3"
  }
 ]

@@ -2,6 +2,118 @@
   "format": "hatch-space-privileged-contracts-v1",
   "contracts": [
     {
+      "name": "listArtIds",
+      "request_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "ids"
+        ],
+        "additionalProperties": false
+      },
+      "capabilities": [],
+      "contract_hash": "bdb8a44df5a2d32c842585e0ae8534512a7c53e34895c1acdd573e020c0ef500"
+    },
+    {
+      "name": "pgMode",
+      "request_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "external": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "external"
+        ],
+        "additionalProperties": false
+      },
+      "capabilities": [],
+      "contract_hash": "b9fe13b6628366042f56797063c3057f55d4c5426a02a14c95e927e19b5f92a8"
+    },
+    {
+      "name": "pgQuery",
+      "request_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          },
+          "params": {
+            "maxItems": 64,
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "sql",
+          "params"
+        ],
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {}
+            }
+          }
+        },
+        "required": [
+          "rows"
+        ],
+        "additionalProperties": false
+      },
+      "capabilities": [],
+      "contract_hash": "4247684229c301f28ea4d46dbac078d929a14770101be0755e8779c40445e1b1"
+    },
+    {
       "name": "readArtBatch",
       "request_schema": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -60,6 +172,66 @@
       },
       "capabilities": [],
       "contract_hash": "8a03866f058d7d2553babdecbcb6926dc9412c0977b1a38e23c7808fcc40ad23"
+    },
+    {
+      "name": "readArtSizes",
+      "request_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "ids": {
+            "maxItems": 500,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            }
+          }
+        },
+        "required": [
+          "ids"
+        ],
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "sizes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "id",
+                "size"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "missing": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "sizes",
+          "missing"
+        ],
+        "additionalProperties": false
+      },
+      "capabilities": [],
+      "contract_hash": "6d57d0e1b71277eed455d3ae651e2cb6537f3fe4264b6d1d663d642c85050683"
     },
     {
       "name": "readClipsBatch",

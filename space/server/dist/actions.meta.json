@@ -1,17 +1,12 @@
 {
   "inputs": {
     "src/actions.ts": {
-      "bytes": 194871,
+      "bytes": 242469,
       "imports": [
         {
           "path": "../node_modules/@hatch/space-sdk/dist/index.js",
           "kind": "import-statement",
           "original": "@hatch/space-sdk"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/index.js",
-          "kind": "import-statement",
-          "original": "drizzle-orm"
         },
         {
           "path": ".generated/privileged.contract.ts",
@@ -19,31 +14,9 @@
           "original": "@space/privileged"
         },
         {
-          "path": "src/schema.ts",
+          "path": "src/store.ts",
           "kind": "import-statement",
-          "original": "./schema"
-        }
-      ],
-      "format": "esm"
-    },
-    ".generated/privileged.contract.ts": {
-      "bytes": 1760,
-      "imports": [
-        {
-          "path": "../node_modules/@hatch/space-sdk/dist/index.js",
-          "kind": "import-statement",
-          "original": "@hatch/space-sdk"
-        }
-      ],
-      "format": "esm"
-    },
-    "src/schema.ts": {
-      "bytes": 2828,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/index.js",
-          "kind": "import-statement",
-          "original": "drizzle-orm/sqlite-core"
+          "original": "./store"
         }
       ],
       "format": "esm"
@@ -70,6 +43,76 @@
           "path": "../node_modules/@hatch/space-sdk/dist/verticals.js",
           "kind": "import-statement",
           "original": "./verticals"
+        }
+      ],
+      "format": "esm"
+    },
+    ".generated/privileged.contract.ts": {
+      "bytes": 3333,
+      "imports": [
+        {
+          "path": "../node_modules/@hatch/space-sdk/dist/index.js",
+          "kind": "import-statement",
+          "original": "@hatch/space-sdk"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/store.ts": {
+      "bytes": 18684,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/index.js",
+          "kind": "import-statement",
+          "original": "drizzle-orm"
+        },
+        {
+          "path": ".generated/privileged.contract.ts",
+          "kind": "import-statement",
+          "original": "@space/privileged"
+        },
+        {
+          "path": "src/schema.ts",
+          "kind": "import-statement",
+          "original": "./schema"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/@hatch/space-sdk/dist/server-contract.js": {
+      "bytes": 4743,
+      "imports": [
+        {
+          "path": "../node_modules/zod/index.js",
+          "kind": "import-statement",
+          "original": "zod"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/zod/index.js": {
+      "bytes": 121,
+      "imports": [
+        {
+          "path": "../node_modules/zod/v4/classic/external.js",
+          "kind": "import-statement",
+          "original": "./v4/classic/external.js"
+        },
+        {
+          "path": "../node_modules/zod/v4/classic/external.js",
+          "kind": "import-statement",
+          "original": "./v4/classic/external.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/schema.ts": {
+      "bytes": 3768,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/index.js",
+          "kind": "import-statement",
+          "original": "drizzle-orm/sqlite-core"
         }
       ],
       "format": "esm"
@@ -168,407 +211,6 @@
           "kind": "import-statement",
           "original": "./view-common.js"
         }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/table.utils.js": {
-      "bytes": 109,
-      "imports": [
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sql/sql.js": {
-      "bytes": 12420,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/pg-core/columns/enum.js",
-          "kind": "import-statement",
-          "original": "../pg-core/columns/enum.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/subquery.js",
-          "kind": "import-statement",
-          "original": "../subquery.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/tracing.js",
-          "kind": "import-statement",
-          "original": "../tracing.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/view-common.js",
-          "kind": "import-statement",
-          "original": "../view-common.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/column.js",
-          "kind": "import-statement",
-          "original": "../column.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/table.js",
-          "kind": "import-statement",
-          "original": "../table.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/@hatch/space-sdk/dist/server-contract.js": {
-      "bytes": 4743,
-      "imports": [
-        {
-          "path": "../node_modules/zod/index.js",
-          "kind": "import-statement",
-          "original": "zod"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/foreign-keys.js": {
-      "bytes": 1917,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/table.utils.js",
-          "kind": "import-statement",
-          "original": "../table.utils.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/table.js": {
-      "bytes": 1836,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/table.js",
-          "kind": "import-statement",
-          "original": "../table.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/all.js",
-          "kind": "import-statement",
-          "original": "./columns/all.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/unique-constraint.js": {
-      "bytes": 1312,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/table.utils.js",
-          "kind": "import-statement",
-          "original": "../table.utils.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/zod/index.js": {
-      "bytes": 121,
-      "imports": [
-        {
-          "path": "../node_modules/zod/v4/classic/external.js",
-          "kind": "import-statement",
-          "original": "./v4/classic/external.js"
-        },
-        {
-          "path": "../node_modules/zod/v4/classic/external.js",
-          "kind": "import-statement",
-          "original": "./v4/classic/external.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/blob.js": {
-      "bytes": 2921,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/utils.js",
-          "kind": "import-statement",
-          "original": "../../utils.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/custom.js": {
-      "bytes": 1564,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/utils.js",
-          "kind": "import-statement",
-          "original": "../../utils.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/real.js": {
-      "bytes": 640,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/text.js": {
-      "bytes": 1722,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/utils.js",
-          "kind": "import-statement",
-          "original": "../../utils.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/integer.js": {
-      "bytes": 3426,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sql/sql.js",
-          "kind": "import-statement",
-          "original": "../../sql/sql.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/utils.js",
-          "kind": "import-statement",
-          "original": "../../utils.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/common.js": {
-      "bytes": 1688,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/column-builder.js",
-          "kind": "import-statement",
-          "original": "../../column-builder.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/column.js",
-          "kind": "import-statement",
-          "original": "../../column.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/foreign-keys.js",
-          "kind": "import-statement",
-          "original": "../foreign-keys.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/unique-constraint.js",
-          "kind": "import-statement",
-          "original": "../unique-constraint.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/numeric.js": {
-      "bytes": 2265,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/utils.js",
-          "kind": "import-statement",
-          "original": "../../utils.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sqlite-core/columns/all.js": {
-      "bytes": 419,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/blob.js",
-          "kind": "import-statement",
-          "original": "./blob.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/custom.js",
-          "kind": "import-statement",
-          "original": "./custom.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/integer.js",
-          "kind": "import-statement",
-          "original": "./integer.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/numeric.js",
-          "kind": "import-statement",
-          "original": "./numeric.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/real.js",
-          "kind": "import-statement",
-          "original": "./real.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sqlite-core/columns/text.js",
-          "kind": "import-statement",
-          "original": "./text.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/tracing.js": {
-      "bytes": 898,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/tracing-utils.js",
-          "kind": "import-statement",
-          "original": "./tracing-utils.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/version.js",
-          "kind": "import-statement",
-          "original": "./version.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/pg-core/columns/enum.js": {
-      "bytes": 2494,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/pg-core/columns/common.js",
-          "kind": "import-statement",
-          "original": "./common.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sql/expressions/conditions.js": {
-      "bytes": 4573,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/column.js",
-          "kind": "import-statement",
-          "original": "../../column.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/entity.js",
-          "kind": "import-statement",
-          "original": "../../entity.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/table.js",
-          "kind": "import-statement",
-          "original": "../../table.js"
-        },
-        {
-          "path": "../node_modules/drizzle-orm/sql/sql.js",
-          "kind": "import-statement",
-          "original": "../sql.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/sql/expressions/select.js": {
-      "bytes": 203,
-      "imports": [
-        {
-          "path": "../node_modules/drizzle-orm/sql/sql.js",
-          "kind": "import-statement",
-          "original": "../sql.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/version.js": {
-      "bytes": 150,
-      "imports": [
-      ],
-      "format": "esm"
-    },
-    "../node_modules/drizzle-orm/tracing-utils.js": {
-      "bytes": 113,
-      "imports": [
       ],
       "format": "esm"
     },
@@ -779,6 +421,143 @@
       ],
       "format": "esm"
     },
+    "../node_modules/drizzle-orm/sql/sql.js": {
+      "bytes": 12420,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/pg-core/columns/enum.js",
+          "kind": "import-statement",
+          "original": "../pg-core/columns/enum.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/subquery.js",
+          "kind": "import-statement",
+          "original": "../subquery.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/tracing.js",
+          "kind": "import-statement",
+          "original": "../tracing.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/view-common.js",
+          "kind": "import-statement",
+          "original": "../view-common.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/column.js",
+          "kind": "import-statement",
+          "original": "../column.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/table.js",
+          "kind": "import-statement",
+          "original": "../table.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/foreign-keys.js": {
+      "bytes": 1917,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/table.utils.js",
+          "kind": "import-statement",
+          "original": "../table.utils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/table.js": {
+      "bytes": 1836,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/table.js",
+          "kind": "import-statement",
+          "original": "../table.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/all.js",
+          "kind": "import-statement",
+          "original": "./columns/all.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/unique-constraint.js": {
+      "bytes": 1312,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/table.utils.js",
+          "kind": "import-statement",
+          "original": "../table.utils.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/table.utils.js": {
+      "bytes": 109,
+      "imports": [
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sql/expressions/conditions.js": {
+      "bytes": 4573,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/column.js",
+          "kind": "import-statement",
+          "original": "../../column.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/table.js",
+          "kind": "import-statement",
+          "original": "../../table.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sql/sql.js",
+          "kind": "import-statement",
+          "original": "../sql.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sql/expressions/select.js": {
+      "bytes": 203,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/sql/sql.js",
+          "kind": "import-statement",
+          "original": "../sql.js"
+        }
+      ],
+      "format": "esm"
+    },
     "../node_modules/zod/v4/core/util.js": {
       "bytes": 22018,
       "imports": [
@@ -786,6 +565,38 @@
           "path": "../node_modules/zod/v4/core/core.js",
           "kind": "import-statement",
           "original": "./core.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/tracing.js": {
+      "bytes": 898,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/tracing-utils.js",
+          "kind": "import-statement",
+          "original": "./tracing-utils.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/version.js",
+          "kind": "import-statement",
+          "original": "./version.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/pg-core/columns/enum.js": {
+      "bytes": 2494,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/pg-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
         }
       ],
       "format": "esm"
@@ -965,11 +776,216 @@
         }
       ],
       "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/blob.js": {
+      "bytes": 2921,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/utils.js",
+          "kind": "import-statement",
+          "original": "../../utils.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/custom.js": {
+      "bytes": 1564,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/utils.js",
+          "kind": "import-statement",
+          "original": "../../utils.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/real.js": {
+      "bytes": 640,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/text.js": {
+      "bytes": 1722,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/utils.js",
+          "kind": "import-statement",
+          "original": "../../utils.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/integer.js": {
+      "bytes": 3426,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sql/sql.js",
+          "kind": "import-statement",
+          "original": "../../sql/sql.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/utils.js",
+          "kind": "import-statement",
+          "original": "../../utils.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/common.js": {
+      "bytes": 1688,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/column-builder.js",
+          "kind": "import-statement",
+          "original": "../../column-builder.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/column.js",
+          "kind": "import-statement",
+          "original": "../../column.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/foreign-keys.js",
+          "kind": "import-statement",
+          "original": "../foreign-keys.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/unique-constraint.js",
+          "kind": "import-statement",
+          "original": "../unique-constraint.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/numeric.js": {
+      "bytes": 2265,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/entity.js",
+          "kind": "import-statement",
+          "original": "../../entity.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/utils.js",
+          "kind": "import-statement",
+          "original": "../../utils.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/common.js",
+          "kind": "import-statement",
+          "original": "./common.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/sqlite-core/columns/all.js": {
+      "bytes": 419,
+      "imports": [
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/blob.js",
+          "kind": "import-statement",
+          "original": "./blob.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/custom.js",
+          "kind": "import-statement",
+          "original": "./custom.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/integer.js",
+          "kind": "import-statement",
+          "original": "./integer.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/numeric.js",
+          "kind": "import-statement",
+          "original": "./numeric.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/real.js",
+          "kind": "import-statement",
+          "original": "./real.js"
+        },
+        {
+          "path": "../node_modules/drizzle-orm/sqlite-core/columns/text.js",
+          "kind": "import-statement",
+          "original": "./text.js"
+        }
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/version.js": {
+      "bytes": 150,
+      "imports": [
+      ],
+      "format": "esm"
+    },
+    "../node_modules/drizzle-orm/tracing-utils.js": {
+      "bytes": 113,
+      "imports": [
+      ],
+      "format": "esm"
     }
   },
   "outputs": {
     "./actions.js": {
-      "bytes": 323482,
+      "bytes": 373021,
       "inputs": {
         "../node_modules/zod/v4/core/core.js": {
           "bytesInOutput": 1935
@@ -984,7 +1000,7 @@
           "bytesInOutput": 3182
         },
         "../node_modules/zod/v4/core/regexes.js": {
-          "bytesInOutput": 3325
+          "bytesInOutput": 3348
         },
         "../node_modules/zod/v4/core/checks.js": {
           "bytesInOutput": 11644
@@ -996,19 +1012,19 @@
           "bytesInOutput": 54
         },
         "../node_modules/zod/v4/core/schemas.js": {
-          "bytesInOutput": 39596
+          "bytesInOutput": 44443
         },
         "../node_modules/zod/v4/core/registries.js": {
           "bytesInOutput": 1210
         },
         "../node_modules/zod/v4/core/api.js": {
-          "bytesInOutput": 9373
+          "bytesInOutput": 9484
         },
         "../node_modules/zod/v4/core/to-json-schema.js": {
           "bytesInOutput": 11273
         },
         "../node_modules/zod/v4/core/json-schema-processors.js": {
-          "bytesInOutput": 8957
+          "bytesInOutput": 10355
         },
         "../node_modules/zod/v4/core/index.js": {
           "bytesInOutput": 0
@@ -1026,7 +1042,7 @@
           "bytesInOutput": 728
         },
         "../node_modules/zod/v4/classic/schemas.js": {
-          "bytesInOutput": 24637
+          "bytesInOutput": 25567
         },
         "../node_modules/zod/index.js": {
           "bytesInOutput": 0
@@ -1036,6 +1052,9 @@
         },
         "../node_modules/@hatch/space-sdk/dist/index.js": {
           "bytesInOutput": 41
+        },
+        ".generated/privileged.contract.ts": {
+          "bytesInOutput": 1760
         },
         "../node_modules/drizzle-orm/entity.js": {
           "bytesInOutput": 766
@@ -1082,9 +1101,6 @@
         "../node_modules/drizzle-orm/sql/expressions/select.js": {
           "bytesInOutput": 110
         },
-        ".generated/privileged.contract.ts": {
-          "bytesInOutput": 1119
-        },
         "../node_modules/drizzle-orm/sqlite-core/foreign-keys.js": {
           "bytesInOutput": 1341
         },
@@ -1119,17 +1135,21 @@
           "bytesInOutput": 1293
         },
         "src/schema.ts": {
-          "bytesInOutput": 1799
+          "bytesInOutput": 1918
+        },
+        "src/store.ts": {
+          "bytesInOutput": 10126
         },
         "src/actions.ts": {
-          "bytesInOutput": 154517
+          "bytesInOutput": 185822
         }
       },
       "imports": [
       ],
       "exports": [
         "Actions",
-        "CLASS_GRADES"
+        "CLASS_GRADES",
+        "SECRET_PICTURE_IDS"
       ],
       "entryPoint": "src/actions.ts"
     }

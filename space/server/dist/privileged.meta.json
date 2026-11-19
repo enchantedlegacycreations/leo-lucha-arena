@@ -1,12 +1,17 @@
 {
   "inputs": {
     "server/src/privileged.ts": {
-      "bytes": 26099,
+      "bytes": 38639,
       "imports": [
         {
           "path": "node_modules/@hatch/space-sdk/dist/index.js",
           "kind": "import-statement",
           "original": "@hatch/space-sdk"
+        },
+        {
+          "path": "bun",
+          "kind": "import-statement",
+          "external": true
         },
         {
           "path": "fs",
@@ -479,7 +484,7 @@
   },
   "outputs": {
     "./privileged.js": {
-      "bytes": 156210,
+      "bytes": 171932,
       "inputs": {
         "node_modules/zod/v4/core/core.js": {
           "bytesInOutput": 1935
@@ -494,7 +499,7 @@
           "bytesInOutput": 3182
         },
         "node_modules/zod/v4/core/regexes.js": {
-          "bytesInOutput": 3290
+          "bytesInOutput": 3348
         },
         "node_modules/zod/v4/core/checks.js": {
           "bytesInOutput": 11644
@@ -506,19 +511,19 @@
           "bytesInOutput": 54
         },
         "node_modules/zod/v4/core/schemas.js": {
-          "bytesInOutput": 38365
+          "bytesInOutput": 43725
         },
         "node_modules/zod/v4/core/registries.js": {
           "bytesInOutput": 1210
         },
         "node_modules/zod/v4/core/api.js": {
-          "bytesInOutput": 9257
+          "bytesInOutput": 9484
         },
         "node_modules/zod/v4/core/to-json-schema.js": {
           "bytesInOutput": 11277
         },
         "node_modules/zod/v4/core/json-schema-processors.js": {
-          "bytesInOutput": 7695
+          "bytesInOutput": 9183
         },
         "node_modules/zod/v4/core/index.js": {
           "bytesInOutput": 0
@@ -536,7 +541,7 @@
           "bytesInOutput": 728
         },
         "node_modules/zod/v4/classic/schemas.js": {
-          "bytesInOutput": 23646
+          "bytesInOutput": 24882
         },
         "node_modules/zod/index.js": {
           "bytesInOutput": 0
@@ -548,7 +553,7 @@
           "bytesInOutput": 41
         },
         "server/src/privileged.ts": {
-          "bytesInOutput": 25059
+          "bytesInOutput": 32412
         }
       },
       "imports": [

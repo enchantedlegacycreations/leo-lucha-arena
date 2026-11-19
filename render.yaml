@@ -12,3 +12,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      # v4: the class database (Neon). JC pastes the connection string in
+      # the Render dashboard (README step "Updating to v4"); sync:false
+      # means Render will never overwrite the pasted value from this file.
+      - key: DATABASE_URL
+        sync: false

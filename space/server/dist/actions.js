@@ -675,6 +675,7 @@ var string = (params) => {
 var integer = /^-?\d+$/;
 var number = /^-?\d+(?:\.\d+)?$/;
 var boolean = /^(?:true|false)$/i;
+var _null = /^null$/i;
 var lowercase = /^[^A-Z]*$/;
 var uppercase = /^[^a-z]*$/;
 
@@ -1576,6 +1577,23 @@ var $ZodBoolean = /* @__PURE__ */ $constructor("$ZodBoolean", (inst, def) => {
     return payload;
   };
 });
+var $ZodNull = /* @__PURE__ */ $constructor("$ZodNull", (inst, def) => {
+  $ZodType.init(inst, def);
+  inst._zod.pattern = _null;
+  inst._zod.values = new Set([null]);
+  inst._zod.parse = (payload, _ctx) => {
+    const input = payload.value;
+    if (input === null)
+      return payload;
+    payload.issues.push({
+      expected: "null",
+      code: "invalid_type",
+      input,
+      inst
+    });
+    return payload;
+  };
+});
 var $ZodUnknown = /* @__PURE__ */ $constructor("$ZodUnknown", (inst, def) => {
   $ZodType.init(inst, def);
   inst._zod.parse = (payload) => payload;
@@ -2065,6 +2083,132 @@ function handleIntersectionResults(result, left, right) {
   result.value = merged.data;
   return result;
 }
+var $ZodRecord = /* @__PURE__ */ $constructor("$ZodRecord", (inst, def) => {
+  $ZodType.init(inst, def);
+  inst._zod.parse = (payload, ctx) => {
+    const input = payload.value;
+    if (!isPlainObject(input)) {
+      payload.issues.push({
+        expected: "record",
+        code: "invalid_type",
+        input,
+        inst
+      });
+      return payload;
+    }
+    const proms = [];
+    const values = def.keyType._zod.values;
+    if (values) {
+      payload.value = {};
+      const recordKeys = new Set;
+      for (const key of values) {
+        if (typeof key === "string" || typeof key === "number" || typeof key === "symbol") {
+          recordKeys.add(typeof key === "number" ? key.toString() : key);
+          const keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+          if (keyResult instanceof Promise) {
+            throw new Error("Async schemas not supported in object keys currently");
+          }
+          if (keyResult.issues.length) {
+            payload.issues.push({
+              code: "invalid_key",
+              origin: "record",
+              issues: keyResult.issues.map((iss) => finalizeIssue(iss, ctx, config())),
+              input: key,
+              path: [key],
+              inst
+            });
+            continue;
+          }
+          const outKey = keyResult.value;
+          const result = def.valueType._zod.run({ value: input[key], issues: [] }, ctx);
+          if (result instanceof Promise) {
+            proms.push(result.then((result) => {
+              if (result.issues.length) {
+                payload.issues.push(...prefixIssues(key, result.issues));
+              }
+              payload.value[outKey] = result.value;
+            }));
+          } else {
+            if (result.issues.length) {
+              payload.issues.push(...prefixIssues(key, result.issues));
+            }
+            payload.value[outKey] = result.value;
+          }
+        }
+      }
+      let unrecognized;
+      for (const key in input) {
+        if (!recordKeys.has(key)) {
+          unrecognized = unrecognized ?? [];
+          unrecognized.push(key);
+        }
+      }
+      if (unrecognized && unrecognized.length > 0) {
+        payload.issues.push({
+          code: "unrecognized_keys",
+          input,
+          inst,
+          keys: unrecognized
+        });
+      }
+    } else {
+      payload.value = {};
+      for (const key of Reflect.ownKeys(input)) {
+        if (key === "__proto__")
+          continue;
+        if (!Object.prototype.propertyIsEnumerable.call(input, key))
+          continue;
+        let keyResult = def.keyType._zod.run({ value: key, issues: [] }, ctx);
+        if (keyResult instanceof Promise) {
+          throw new Error("Async schemas not supported in object keys currently");
+        }
+        const checkNumericKey = typeof key === "string" && number.test(key) && keyResult.issues.length;
+        if (checkNumericKey) {
+          const retryResult = def.keyType._zod.run({ value: Number(key), issues: [] }, ctx);
+          if (retryResult instanceof Promise) {
+            throw new Error("Async schemas not supported in object keys currently");
+          }
+          if (retryResult.issues.length === 0) {
+            keyResult = retryResult;
+          }
+        }
+        if (keyResult.issues.length) {
+          if (def.mode === "loose") {
+            payload.value[key] = input[key];
+          } else {
+            payload.issues.push({
+              code: "invalid_key",
+              origin: "record",
+              issues: keyResult.issues.map((iss) => finalizeIssue(iss, ctx, config())),
+              input: key,
+              path: [key],
+              inst
+            });
+          }
+          continue;
+        }
+        const result = def.valueType._zod.run({ value: input[key], issues: [] }, ctx);
+        if (result instanceof Promise) {
+          proms.push(result.then((result) => {
+            if (result.issues.length) {
+              payload.issues.push(...prefixIssues(key, result.issues));
+            }
+            payload.value[keyResult.value] = result.value;
+          }));
+        } else {
+          if (result.issues.length) {
+            payload.issues.push(...prefixIssues(key, result.issues));
+          }
+          payload.value[keyResult.value] = result.value;
+        }
+      }
+    }
+    if (proms.length) {
+      return Promise.all(proms).then(() => payload);
+    }
+    return payload;
+  };
+});
 var $ZodEnum = /* @__PURE__ */ $constructor("$ZodEnum", (inst, def) => {
   $ZodType.init(inst, def);
   const values = getEnumValues(def.entries);
@@ -2688,6 +2832,12 @@ function _boolean(Class, params) {
     ...normalizeParams(params)
   });
 }
+function _null2(Class, params) {
+  return new Class({
+    type: "null",
+    ...normalizeParams(params)
+  });
+}
 function _unknown(Class) {
   return new Class({
     type: "unknown"
@@ -3299,6 +3449,15 @@ var numberProcessor = (schema, ctx, _json, _params) => {
 var booleanProcessor = (_schema, _ctx, json, _params) => {
   json.type = "boolean";
 };
+var nullProcessor = (_schema, ctx, json, _params) => {
+  if (ctx.target === "openapi-3.0") {
+    json.type = "string";
+    json.nullable = true;
+    json.enum = [null];
+  } else {
+    json.type = "null";
+  }
+};
 var neverProcessor = (_schema, _ctx, json, _params) => {
   json.not = {};
 };
@@ -3439,6 +3598,42 @@ var intersectionProcessor = (schema, ctx, json, params) => {
     ...isSimpleIntersection(b) ? b.allOf : [b]
   ];
   json.allOf = allOf;
+};
+var recordProcessor = (schema, ctx, _json, params) => {
+  const json = _json;
+  const def = schema._zod.def;
+  json.type = "object";
+  const keyType = def.keyType;
+  const keyBag = keyType._zod.bag;
+  const patterns = keyBag?.patterns;
+  if (def.mode === "loose" && patterns && patterns.size > 0) {
+    const valueSchema = process(def.valueType, ctx, {
+      ...params,
+      path: [...params.path, "patternProperties", "*"]
+    });
+    json.patternProperties = {};
+    for (const pattern of patterns) {
+      json.patternProperties[pattern.source] = valueSchema;
+    }
+  } else {
+    if (ctx.target === "draft-07" || ctx.target === "draft-2020-12") {
+      json.propertyNames = process(def.keyType, ctx, {
+        ...params,
+        path: [...params.path, "propertyNames"]
+      });
+    }
+    json.additionalProperties = process(def.valueType, ctx, {
+      ...params,
+      path: [...params.path, "additionalProperties"]
+    });
+  }
+  const keyValues = keyType._zod.values;
+  if (keyValues) {
+    const validKeyValues = [...keyValues].filter((v) => typeof v === "string" || typeof v === "number");
+    if (validKeyValues.length > 0) {
+      json.required = validKeyValues;
+    }
+  }
 };
 var nullableProcessor = (schema, ctx, json, params) => {
   const def = schema._zod.def;
@@ -3997,6 +4192,14 @@ var ZodBoolean = /* @__PURE__ */ $constructor("ZodBoolean", (inst, def) => {
 function boolean2(params) {
   return _boolean(ZodBoolean, params);
 }
+var ZodNull = /* @__PURE__ */ $constructor("ZodNull", (inst, def) => {
+  $ZodNull.init(inst, def);
+  ZodType.init(inst, def);
+  inst._zod.processJSONSchema = (ctx, json, params) => nullProcessor(inst, ctx, json, params);
+});
+function _null3(params) {
+  return _null2(ZodNull, params);
+}
 var ZodUnknown = /* @__PURE__ */ $constructor("ZodUnknown", (inst, def) => {
   $ZodUnknown.init(inst, def);
   ZodType.init(inst, def);
@@ -4119,6 +4322,29 @@ function intersection(left, right) {
     type: "intersection",
     left,
     right
+  });
+}
+var ZodRecord = /* @__PURE__ */ $constructor("ZodRecord", (inst, def) => {
+  $ZodRecord.init(inst, def);
+  ZodType.init(inst, def);
+  inst._zod.processJSONSchema = (ctx, json, params) => recordProcessor(inst, ctx, json, params);
+  inst.keyType = def.keyType;
+  inst.valueType = def.valueType;
+});
+function record(keyType, valueType, params) {
+  if (!valueType || !valueType._zod) {
+    return new ZodRecord({
+      type: "record",
+      keyType: string2(),
+      valueType: keyType,
+      ...normalizeParams(valueType)
+    });
+  }
+  return new ZodRecord({
+    type: "record",
+    keyType,
+    valueType,
+    ...normalizeParams(params)
   });
 }
 var ZodEnum = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
@@ -4391,6 +4617,68 @@ function createDefineAction() {
 }
 // ../node_modules/@hatch/space-sdk/dist/index.js
 var defineAction = createDefineAction();
+
+// .generated/privileged.contract.ts
+var privileged = definePrivilegedContracts({
+  readGameData: {
+    request: object({}),
+    response: object({ json: string2() })
+  },
+  readManifest: {
+    request: object({}),
+    response: object({ json: string2() })
+  },
+  readClipsBatch: {
+    request: object({ ids: array(string2().min(1).max(80)).max(100) }),
+    response: object({
+      clips: array(object({ id: string2(), base64: string2() })),
+      missing: array(string2())
+    })
+  },
+  readClipSizes: {
+    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
+    response: object({
+      sizes: array(object({ id: string2(), size: number2() })),
+      missing: array(string2())
+    })
+  },
+  readArtBatch: {
+    request: object({ ids: array(string2().min(1).max(80)).max(20) }),
+    response: object({
+      art: array(object({ id: string2(), base64: string2() })),
+      missing: array(string2())
+    })
+  },
+  readArtSizes: {
+    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
+    response: object({
+      sizes: array(object({ id: string2(), size: number2() })),
+      missing: array(string2())
+    })
+  },
+  listArtIds: {
+    request: object({}),
+    response: object({ ids: array(string2()) })
+  },
+  readVideoBatch: {
+    request: object({ ids: array(string2().min(1).max(80)).max(5) }),
+    response: object({
+      videos: array(object({ id: string2(), base64: string2() })),
+      missing: array(string2())
+    })
+  },
+  pgMode: {
+    request: object({}),
+    response: object({ external: boolean2() })
+  },
+  pgQuery: {
+    request: object({
+      sql: string2().min(1).max(20000),
+      params: array(union([string2(), number2(), boolean2(), _null3()])).max(64)
+    }),
+    response: object({ rows: array(record(string2(), unknown())) })
+  }
+});
 
 // ../node_modules/drizzle-orm/entity.js
 var entityKind = Symbol.for("drizzle:entityKind");
@@ -5014,46 +5302,6 @@ function desc(column) {
   return sql`${column} desc`;
 }
 
-// .generated/privileged.contract.ts
-var privileged = definePrivilegedContracts({
-  readGameData: {
-    request: object({}),
-    response: object({ json: string2() })
-  },
-  readManifest: {
-    request: object({}),
-    response: object({ json: string2() })
-  },
-  readClipsBatch: {
-    request: object({ ids: array(string2().min(1).max(80)).max(100) }),
-    response: object({
-      clips: array(object({ id: string2(), base64: string2() })),
-      missing: array(string2())
-    })
-  },
-  readClipSizes: {
-    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
-    response: object({
-      sizes: array(object({ id: string2(), size: number2() })),
-      missing: array(string2())
-    })
-  },
-  readArtBatch: {
-    request: object({ ids: array(string2().min(1).max(80)).max(20) }),
-    response: object({
-      art: array(object({ id: string2(), base64: string2() })),
-      missing: array(string2())
-    })
-  },
-  readVideoBatch: {
-    request: object({ ids: array(string2().min(1).max(80)).max(5) }),
-    response: object({
-      videos: array(object({ id: string2(), base64: string2() })),
-      missing: array(string2())
-    })
-  }
-});
-
 // ../node_modules/drizzle-orm/sqlite-core/foreign-keys.js
 class ForeignKeyBuilder {
   static [entityKind] = "SQLiteForeignKeyBuilder";
@@ -5598,6 +5846,8 @@ var students = sqliteTable("students", {
   name: text("name").notNull(),
   groupName: text("group_name").notNull().default(""),
   badgeColor: text("badge_color").notNull().default("#C1272D"),
+  secretPicture: text("secret_picture").notNull().default(""),
+  radioLeo: integer2("radio_leo").notNull().default(0),
   stateJson: text("state_json").notNull().default("{}"),
   updatedAt: integer2("updated_at", { mode: "timestamp_ms" }).notNull().$defaultFn(() => new Date)
 });
@@ -5627,6 +5877,266 @@ var recordings = sqliteTable("recordings", {
   createdAt: integer2("created_at", { mode: "timestamp_ms" }).notNull().$defaultFn(() => new Date)
 });
 
+// src/store.ts
+class LocalStore {
+  ctx;
+  external = false;
+  constructor(ctx) {
+    this.ctx = ctx;
+  }
+  db() {
+    return this.ctx.db();
+  }
+  async metaGet(key) {
+    const rows = await this.db().select().from(meta2).where(eq(meta2.key, key));
+    return rows[0]?.value;
+  }
+  async metaAll() {
+    return this.db().select().from(meta2);
+  }
+  async metaSet(key, value) {
+    await this.db().insert(meta2).values({ key, value }).onConflictDoUpdate({ target: meta2.key, set: { value } });
+  }
+  async metaDelete(key) {
+    await this.db().delete(meta2).where(eq(meta2.key, key));
+  }
+  async studentsAll() {
+    return this.db().select().from(students);
+  }
+  async studentsByName() {
+    return this.db().select().from(students).orderBy(asc(students.name));
+  }
+  async studentsAny() {
+    const rows = await this.db().select({ id: students.id }).from(students).limit(1);
+    return rows.length > 0;
+  }
+  async studentById(id) {
+    const rows = await this.db().select().from(students).where(eq(students.id, id));
+    return rows[0];
+  }
+  async studentExists(id) {
+    const rows = await this.db().select({ id: students.id }).from(students).where(eq(students.id, id));
+    return rows.length > 0;
+  }
+  async studentInsert(row) {
+    await this.db().insert(students).values(row);
+  }
+  async studentUpdateState(id, stateJson) {
+    await this.db().update(students).set({ stateJson, updatedAt: new Date }).where(eq(students.id, id));
+  }
+  async studentUpdateName(id, name) {
+    await this.db().update(students).set({ name }).where(eq(students.id, id));
+  }
+  async studentUpdateSecretPicture(id, pictureId) {
+    await this.db().update(students).set({ secretPicture: pictureId }).where(eq(students.id, id));
+  }
+  async studentUpdateRadioLeo(id, enabled) {
+    await this.db().update(students).set({ radioLeo: enabled ? 1 : 0 }).where(eq(students.id, id));
+  }
+  async studentDelete(id) {
+    await this.db().delete(students).where(eq(students.id, id));
+  }
+  async assignmentsAll() {
+    return this.db().select().from(assignments).orderBy(asc(assignments.id));
+  }
+  async assignmentInsert(row) {
+    const result = await this.db().insert(assignments).values(row).returning({ id: assignments.id });
+    const inserted = result[0];
+    if (!inserted)
+      throw new Error("assignmentInsert: no row returned");
+    return inserted.id;
+  }
+  async assignmentDelete(id) {
+    await this.db().delete(assignments).where(eq(assignments.id, id));
+  }
+  async assignmentsDeleteByTarget(targetId) {
+    await this.db().delete(assignments).where(eq(assignments.targetId, targetId));
+  }
+  async recordingsList(kind) {
+    return kind ? this.db().select().from(recordings).where(eq(recordings.kind, kind)).orderBy(desc(recordings.id)) : this.db().select().from(recordings).orderBy(desc(recordings.id));
+  }
+  async recordingsByStudent(studentId) {
+    return this.db().select().from(recordings).where(eq(recordings.studentId, studentId));
+  }
+  async recordingInsert(row) {
+    await this.db().insert(recordings).values(row);
+  }
+  async recordingDelete(id) {
+    await this.db().delete(recordings).where(eq(recordings.id, id));
+  }
+  async recordingsDeleteByStudent(studentId) {
+    await this.db().delete(recordings).where(eq(recordings.studentId, studentId));
+  }
+  async recordingData() {
+    return null;
+  }
+}
+function pgNum(v) {
+  const n = typeof v === "number" ? v : Number(v);
+  return Number.isFinite(n) ? n : 0;
+}
+function pgStr(v) {
+  return typeof v === "string" ? v : v == null ? "" : String(v);
+}
+function pgStudent(r) {
+  return {
+    id: pgStr(r.id),
+    name: pgStr(r.name),
+    groupName: pgStr(r.group_name),
+    badgeColor: pgStr(r.badge_color),
+    secretPicture: pgStr(r.secret_picture),
+    radioLeo: pgNum(r.radio_leo),
+    stateJson: pgStr(r.state_json),
+    updatedAt: new Date(pgNum(r.updated_at))
+  };
+}
+function pgAssignment(r) {
+  return {
+    id: pgNum(r.id),
+    title: pgStr(r.title),
+    targetType: pgStr(r.target_type),
+    targetId: pgStr(r.target_id),
+    section: pgStr(r.section),
+    skillId: pgStr(r.skill_id),
+    stdCode: pgStr(r.std_code),
+    grade: pgStr(r.grade),
+    windowStart: pgStr(r.window_start),
+    windowEnd: pgStr(r.window_end),
+    createdAt: new Date(pgNum(r.created_at))
+  };
+}
+function pgRecording(r) {
+  return {
+    id: pgNum(r.id),
+    studentId: pgStr(r.student_id),
+    kind: pgStr(r.kind),
+    refId: pgStr(r.ref_id),
+    blobKey: pgStr(r.blob_key),
+    createdAt: new Date(pgNum(r.created_at))
+  };
+}
+var STUDENT_COLS = "id, name, group_name, badge_color, secret_picture, radio_leo, state_json, updated_at";
+var ASSIGNMENT_COLS = "id::int AS id, title, target_type, target_id, section, skill_id, std_code, grade, window_start, window_end, created_at";
+var RECORDING_COLS = "id::int AS id, student_id, kind, ref_id, blob_key, created_at";
+
+class PgStore {
+  ctx;
+  external = true;
+  constructor(ctx) {
+    this.ctx = ctx;
+  }
+  async q(sqlText, params = []) {
+    const { rows } = await this.ctx.executePrivileged(privileged.pgQuery, { sql: sqlText, params });
+    return rows;
+  }
+  async metaGet(key) {
+    const rows = await this.q("SELECT value FROM meta WHERE key = $1", [key]);
+    const v = rows[0]?.value;
+    return typeof v === "string" ? v : undefined;
+  }
+  async metaAll() {
+    const rows = await this.q("SELECT key, value FROM meta");
+    return rows.map((r) => ({ key: pgStr(r.key), value: pgStr(r.value) }));
+  }
+  async metaSet(key, value) {
+    await this.q("INSERT INTO meta (key, value) VALUES ($1, $2) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [key, value]);
+  }
+  async metaDelete(key) {
+    await this.q("DELETE FROM meta WHERE key = $1", [key]);
+  }
+  async studentsAll() {
+    const rows = await this.q(`SELECT ${STUDENT_COLS} FROM students`);
+    return rows.map(pgStudent);
+  }
+  async studentsByName() {
+    const rows = await this.q(`SELECT ${STUDENT_COLS} FROM students ORDER BY name COLLATE "C" ASC`);
+    return rows.map(pgStudent);
+  }
+  async studentsAny() {
+    const rows = await this.q("SELECT id FROM students LIMIT 1");
+    return rows.length > 0;
+  }
+  async studentById(id) {
+    const rows = await this.q(`SELECT ${STUDENT_COLS} FROM students WHERE id = $1`, [id]);
+    return rows[0] ? pgStudent(rows[0]) : undefined;
+  }
+  async studentExists(id) {
+    const rows = await this.q("SELECT id FROM students WHERE id = $1", [id]);
+    return rows.length > 0;
+  }
+  async studentInsert(row) {
+    await this.q("INSERT INTO students (id, name, group_name, badge_color, secret_picture, radio_leo, state_json, updated_at) VALUES ($1, $2, $3, $4, '', 0, $5, $6)", [row.id, row.name, row.groupName, row.badgeColor, row.stateJson, Date.now()]);
+  }
+  async studentUpdateState(id, stateJson) {
+    await this.q("UPDATE students SET state_json = $1, updated_at = $2 WHERE id = $3", [stateJson, Date.now(), id]);
+  }
+  async studentUpdateName(id, name) {
+    await this.q("UPDATE students SET name = $1 WHERE id = $2", [name, id]);
+  }
+  async studentUpdateSecretPicture(id, pictureId) {
+    await this.q("UPDATE students SET secret_picture = $1 WHERE id = $2", [pictureId, id]);
+  }
+  async studentUpdateRadioLeo(id, enabled) {
+    await this.q("UPDATE students SET radio_leo = $1 WHERE id = $2", [enabled ? 1 : 0, id]);
+  }
+  async studentDelete(id) {
+    await this.q("DELETE FROM students WHERE id = $1", [id]);
+  }
+  async assignmentsAll() {
+    const rows = await this.q(`SELECT ${ASSIGNMENT_COLS} FROM assignments ORDER BY id ASC`);
+    return rows.map(pgAssignment);
+  }
+  async assignmentInsert(row) {
+    const rows = await this.q("INSERT INTO assignments (title, target_type, target_id, section, skill_id, std_code, grade, window_start, window_end, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id::int AS id", [row.title, row.targetType, row.targetId, row.section, row.skillId, row.stdCode, row.grade, row.windowStart, row.windowEnd, Date.now()]);
+    const id = rows[0]?.id;
+    if (id === undefined)
+      throw new Error("assignmentInsert: no row returned");
+    return pgNum(id);
+  }
+  async assignmentDelete(id) {
+    await this.q("DELETE FROM assignments WHERE id = $1", [id]);
+  }
+  async assignmentsDeleteByTarget(targetId) {
+    await this.q("DELETE FROM assignments WHERE target_id = $1", [targetId]);
+  }
+  async recordingsList(kind) {
+    const rows = kind ? await this.q(`SELECT ${RECORDING_COLS} FROM recordings WHERE kind = $1 ORDER BY id DESC`, [kind]) : await this.q(`SELECT ${RECORDING_COLS} FROM recordings ORDER BY id DESC`);
+    return rows.map(pgRecording);
+  }
+  async recordingsByStudent(studentId) {
+    const rows = await this.q(`SELECT ${RECORDING_COLS} FROM recordings WHERE student_id = $1`, [studentId]);
+    return rows.map(pgRecording);
+  }
+  async recordingInsert(row, data) {
+    if (data) {
+      await this.q("INSERT INTO recordings (student_id, kind, ref_id, blob_key, created_at, data, content_type) VALUES ($1, $2, $3, $4, $5, decode($6, 'base64'), $7)", [row.studentId, row.kind, row.refId, row.blobKey, Date.now(), data.base64, data.contentType]);
+    } else {
+      await this.q("INSERT INTO recordings (student_id, kind, ref_id, blob_key, created_at) VALUES ($1, $2, $3, $4, $5)", [row.studentId, row.kind, row.refId, row.blobKey, Date.now()]);
+    }
+  }
+  async recordingDelete(id) {
+    await this.q("DELETE FROM recordings WHERE id = $1", [id]);
+  }
+  async recordingsDeleteByStudent(studentId) {
+    await this.q("DELETE FROM recordings WHERE student_id = $1", [studentId]);
+  }
+  async recordingData(id) {
+    const rows = await this.q("SELECT encode(data, 'base64') AS data_b64, content_type FROM recordings WHERE id = $1 AND data IS NOT NULL", [id]);
+    const r = rows[0];
+    if (!r || typeof r.data_b64 !== "string" || r.data_b64 === "")
+      return null;
+    return { base64: r.data_b64, contentType: pgStr(r.content_type) };
+  }
+}
+var externalPromise = null;
+function pgExternal(ctx) {
+  externalPromise ??= ctx.executePrivileged(privileged.pgMode, {}).then((r) => r.external).catch(() => false);
+  return externalPromise;
+}
+async function getStore(ctx) {
+  return await pgExternal(ctx) ? new PgStore(ctx) : new LocalStore(ctx);
+}
+
 // src/actions.ts
 var CLASS_GRADES = ["K", "1", "2", "3", "4", "5"];
 var CLASS_CODE_ALPHABET = "ABCDEFGHJKMNPQRTUVWXY346789";
@@ -5649,15 +6159,19 @@ function gradeStart(grade) {
   return GRADE_START[grade] ?? null;
 }
 async function readEventSettings(ctx) {
-  const db = ctx.db();
-  const rows = await db.select().from(meta2);
+  const store = await getStore(ctx);
+  const rows = await store.metaAll();
   const get = (k) => rows.find((r) => r.key === k)?.value === "1";
   return { preview: get("event_preview"), off: get("event_off") };
 }
+var RADIO_LEO_MASTER_KEY = "radio_leo_master";
+async function readRadioLeoMaster(ctx) {
+  const store = await getStore(ctx);
+  return await store.metaGet(RADIO_LEO_MASTER_KEY) === "1";
+}
 async function readClassGrade(ctx) {
-  const db = ctx.db();
-  const rows = await db.select().from(meta2).where(eq(meta2.key, "class_grade"));
-  const v = rows[0]?.value ?? "";
+  const store = await getStore(ctx);
+  const v = await store.metaGet("class_grade") ?? "";
   return gradeStart(v) ? v : "";
 }
 var TEACHER_PIN_KEY = "teacher_pin_v1";
@@ -5699,10 +6213,10 @@ function validPhrase(p) {
   return n.length >= 8 && n.split(" ").length >= 2;
 }
 async function readRecovery(ctx) {
-  const db = ctx.db();
-  const rows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_RECOVERY_KEY));
+  const store = await getStore(ctx);
+  const raw = await store.metaGet(TEACHER_RECOVERY_KEY);
   try {
-    const v = rows[0]?.value ? JSON.parse(rows[0].value) : null;
+    const v = raw ? JSON.parse(raw) : null;
     return v && typeof v.salt === "string" && typeof v.hash === "string" ? v : null;
   } catch {
     return null;
@@ -5714,11 +6228,11 @@ async function writeRecovery(ctx, phrase) {
   await writeMeta(ctx, TEACHER_RECOVERY_KEY, JSON.stringify(rec));
 }
 async function readPinFails(ctx) {
-  const db = ctx.db();
-  const rows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_FAILS_KEY));
+  const store = await getStore(ctx);
+  const raw = await store.metaGet(TEACHER_FAILS_KEY);
   try {
-    if (rows[0]?.value)
-      return JSON.parse(rows[0].value);
+    if (raw)
+      return JSON.parse(raw);
   } catch {}
   return { count: 0, lockedUntil: 0 };
 }
@@ -5728,26 +6242,53 @@ async function notePinFail(ctx, fails, missReason) {
   return count >= 5 ? "locked" : missReason;
 }
 async function readTeacherPin(ctx) {
-  const db = ctx.db();
-  const rows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_PIN_KEY));
+  const store = await getStore(ctx);
+  const raw = await store.metaGet(TEACHER_PIN_KEY);
   try {
-    const v = rows[0]?.value ? JSON.parse(rows[0].value) : null;
+    const v = raw ? JSON.parse(raw) : null;
     return v && typeof v.salt === "string" && typeof v.hash === "string" ? v : null;
   } catch {
     return null;
   }
 }
 async function writeMeta(ctx, key, value) {
-  const db = ctx.db();
-  await db.insert(meta2).values({ key, value }).onConflictDoUpdate({ target: meta2.key, set: { value } });
+  const store = await getStore(ctx);
+  await store.metaSet(key, value);
+}
+async function ensureRecordingServed(ctx, store, row) {
+  if (!store.external)
+    return;
+  const head = await ctx.blobs.head(row.blobKey);
+  if (head)
+    return;
+  const data = await store.recordingData(row.id);
+  if (!data)
+    return;
+  const bytes = Uint8Array.from(Buffer.from(data.base64, "base64"));
+  await ctx.blobs.put(row.blobKey, bytes, { contentType: data.contentType || "audio/webm" });
+}
+var TEACHER_EMAIL_KEY = "teacher_google_email";
+var TEACHER_EMAIL_FAILS_KEY = "teacher_email_fails_v1";
+async function readTeacherEmail(ctx) {
+  const store = await getStore(ctx);
+  return (await store.metaGet(TEACHER_EMAIL_KEY) ?? "").trim().toLowerCase();
+}
+async function readEmailFails(ctx) {
+  const store = await getStore(ctx);
+  const raw = await store.metaGet(TEACHER_EMAIL_FAILS_KEY);
+  try {
+    if (raw)
+      return JSON.parse(raw);
+  } catch {}
+  return { count: 0, lockedUntil: 0 };
 }
 async function mintTeacherSession(ctx) {
   const token = randomHex(32);
-  const db = ctx.db();
-  const rows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_SESSIONS_KEY));
+  const store = await getStore(ctx);
+  const raw = await store.metaGet(TEACHER_SESSIONS_KEY);
   let sessions = [];
   try {
-    sessions = rows[0]?.value ? JSON.parse(rows[0].value) : [];
+    sessions = raw ? JSON.parse(raw) : [];
   } catch {
     sessions = [];
   }
@@ -5760,11 +6301,11 @@ async function mintTeacherSession(ctx) {
 async function isTeacher(ctx, token) {
   if (!token)
     return false;
-  const db = ctx.db();
-  const rows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_SESSIONS_KEY));
+  const store = await getStore(ctx);
+  const raw = await store.metaGet(TEACHER_SESSIONS_KEY);
   let sessions = [];
   try {
-    sessions = rows[0]?.value ? JSON.parse(rows[0].value) : [];
+    sessions = raw ? JSON.parse(raw) : [];
   } catch {
     sessions = [];
   }
@@ -5797,6 +6338,7 @@ function defaultState(lang, grade = "") {
     placedEn: false,
     belts: { math: start ? start.belt : 0, en: start ? start.belt : 0, es: start ? start.belt : 0 },
     beltWins: { math: 0, en: 0, es: 0 },
+    beltDates: {},
     battlesWon: 0,
     owned: ["mask_red", "suit_red", "cape_none"],
     equipped: { mask: "mask_red", suit: "suit_red", cape: "cape_none", gear: "", trim: "" },
@@ -5860,13 +6402,12 @@ var DEMO_ROSTER = [
   { id: "st-valentina", name: "Valentina", groupName: "Luna", badgeColor: "#00838F", lang: "es" }
 ];
 async function ensureRoster(ctx) {
-  const db = ctx.db();
-  const existing = await db.select({ id: students.id }).from(students).limit(1);
-  if (existing.length > 0)
+  const store = await getStore(ctx);
+  if (await store.studentsAny())
     return;
   const grade = await readClassGrade(ctx);
   for (const s of DEMO_ROSTER) {
-    await db.insert(students).values({
+    await store.studentInsert({
       id: s.id,
       name: s.name,
       groupName: s.groupName,
@@ -5925,12 +6466,87 @@ function parseState(json, lang = "es") {
     return defaultState(lang);
   }
 }
+var SECRET_PICTURE_IDS = [
+  "gato",
+  "perro",
+  "elefante",
+  "leon",
+  "tigre",
+  "oso",
+  "mono",
+  "mariposa",
+  "sol",
+  "estrella",
+  "flor",
+  "pinata",
+  "volcan",
+  "dragon",
+  "tren",
+  "barco"
+];
+function isSecretPictureId(id) {
+  return SECRET_PICTURE_IDS.includes(id);
+}
+function shuffled(arr) {
+  const out = [...arr];
+  for (let i = out.length - 1;i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const tmp = out[i];
+    out[i] = out[j];
+    out[j] = tmp;
+  }
+  return out;
+}
+function studentRowOut(r, opts) {
+  const state = parseState(r.stateJson);
+  if (!opts.teacher)
+    state.googleEmail = "";
+  const own = r.radioLeo === 1;
+  return {
+    id: r.id,
+    name: r.name,
+    groupName: r.groupName,
+    badgeColor: r.badgeColor,
+    hasSecretPicture: isSecretPictureId(r.secretPicture),
+    secretPictureId: opts.teacher && isSecretPictureId(r.secretPicture) ? r.secretPicture : "",
+    radioLeoEnabled: opts.radioMaster && own,
+    radioLeoStudent: opts.teacher ? own : false,
+    state
+  };
+}
 var studentOut = object({
   id: string2(),
   name: string2(),
   groupName: string2(),
   badgeColor: string2(),
+  hasSecretPicture: boolean2(),
+  secretPictureId: string2(),
+  radioLeoEnabled: boolean2(),
+  radioLeoStudent: boolean2(),
   state: unknown()
+});
+var familyPeekSummary = object({
+  name: string2(),
+  badgeColor: string2(),
+  lang: string2(),
+  avatar: object({ mask: string2(), suit: string2(), cape: string2(), gear: string2(), trim: string2() }),
+  puntos: number2(),
+  rayos: number2(),
+  battlesWon: number2(),
+  belts: record(string2(), number2()),
+  beltWins: record(string2(), number2()),
+  beltDates: record(string2(), string2()),
+  esRung: number2(),
+  enRung: number2(),
+  gradeSeed: string2(),
+  mastery: record(string2(), object({ correct: number2(), total: number2() })),
+  recent: record(string2(), array(number2())),
+  booksRead: array(string2()),
+  scienceDone: array(string2())
+});
+var familyPeekResponse = object({
+  status: _enum(["ok", "wrong", "no-picture"]),
+  summary: familyPeekSummary.nullable()
 });
 var assignmentOut = object({
   id: number2(),
@@ -5950,6 +6566,7 @@ var Actions = {
     description: "Report whether a teacher PIN and recovery phrase have been configured, without revealing either secret.",
     request: object({}),
     response: object({ configured: boolean2(), recoverySet: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
       return { configured: await readTeacherPin(ctx) !== null, recoverySet: await readRecovery(ctx) !== null };
     }
@@ -5958,6 +6575,7 @@ var Actions = {
     description: "Set the teacher PIN on first run (only while none exists) and return a teacher session token.",
     request: object({ pin: string2().min(4).max(8), recoveryPhrase: string2().max(120).optional() }),
     response: object({ ok: boolean2(), token: string2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       if (await readTeacherPin(ctx))
         return { ok: false, token: "", reason: "already-set" };
@@ -5978,17 +6596,12 @@ var Actions = {
     description: "Check a teacher PIN attempt (rate-limited) and mint a 12-hour teacher session token on success.",
     request: object({ pin: string2().min(1).max(8) }),
     response: object({ ok: boolean2(), token: string2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       const rec = await readTeacherPin(ctx);
       if (!rec)
         return { ok: false, token: "", reason: "not-configured" };
-      const db = ctx.db();
-      const frows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_FAILS_KEY));
-      let fails = { count: 0, lockedUntil: 0 };
-      try {
-        if (frows[0]?.value)
-          fails = JSON.parse(frows[0].value);
-      } catch {}
+      const fails = await readPinFails(ctx);
       const now = Date.now();
       if (fails.lockedUntil > now)
         return { ok: false, token: "", reason: "locked" };
@@ -6006,6 +6619,7 @@ var Actions = {
     description: "Check whether a teacher session token is still valid.",
     request: object({ token: string2().min(1).max(200) }),
     response: object({ valid: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       return { valid: await isTeacher(ctx, args.token) };
     }
@@ -6014,12 +6628,13 @@ var Actions = {
     description: "End a teacher session server-side so its token no longer unlocks the dashboard.",
     request: object({ token: string2().min(1).max(200) }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, TEACHER_SESSIONS_KEY));
+      const store = await getStore(ctx);
+      const raw = await store.metaGet(TEACHER_SESSIONS_KEY);
       let sessions = [];
       try {
-        sessions = rows[0]?.value ? JSON.parse(rows[0].value) : [];
+        sessions = raw ? JSON.parse(raw) : [];
       } catch {
         sessions = [];
       }
@@ -6032,6 +6647,7 @@ var Actions = {
     description: "Change the teacher PIN from inside the unlocked dashboard.",
     request: object({ teacherToken: teacherTokenField, newPin: string2().min(4).max(8) }),
     response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       if (!validPinFormat(args.newPin))
@@ -6045,6 +6661,7 @@ var Actions = {
     description: "Report whether a PIN recovery phrase is set (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ set: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       return { set: await readRecovery(ctx) !== null };
@@ -6054,6 +6671,7 @@ var Actions = {
     description: "Set or replace the PIN recovery phrase from inside the unlocked dashboard.",
     request: object({ teacherToken: teacherTokenField, phrase: string2().min(1).max(120) }),
     response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       if (!validPhrase(args.phrase))
@@ -6066,6 +6684,7 @@ var Actions = {
     description: "Reset a forgotten teacher PIN using the recovery phrase and return a fresh session token.",
     request: object({ phrase: string2().min(1).max(120), newPin: string2().min(4).max(8) }),
     response: object({ ok: boolean2(), token: string2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       const rec = await readRecovery(ctx);
       if (!rec)
@@ -6102,28 +6721,28 @@ var Actions = {
     description: "Copy every audio clip from the pack into owned blob storage, idempotently, keyed by clip count and pack version.",
     request: object({}),
     response: object({ seeded: number2(), total: number2(), already: boolean2(), done: boolean2() }),
-    privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes],
+    privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const AUDIO_PACK_VERSION = "2026-10-27-content6";
-      const db = ctx.db();
-      const flag = await db.select().from(meta2).where(eq(meta2.key, "audio_seeded"));
-      const ver = await db.select().from(meta2).where(eq(meta2.key, "audio_pack_version"));
+      const AUDIO_PACK_VERSION = "2026-11-19-familypeek1";
+      const store = await getStore(ctx);
+      const flag = await store.metaGet("audio_seeded");
+      const ver = await store.metaGet("audio_pack_version");
       const manifest = await ctx.executePrivileged(privileged.readManifest, {});
       const rows = JSON.parse(manifest.json);
-      if (flag.length > 0 && flag[0]?.value === String(rows.length) && ver[0]?.value === AUDIO_PACK_VERSION) {
+      if (flag === String(rows.length) && ver === AUDIO_PACK_VERSION) {
         return { seeded: 0, total: rows.length, already: true, done: true };
       }
       const PROGRESS_KEY = "audio_seed_progress";
-      const prog = await db.select().from(meta2).where(eq(meta2.key, PROGRESS_KEY));
+      const prog = await store.metaGet(PROGRESS_KEY);
       let start = 0;
-      if (prog[0]?.value) {
-        const [pv, pi] = prog[0].value.split(":");
+      if (prog) {
+        const [pv, pi] = prog.split(":");
         const n = Number(pi);
         if (pv === AUDIO_PACK_VERSION && Number.isFinite(n) && n > 0)
           start = Math.min(n, rows.length);
       }
       const setMeta = async (key, value) => {
-        await db.insert(meta2).values({ key, value }).onConflictDoUpdate({ target: meta2.key, set: { value } });
+        await store.metaSet(key, value);
       };
       let seeded = 0;
       const CHUNK = 200;
@@ -6162,13 +6781,13 @@ var Actions = {
     description: "Re-copy the video asset pack into owned blob storage.",
     request: object({}),
     response: object({ seeded: number2(), already: boolean2() }),
-    privileged: [privileged.readVideoBatch],
+    privileged: [privileged.readVideoBatch, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const VIDEO_PACK_VERSION = "2026-10-25-vocalesfix2";
+      const VIDEO_PACK_VERSION = "2026-11-18-diet1";
       const VIDEO_IDS = ["vocales", "colores-1", "colores-2", "numeros", "formas", "sonidos", "familias", "rimas", "numeros-6-10", "de-2-en-2", "de-5-en-5", "readalong-catrina", "readalong-serpent"];
-      const db = ctx.db();
-      const ver = await db.select().from(meta2).where(eq(meta2.key, "video_pack_version"));
-      if (ver[0]?.value === VIDEO_PACK_VERSION)
+      const store = await getStore(ctx);
+      const ver = await store.metaGet("video_pack_version");
+      if (ver === VIDEO_PACK_VERSION)
         return { seeded: 0, already: true };
       let seeded = 0;
       for (const id of VIDEO_IDS) {
@@ -6180,8 +6799,47 @@ var Actions = {
         await ctx.blobs.put(`video/${id}`, bytes, { contentType: "video/mp4" });
         seeded += 1;
       }
-      await db.insert(meta2).values({ key: "video_pack_version", value: VIDEO_PACK_VERSION }).onConflictDoUpdate({ target: meta2.key, set: { value: VIDEO_PACK_VERSION } });
+      await store.metaSet("video_pack_version", VIDEO_PACK_VERSION);
       return { seeded, already: false };
+    }
+  }),
+  refreshDietArt: defineAction({
+    description: "Re-copy recompressed art assets whose disk bytes changed into blob storage, in bounded batches.",
+    request: object({}),
+    response: object({ copied: number2(), done: boolean2(), already: boolean2() }),
+    privileged: [privileged.listArtIds, privileged.readArtSizes, privileged.readArtBatch, privileged.pgMode, privileged.pgQuery],
+    async handler(ctx) {
+      const DIET_VERSION = "2026-11-18-diet1";
+      const store = await getStore(ctx);
+      if (await store.metaGet("art_diet_version") === DIET_VERSION) {
+        return { copied: 0, done: true, already: true };
+      }
+      const { ids } = await ctx.executePrivileged(privileged.listArtIds, {});
+      const stale = [];
+      for (let start = 0;start < ids.length; start += 500) {
+        const chunk = ids.slice(start, start + 500);
+        const { sizes } = await ctx.executePrivileged(privileged.readArtSizes, { ids: chunk });
+        for (const s of sizes) {
+          const head = await ctx.blobs.head(`art/${s.id}`);
+          if (!head || (head.sizeBytes ?? head.size) !== s.size)
+            stale.push(s.id);
+        }
+      }
+      const batch = stale.slice(0, 40);
+      let copied = 0;
+      for (let start = 0;start < batch.length; start += 20) {
+        const chunk = batch.slice(start, start + 20);
+        const { art } = await ctx.executePrivileged(privileged.readArtBatch, { ids: chunk });
+        for (const item of art) {
+          const bytes = Uint8Array.from(Buffer.from(item.base64, "base64"));
+          await ctx.blobs.put(`art/${item.id}`, bytes, { contentType: "image/webp" });
+          copied += 1;
+        }
+      }
+      const done = stale.length <= batch.length && copied === batch.length;
+      if (done)
+        await store.metaSet("art_diet_version", DIET_VERSION);
+      return { copied, done, already: false };
     }
   }),
   refreshPlaytestAudioClips: defineAction({
@@ -6268,6 +6926,43 @@ var Actions = {
         "ln_qmission_f7_es",
         "ln_qforest_cleared_en",
         "ln_qforest_cleared_es"
+      ];
+      const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS });
+      const out = [];
+      for (const clip of clips) {
+        const bytes = Uint8Array.from(Buffer.from(clip.base64, "base64"));
+        const key = `audio/${clip.id}`;
+        await ctx.blobs.put(key, bytes, { contentType: "audio/mpeg" });
+        const head = await ctx.blobs.head(key);
+        out.push({ id: clip.id, bytes: head?.sizeBytes ?? head?.size ?? bytes.length });
+      }
+      return { refreshed: out.length, clips: out };
+    }
+  }),
+  refreshTogetherClips: defineAction({
+    description: "Force-refresh the Play Together co-play framing clips over the seeded blobs.",
+    request: object({}),
+    response: object({
+      refreshed: number2(),
+      clips: array(object({ id: string2(), bytes: number2() }))
+    }),
+    privileged: [privileged.readClipsBatch],
+    async handler(ctx) {
+      const IDS = [
+        "ln_games_together_en",
+        "ln_games_together_es",
+        "ln_together_welcome_en",
+        "ln_together_welcome_es",
+        "ln_together_read_en",
+        "ln_together_read_es",
+        "ln_together_team_0_en",
+        "ln_together_team_0_es",
+        "ln_together_team_1_en",
+        "ln_together_team_1_es",
+        "ln_together_team_2_en",
+        "ln_together_team_2_es",
+        "ln_together_done_en",
+        "ln_together_done_es"
       ];
       const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS });
       const out = [];
@@ -6578,6 +7273,272 @@ var Actions = {
         await ctx.blobs.put(key, bytes, { contentType: "audio/mpeg" });
         const head = await ctx.blobs.head(key);
         out.push({ id: clip.id, bytes: head?.sizeBytes ?? head?.size ?? bytes.length });
+      }
+      return { refreshed: out.length, clips: out };
+    }
+  }),
+  refreshContentPackClips: defineAction({
+    description: "Force-refresh the v4 content-pack clips (EN word bank, second passage set, division operators) over the seeded blobs.",
+    request: object({}),
+    response: object({
+      refreshed: number2(),
+      clips: array(object({ id: string2(), bytes: number2() }))
+    }),
+    privileged: [privileged.readClipsBatch],
+    async handler(ctx) {
+      const IDS = [
+        "en_w_ant",
+        "en_w_cow",
+        "en_w_duck",
+        "en_w_elk",
+        "en_w_frog",
+        "en_w_grapes",
+        "en_w_horse",
+        "en_w_insect",
+        "en_w_juice",
+        "en_w_koala",
+        "en_w_lemon",
+        "en_w_monkey",
+        "en_w_nose",
+        "en_w_orange",
+        "en_w_panda",
+        "en_w_quilt",
+        "en_w_rabbit",
+        "en_w_snake",
+        "en_w_violin",
+        "en_w_wolf",
+        "en_w_yarn",
+        "en_w_zoo",
+        "en_w_bat",
+        "en_w_cap",
+        "en_w_fan",
+        "en_w_jet",
+        "en_w_kid",
+        "en_w_lip",
+        "en_w_mop",
+        "en_w_nut",
+        "en_w_rug",
+        "en_w_zip",
+        "en_w_shell",
+        "en_w_wash",
+        "en_w_chick",
+        "en_w_cheese",
+        "en_w_three",
+        "en_w_teeth",
+        "en_w_wheel",
+        "en_w_white",
+        "en_w_blow",
+        "en_w_blend",
+        "en_w_clean",
+        "en_w_floor",
+        "en_w_stone",
+        "en_w_stamp",
+        "en_w_snail",
+        "en_w_tail",
+        "en_w_tray",
+        "en_w_gray",
+        "en_w_feet",
+        "en_w_leaf",
+        "en_w_eat",
+        "en_w_road",
+        "en_w_lie",
+        "en_w_cried",
+        "en_w_true",
+        "en_w_clue",
+        "en_w_jar",
+        "en_w_paper",
+        "en_w_first",
+        "en_w_shirt",
+        "en_w_storm",
+        "en_w_short",
+        "en_w_hurt",
+        "en_w_purple",
+        "en_sent_5",
+        "en_sent_6",
+        "en_sent_7",
+        "en_sent_8",
+        "en_sent_9",
+        "en_fpass_6",
+        "en_fq_6_0",
+        "en_fch_6_0_0",
+        "en_fch_6_0_1",
+        "en_fch_6_0_2",
+        "en_fpass_7",
+        "en_fq_7_0",
+        "en_fch_7_0_0",
+        "en_fch_7_0_1",
+        "en_fch_7_0_2",
+        "en_fpass_8",
+        "en_fq_8_0",
+        "en_fch_8_0_0",
+        "en_fch_8_0_1",
+        "en_fch_8_0_2",
+        "en_fpass_9",
+        "en_fq_9_0",
+        "en_fch_9_0_0",
+        "en_fch_9_0_1",
+        "en_fch_9_0_2",
+        "en_fpass_10",
+        "en_fq_10_0",
+        "en_fch_10_0_0",
+        "en_fch_10_0_1",
+        "en_fch_10_0_2",
+        "en_fpass_11",
+        "en_fq_11_0",
+        "en_fch_11_0_0",
+        "en_fch_11_0_1",
+        "en_fch_11_0_2",
+        "en_cpass_6",
+        "en_cq_6_0",
+        "en_cch_6_0_0",
+        "en_cch_6_0_1",
+        "en_cch_6_0_2",
+        "en_cq_6_1",
+        "en_cch_6_1_0",
+        "en_cch_6_1_1",
+        "en_cch_6_1_2",
+        "en_cpass_7",
+        "en_cq_7_0",
+        "en_cch_7_0_0",
+        "en_cch_7_0_1",
+        "en_cch_7_0_2",
+        "en_cq_7_1",
+        "en_cch_7_1_0",
+        "en_cch_7_1_1",
+        "en_cch_7_1_2",
+        "en_cpass_8",
+        "en_cq_8_0",
+        "en_cch_8_0_0",
+        "en_cch_8_0_1",
+        "en_cch_8_0_2",
+        "en_cq_8_1",
+        "en_cch_8_1_0",
+        "en_cch_8_1_1",
+        "en_cch_8_1_2",
+        "en_cpass_9",
+        "en_cq_9_0",
+        "en_cch_9_0_0",
+        "en_cch_9_0_1",
+        "en_cch_9_0_2",
+        "en_cq_9_1",
+        "en_cch_9_1_0",
+        "en_cch_9_1_1",
+        "en_cch_9_1_2",
+        "en_cpass_10",
+        "en_cq_10_0",
+        "en_cch_10_0_0",
+        "en_cch_10_0_1",
+        "en_cch_10_0_2",
+        "en_cq_10_1",
+        "en_cch_10_1_0",
+        "en_cch_10_1_1",
+        "en_cch_10_1_2",
+        "en_cpass_11",
+        "en_cq_11_0",
+        "en_cch_11_0_0",
+        "en_cch_11_0_1",
+        "en_cch_11_0_2",
+        "en_cq_11_1",
+        "en_cch_11_1_0",
+        "en_cch_11_1_1",
+        "en_cch_11_1_2",
+        "es_fpass_6",
+        "es_fq_6_0",
+        "es_fch_6_0_0",
+        "es_fch_6_0_1",
+        "es_fch_6_0_2",
+        "es_fpass_7",
+        "es_fq_7_0",
+        "es_fch_7_0_0",
+        "es_fch_7_0_1",
+        "es_fch_7_0_2",
+        "es_fpass_8",
+        "es_fq_8_0",
+        "es_fch_8_0_0",
+        "es_fch_8_0_1",
+        "es_fch_8_0_2",
+        "es_fpass_9",
+        "es_fq_9_0",
+        "es_fch_9_0_0",
+        "es_fch_9_0_1",
+        "es_fch_9_0_2",
+        "es_fpass_10",
+        "es_fq_10_0",
+        "es_fch_10_0_0",
+        "es_fch_10_0_1",
+        "es_fch_10_0_2",
+        "es_fpass_11",
+        "es_fq_11_0",
+        "es_fch_11_0_0",
+        "es_fch_11_0_1",
+        "es_fch_11_0_2",
+        "es_cpass_6",
+        "es_cq_6_0",
+        "es_cch_6_0_0",
+        "es_cch_6_0_1",
+        "es_cch_6_0_2",
+        "es_cq_6_1",
+        "es_cch_6_1_0",
+        "es_cch_6_1_1",
+        "es_cch_6_1_2",
+        "es_cpass_7",
+        "es_cq_7_0",
+        "es_cch_7_0_0",
+        "es_cch_7_0_1",
+        "es_cch_7_0_2",
+        "es_cq_7_1",
+        "es_cch_7_1_0",
+        "es_cch_7_1_1",
+        "es_cch_7_1_2",
+        "es_cpass_8",
+        "es_cq_8_0",
+        "es_cch_8_0_0",
+        "es_cch_8_0_1",
+        "es_cch_8_0_2",
+        "es_cq_8_1",
+        "es_cch_8_1_0",
+        "es_cch_8_1_1",
+        "es_cch_8_1_2",
+        "es_cpass_9",
+        "es_cq_9_0",
+        "es_cch_9_0_0",
+        "es_cch_9_0_1",
+        "es_cch_9_0_2",
+        "es_cq_9_1",
+        "es_cch_9_1_0",
+        "es_cch_9_1_1",
+        "es_cch_9_1_2",
+        "es_cpass_10",
+        "es_cq_10_0",
+        "es_cch_10_0_0",
+        "es_cch_10_0_1",
+        "es_cch_10_0_2",
+        "es_cq_10_1",
+        "es_cch_10_1_0",
+        "es_cch_10_1_1",
+        "es_cch_10_1_2",
+        "es_cpass_11",
+        "es_cq_11_0",
+        "es_cch_11_0_0",
+        "es_cch_11_0_1",
+        "es_cch_11_0_2",
+        "es_cq_11_1",
+        "es_cch_11_1_0",
+        "es_cch_11_1_1",
+        "es_cch_11_1_2",
+        "op_en_divided",
+        "op_es_entre"
+      ];
+      const out = [];
+      for (let j = 0;j < IDS.length; j += 90) {
+        const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS.slice(j, j + 90) });
+        for (const clip of clips) {
+          const bytes = Uint8Array.from(Buffer.from(clip.base64, "base64"));
+          const key = `audio/${clip.id}`;
+          await ctx.blobs.put(key, bytes, { contentType: "audio/mpeg" });
+          const head = await ctx.blobs.head(key);
+          out.push({ id: clip.id, bytes: head?.sizeBytes ?? head?.size ?? bytes.length });
+        }
       }
       return { refreshed: out.length, clips: out };
     }
@@ -6946,12 +7907,12 @@ var Actions = {
     description: "Force-refresh the overnight batch of new and repaired clips over the seeded blobs.",
     request: object({}),
     response: object({ clipsAdded: number2(), packVersion: string2() }),
-    privileged: [privileged.readClipsBatch, privileged.readClipSizes],
+    privileged: [privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
       const PACK_VERSION = "2026-10-27-content5";
-      const db = ctx.db();
-      const doneFlag = await db.select().from(meta2).where(eq(meta2.key, "overnight_clips_version"));
-      if (doneFlag[0]?.value === PACK_VERSION)
+      const store = await getStore(ctx);
+      const doneFlag = await store.metaGet("overnight_clips_version");
+      if (doneFlag === PACK_VERSION)
         return { clipsAdded: 0, packVersion: PACK_VERSION };
       const IDS = [
         "ln_mstory_a6_9_en",
@@ -7806,7 +8767,7 @@ var Actions = {
           }));
         }
       }
-      await db.insert(meta2).values({ key: "overnight_clips_version", value: PACK_VERSION }).onConflictDoUpdate({ target: meta2.key, set: { value: PACK_VERSION } });
+      await store.metaSet("overnight_clips_version", PACK_VERSION);
       return { clipsAdded: added, packVersion: PACK_VERSION };
     }
   }),
@@ -7814,12 +8775,12 @@ var Actions = {
     description: "Force-refresh the El Rinc\xF3n de las Emociones (SEL) clips over the seeded blobs.",
     request: object({}),
     response: object({ clipsAdded: number2(), packVersion: string2() }),
-    privileged: [privileged.readClipsBatch, privileged.readClipSizes],
+    privileged: [privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
       const PACK_VERSION = "2026-10-27-content6";
-      const db = ctx.db();
-      const doneFlag = await db.select().from(meta2).where(eq(meta2.key, "sel_clips_version"));
-      if (doneFlag[0]?.value === PACK_VERSION)
+      const store = await getStore(ctx);
+      const doneFlag = await store.metaGet("sel_clips_version");
+      if (doneFlag === PACK_VERSION)
         return { clipsAdded: 0, packVersion: PACK_VERSION };
       const IDS = [
         "sel_feel_nervous_en",
@@ -8745,7 +9706,7 @@ var Actions = {
           }));
         }
       }
-      await db.insert(meta2).values({ key: "sel_clips_version", value: PACK_VERSION }).onConflictDoUpdate({ target: meta2.key, set: { value: PACK_VERSION } });
+      await store.metaSet("sel_clips_version", PACK_VERSION);
       return { clipsAdded: added, packVersion: PACK_VERSION };
     }
   }),
@@ -8757,19 +9718,19 @@ var Actions = {
       dateISO: string2().max(40).optional()
     }),
     response: object({ ok: boolean2(), count: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const sid = args.studentId.trim();
       if (!sid)
         return { ok: false, count: 0 };
-      const known = await db.select({ id: students.id }).from(students).where(eq(students.id, sid));
-      if (known.length === 0)
+      if (!await store.studentExists(sid))
         return { ok: false, count: 0 };
       const key = `feelings_entries:${sid}`;
-      const rows = await db.select().from(meta2).where(eq(meta2.key, key));
+      const raw = await store.metaGet(key);
       let entries = [];
       try {
-        const parsed = JSON.parse(rows[0]?.value ?? "[]");
+        const parsed = JSON.parse(raw ?? "[]");
         if (Array.isArray(parsed))
           entries = parsed;
       } catch {
@@ -8778,7 +9739,7 @@ var Actions = {
       entries.push({ dateISO: args.dateISO && args.dateISO.length > 0 ? args.dateISO : new Date().toISOString(), feelingId: args.feelingId });
       if (entries.length > 200)
         entries = entries.slice(-200);
-      await db.insert(meta2).values({ key, value: JSON.stringify(entries) }).onConflictDoUpdate({ target: meta2.key, set: { value: JSON.stringify(entries) } });
+      await store.metaSet(key, JSON.stringify(entries));
       ctx.invalidateQueries();
       return { ok: true, count: entries.length };
     }
@@ -8790,14 +9751,15 @@ var Actions = {
       entries: array(object({ dateISO: string2(), feelingId: string2() })),
       count: number2()
     }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const sid = args.studentId.trim() || "guest";
       const key = `feelings_entries:${sid}`;
-      const rows = await db.select().from(meta2).where(eq(meta2.key, key));
+      const raw = await store.metaGet(key);
       let entries = [];
       try {
-        const parsed = JSON.parse(rows[0]?.value ?? "[]");
+        const parsed = JSON.parse(raw ?? "[]");
         if (Array.isArray(parsed)) {
           entries = parsed.filter((e) => e && typeof e.dateISO === "string" && typeof e.feelingId === "string");
         }
@@ -8806,6 +9768,142 @@ var Actions = {
       }
       const newestFirst = [...entries].reverse();
       return { entries: newestFirst.slice(0, 30), count: entries.length };
+    }
+  }),
+  saveMorningCheckin: defineAction({
+    description: "Record the signed-in student's SEL morning check-in (one feeling) for today.",
+    request: object({
+      studentId: string2().max(60).default(""),
+      feelingId: string2().min(1).max(60),
+      localDay: string2().regex(/^\d{4}-\d{2}-\d{2}$/)
+    }),
+    response: object({ ok: boolean2(), count: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const store = await getStore(ctx);
+      const sid = args.studentId.trim();
+      if (!sid)
+        return { ok: false, count: 0 };
+      if (!await store.studentExists(sid))
+        return { ok: false, count: 0 };
+      const key = `feelings_entries:${sid}`;
+      const raw = await store.metaGet(key);
+      let entries = [];
+      try {
+        const parsed = JSON.parse(raw ?? "[]");
+        if (Array.isArray(parsed))
+          entries = parsed;
+      } catch {
+        entries = [];
+      }
+      const already = entries.some((e) => e && e.kind === "checkin" && e.localDay === args.localDay);
+      if (!already) {
+        entries.push({ dateISO: new Date().toISOString(), feelingId: args.feelingId, kind: "checkin", localDay: args.localDay });
+        if (entries.length > 200)
+          entries = entries.slice(-200);
+        await store.metaSet(key, JSON.stringify(entries));
+        ctx.invalidateQueries();
+      }
+      return { ok: true, count: entries.length };
+    }
+  }),
+  dismissMorningCheckin: defineAction({
+    description: "Remember that the student dismissed today's SEL morning check-in card without answering.",
+    request: object({
+      studentId: string2().max(60).default(""),
+      localDay: string2().regex(/^\d{4}-\d{2}-\d{2}$/)
+    }),
+    response: object({ ok: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const store = await getStore(ctx);
+      const sid = args.studentId.trim();
+      if (!sid)
+        return { ok: false };
+      if (!await store.studentExists(sid))
+        return { ok: false };
+      await store.metaSet(`checkin_dismissed:${sid}`, args.localDay);
+      ctx.invalidateQueries();
+      return { ok: true };
+    }
+  }),
+  getMorningCheckin: defineAction({
+    description: "Whether the student already answered or dismissed today's SEL morning check-in.",
+    request: object({
+      studentId: string2().max(60).default(""),
+      localDay: string2().regex(/^\d{4}-\d{2}-\d{2}$/)
+    }),
+    response: object({ answered: boolean2(), dismissed: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const store = await getStore(ctx);
+      const sid = args.studentId.trim();
+      if (!sid)
+        return { answered: false, dismissed: false };
+      const dismissedDay = await store.metaGet(`checkin_dismissed:${sid}`);
+      const raw = await store.metaGet(`feelings_entries:${sid}`);
+      let answered = false;
+      try {
+        const parsed = JSON.parse(raw ?? "[]");
+        if (Array.isArray(parsed)) {
+          answered = parsed.some((e) => e && e.kind === "checkin" && e.localDay === args.localDay);
+        }
+      } catch {
+        answered = false;
+      }
+      return { answered, dismissed: dismissedDay === args.localDay };
+    }
+  }),
+  getFeelingsSnapshot: defineAction({
+    description: "Aggregate class feelings counts from SEL morning check-ins: per-feeling totals for today and for this week (counts only, never per-student).",
+    request: object({
+      teacherToken: teacherTokenField,
+      today: string2().regex(/^\d{4}-\d{2}-\d{2}$/),
+      weekStart: string2().regex(/^\d{4}-\d{2}-\d{2}$/)
+    }),
+    response: object({
+      today: array(object({ feelingId: string2(), count: number2() })),
+      week: array(object({ feelingId: string2(), count: number2() })),
+      todayTotal: number2(),
+      weekTotal: number2(),
+      weekStart: string2()
+    }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      const store = await getStore(ctx);
+      const todayCounts = new Map;
+      const weekCounts = new Map;
+      let todayTotal = 0;
+      let weekTotal = 0;
+      const roster = await store.studentsAll();
+      for (const s of roster) {
+        const raw = await store.metaGet(`feelings_entries:${s.id}`);
+        if (!raw)
+          continue;
+        let entries = [];
+        try {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed))
+            entries = parsed;
+        } catch {
+          entries = [];
+        }
+        for (const e of entries) {
+          if (!e || e.kind !== "checkin" || typeof e.feelingId !== "string" || typeof e.localDay !== "string")
+            continue;
+          if (e.localDay === args.today) {
+            todayCounts.set(e.feelingId, (todayCounts.get(e.feelingId) ?? 0) + 1);
+            todayTotal += 1;
+          }
+          if (e.localDay >= args.weekStart && e.localDay <= args.today) {
+            weekCounts.set(e.feelingId, (weekCounts.get(e.feelingId) ?? 0) + 1);
+            weekTotal += 1;
+          }
+        }
+      }
+      const toList = (m) => [...m.entries()].map(([feelingId, count]) => ({ feelingId, count }));
+      return { today: toList(todayCounts), week: toList(weekCounts), todayTotal, weekTotal, weekStart: args.weekStart };
     }
   }),
   refreshNumberClips: defineAction({
@@ -9054,9 +10152,10 @@ var Actions = {
     description: "Return classroom-wide settings such as the ceremony hide-names preference.",
     request: object({}),
     response: object({ hideNames: boolean2(), masterMute: boolean2(), volumeCap: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2);
+      const store = await getStore(ctx);
+      const rows = await store.metaAll();
       const get = (k) => rows.find((r) => r.key === k)?.value;
       const cap = Number(get("quiet_volume_cap") ?? "100");
       return {
@@ -9075,11 +10174,12 @@ var Actions = {
       volumeCap: number2().min(10).max(100).optional()
     }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const put = async (key, value) => {
-        await db.insert(meta2).values({ key, value }).onConflictDoUpdate({ target: meta2.key, set: { value } });
+        await store.metaSet(key, value);
       };
       await put("ceremony_hide_names", args.hideNames ? "1" : "0");
       if (typeof args.masterMute === "boolean")
@@ -9094,14 +10194,14 @@ var Actions = {
     description: "Return the class join code students use to enter the Arena (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ code: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "class_code"));
-      let code = rows[0]?.value ?? "";
+      const store = await getStore(ctx);
+      let code = await store.metaGet("class_code") ?? "";
       if (!code) {
         code = makeClassCode();
-        await db.insert(meta2).values({ key: "class_code", value: code });
+        await store.metaSet("class_code", code);
       }
       return { code };
     }
@@ -9110,11 +10210,12 @@ var Actions = {
     description: "Generate a new class join code, invalidating the old one (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ code: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const code = makeClassCode();
-      await db.insert(meta2).values({ key: "class_code", value: code }).onConflictDoUpdate({ target: meta2.key, set: { value: code } });
+      await store.metaSet("class_code", code);
       ctx.invalidateQueries();
       return { code };
     }
@@ -9123,28 +10224,19 @@ var Actions = {
     description: "Join the class roster by entering the class code, returning the student's saved state.",
     request: object({ code: string2().min(1).max(12) }),
     response: object({ ok: boolean2(), students: array(studentOut) }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "class_code"));
-      const want = (rows[0]?.value ?? "").trim().toUpperCase();
+      const store = await getStore(ctx);
+      const want = (await store.metaGet("class_code") ?? "").trim().toUpperCase();
       const got = args.code.trim().toUpperCase().replace(/[\s-]/g, "");
       if (!want || got !== want)
         return { ok: false, students: [] };
       await ensureRoster(ctx);
-      const roster = await db.select().from(students).orderBy(asc(students.name));
+      const roster = await store.studentsByName();
+      const radioMaster = await readRadioLeoMaster(ctx);
       return {
         ok: true,
-        students: roster.map((r) => {
-          const state = parseState(r.stateJson);
-          state.googleEmail = "";
-          return {
-            id: r.id,
-            name: r.name,
-            groupName: r.groupName,
-            badgeColor: r.badgeColor,
-            state
-          };
-        })
+        students: roster.map((r) => studentRowOut(r, { teacher: false, radioMaster }))
       };
     }
   }),
@@ -9156,39 +10248,38 @@ var Actions = {
       student: studentOut.nullable(),
       matches: array(studentOut)
     }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "class_code"));
-      const want = (rows[0]?.value ?? "").trim().toUpperCase();
+      const store = await getStore(ctx);
+      const want = (await store.metaGet("class_code") ?? "").trim().toUpperCase();
       const got = args.code.trim().toUpperCase().replace(/[\s-]/g, "");
       if (!want || got !== want)
         return { status: "bad-code", student: null, matches: [] };
       await ensureRoster(ctx);
       const cleanName = args.name.trim().replace(/\s+/g, " ");
       const norm = (s) => s.normalize("NFD").replace(/\p{M}/gu, "").trim().toLowerCase();
-      const roster = await db.select().from(students).orderBy(asc(students.name));
-      const toOut = (r, state) => {
-        const st = state;
-        st.googleEmail = "";
-        return { id: r.id, name: r.name, groupName: r.groupName, badgeColor: r.badgeColor, state: st };
-      };
+      const roster = await store.studentsByName();
+      const radioMaster = await readRadioLeoMaster(ctx);
+      const toOut = (r) => studentRowOut(r, { teacher: false, radioMaster });
       const matches = roster.filter((r) => norm(r.name) === norm(cleanName));
       if (matches.length > 1) {
         return {
           status: "pick",
           student: null,
-          matches: matches.map((r) => toOut(r, parseState(r.stateJson)))
+          matches: matches.map((r) => toOut(r))
         };
       }
       if (matches.length === 1) {
         const r = matches[0];
         const st = parseState(r.stateJson);
+        let row = r;
         if (!st.joinedViaCodeAt) {
           st.joinedViaCodeAt = new Date().toISOString();
-          await db.update(students).set({ stateJson: JSON.stringify(st), updatedAt: new Date }).where(eq(students.id, r.id));
+          await store.studentUpdateState(r.id, JSON.stringify(st));
           ctx.invalidateQueries();
+          row = { ...r, stateJson: JSON.stringify(st) };
         }
-        return { status: "joined", student: toOut(r, st), matches: [] };
+        return { status: "joined", student: toOut(row), matches: [] };
       }
       const grade = await readClassGrade(ctx);
       const fresh = defaultState("es", grade);
@@ -9196,7 +10287,7 @@ var Actions = {
       const colors = ["#C1272D", "#0E7C7B", "#E85D9E", "#1565C0", "#2E7D32", "#EF6C00"];
       const badgeColor = colors[roster.length % colors.length] ?? "#C1272D";
       const id = `st-${Date.now().toString(36)}-${randomHex(4)}`;
-      await db.insert(students).values({
+      await store.studentInsert({
         id,
         name: cleanName,
         groupName: "",
@@ -9204,8 +10295,8 @@ var Actions = {
         stateJson: JSON.stringify(fresh)
       });
       ctx.invalidateQueries();
-      const created = { id, name: cleanName, groupName: "", badgeColor };
-      return { status: "joined", student: toOut(created, fresh), matches: [] };
+      const created = { id, name: cleanName, groupName: "", badgeColor, secretPicture: "", radioLeo: 0, stateJson: JSON.stringify(fresh), updatedAt: new Date };
+      return { status: "joined", student: toOut(created), matches: [] };
     }
   }),
   getClassGoal: defineAction({
@@ -9219,17 +10310,18 @@ var Actions = {
       labelEn: string2(),
       labelEs: string2()
     }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "class_goal"));
+      const store = await getStore(ctx);
+      const rawGoal = await store.metaGet("class_goal");
       let goal = null;
       try {
-        goal = rows[0]?.value ? JSON.parse(rows[0].value) : null;
+        goal = rawGoal ? JSON.parse(rawGoal) : null;
       } catch {
         goal = null;
       }
       await ensureRoster(ctx);
-      const roster = await db.select().from(students);
+      const roster = await store.studentsAll();
       let current = 0;
       for (const r of roster) {
         const st = parseState(r.stateJson);
@@ -9241,15 +10333,52 @@ var Actions = {
       return { active: true, target: goal.target, baseline: goal.baseline, current, labelEn: goal.labelEn, labelEs: goal.labelEs };
     }
   }),
+  getClassMeter: defineAction({
+    description: "Return the class celebration meter: the shared goal and the whole-class aggregate progress only (no per-student data).",
+    request: object({}),
+    response: object({
+      active: boolean2(),
+      labelEn: string2(),
+      labelEs: string2(),
+      progress: number2(),
+      span: number2(),
+      met: boolean2()
+    }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx) {
+      const store = await getStore(ctx);
+      const rawGoal = await store.metaGet("class_goal");
+      let goal = null;
+      try {
+        goal = rawGoal ? JSON.parse(rawGoal) : null;
+      } catch {
+        goal = null;
+      }
+      if (!goal)
+        return { active: false, labelEn: "", labelEs: "", progress: 0, span: 0, met: false };
+      await ensureRoster(ctx);
+      const roster = await store.studentsAll();
+      let current = 0;
+      for (const r of roster) {
+        const st = parseState(r.stateJson);
+        for (const m of Object.values(st.mastery ?? {}))
+          current += m.correct ?? 0;
+      }
+      const span = Math.max(1, goal.target - goal.baseline);
+      const progress = Math.min(span, Math.max(0, current - goal.baseline));
+      return { active: true, labelEn: goal.labelEn, labelEs: goal.labelEs, progress, span, met: progress >= span };
+    }
+  }),
   setClassGoal: defineAction({
     description: "Set the class goal shown to students (teacher session required).",
     request: object({ teacherToken: teacherTokenField, target: number2().min(1).max(1e5), labelEn: string2().max(80), labelEs: string2().max(80) }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
+      const store = await getStore(ctx);
       await ensureRoster(ctx);
-      const roster = await db.select().from(students);
+      const roster = await store.studentsAll();
       let baseline = 0;
       for (const r of roster) {
         const st = parseState(r.stateJson);
@@ -9257,7 +10386,7 @@ var Actions = {
           baseline += m.correct ?? 0;
       }
       const goal = { target: baseline + args.target, baseline, labelEn: args.labelEn, labelEs: args.labelEs };
-      await db.insert(meta2).values({ key: "class_goal", value: JSON.stringify(goal) }).onConflictDoUpdate({ target: meta2.key, set: { value: JSON.stringify(goal) } });
+      await store.metaSet("class_goal", JSON.stringify(goal));
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9266,10 +10395,11 @@ var Actions = {
     description: "Clear the current class goal (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      await db.delete(meta2).where(eq(meta2.key, "class_goal"));
+      const store = await getStore(ctx);
+      await store.metaDelete("class_goal");
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9285,19 +10415,15 @@ var Actions = {
       contentType: string2().max(60).default("audio/webm")
     }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       if (args.kind === "voice")
         await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const bytes = Uint8Array.from(Buffer.from(args.base64, "base64"));
       const blobKey = `recordings/${args.kind}/${args.refId}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
       await ctx.blobs.put(blobKey, bytes, { contentType: args.contentType || "audio/webm" });
-      await db.insert(recordings).values({
-        studentId: args.studentId,
-        kind: args.kind,
-        refId: args.refId,
-        blobKey
-      });
+      await store.recordingInsert({ studentId: args.studentId, kind: args.kind, refId: args.refId, blobKey }, { base64: args.base64, contentType: args.contentType || "audio/webm" });
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9315,12 +10441,14 @@ var Actions = {
         createdAt: string2()
       }))
     }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      const rows = args.kind ? await db.select().from(recordings).where(eq(recordings.kind, args.kind)).orderBy(desc(recordings.id)) : await db.select().from(recordings).orderBy(desc(recordings.id));
+      const store = await getStore(ctx);
+      const rows = await store.recordingsList(args.kind);
       const out = [];
       for (const r of rows.slice(0, 200)) {
+        await ensureRecordingServed(ctx, store, r);
         out.push({
           id: r.id,
           studentId: r.studentId,
@@ -9337,10 +10465,11 @@ var Actions = {
     description: "Delete a stored audio recording and its blob.",
     request: object({ teacherToken: teacherTokenField, id: number2() }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      await db.delete(recordings).where(eq(recordings.id, args.id));
+      const store = await getStore(ctx);
+      await store.recordingDelete(args.id);
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9349,14 +10478,16 @@ var Actions = {
     description: "Return a playable URL for one audio clip by id, preferring a recorded voice take when one exists.",
     request: object({ id: string2().min(1).max(80) }),
     response: object({ ok: boolean2(), url: string2() }),
-    privileged: [privileged.readClipsBatch],
+    privileged: [privileged.readClipsBatch, privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       try {
-        const db = ctx.db();
-        const recs = await db.select().from(recordings).where(eq(recordings.kind, "voice")).orderBy(desc(recordings.id));
+        const store = await getStore(ctx);
+        const recs = await store.recordingsList("voice");
         const mine = recs.find((r) => r.refId === args.id);
-        if (mine)
+        if (mine) {
+          await ensureRecordingServed(ctx, store, mine);
           return { ok: true, url: await ctx.blobs.getUrl(mine.blobKey) };
+        }
       } catch {}
       const key = `audio/${args.id}`;
       const head = await ctx.blobs.head(key);
@@ -9449,34 +10580,24 @@ var Actions = {
     description: "Return the student roster with saved game states. Requires a valid teacher session (linked emails included) or the current class code; any other caller gets an empty roster with authorized:false.",
     request: object({ teacherToken: teacherTokenField, classCode: string2().max(12).optional() }),
     response: object({ authorized: boolean2(), students: array(studentOut) }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const teacher = await isTeacher(ctx, args.teacherToken);
       let authorized = teacher;
       if (!authorized && args.classCode) {
-        const codeRows = await db.select().from(meta2).where(eq(meta2.key, "class_code"));
-        const want = (codeRows[0]?.value ?? "").trim().toUpperCase();
+        const want = (await store.metaGet("class_code") ?? "").trim().toUpperCase();
         const got = args.classCode.trim().toUpperCase().replace(/[\s-]/g, "");
         authorized = !!want && got === want;
       }
       if (!authorized)
         return { authorized: false, students: [] };
       await ensureRoster(ctx);
-      const rows = await db.select().from(students).orderBy(asc(students.name));
+      const rows = await store.studentsByName();
+      const radioMaster = await readRadioLeoMaster(ctx);
       return {
         authorized: true,
-        students: rows.map((r) => {
-          const state = parseState(r.stateJson);
-          if (!teacher)
-            state.googleEmail = "";
-          return {
-            id: r.id,
-            name: r.name,
-            groupName: r.groupName,
-            badgeColor: r.badgeColor,
-            state
-          };
-        })
+        students: rows.map((r) => studentRowOut(r, { teacher, radioMaster }))
       };
     }
   }),
@@ -9484,15 +10605,16 @@ var Actions = {
     description: "Save one student's complete game state after a meaningful play event.",
     request: object({ id: string2().min(1), state: unknown() }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const next = args.state ?? {};
-      const existing = await db.select().from(students).where(eq(students.id, args.id));
-      if (existing[0]) {
-        const stored = parseState(existing[0].stateJson);
+      const existing = await store.studentById(args.id);
+      if (existing) {
+        const stored = parseState(existing.stateJson);
         next.googleEmail = stored.googleEmail ?? "";
       }
-      await db.update(students).set({ stateJson: JSON.stringify(next), updatedAt: new Date }).where(eq(students.id, args.id));
+      await store.studentUpdateState(args.id, JSON.stringify(next));
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9501,15 +10623,16 @@ var Actions = {
     description: "Sign a student in with their Google identity and return their roster record and saved state.",
     request: object({ email: string2().min(3).max(120) }),
     response: object({ kind: _enum(["student", "teacher", "none"]), studentId: string2(), student: studentOut.nullable() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       const email = args.email.trim().toLowerCase();
-      const db = ctx.db();
-      const trow = await db.select().from(meta2).where(eq(meta2.key, "teacher_google_email"));
-      if (email && trow[0]?.value && trow[0].value.trim().toLowerCase() === email) {
+      const store = await getStore(ctx);
+      const tval = await store.metaGet("teacher_google_email");
+      if (email && tval && tval.trim().toLowerCase() === email) {
         return { kind: "none", studentId: "", student: null };
       }
       await ensureRoster(ctx);
-      const rows = await db.select().from(students);
+      const rows = await store.studentsAll();
       for (const r of rows) {
         const st = parseState(r.stateJson);
         if (st.googleEmail && st.googleEmail.trim().toLowerCase() === email) {
@@ -9517,7 +10640,7 @@ var Actions = {
           return {
             kind: "student",
             studentId: r.id,
-            student: { id: r.id, name: r.name, groupName: r.groupName, badgeColor: r.badgeColor, state: st }
+            student: studentRowOut(r, { teacher: false, radioMaster: await readRadioLeoMaster(ctx) })
           };
         }
       }
@@ -9528,16 +10651,17 @@ var Actions = {
     description: "Link a Google account identity to a roster student (teacher session required).",
     request: object({ teacherToken: teacherTokenField, studentId: string2().min(1), email: string2().max(120) }),
     response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       const email = args.email.trim().toLowerCase();
       if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
         return { ok: false, reason: "bad-email" };
-      const db = ctx.db();
-      const trow = await db.select().from(meta2).where(eq(meta2.key, "teacher_google_email"));
-      if (email && trow[0]?.value && trow[0].value.trim().toLowerCase() === email) {
+      const store = await getStore(ctx);
+      const tval = await store.metaGet("teacher_google_email");
+      if (email && tval && tval.trim().toLowerCase() === email) {
         return { ok: false, reason: "teacher-email" };
       }
-      const rows = await db.select().from(students);
+      const rows = await store.studentsAll();
       for (const r of rows) {
         if (r.id === args.studentId)
           continue;
@@ -9551,7 +10675,7 @@ var Actions = {
         return { ok: false, reason: "no-student" };
       const st = parseState(target.stateJson);
       st.googleEmail = email;
-      await db.update(students).set({ stateJson: JSON.stringify(st), updatedAt: new Date }).where(eq(students.id, args.studentId));
+      await store.studentUpdateState(args.studentId, JSON.stringify(st));
       ctx.invalidateQueries();
       return { ok: true, reason: "" };
     }
@@ -9560,11 +10684,12 @@ var Actions = {
     description: "Record the teacher's Google email for account linking (teacher session required).",
     request: object({ teacherToken: teacherTokenField, email: string2().max(120) }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       const email = args.email.trim().toLowerCase();
-      const db = ctx.db();
-      await db.insert(meta2).values({ key: "teacher_google_email", value: email }).onConflictDoUpdate({ target: meta2.key, set: { value: email } });
+      const store = await getStore(ctx);
+      await store.metaSet("teacher_google_email", email);
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9573,25 +10698,83 @@ var Actions = {
     description: "Return the recorded teacher Google email (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ email: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      const row = await db.select().from(meta2).where(eq(meta2.key, "teacher_google_email"));
-      return { email: row[0]?.value ?? "" };
+      const store = await getStore(ctx);
+      return { email: await store.metaGet("teacher_google_email") ?? "" };
+    }
+  }),
+  getTeacherSetupStatus: defineAction({
+    description: "Report whether a teacher email and teacher PIN have been recorded, for the Maestro-door setup flow (booleans only, never the email itself).",
+    request: object({}),
+    response: object({ emailRecorded: boolean2(), pinConfigured: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx) {
+      return { emailRecorded: await readTeacherEmail(ctx) !== "", pinConfigured: await readTeacherPin(ctx) !== null };
+    }
+  }),
+  claimTeacherEmail: defineAction({
+    description: "Record the teacher Google email during first-run Maestro setup, only while no teacher email is recorded yet.",
+    request: object({ email: string2().min(3).max(120) }),
+    response: object({ ok: boolean2(), reason: string2(), pinConfigured: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const pinConfigured = await readTeacherPin(ctx) !== null;
+      const email = args.email.trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+        return { ok: false, reason: "bad-email", pinConfigured };
+      if (await readTeacherEmail(ctx) !== "")
+        return { ok: false, reason: "already-recorded", pinConfigured };
+      await ensureRoster(ctx);
+      const store = await getStore(ctx);
+      const rows = await store.studentsAll();
+      for (const r of rows) {
+        const st = parseState(r.stateJson);
+        if (st.googleEmail && st.googleEmail.trim().toLowerCase() === email) {
+          return { ok: false, reason: "student-email", pinConfigured };
+        }
+      }
+      await writeMeta(ctx, TEACHER_EMAIL_KEY, email);
+      ctx.invalidateQueries();
+      return { ok: true, reason: "", pinConfigured };
+    }
+  }),
+  checkTeacherEmail: defineAction({
+    description: "Check whether a Google sign-in email matches the recorded teacher email for the Maestro-door entry step (boolean only, separately rate-limited).",
+    request: object({ email: string2().min(3).max(120) }),
+    response: object({ match: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const recorded = await readTeacherEmail(ctx);
+      if (!recorded)
+        return { match: false, reason: "no-email" };
+      const fails = await readEmailFails(ctx);
+      if (fails.lockedUntil > Date.now())
+        return { match: false, reason: "locked" };
+      const email = args.email.trim().toLowerCase();
+      if (email === recorded) {
+        await writeMeta(ctx, TEACHER_EMAIL_FAILS_KEY, JSON.stringify({ count: 0, lockedUntil: 0 }));
+        return { match: true, reason: "" };
+      }
+      const count = fails.count + 1;
+      await writeMeta(ctx, TEACHER_EMAIL_FAILS_KEY, JSON.stringify({ count, lockedUntil: count >= 5 ? Date.now() + 5 * 60 * 1000 : 0 }));
+      return { match: false, reason: count >= 5 ? "locked" : "mismatch" };
     }
   }),
   addStudent: defineAction({
     description: "Add a new student to the roster, seeded at the class grade start (teacher session required).",
     request: object({ teacherToken: teacherTokenField, name: string2().min(1).max(40), groupName: string2().max(20).default("") }),
     response: object({ id: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       await ensureRoster(ctx);
-      const db = ctx.db();
+      const store = await getStore(ctx);
       const id = `st-${Date.now().toString(36)}-${randomHex(4)}`;
       const colors = ["#C1272D", "#0E7C7B", "#E85D9E", "#1565C0", "#2E7D32", "#EF6C00"];
       const grade = await readClassGrade(ctx);
-      await db.insert(students).values({
+      await store.studentInsert({
         id,
         name: args.name,
         groupName: args.groupName,
@@ -9602,14 +10785,52 @@ var Actions = {
       return { id };
     }
   }),
+  addStudentsBulk: defineAction({
+    description: "Add many students at once from a pasted class list, skipping blanks and names already on the roster (teacher session required).",
+    request: object({ teacherToken: teacherTokenField, names: array(string2().max(60)).max(200), groupName: string2().max(20).default("") }),
+    response: object({ added: number2(), skipped: number2(), addedNames: array(string2()) }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      await ensureRoster(ctx);
+      const store = await getStore(ctx);
+      const existing = new Set((await store.studentsAll()).map((r) => r.name));
+      const colors = ["#C1272D", "#0E7C7B", "#E85D9E", "#1565C0", "#2E7D32", "#EF6C00"];
+      const grade = await readClassGrade(ctx);
+      let added = 0;
+      let skipped = 0;
+      const addedNames = [];
+      for (const raw of args.names) {
+        const name = raw.trim().slice(0, 40);
+        if (!name || existing.has(name)) {
+          skipped += 1;
+          continue;
+        }
+        const id = `st-${Date.now().toString(36)}-${randomHex(4)}`;
+        await store.studentInsert({
+          id,
+          name,
+          groupName: args.groupName,
+          badgeColor: colors[Math.floor(Math.random() * colors.length)] ?? "#C1272D",
+          stateJson: JSON.stringify(defaultState("es", grade))
+        });
+        existing.add(name);
+        added += 1;
+        addedNames.push(name);
+      }
+      ctx.invalidateQueries();
+      return { added, skipped, addedNames };
+    }
+  }),
   setClassGrade: defineAction({
     description: "Record the class grade level used to seed new students' starting rungs (teacher session required).",
     request: object({ teacherToken: teacherTokenField, grade: _enum(["K", "1", "2", "3", "4", "5"]) }),
     response: object({ ok: literal(true), grade: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      await db.insert(meta2).values({ key: "class_grade", value: args.grade }).onConflictDoUpdate({ target: meta2.key, set: { value: args.grade } });
+      const store = await getStore(ctx);
+      await store.metaSet("class_grade", args.grade);
       ctx.invalidateQueries();
       return { ok: true, grade: args.grade };
     }
@@ -9618,10 +10839,11 @@ var Actions = {
     description: "Clear the class grade level so future students start with placement instead (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ ok: literal(true), grade: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      await db.delete(meta2).where(eq(meta2.key, "class_grade"));
+      const store = await getStore(ctx);
+      await store.metaDelete("class_grade");
       ctx.invalidateQueries();
       return { ok: true, grade: "" };
     }
@@ -9630,12 +10852,13 @@ var Actions = {
     description: "Raise existing students to the class grade starting rungs without lowering anyone or touching rewards (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ ok: boolean2(), grade: string2(), updated: number2(), total: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       const grade = await readClassGrade(ctx);
       const start = gradeStart(grade);
-      const db = ctx.db();
-      const rows = await db.select().from(students);
+      const store = await getStore(ctx);
+      const rows = await store.studentsAll();
       if (!start)
         return { ok: false, grade: "", updated: 0, total: rows.length };
       let updated = 0;
@@ -9664,7 +10887,7 @@ var Actions = {
         }
         if (changed || st.gradeSeed !== grade) {
           st.gradeSeed = grade;
-          await db.update(students).set({ stateJson: JSON.stringify(st), updatedAt: new Date }).where(eq(students.id, r.id));
+          await store.studentUpdateState(r.id, JSON.stringify(st));
           if (changed)
             updated += 1;
         }
@@ -9677,6 +10900,7 @@ var Actions = {
     description: "Return the seasonal event override settings (preview on / forced off).",
     request: object({}),
     response: object({ preview: boolean2(), off: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
       return readEventSettings(ctx);
     }
@@ -9685,11 +10909,12 @@ var Actions = {
     description: "Update the seasonal event overrides for the whole class (teacher session required).",
     request: object({ teacherToken: teacherTokenField, preview: boolean2(), off: boolean2() }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
+      const store = await getStore(ctx);
       for (const [key, on] of [["event_preview", args.preview], ["event_off", args.off]]) {
-        await db.insert(meta2).values({ key, value: on ? "1" : "0" }).onConflictDoUpdate({ target: meta2.key, set: { value: on ? "1" : "0" } });
+        await store.metaSet(key, on ? "1" : "0");
       }
       ctx.invalidateQueries();
       return { ok: true };
@@ -9699,31 +10924,210 @@ var Actions = {
     description: "Rename a roster student (teacher session required).",
     request: object({ teacherToken: teacherTokenField, id: string2().min(1), name: string2().min(1).max(40) }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      await db.update(students).set({ name: args.name }).where(eq(students.id, args.id));
+      const store = await getStore(ctx);
+      await store.studentUpdateName(args.id, args.name);
       ctx.invalidateQueries();
       return { ok: true };
+    }
+  }),
+  deleteStudent: defineAction({
+    description: "Permanently delete one student, their saved game state, points/progress, linked Google email, and their recordings (teacher session required).",
+    request: object({ teacherToken: teacherTokenField, id: string2().min(1).max(60) }),
+    response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      const store = await getStore(ctx);
+      const recs = await store.recordingsByStudent(args.id);
+      for (const r of recs) {
+        try {
+          await ctx.blobs.delete(r.blobKey);
+        } catch {}
+      }
+      await store.recordingsDeleteByStudent(args.id);
+      await store.assignmentsDeleteByTarget(args.id);
+      await store.metaDelete(`feelings_entries:${args.id}`);
+      await store.metaDelete(`checkin_dismissed:${args.id}`);
+      await store.studentDelete(args.id);
+      ctx.invalidateQueries();
+      return { ok: true };
+    }
+  }),
+  getPictureChallenge: defineAction({
+    description: "Return a shuffled set of picture tiles (the student's secret picture hidden among decoys) for the badge-entry picture challenge.",
+    request: object({ studentId: string2().min(1).max(60) }),
+    response: object({ hasPicture: boolean2(), tiles: array(string2()) }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const store = await getStore(ctx);
+      const row = await store.studentById(args.studentId);
+      const secret = row?.secretPicture ?? "";
+      if (!row || !isSecretPictureId(secret))
+        return { hasPicture: false, tiles: [] };
+      const decoys = shuffled(SECRET_PICTURE_IDS.filter((id) => id !== secret)).slice(0, 7);
+      return { hasPicture: true, tiles: shuffled([secret, ...decoys]) };
+    }
+  }),
+  verifySecretPicture: defineAction({
+    description: "Check a tapped picture against the student's secret picture server-side; on success return the student's saved state for entry, on failure a plain not-ok.",
+    request: object({ studentId: string2().min(1).max(60), pictureId: string2().min(1).max(40) }),
+    response: object({ ok: boolean2(), student: studentOut.nullable() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const store = await getStore(ctx);
+      const r = await store.studentById(args.studentId);
+      if (!r)
+        return { ok: false, student: null };
+      const radioMaster = await readRadioLeoMaster(ctx);
+      if (!isSecretPictureId(r.secretPicture))
+        return { ok: true, student: studentRowOut(r, { teacher: false, radioMaster }) };
+      if (args.pictureId !== r.secretPicture)
+        return { ok: false, student: null };
+      return { ok: true, student: studentRowOut(r, { teacher: false, radioMaster }) };
+    }
+  }),
+  setSecretPicture: defineAction({
+    description: "Set or clear (empty pictureId) a student's secret picture for badge-entry picture lock (teacher session required).",
+    request: object({ teacherToken: teacherTokenField, studentId: string2().min(1).max(60), pictureId: string2().max(40) }),
+    response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      if (args.pictureId !== "" && !isSecretPictureId(args.pictureId))
+        return { ok: false, reason: "bad-picture" };
+      const store = await getStore(ctx);
+      if (!await store.studentExists(args.studentId))
+        return { ok: false, reason: "no-student" };
+      await store.studentUpdateSecretPicture(args.studentId, args.pictureId);
+      ctx.invalidateQueries();
+      return { ok: true, reason: "" };
+    }
+  }),
+  verifyFamilyPeek: defineAction({
+    description: "Verify a family's tapped secret picture for the family progress peek; only on success return a read-only progress summary for that one student.",
+    request: object({ studentId: string2().min(1).max(60), pictureId: string2().min(1).max(40) }),
+    response: familyPeekResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      const store = await getStore(ctx);
+      const r = await store.studentById(args.studentId);
+      if (!r)
+        return { status: "wrong", summary: null };
+      if (!isSecretPictureId(r.secretPicture))
+        return { status: "no-picture", summary: null };
+      if (args.pictureId !== r.secretPicture)
+        return { status: "wrong", summary: null };
+      const st = parseState(r.stateJson);
+      const numTrack = (src) => {
+        const o = {};
+        for (const mode of ["math", "en", "es"])
+          o[mode] = typeof src?.[mode] === "number" ? src[mode] : 0;
+        return o;
+      };
+      const beltDates = {};
+      for (const [k, v] of Object.entries(st.beltDates ?? {}))
+        if (typeof v === "string")
+          beltDates[k] = v;
+      const mastery = {};
+      for (const [k, v] of Object.entries(st.mastery ?? {})) {
+        const m = v;
+        if (typeof m?.correct === "number" && typeof m?.total === "number")
+          mastery[k] = { correct: m.correct, total: m.total };
+      }
+      const recent = {};
+      for (const [k, v] of Object.entries(st.recent ?? {})) {
+        if (Array.isArray(v))
+          recent[k] = v.filter((n) => typeof n === "number");
+      }
+      return {
+        status: "ok",
+        summary: {
+          name: r.name,
+          badgeColor: r.badgeColor,
+          lang: st.lang === "en" ? "en" : "es",
+          avatar: {
+            mask: st.equipped.mask,
+            suit: st.equipped.suit,
+            cape: st.equipped.cape,
+            gear: st.equipped.gear,
+            trim: st.equipped.trim
+          },
+          puntos: st.puntosTotal,
+          rayos: st.rayos,
+          battlesWon: st.battlesWon,
+          belts: numTrack(st.belts),
+          beltWins: numTrack(st.beltWins),
+          beltDates,
+          esRung: st.esRung,
+          enRung: st.enRung,
+          gradeSeed: st.gradeSeed,
+          mastery,
+          recent,
+          booksRead: [...st.gardenDone ?? []],
+          scienceDone: [...st.scienceDone ?? []]
+        }
+      };
+    }
+  }),
+  getRadioLeoSettings: defineAction({
+    description: "Return the class-wide Radio Leo master switch state (teacher session required).",
+    request: object({ teacherToken: teacherTokenField }),
+    response: object({ masterEnabled: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      return { masterEnabled: await readRadioLeoMaster(ctx) };
+    }
+  }),
+  setRadioLeoMaster: defineAction({
+    description: "Set the class-wide Radio Leo master switch (teacher session required).",
+    request: object({ teacherToken: teacherTokenField, enabled: boolean2() }),
+    response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      const store = await getStore(ctx);
+      await store.metaSet(RADIO_LEO_MASTER_KEY, args.enabled ? "1" : "0");
+      ctx.invalidateQueries();
+      return { ok: true };
+    }
+  }),
+  setRadioLeoStudent: defineAction({
+    description: "Set one student's Radio Leo switch (teacher session required).",
+    request: object({ teacherToken: teacherTokenField, studentId: string2().min(1).max(60), enabled: boolean2() }),
+    response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      const store = await getStore(ctx);
+      if (!await store.studentExists(args.studentId))
+        return { ok: false, reason: "no-student" };
+      await store.studentUpdateRadioLeo(args.studentId, args.enabled);
+      ctx.invalidateQueries();
+      return { ok: true, reason: "" };
     }
   }),
   awardClassBattle: defineAction({
     description: "Record a class battle win in the shared class tally.",
     request: object({ rayos: number2().int().min(1).max(50) }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await ensureRoster(ctx);
-      const db = ctx.db();
-      const rows = await db.select().from(students);
+      const store = await getStore(ctx);
+      const rows = await store.studentsAll();
       for (const r of rows) {
         const st = parseState(r.stateJson);
         st.rayos += args.rayos;
         st.puntosTotal += args.rayos;
-        await db.update(students).set({ stateJson: JSON.stringify(st), updatedAt: new Date }).where(eq(students.id, r.id));
+        await store.studentUpdateState(r.id, JSON.stringify(st));
       }
-      const wins = await db.select().from(meta2).where(eq(meta2.key, "class_battle_wins"));
-      const n = (wins.length > 0 ? Number(wins[0]?.value ?? "0") || 0 : 0) + 1;
-      await db.insert(meta2).values({ key: "class_battle_wins", value: String(n) }).onConflictDoUpdate({ target: meta2.key, set: { value: String(n) } });
+      const winsVal = await store.metaGet("class_battle_wins");
+      const n = (winsVal !== undefined ? Number(winsVal) || 0 : 0) + 1;
+      await store.metaSet("class_battle_wins", String(n));
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9732,10 +11136,11 @@ var Actions = {
     description: "List teacher assignments (class, group, or student targeted) with their windows.",
     request: object({}),
     response: object({ assignments: array(assignmentOut), classBattleWins: number2(), classGrade: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const db = ctx.db();
-      const rows = await db.select().from(assignments).orderBy(asc(assignments.id));
-      const wins = await db.select().from(meta2).where(eq(meta2.key, "class_battle_wins"));
+      const store = await getStore(ctx);
+      const rows = await store.assignmentsAll();
+      const winsVal = await store.metaGet("class_battle_wins");
       const classGrade = await readClassGrade(ctx);
       return {
         assignments: rows.map((r) => ({
@@ -9750,7 +11155,7 @@ var Actions = {
           windowStart: r.windowStart,
           windowEnd: r.windowEnd
         })),
-        classBattleWins: wins.length > 0 ? Number(wins[0]?.value ?? "0") || 0 : 0,
+        classBattleWins: winsVal !== undefined ? Number(winsVal) || 0 : 0,
         classGrade
       };
     }
@@ -9770,10 +11175,11 @@ var Actions = {
       windowEnd: string2().min(8).max(12)
     }),
     response: object({ id: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      const result = await db.insert(assignments).values({
+      const store = await getStore(ctx);
+      const id = await store.assignmentInsert({
         title: args.title,
         targetType: args.targetType,
         targetId: args.targetId,
@@ -9783,22 +11189,20 @@ var Actions = {
         grade: args.grade,
         windowStart: args.windowStart,
         windowEnd: args.windowEnd
-      }).returning({ id: assignments.id });
-      const inserted = result[0];
-      if (!inserted)
-        throw new Error("createAssignment: no row returned");
+      });
       ctx.invalidateQueries();
-      return { id: inserted.id };
+      return { id };
     }
   }),
   deleteAssignment: defineAction({
     description: "Delete a teacher assignment (teacher session required).",
     request: object({ teacherToken: teacherTokenField, id: number2().int() }),
     response: okResponse,
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      await db.delete(assignments).where(eq(assignments.id, args.id));
+      const store = await getStore(ctx);
+      await store.assignmentDelete(args.id);
       ctx.invalidateQueries();
       return { ok: true };
     }
@@ -9813,6 +11217,7 @@ var Actions = {
       durationMin: number2().int().min(3).max(20)
     }),
     response: object({ ok: literal(true), code: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       const code = makeClassCode().slice(0, 4);
@@ -9846,11 +11251,12 @@ var Actions = {
     description: "Return the live state of the current treasure session.",
     request: object({}),
     response: object({ session: unknown() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "treasure_session"));
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("treasure_session");
       try {
-        return { session: rows[0]?.value ? JSON.parse(rows[0].value) : null };
+        return { session: raw ? JSON.parse(raw) : null };
       } catch {
         return { session: null };
       }
@@ -9860,12 +11266,13 @@ var Actions = {
     description: "Join the live treasure session as a roster student using the join code.",
     request: object({ code: string2().min(1).max(8), studentId: string2().min(1).max(60), name: string2().min(1).max(40) }),
     response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "treasure_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("treasure_session");
+      if (!raw)
         return { ok: false, reason: "no-session" };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (!s.active || s.ended)
         return { ok: false, reason: "ended" };
       if (args.code.trim().toUpperCase() !== s.code.toUpperCase())
@@ -9890,12 +11297,13 @@ var Actions = {
       kind: _enum(["normal", "respira", "puente", "catchup"])
     }),
     response: object({ ok: boolean2(), gold: number2(), classPool: number2(), rudoStash: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "treasure_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("treasure_session");
+      if (!raw)
         return { ok: false, gold: 0, classPool: 0, rudoStash: 0 };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (!s.active || s.ended)
         return { ok: false, gold: 0, classPool: s.classPool ?? 0, rudoStash: s.rudoStash ?? 0 };
       const me = s.perStudent[args.studentId] ?? { name: args.name, gold: 0, correct: 0, answered: 0, respira: 0, puente: 0, comebacks: 0 };
@@ -9929,12 +11337,13 @@ var Actions = {
     description: "Advance the treasure session clock check and report whether time remains.",
     request: object({}),
     response: object({ ok: boolean2(), rudoStash: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "treasure_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("treasure_session");
+      if (!raw)
         return { ok: false, rudoStash: 0 };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (!s.active || s.ended || Date.now() > s.endsAt)
         return { ok: true, rudoStash: s.rudoStash };
       const elapsed = Date.now() - (s.lastTick || Date.now());
@@ -9951,13 +11360,14 @@ var Actions = {
     description: "End the live treasure session and compute its class summary (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ ok: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "treasure_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("treasure_session");
+      if (!raw)
         return { ok: false };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (s.ended)
         return { ok: true };
       s.active = false;
@@ -9984,12 +11394,12 @@ var Actions = {
         for (const p of players) {
           if (p.answered < 1)
             continue;
-          const row = await db.select().from(students).where(eq(students.id, p.id));
-          if (!row[0])
+          const row = await store.studentById(p.id);
+          if (!row)
             continue;
-          const st = parseState(row[0].stateJson);
+          const st = parseState(row.stateJson);
           st.rayos += award;
-          await db.update(students).set({ stateJson: JSON.stringify(st), updatedAt: new Date }).where(eq(students.id, p.id));
+          await store.studentUpdateState(p.id, JSON.stringify(st));
         }
       }
       ctx.invalidateQueries();
@@ -10009,6 +11419,7 @@ var Actions = {
       themeId: string2().min(1).max(40).default("oro")
     }),
     response: object({ ok: literal(true), code: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
       const code = makeClassCode().slice(0, 4);
@@ -10045,13 +11456,14 @@ var Actions = {
     description: "Return the live hosted session state, including the names-and-gold-only scoreboard projection.",
     request: object({}),
     response: object({ session: unknown() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "hosted_session"));
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("hosted_session");
       try {
-        if (!rows[0]?.value)
+        if (!raw)
           return { session: null };
-        const s = JSON.parse(rows[0].value);
+        const s = JSON.parse(raw);
         const scoreboard = Object.values(s.perStudent ?? {}).map((p) => ({ name: p.name, gold: p.gold })).sort((a, b) => b.gold - a.gold || a.name.localeCompare(b.name));
         return {
           session: {
@@ -10098,13 +11510,14 @@ var Actions = {
         comebacks: number2()
       }).nullable()
     }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "hosted_session"));
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("hosted_session");
       try {
-        if (!rows[0]?.value)
+        if (!raw)
           return { row: null };
-        const s = JSON.parse(rows[0].value);
+        const s = JSON.parse(raw);
         const me = s.perStudent?.[args.studentId];
         return {
           row: me ? { name: me.name, gold: me.gold, correct: me.correct, answered: me.answered, respira: me.respira, puente: me.puente, comebacks: me.comebacks } : null
@@ -10118,12 +11531,13 @@ var Actions = {
     description: "Join the live hosted session as a roster student using the join code.",
     request: object({ code: string2().min(1).max(8), studentId: string2().min(1).max(60), name: string2().min(1).max(40) }),
     response: object({ ok: boolean2(), reason: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "hosted_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("hosted_session");
+      if (!raw)
         return { ok: false, reason: "no-session" };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (!s.active || s.ended)
         return { ok: false, reason: "ended" };
       if (args.code.trim().toUpperCase() !== s.code.toUpperCase())
@@ -10148,12 +11562,13 @@ var Actions = {
       kind: string2().min(1).max(20)
     }),
     response: object({ ok: boolean2(), gold: number2(), classPool: number2(), rivalStash: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "hosted_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("hosted_session");
+      if (!raw)
         return { ok: false, gold: 0, classPool: 0, rivalStash: 0 };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (!s.active || s.ended)
         return { ok: false, gold: 0, classPool: s.classPool ?? 0, rivalStash: s.rivalStash ?? 0 };
       const me = s.perStudent[args.studentId] ?? { name: args.name, gold: 0, correct: 0, answered: 0, respira: 0, puente: 0, comebacks: 0 };
@@ -10188,12 +11603,13 @@ var Actions = {
     description: "Advance the hosted session clock check and report whether time remains.",
     request: object({ amount: number2().int().min(1).max(10).default(4) }),
     response: object({ ok: boolean2(), rivalStash: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "hosted_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("hosted_session");
+      if (!raw)
         return { ok: false, rivalStash: 0 };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (!s.active || s.ended || Date.now() > s.endsAt)
         return { ok: true, rivalStash: s.rivalStash };
       const elapsed = Date.now() - (s.lastTick || Date.now());
@@ -10210,13 +11626,14 @@ var Actions = {
     description: "End the live hosted session and compute its class-level summary (teacher session required).",
     request: object({ teacherToken: teacherTokenField }),
     response: object({ ok: boolean2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       await requireTeacher(ctx, args.teacherToken);
-      const db = ctx.db();
-      const rows = await db.select().from(meta2).where(eq(meta2.key, "hosted_session"));
-      if (!rows[0]?.value)
+      const store = await getStore(ctx);
+      const raw = await store.metaGet("hosted_session");
+      if (!raw)
         return { ok: false };
-      const s = JSON.parse(rows[0].value);
+      const s = JSON.parse(raw);
       if (s.ended)
         return { ok: true };
       s.active = false;
@@ -10246,12 +11663,12 @@ var Actions = {
         for (const p of players) {
           if (p.answered < 1)
             continue;
-          const row = await db.select().from(students).where(eq(students.id, p.id));
-          if (!row[0])
+          const row = await store.studentById(p.id);
+          if (!row)
             continue;
-          const st = parseState(row[0].stateJson);
+          const st = parseState(row.stateJson);
           st.rayos += award;
-          await db.update(students).set({ stateJson: JSON.stringify(st), updatedAt: new Date }).where(eq(students.id, p.id));
+          await store.studentUpdateState(p.id, JSON.stringify(st));
         }
       }
       ctx.invalidateQueries();
@@ -10261,5 +11678,6 @@ var Actions = {
 };
 export {
   Actions,
-  CLASS_GRADES
+  CLASS_GRADES,
+  SECRET_PICTURE_IDS
 };

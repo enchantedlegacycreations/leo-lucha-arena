@@ -3548,6 +3548,258 @@
       }
      ],
      "answer": 0
+    },
+    {
+     "text": "Tito tiene un perro. El perro se llama Sol. Sol corre en el patio. Sol duerme en una caja grande.",
+     "clip": "es_fpass_6",
+     "questions": [
+      {
+       "question": "¿Cómo se llama el perro?",
+       "qclip": "es_fq_6_0",
+       "choices": [
+        {
+         "w": "Luna",
+         "clip": "es_fch_6_0_0"
+        },
+        {
+         "w": "Sol",
+         "clip": "es_fch_6_0_1"
+        },
+        {
+         "w": "Pato",
+         "clip": "es_fch_6_0_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "¿Cómo se llama el perro?",
+     "qclip": "es_fq_6_0",
+     "choices": [
+      {
+       "w": "Luna",
+       "clip": "es_fch_6_0_0"
+      },
+      {
+       "w": "Sol",
+       "clip": "es_fch_6_0_1"
+      },
+      {
+       "w": "Pato",
+       "clip": "es_fch_6_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "La vaca come pasto verde. La vaca da leche. Mamá pone la leche en un vaso. ¡La leche es rica!",
+     "clip": "es_fpass_7",
+     "questions": [
+      {
+       "question": "¿Qué da la vaca?",
+       "qclip": "es_fq_7_0",
+       "choices": [
+        {
+         "w": "huevos",
+         "clip": "es_fch_7_0_0"
+        },
+        {
+         "w": "lana",
+         "clip": "es_fch_7_0_1"
+        },
+        {
+         "w": "leche",
+         "clip": "es_fch_7_0_2"
+        }
+       ],
+       "answer": 2
+      }
+     ],
+     "question": "¿Qué da la vaca?",
+     "qclip": "es_fq_7_0",
+     "choices": [
+      {
+       "w": "huevos",
+       "clip": "es_fch_7_0_0"
+      },
+      {
+       "w": "lana",
+       "clip": "es_fch_7_0_1"
+      },
+      {
+       "w": "leche",
+       "clip": "es_fch_7_0_2"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "text": "Pablo pinta un barco. El barco es azul y blanco. Pablo pone el barco en el agua. ¡El barco flota!",
+     "clip": "es_fpass_8",
+     "questions": [
+      {
+       "question": "¿De qué color es el barco?",
+       "qclip": "es_fq_8_0",
+       "choices": [
+        {
+         "w": "azul y blanco",
+         "clip": "es_fch_8_0_0"
+        },
+        {
+         "w": "rojo y negro",
+         "clip": "es_fch_8_0_1"
+        },
+        {
+         "w": "verde y rosa",
+         "clip": "es_fch_8_0_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "¿De qué color es el barco?",
+     "qclip": "es_fq_8_0",
+     "choices": [
+      {
+       "w": "azul y blanco",
+       "clip": "es_fch_8_0_0"
+      },
+      {
+       "w": "rojo y negro",
+       "clip": "es_fch_8_0_1"
+      },
+      {
+       "w": "verde y rosa",
+       "clip": "es_fch_8_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "La gallina pone un huevo. El huevo es blanco y redondo. Un día, el huevo se abre. ¡Sale un pollito!",
+     "clip": "es_fpass_9",
+     "questions": [
+      {
+       "question": "¿Qué sale del huevo?",
+       "qclip": "es_fq_9_0",
+       "choices": [
+        {
+         "w": "un pato",
+         "clip": "es_fch_9_0_0"
+        },
+        {
+         "w": "un pollito",
+         "clip": "es_fch_9_0_1"
+        },
+        {
+         "w": "un sapo",
+         "clip": "es_fch_9_0_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "¿Qué sale del huevo?",
+     "qclip": "es_fq_9_0",
+     "choices": [
+      {
+       "w": "un pato",
+       "clip": "es_fch_9_0_0"
+      },
+      {
+       "w": "un pollito",
+       "clip": "es_fch_9_0_1"
+      },
+      {
+       "w": "un sapo",
+       "clip": "es_fch_9_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "Mina sube la loma con su papá. En la loma hay una casa. En la casa vive su tía Rosa. La tía Rosa les da pan.",
+     "clip": "es_fpass_10",
+     "questions": [
+      {
+       "question": "¿Quién vive en la casa?",
+       "qclip": "es_fq_10_0",
+       "choices": [
+        {
+         "w": "su abuela",
+         "clip": "es_fch_10_0_0"
+        },
+        {
+         "w": "su maestra",
+         "clip": "es_fch_10_0_1"
+        },
+        {
+         "w": "su tía Rosa",
+         "clip": "es_fch_10_0_2"
+        }
+       ],
+       "answer": 2
+      }
+     ],
+     "question": "¿Quién vive en la casa?",
+     "qclip": "es_fq_10_0",
+     "choices": [
+      {
+       "w": "su abuela",
+       "clip": "es_fch_10_0_0"
+      },
+      {
+       "w": "su maestra",
+       "clip": "es_fch_10_0_1"
+      },
+      {
+       "w": "su tía Rosa",
+       "clip": "es_fch_10_0_2"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "text": "El mono vive en un palo alto. El mono come una banana. El mono salta de palo en palo. El mono ríe: ¡ji, ji, ji!",
+     "clip": "es_fpass_11",
+     "questions": [
+      {
+       "question": "¿Qué come el mono?",
+       "qclip": "es_fq_11_0",
+       "choices": [
+        {
+         "w": "una banana",
+         "clip": "es_fch_11_0_0"
+        },
+        {
+         "w": "una pera",
+         "clip": "es_fch_11_0_1"
+        },
+        {
+         "w": "un queso",
+         "clip": "es_fch_11_0_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "¿Qué come el mono?",
+     "qclip": "es_fq_11_0",
+     "choices": [
+      {
+       "w": "una banana",
+       "clip": "es_fch_11_0_0"
+      },
+      {
+       "w": "una pera",
+       "clip": "es_fch_11_0_1"
+      },
+      {
+       "w": "un queso",
+       "clip": "es_fch_11_0_2"
+      }
+     ],
+     "answer": 0
     }
    ]
   },
@@ -3922,6 +4174,372 @@
       }
      ],
      "answer": 0
+    },
+    {
+     "text": "Sara va a la biblioteca de su barrio. Sara busca un libro de animales. La bibliotecaria la ayuda a buscar. Sara lee el libro en una mesa. Al fin, Sara pide el libro para su casa.",
+     "clip": "es_cpass_6",
+     "questions": [
+      {
+       "question": "¿Qué busca Sara?",
+       "qclip": "es_cq_6_0",
+       "choices": [
+        {
+         "w": "un libro de animales",
+         "clip": "es_cch_6_0_0"
+        },
+        {
+         "w": "un libro de cocina",
+         "clip": "es_cch_6_0_1"
+        },
+        {
+         "w": "una pelota roja",
+         "clip": "es_cch_6_0_2"
+        }
+       ],
+       "answer": 0
+      },
+      {
+       "question": "¿Por qué pide Sara el libro para su casa?",
+       "qclip": "es_cq_6_1",
+       "choices": [
+        {
+         "w": "Para seguir leyendo en su casa",
+         "clip": "es_cch_6_1_0"
+        },
+        {
+         "w": "Para dar el libro a su perro",
+         "clip": "es_cch_6_1_1"
+        },
+        {
+         "w": "Para poner flores en el libro",
+         "clip": "es_cch_6_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "¿Qué busca Sara?",
+     "qclip": "es_cq_6_0",
+     "choices": [
+      {
+       "w": "un libro de animales",
+       "clip": "es_cch_6_0_0"
+      },
+      {
+       "w": "un libro de cocina",
+       "clip": "es_cch_6_0_1"
+      },
+      {
+       "w": "una pelota roja",
+       "clip": "es_cch_6_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "Don Luis vende fruta en el mercado. Vende mangos, peras y uvas. Una niña compra tres mangos para su mamá. Don Luis pone la fruta en una bolsa. La niña dice: ¡gracias!",
+     "clip": "es_cpass_7",
+     "questions": [
+      {
+       "question": "¿Qué vende Don Luis?",
+       "qclip": "es_cq_7_0",
+       "choices": [
+        {
+         "w": "zapatos",
+         "clip": "es_cch_7_0_0"
+        },
+        {
+         "w": "fruta",
+         "clip": "es_cch_7_0_1"
+        },
+        {
+         "w": "libros",
+         "clip": "es_cch_7_0_2"
+        }
+       ],
+       "answer": 1
+      },
+      {
+       "question": "¿Para quién son los mangos?",
+       "qclip": "es_cq_7_1",
+       "choices": [
+        {
+         "w": "para su maestra",
+         "clip": "es_cch_7_1_0"
+        },
+        {
+         "w": "para su perro",
+         "clip": "es_cch_7_1_1"
+        },
+        {
+         "w": "para su mamá",
+         "clip": "es_cch_7_1_2"
+        }
+       ],
+       "answer": 2
+      }
+     ],
+     "question": "¿Qué vende Don Luis?",
+     "qclip": "es_cq_7_0",
+     "choices": [
+      {
+       "w": "zapatos",
+       "clip": "es_cch_7_0_0"
+      },
+      {
+       "w": "fruta",
+       "clip": "es_cch_7_0_1"
+      },
+      {
+       "w": "libros",
+       "clip": "es_cch_7_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "Hoy, Nora y su papá van en tren a la ciudad. El tren pasa por el río y por las lomas. Nora mira por la ventana. ¡Qué rápido va el tren! Al fin, llegan a la ciudad.",
+     "clip": "es_cpass_8",
+     "questions": [
+      {
+       "question": "¿En qué van Nora y su papá?",
+       "qclip": "es_cq_8_0",
+       "choices": [
+        {
+         "w": "en tren",
+         "clip": "es_cch_8_0_0"
+        },
+        {
+         "w": "en barco",
+         "clip": "es_cch_8_0_1"
+        },
+        {
+         "w": "en bicicleta",
+         "clip": "es_cch_8_0_2"
+        }
+       ],
+       "answer": 0
+      },
+      {
+       "question": "¿Por qué mira Nora por la ventana?",
+       "qclip": "es_cq_8_1",
+       "choices": [
+        {
+         "w": "Porque busca a su gato",
+         "clip": "es_cch_8_1_0"
+        },
+        {
+         "w": "Porque quiere ver el río y las lomas",
+         "clip": "es_cch_8_1_1"
+        },
+        {
+         "w": "Porque tiene sueño",
+         "clip": "es_cch_8_1_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "¿En qué van Nora y su papá?",
+     "qclip": "es_cq_8_0",
+     "choices": [
+      {
+       "w": "en tren",
+       "clip": "es_cch_8_0_0"
+      },
+      {
+       "w": "en barco",
+       "clip": "es_cch_8_0_1"
+      },
+      {
+       "w": "en bicicleta",
+       "clip": "es_cch_8_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "Es la primera vez que Tomás ve la nieve. La nieve cae suave y blanca. Tomás toca la nieve con la mano. ¡Está muy fría! Tomás ríe y hace una bola de nieve.",
+     "clip": "es_cpass_9",
+     "questions": [
+      {
+       "question": "¿Qué ve Tomás por primera vez?",
+       "qclip": "es_cq_9_0",
+       "choices": [
+        {
+         "w": "la lluvia",
+         "clip": "es_cch_9_0_0"
+        },
+        {
+         "w": "el mar",
+         "clip": "es_cch_9_0_1"
+        },
+        {
+         "w": "la nieve",
+         "clip": "es_cch_9_0_2"
+        }
+       ],
+       "answer": 2
+      },
+      {
+       "question": "¿Cómo sabe Tomás que la nieve está fría?",
+       "qclip": "es_cq_9_1",
+       "choices": [
+        {
+         "w": "Porque la toca con la mano",
+         "clip": "es_cch_9_1_0"
+        },
+        {
+         "w": "Porque se la come",
+         "clip": "es_cch_9_1_1"
+        },
+        {
+         "w": "Porque su papá se lo dice",
+         "clip": "es_cch_9_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "¿Qué ve Tomás por primera vez?",
+     "qclip": "es_cq_9_0",
+     "choices": [
+      {
+       "w": "la lluvia",
+       "clip": "es_cch_9_0_0"
+      },
+      {
+       "w": "el mar",
+       "clip": "es_cch_9_0_1"
+      },
+      {
+       "w": "la nieve",
+       "clip": "es_cch_9_0_2"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "text": "Los niños del barrio juegan fútbol en el parque. Ana pasa el balón a Luis. Luis corre y patea. ¡Gol! Todos los niños saltan y ríen. Al fin, toman agua y descansan.",
+     "clip": "es_cpass_10",
+     "questions": [
+      {
+       "question": "¿A qué juegan los niños?",
+       "qclip": "es_cq_10_0",
+       "choices": [
+        {
+         "w": "a las escondidas",
+         "clip": "es_cch_10_0_0"
+        },
+        {
+         "w": "fútbol",
+         "clip": "es_cch_10_0_1"
+        },
+        {
+         "w": "a saltar la cuerda",
+         "clip": "es_cch_10_0_2"
+        }
+       ],
+       "answer": 1
+      },
+      {
+       "question": "¿Por qué saltan y ríen los niños?",
+       "qclip": "es_cq_10_1",
+       "choices": [
+        {
+         "w": "Porque Luis hace un gol",
+         "clip": "es_cch_10_1_0"
+        },
+        {
+         "w": "Porque empieza a llover",
+         "clip": "es_cch_10_1_1"
+        },
+        {
+         "w": "Porque ven un perro",
+         "clip": "es_cch_10_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "¿A qué juegan los niños?",
+     "qclip": "es_cq_10_0",
+     "choices": [
+      {
+       "w": "a las escondidas",
+       "clip": "es_cch_10_0_0"
+      },
+      {
+       "w": "fútbol",
+       "clip": "es_cch_10_0_1"
+      },
+      {
+       "w": "a saltar la cuerda",
+       "clip": "es_cch_10_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "La clase va de paseo al río. La maestra dice: miren los peces. Los peces son chicos y de colores. Un pez salta: ¡plaf! Los niños miran y no tocan el agua.",
+     "clip": "es_cpass_11",
+     "questions": [
+      {
+       "question": "¿Qué miran los niños en el río?",
+       "qclip": "es_cq_11_0",
+       "choices": [
+        {
+         "w": "barcos grandes",
+         "clip": "es_cch_11_0_0"
+        },
+        {
+         "w": "peces de colores",
+         "clip": "es_cch_11_0_1"
+        },
+        {
+         "w": "una tortuga",
+         "clip": "es_cch_11_0_2"
+        }
+       ],
+       "answer": 1
+      },
+      {
+       "question": "¿Por qué miran los niños sin tocar el agua?",
+       "qclip": "es_cq_11_1",
+       "choices": [
+        {
+         "w": "Porque cuidan a los peces",
+         "clip": "es_cch_11_1_0"
+        },
+        {
+         "w": "Porque el agua está muy lejos",
+         "clip": "es_cch_11_1_1"
+        },
+        {
+         "w": "Porque buscan una pelota",
+         "clip": "es_cch_11_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "¿Qué miran los niños en el río?",
+     "qclip": "es_cq_11_0",
+     "choices": [
+      {
+       "w": "barcos grandes",
+       "clip": "es_cch_11_0_0"
+      },
+      {
+       "w": "peces de colores",
+       "clip": "es_cch_11_0_1"
+      },
+      {
+       "w": "una tortuga",
+       "clip": "es_cch_11_0_2"
+      }
+     ],
+     "answer": 1
     }
    ]
   }
@@ -3940,6 +4558,10 @@
      "word": {
       "w": "apple",
       "clip": "en_w_apple"
+     },
+     "word2": {
+      "w": "ant",
+      "clip": "en_w_ant"
      }
     },
     {
@@ -3949,6 +4571,10 @@
      "word": {
       "w": "ball",
       "clip": "en_w_ball"
+     },
+     "word2": {
+      "w": "bear",
+      "clip": "en_w_bear"
      }
     },
     {
@@ -3958,6 +4584,10 @@
      "word": {
       "w": "cat",
       "clip": "en_w_cat"
+     },
+     "word2": {
+      "w": "cow",
+      "clip": "en_w_cow"
      }
     },
     {
@@ -3967,6 +4597,10 @@
      "word": {
       "w": "dog",
       "clip": "en_w_dog"
+     },
+     "word2": {
+      "w": "duck",
+      "clip": "en_w_duck"
      }
     },
     {
@@ -3976,6 +4610,10 @@
      "word": {
       "w": "egg",
       "clip": "en_w_egg"
+     },
+     "word2": {
+      "w": "elk",
+      "clip": "en_w_elk"
      }
     },
     {
@@ -3985,6 +4623,10 @@
      "word": {
       "w": "fish",
       "clip": "en_w_fish"
+     },
+     "word2": {
+      "w": "frog",
+      "clip": "en_w_frog"
      }
     },
     {
@@ -3994,6 +4636,10 @@
      "word": {
       "w": "goat",
       "clip": "en_w_goat"
+     },
+     "word2": {
+      "w": "grapes",
+      "clip": "en_w_grapes"
      }
     },
     {
@@ -4003,6 +4649,10 @@
      "word": {
       "w": "hat",
       "clip": "en_w_hat"
+     },
+     "word2": {
+      "w": "horse",
+      "clip": "en_w_horse"
      }
     },
     {
@@ -4012,6 +4662,10 @@
      "word": {
       "w": "igloo",
       "clip": "en_w_igloo"
+     },
+     "word2": {
+      "w": "insect",
+      "clip": "en_w_insect"
      }
     },
     {
@@ -4021,6 +4675,10 @@
      "word": {
       "w": "jam",
       "clip": "en_w_jam"
+     },
+     "word2": {
+      "w": "juice",
+      "clip": "en_w_juice"
      }
     },
     {
@@ -4030,6 +4688,10 @@
      "word": {
       "w": "kite",
       "clip": "en_w_kite"
+     },
+     "word2": {
+      "w": "koala",
+      "clip": "en_w_koala"
      }
     },
     {
@@ -4039,6 +4701,10 @@
      "word": {
       "w": "lion",
       "clip": "en_w_lion"
+     },
+     "word2": {
+      "w": "lemon",
+      "clip": "en_w_lemon"
      }
     },
     {
@@ -4048,6 +4714,10 @@
      "word": {
       "w": "map",
       "clip": "en_w_map"
+     },
+     "word2": {
+      "w": "monkey",
+      "clip": "en_w_monkey"
      }
     },
     {
@@ -4057,6 +4727,10 @@
      "word": {
       "w": "nest",
       "clip": "en_w_nest"
+     },
+     "word2": {
+      "w": "nose",
+      "clip": "en_w_nose"
      }
     },
     {
@@ -4066,6 +4740,10 @@
      "word": {
       "w": "octopus",
       "clip": "en_w_octopus"
+     },
+     "word2": {
+      "w": "orange",
+      "clip": "en_w_orange"
      }
     },
     {
@@ -4075,6 +4753,10 @@
      "word": {
       "w": "pig",
       "clip": "en_w_pig"
+     },
+     "word2": {
+      "w": "panda",
+      "clip": "en_w_panda"
      }
     },
     {
@@ -4084,6 +4766,10 @@
      "word": {
       "w": "queen",
       "clip": "en_w_queen"
+     },
+     "word2": {
+      "w": "quilt",
+      "clip": "en_w_quilt"
      }
     },
     {
@@ -4093,6 +4779,10 @@
      "word": {
       "w": "rat",
       "clip": "en_w_rat"
+     },
+     "word2": {
+      "w": "rabbit",
+      "clip": "en_w_rabbit"
      }
     },
     {
@@ -4102,6 +4792,10 @@
      "word": {
       "w": "sun",
       "clip": "en_w_sun"
+     },
+     "word2": {
+      "w": "snake",
+      "clip": "en_w_snake"
      }
     },
     {
@@ -4111,6 +4805,10 @@
      "word": {
       "w": "top",
       "clip": "en_w_top"
+     },
+     "word2": {
+      "w": "tiger",
+      "clip": "en_w_tiger"
      }
     },
     {
@@ -4120,6 +4818,10 @@
      "word": {
       "w": "umbrella",
       "clip": "en_w_umbrella"
+     },
+     "word2": {
+      "w": "up",
+      "clip": "en_w_up"
      }
     },
     {
@@ -4129,6 +4831,10 @@
      "word": {
       "w": "van",
       "clip": "en_w_van"
+     },
+     "word2": {
+      "w": "violin",
+      "clip": "en_w_violin"
      }
     },
     {
@@ -4138,6 +4844,10 @@
      "word": {
       "w": "web",
       "clip": "en_w_web"
+     },
+     "word2": {
+      "w": "wolf",
+      "clip": "en_w_wolf"
      }
     },
     {
@@ -4147,6 +4857,10 @@
      "word": {
       "w": "box",
       "clip": "en_w_box"
+     },
+     "word2": {
+      "w": "fox",
+      "clip": "en_w_fox"
      }
     },
     {
@@ -4156,6 +4870,10 @@
      "word": {
       "w": "yo-yo",
       "clip": "en_w_yo_yo"
+     },
+     "word2": {
+      "w": "yarn",
+      "clip": "en_w_yarn"
      }
     },
     {
@@ -4165,6 +4883,10 @@
      "word": {
       "w": "zebra",
       "clip": "en_w_zebra"
+     },
+     "word2": {
+      "w": "zoo",
+      "clip": "en_w_zoo"
      }
     }
    ]
@@ -4218,6 +4940,50 @@
     {
      "w": "web",
      "clip": "en_w_web"
+    },
+    {
+     "w": "bat",
+     "clip": "en_w_bat"
+    },
+    {
+     "w": "cap",
+     "clip": "en_w_cap"
+    },
+    {
+     "w": "fan",
+     "clip": "en_w_fan"
+    },
+    {
+     "w": "jet",
+     "clip": "en_w_jet"
+    },
+    {
+     "w": "kid",
+     "clip": "en_w_kid"
+    },
+    {
+     "w": "lip",
+     "clip": "en_w_lip"
+    },
+    {
+     "w": "mop",
+     "clip": "en_w_mop"
+    },
+    {
+     "w": "nut",
+     "clip": "en_w_nut"
+    },
+    {
+     "w": "pan",
+     "clip": "en_w_pan"
+    },
+    {
+     "w": "rug",
+     "clip": "en_w_rug"
+    },
+    {
+     "w": "zip",
+     "clip": "en_w_zip"
     }
    ]
   },
@@ -4238,6 +5004,14 @@
       {
        "w": "fish",
        "clip": "en_w_fish"
+      },
+      {
+       "w": "shell",
+       "clip": "en_w_shell"
+      },
+      {
+       "w": "wash",
+       "clip": "en_w_wash"
       }
      ]
     },
@@ -4252,6 +5026,14 @@
       {
        "w": "lunch",
        "clip": "en_w_lunch"
+      },
+      {
+       "w": "chick",
+       "clip": "en_w_chick"
+      },
+      {
+       "w": "cheese",
+       "clip": "en_w_cheese"
       }
      ]
     },
@@ -4266,6 +5048,14 @@
       {
        "w": "bath",
        "clip": "en_w_bath"
+      },
+      {
+       "w": "three",
+       "clip": "en_w_three"
+      },
+      {
+       "w": "teeth",
+       "clip": "en_w_teeth"
       }
      ]
     },
@@ -4280,6 +5070,14 @@
       {
        "w": "when",
        "clip": "en_w_when"
+      },
+      {
+       "w": "wheel",
+       "clip": "en_w_wheel"
+      },
+      {
+       "w": "white",
+       "clip": "en_w_white"
       }
      ]
     },
@@ -4294,6 +5092,14 @@
       {
        "w": "block",
        "clip": "en_w_block"
+      },
+      {
+       "w": "blow",
+       "clip": "en_w_blow"
+      },
+      {
+       "w": "blend",
+       "clip": "en_w_blend"
       }
      ]
     },
@@ -4308,6 +5114,14 @@
       {
        "w": "clock",
        "clip": "en_w_clock"
+      },
+      {
+       "w": "cloud",
+       "clip": "en_w_cloud"
+      },
+      {
+       "w": "clean",
+       "clip": "en_w_clean"
       }
      ]
     },
@@ -4322,6 +5136,14 @@
       {
        "w": "fly",
        "clip": "en_w_fly"
+      },
+      {
+       "w": "float",
+       "clip": "en_w_float"
+      },
+      {
+       "w": "floor",
+       "clip": "en_w_floor"
       }
      ]
     },
@@ -4336,6 +5158,14 @@
       {
        "w": "stick",
        "clip": "en_w_stick"
+      },
+      {
+       "w": "stone",
+       "clip": "en_w_stone"
+      },
+      {
+       "w": "stamp",
+       "clip": "en_w_stamp"
       }
      ]
     }
@@ -4358,6 +5188,14 @@
       {
        "w": "train",
        "clip": "en_w_train"
+      },
+      {
+       "w": "snail",
+       "clip": "en_w_snail"
+      },
+      {
+       "w": "tail",
+       "clip": "en_w_tail"
       }
      ]
     },
@@ -4372,6 +5210,14 @@
       {
        "w": "day",
        "clip": "en_w_day"
+      },
+      {
+       "w": "tray",
+       "clip": "en_w_tray"
+      },
+      {
+       "w": "gray",
+       "clip": "en_w_gray"
       }
      ]
     },
@@ -4386,6 +5232,14 @@
       {
        "w": "bee",
        "clip": "en_ln_b"
+      },
+      {
+       "w": "seed",
+       "clip": "en_w_seed"
+      },
+      {
+       "w": "feet",
+       "clip": "en_w_feet"
       }
      ]
     },
@@ -4400,6 +5254,14 @@
       {
        "w": "beach",
        "clip": "en_w_beach"
+      },
+      {
+       "w": "leaf",
+       "clip": "en_w_leaf"
+      },
+      {
+       "w": "eat",
+       "clip": "en_w_eat"
       }
      ]
     },
@@ -4414,6 +5276,14 @@
       {
        "w": "goat",
        "clip": "en_w_goat"
+      },
+      {
+       "w": "soap",
+       "clip": "en_w_soap"
+      },
+      {
+       "w": "road",
+       "clip": "en_w_road"
       }
      ]
     },
@@ -4428,6 +5298,14 @@
       {
        "w": "tie",
        "clip": "en_w_tie"
+      },
+      {
+       "w": "lie",
+       "clip": "en_w_lie"
+      },
+      {
+       "w": "cried",
+       "clip": "en_w_cried"
       }
      ]
     },
@@ -4442,6 +5320,14 @@
       {
        "w": "glue",
        "clip": "en_w_glue"
+      },
+      {
+       "w": "true",
+       "clip": "en_w_true"
+      },
+      {
+       "w": "clue",
+       "clip": "en_w_clue"
       }
      ]
     }
@@ -4464,6 +5350,14 @@
       {
        "w": "farm",
        "clip": "en_w_farm"
+      },
+      {
+       "w": "jar",
+       "clip": "en_w_jar"
+      },
+      {
+       "w": "park",
+       "clip": "en_w_park"
       }
      ]
     },
@@ -4478,6 +5372,14 @@
       {
        "w": "fern",
        "clip": "en_w_fern"
+      },
+      {
+       "w": "water",
+       "clip": "en_w_water"
+      },
+      {
+       "w": "paper",
+       "clip": "en_w_paper"
       }
      ]
     },
@@ -4492,6 +5394,14 @@
       {
        "w": "girl",
        "clip": "en_w_girl"
+      },
+      {
+       "w": "first",
+       "clip": "en_w_first"
+      },
+      {
+       "w": "shirt",
+       "clip": "en_w_shirt"
       }
      ]
     },
@@ -4506,6 +5416,14 @@
       {
        "w": "fork",
        "clip": "en_w_fork"
+      },
+      {
+       "w": "storm",
+       "clip": "en_w_storm"
+      },
+      {
+       "w": "short",
+       "clip": "en_w_short"
       }
      ]
     },
@@ -4520,6 +5438,14 @@
       {
        "w": "turn",
        "clip": "en_w_turn"
+      },
+      {
+       "w": "hurt",
+       "clip": "en_w_hurt"
+      },
+      {
+       "w": "purple",
+       "clip": "en_w_purple"
       }
      ]
     }
@@ -4550,6 +5476,26 @@
     {
      "text": "I see a pig on the farm.",
      "clip": "en_sent_4"
+    },
+    {
+     "text": "A big frog sits on a log.",
+     "clip": "en_sent_5"
+    },
+    {
+     "text": "The crab is red and fast.",
+     "clip": "en_sent_6"
+    },
+    {
+     "text": "I see a nest in the tall tree.",
+     "clip": "en_sent_7"
+    },
+    {
+     "text": "The duck swims in the pond.",
+     "clip": "en_sent_8"
+    },
+    {
+     "text": "A plum and a fig are in the box.",
+     "clip": "en_sent_9"
     }
    ]
   },
@@ -4810,6 +5756,258 @@
       }
      ],
      "answer": 0
+    },
+    {
+     "text": "Pip is a little pup. Pip digs in the mud. Pip digs and digs. A big bone is in the mud!",
+     "clip": "en_fpass_6",
+     "questions": [
+      {
+       "question": "What does Pip find in the mud?",
+       "qclip": "en_fq_6_0",
+       "choices": [
+        {
+         "w": "a bone",
+         "clip": "en_fch_6_0_0"
+        },
+        {
+         "w": "a ball",
+         "clip": "en_fch_6_0_1"
+        },
+        {
+         "w": "a fish",
+         "clip": "en_fch_6_0_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "What does Pip find in the mud?",
+     "qclip": "en_fq_6_0",
+     "choices": [
+      {
+       "w": "a bone",
+       "clip": "en_fch_6_0_0"
+      },
+      {
+       "w": "a ball",
+       "clip": "en_fch_6_0_1"
+      },
+      {
+       "w": "a fish",
+       "clip": "en_fch_6_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "June has a kite. The kite is red and blue. June runs fast. Up, up goes the kite!",
+     "clip": "en_fpass_7",
+     "questions": [
+      {
+       "question": "What color is the kite?",
+       "qclip": "en_fq_7_0",
+       "choices": [
+        {
+         "w": "green",
+         "clip": "en_fch_7_0_0"
+        },
+        {
+         "w": "red and blue",
+         "clip": "en_fch_7_0_1"
+        },
+        {
+         "w": "pink",
+         "clip": "en_fch_7_0_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "What color is the kite?",
+     "qclip": "en_fq_7_0",
+     "choices": [
+      {
+       "w": "green",
+       "clip": "en_fch_7_0_0"
+      },
+      {
+       "w": "red and blue",
+       "clip": "en_fch_7_0_1"
+      },
+      {
+       "w": "pink",
+       "clip": "en_fch_7_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "A frog sits on a log. The frog jumps in the pond. Splash! The frog can swim and swim.",
+     "clip": "en_fpass_8",
+     "questions": [
+      {
+       "question": "Where does the frog jump?",
+       "qclip": "en_fq_8_0",
+       "choices": [
+        {
+         "w": "in a cup",
+         "clip": "en_fch_8_0_0"
+        },
+        {
+         "w": "in the grass",
+         "clip": "en_fch_8_0_1"
+        },
+        {
+         "w": "in the pond",
+         "clip": "en_fch_8_0_2"
+        }
+       ],
+       "answer": 2
+      }
+     ],
+     "question": "Where does the frog jump?",
+     "qclip": "en_fq_8_0",
+     "choices": [
+      {
+       "w": "in a cup",
+       "clip": "en_fch_8_0_0"
+      },
+      {
+       "w": "in the grass",
+       "clip": "en_fch_8_0_1"
+      },
+      {
+       "w": "in the pond",
+       "clip": "en_fch_8_0_2"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "text": "Max feeds the hens. The hens peck, peck, peck. Max looks in the nest. A brown egg is in the nest!",
+     "clip": "en_fpass_9",
+     "questions": [
+      {
+       "question": "What does Max find in the nest?",
+       "qclip": "en_fq_9_0",
+       "choices": [
+        {
+         "w": "a brown egg",
+         "clip": "en_fch_9_0_0"
+        },
+        {
+         "w": "a red rock",
+         "clip": "en_fch_9_0_1"
+        },
+        {
+         "w": "a green leaf",
+         "clip": "en_fch_9_0_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "What does Max find in the nest?",
+     "qclip": "en_fq_9_0",
+     "choices": [
+      {
+       "w": "a brown egg",
+       "clip": "en_fch_9_0_0"
+      },
+      {
+       "w": "a red rock",
+       "clip": "en_fch_9_0_1"
+      },
+      {
+       "w": "a green leaf",
+       "clip": "en_fch_9_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "Lily is in bed. Lily reads a big book. Mom turns off the light. Good night, Lily!",
+     "clip": "en_fpass_10",
+     "questions": [
+      {
+       "question": "What does Lily do in bed?",
+       "qclip": "en_fq_10_0",
+       "choices": [
+        {
+         "w": "She eats cake",
+         "clip": "en_fch_10_0_0"
+        },
+        {
+         "w": "She reads a book",
+         "clip": "en_fch_10_0_1"
+        },
+        {
+         "w": "She plays ball",
+         "clip": "en_fch_10_0_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "What does Lily do in bed?",
+     "qclip": "en_fq_10_0",
+     "choices": [
+      {
+       "w": "She eats cake",
+       "clip": "en_fch_10_0_0"
+      },
+      {
+       "w": "She reads a book",
+       "clip": "en_fch_10_0_1"
+      },
+      {
+       "w": "She plays ball",
+       "clip": "en_fch_10_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "Ben and Zoe ride the bus. The bus goes up the hill. The bus stops. Ben and Zoe get off at the park.",
+     "clip": "en_fpass_11",
+     "questions": [
+      {
+       "question": "Where does the bus stop?",
+       "qclip": "en_fq_11_0",
+       "choices": [
+        {
+         "w": "at the lake",
+         "clip": "en_fch_11_0_0"
+        },
+        {
+         "w": "at the school",
+         "clip": "en_fch_11_0_1"
+        },
+        {
+         "w": "at the park",
+         "clip": "en_fch_11_0_2"
+        }
+       ],
+       "answer": 2
+      }
+     ],
+     "question": "Where does the bus stop?",
+     "qclip": "en_fq_11_0",
+     "choices": [
+      {
+       "w": "at the lake",
+       "clip": "en_fch_11_0_0"
+      },
+      {
+       "w": "at the school",
+       "clip": "en_fch_11_0_1"
+      },
+      {
+       "w": "at the park",
+       "clip": "en_fch_11_0_2"
+      }
+     ],
+     "answer": 2
     }
    ]
   },
@@ -5184,6 +6382,372 @@
       }
      ],
      "answer": 0
+    },
+    {
+     "text": "Bees live in a hive by the big oak tree. All day, they fly from flower to flower. The bees make sweet honey in the hive. Mr. Park takes care of the bees. He always leaves honey for the bees to eat.",
+     "clip": "en_cpass_6",
+     "questions": [
+      {
+       "question": "Where do the bees live?",
+       "qclip": "en_cq_6_0",
+       "choices": [
+        {
+         "w": "in a hive by an oak tree",
+         "clip": "en_cch_6_0_0"
+        },
+        {
+         "w": "in a box by the sea",
+         "clip": "en_cch_6_0_1"
+        },
+        {
+         "w": "in a cave on a hill",
+         "clip": "en_cch_6_0_2"
+        }
+       ],
+       "answer": 0
+      },
+      {
+       "question": "Why does Mr. Park leave honey for the bees?",
+       "qclip": "en_cq_6_1",
+       "choices": [
+        {
+         "w": "So the bees have food",
+         "clip": "en_cch_6_1_0"
+        },
+        {
+         "w": "So the bees will fly away",
+         "clip": "en_cch_6_1_1"
+        },
+        {
+         "w": "So the bees can sleep",
+         "clip": "en_cch_6_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "Where do the bees live?",
+     "qclip": "en_cq_6_0",
+     "choices": [
+      {
+       "w": "in a hive by an oak tree",
+       "clip": "en_cch_6_0_0"
+      },
+      {
+       "w": "in a box by the sea",
+       "clip": "en_cch_6_0_1"
+      },
+      {
+       "w": "in a cave on a hill",
+       "clip": "en_cch_6_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "Mrs. Chen brings the mail to our street. She walks in the sun and in the rain. Every day, she puts letters in the boxes. The kids wave and say thank you. Mrs. Chen smiles and waves back.",
+     "clip": "en_cpass_7",
+     "questions": [
+      {
+       "question": "What does Mrs. Chen bring?",
+       "qclip": "en_cq_7_0",
+       "choices": [
+        {
+         "w": "pizza",
+         "clip": "en_cch_7_0_0"
+        },
+        {
+         "w": "the mail",
+         "clip": "en_cch_7_0_1"
+        },
+        {
+         "w": "flowers",
+         "clip": "en_cch_7_0_2"
+        }
+       ],
+       "answer": 1
+      },
+      {
+       "question": "Why do the kids say thank you?",
+       "qclip": "en_cq_7_1",
+       "choices": [
+        {
+         "w": "Because she gives them candy",
+         "clip": "en_cch_7_1_0"
+        },
+        {
+         "w": "Because she brings their mail every day",
+         "clip": "en_cch_7_1_1"
+        },
+        {
+         "w": "Because she reads them a story",
+         "clip": "en_cch_7_1_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "What does Mrs. Chen bring?",
+     "qclip": "en_cq_7_0",
+     "choices": [
+      {
+       "w": "pizza",
+       "clip": "en_cch_7_0_0"
+      },
+      {
+       "w": "the mail",
+       "clip": "en_cch_7_0_1"
+      },
+      {
+       "w": "flowers",
+       "clip": "en_cch_7_0_2"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "text": "A little turtle wants to cross the road. Cars go fast, zoom, zoom! Rosa sees the turtle and stops. She picks it up with care. She puts the turtle in the grass, safe and sound.",
+     "clip": "en_cpass_8",
+     "questions": [
+      {
+       "question": "What does the turtle want to do?",
+       "qclip": "en_cq_8_0",
+       "choices": [
+        {
+         "w": "cross the road",
+         "clip": "en_cch_8_0_0"
+        },
+        {
+         "w": "climb a tree",
+         "clip": "en_cch_8_0_1"
+        },
+        {
+         "w": "swim in a lake",
+         "clip": "en_cch_8_0_2"
+        }
+       ],
+       "answer": 0
+      },
+      {
+       "question": "Why does Rosa pick up the turtle?",
+       "qclip": "en_cq_8_1",
+       "choices": [
+        {
+         "w": "To keep it as a pet",
+         "clip": "en_cch_8_1_0"
+        },
+        {
+         "w": "To help it cross safely",
+         "clip": "en_cch_8_1_1"
+        },
+        {
+         "w": "To give it a bath",
+         "clip": "en_cch_8_1_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "What does the turtle want to do?",
+     "qclip": "en_cq_8_0",
+     "choices": [
+      {
+       "w": "cross the road",
+       "clip": "en_cch_8_0_0"
+      },
+      {
+       "w": "climb a tree",
+       "clip": "en_cch_8_0_1"
+      },
+      {
+       "w": "swim in a lake",
+       "clip": "en_cch_8_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "Grandpa and Elena make bread together. Grandpa puts flour in a big bowl. Elena stirs and stirs. They wait for the bread to rise. Soon the warm bread is ready, and it smells so good!",
+     "clip": "en_cpass_9",
+     "questions": [
+      {
+       "question": "What do Grandpa and Elena make?",
+       "qclip": "en_cq_9_0",
+       "choices": [
+        {
+         "w": "a cake",
+         "clip": "en_cch_9_0_0"
+        },
+        {
+         "w": "soup",
+         "clip": "en_cch_9_0_1"
+        },
+        {
+         "w": "bread",
+         "clip": "en_cch_9_0_2"
+        }
+       ],
+       "answer": 2
+      },
+      {
+       "question": "Why do they wait?",
+       "qclip": "en_cq_9_1",
+       "choices": [
+        {
+         "w": "For the bread to rise",
+         "clip": "en_cch_9_1_0"
+        },
+        {
+         "w": "For the rain to stop",
+         "clip": "en_cch_9_1_1"
+        },
+        {
+         "w": "For the bus to come",
+         "clip": "en_cch_9_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "What do Grandpa and Elena make?",
+     "qclip": "en_cq_9_0",
+     "choices": [
+      {
+       "w": "a cake",
+       "clip": "en_cch_9_0_0"
+      },
+      {
+       "w": "soup",
+       "clip": "en_cch_9_0_1"
+      },
+      {
+       "w": "bread",
+       "clip": "en_cch_9_0_2"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "text": "The lighthouse stands by the sea. At night, its light shines bright and turns, turns, turns. The light shows the ships where the rocks are. The ships stay safe and sail home.",
+     "clip": "en_cpass_10",
+     "questions": [
+      {
+       "question": "Where does the lighthouse stand?",
+       "qclip": "en_cq_10_0",
+       "choices": [
+        {
+         "w": "by the sea",
+         "clip": "en_cch_10_0_0"
+        },
+        {
+         "w": "on a farm",
+         "clip": "en_cch_10_0_1"
+        },
+        {
+         "w": "in the snow",
+         "clip": "en_cch_10_0_2"
+        }
+       ],
+       "answer": 0
+      },
+      {
+       "question": "Why does the light shine at night?",
+       "qclip": "en_cq_10_1",
+       "choices": [
+        {
+         "w": "To help the ships stay safe",
+         "clip": "en_cch_10_1_0"
+        },
+        {
+         "w": "To wake up the fish",
+         "clip": "en_cch_10_1_1"
+        },
+        {
+         "w": "To light up the beach for a party",
+         "clip": "en_cch_10_1_2"
+        }
+       ],
+       "answer": 0
+      }
+     ],
+     "question": "Where does the lighthouse stand?",
+     "qclip": "en_cq_10_0",
+     "choices": [
+      {
+       "w": "by the sea",
+       "clip": "en_cch_10_0_0"
+      },
+      {
+       "w": "on a farm",
+       "clip": "en_cch_10_0_1"
+      },
+      {
+       "w": "in the snow",
+       "clip": "en_cch_10_0_2"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "text": "Our class goes to the park with big bags. We pick up cans, cups, and paper. Ben finds a lost ball under a bench. Now the park is clean. The birds sing in the clean park.",
+     "clip": "en_cpass_11",
+     "questions": [
+      {
+       "question": "What does the class pick up?",
+       "qclip": "en_cq_11_0",
+       "choices": [
+        {
+         "w": "flowers and leaves",
+         "clip": "en_cch_11_0_0"
+        },
+        {
+         "w": "cans, cups, and paper",
+         "clip": "en_cch_11_0_1"
+        },
+        {
+         "w": "rocks and sticks",
+         "clip": "en_cch_11_0_2"
+        }
+       ],
+       "answer": 1
+      },
+      {
+       "question": "Why does the class clean the park?",
+       "qclip": "en_cq_11_1",
+       "choices": [
+        {
+         "w": "To find a lost ball",
+         "clip": "en_cch_11_1_0"
+        },
+        {
+         "w": "To keep the park clean for everyone",
+         "clip": "en_cch_11_1_1"
+        },
+        {
+         "w": "To look for treasure",
+         "clip": "en_cch_11_1_2"
+        }
+       ],
+       "answer": 1
+      }
+     ],
+     "question": "What does the class pick up?",
+     "qclip": "en_cq_11_0",
+     "choices": [
+      {
+       "w": "flowers and leaves",
+       "clip": "en_cch_11_0_0"
+      },
+      {
+       "w": "cans, cups, and paper",
+       "clip": "en_cch_11_0_1"
+      },
+      {
+       "w": "rocks and sticks",
+       "clip": "en_cch_11_0_2"
+      }
+     ],
+     "answer": 1
     }
    ]
   }
@@ -5697,13 +7261,15 @@
    "+": "op_en_plus",
    "-": "op_en_minus",
    "x": "op_en_times",
-   "=": "op_en_eq"
+   "=": "op_en_eq",
+   "÷": "op_en_divided"
   },
   "es": {
    "+": "es_w_mas",
    "-": "op_es_menos",
    "x": "es_w_por",
-   "=": "es_inv_es"
+   "=": "es_inv_es",
+   "÷": "op_es_entre"
   }
  },
  "math_skills": [
@@ -5784,6 +7350,78 @@
    "facts": [
     3,
     4
+   ]
+  },
+  {
+   "id": "mul67",
+   "grade": "3",
+   "std": "3.OA.C.7",
+   "en": "Multiply 6 and 7",
+   "es": "Multiplica 6 y 7",
+   "op": "x",
+   "facts": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "mul89",
+   "grade": "4",
+   "std": "3.OA.C.7",
+   "en": "Multiply 8 and 9",
+   "es": "Multiplica 8 y 9",
+   "op": "x",
+   "facts": [
+    8,
+    9
+   ]
+  },
+  {
+   "id": "div23",
+   "grade": "3",
+   "std": "3.OA.C.7",
+   "en": "Divide by 2 and 3",
+   "es": "Divide entre 2 y 3",
+   "op": "÷",
+   "facts": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "div45",
+   "grade": "3",
+   "std": "3.OA.C.7",
+   "en": "Divide by 4 and 5",
+   "es": "Divide entre 4 y 5",
+   "op": "÷",
+   "facts": [
+    4,
+    5
+   ]
+  },
+  {
+   "id": "div67",
+   "grade": "4",
+   "std": "3.OA.C.7",
+   "en": "Divide by 6 and 7",
+   "es": "Divide entre 6 y 7",
+   "op": "÷",
+   "facts": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "div89",
+   "grade": "4",
+   "std": "3.OA.C.7",
+   "en": "Divide by 8 and 9",
+   "es": "Divide entre 8 y 9",
+   "op": "÷",
+   "facts": [
+    8,
+    9
    ]
   }
  ],
@@ -6296,6 +7934,208 @@
   "math_chart": {
    "en": "ln_math_chart_en",
    "es": "ln_math_chart_es"
+  },
+  "picture_lock": {
+   "en": "ln_piclock_en",
+   "es": "ln_piclock_es"
+  },
+  "class_goal_meter": {
+   "en": "ln_goal_meter_en",
+   "es": "ln_goal_meter_es"
+  },
+  "class_goal_party": {
+   "en": "ln_goal_party_en",
+   "es": "ln_goal_party_es"
+  },
+  "belt_certificate": {
+   "en": "ln_belt_cert_en",
+   "es": "ln_belt_cert_es"
+  },
+  "join_code": {
+   "en": "ln_joincode_en",
+   "es": "ln_joincode_es"
+  },
+  "waiting_teacher": {
+   "en": "ln_waitteacher_en",
+   "es": "ln_waitteacher_es"
+  },
+  "door_reading": {
+   "en": "ln_door_reading_en",
+   "es": "ln_door_reading_es"
+  },
+  "door_math": {
+   "en": "ln_door_math_en",
+   "es": "ln_door_math_es"
+  },
+  "door_lands": {
+   "en": "ln_door_lands_en",
+   "es": "ln_door_lands_es"
+  },
+  "door_ring": {
+   "en": "ln_door_ring_en",
+   "es": "ln_door_ring_es"
+  },
+  "door_tesoro": {
+   "en": "ln_door_tesoro_en",
+   "es": "ln_door_tesoro_es"
+  },
+  "door_clasico": {
+   "en": "ln_door_clasico_en",
+   "es": "ln_door_clasico_es"
+  },
+  "door_carrera": {
+   "en": "ln_door_carrera_en",
+   "es": "ln_door_carrera_es"
+  },
+  "door_library": {
+   "en": "ln_door_library_en",
+   "es": "ln_door_library_es"
+  },
+  "door_music": {
+   "en": "ln_door_music_en",
+   "es": "ln_door_music_es"
+  },
+  "door_atelier": {
+   "en": "ln_door_atelier_en",
+   "es": "ln_door_atelier_es"
+  },
+  "door_companions": {
+   "en": "ln_door_companions_en",
+   "es": "ln_door_companions_es"
+  },
+  "door_games": {
+   "en": "ln_door_games_en",
+   "es": "ln_door_games_es"
+  },
+  "games_solo": {
+   "en": "ln_games_solo_en",
+   "es": "ln_games_solo_es"
+  },
+  "games_tesoro": {
+   "en": "ln_games_tesoro_en",
+   "es": "ln_games_tesoro_es"
+  },
+  "games_clasico": {
+   "en": "ln_games_clasico_en",
+   "es": "ln_games_clasico_es"
+  },
+  "games_carrera": {
+   "en": "ln_games_carrera_en",
+   "es": "ln_games_carrera_es"
+  },
+  "games_atrapa": {
+   "en": "ln_games_atrapa_en",
+   "es": "ln_games_atrapa_es"
+  },
+  "games_teatro": {
+   "en": "ln_games_teatro_en",
+   "es": "ln_games_teatro_es"
+  },
+  "hero_assignment": {
+   "en": "ln_hero_assignment_en",
+   "es": "ln_hero_assignment_es"
+  },
+  "checkin_today": {
+   "en": "ln_checkin_today_en",
+   "es": "ln_checkin_today_es"
+  },
+  "hero_reading": {
+   "en": "ln_hero_reading_en",
+   "es": "ln_hero_reading_es"
+  },
+  "hero_math": {
+   "en": "ln_hero_math_en",
+   "es": "ln_hero_math_es"
+  },
+  "hero_fastfacts": {
+   "en": "ln_hero_fastfacts_en",
+   "es": "ln_hero_fastfacts_es"
+  },
+  "hero_sight_en": {
+   "en": "ln_hero_sighten_en",
+   "es": "ln_hero_sighten_es"
+  },
+  "hero_sight_es": {
+   "en": "ln_hero_sightes_en",
+   "es": "ln_hero_sightes_es"
+  },
+  "hero_celebrate": {
+   "en": "ln_hero_celebrate_en",
+   "es": "ln_hero_celebrate_es"
+  },
+  "games_together": {
+   "en": "ln_games_together_en",
+   "es": "ln_games_together_es"
+  },
+  "together_welcome": {
+   "en": "ln_together_welcome_en",
+   "es": "ln_together_welcome_es"
+  },
+  "together_read": {
+   "en": "ln_together_read_en",
+   "es": "ln_together_read_es"
+  },
+  "together_done": {
+   "en": "ln_together_done_en",
+   "es": "ln_together_done_es"
+  },
+  "together_team": [
+   {
+    "en": "ln_together_team_0_en",
+    "es": "ln_together_team_0_es"
+   },
+   {
+    "en": "ln_together_team_1_en",
+    "es": "ln_together_team_1_es"
+   },
+   {
+    "en": "ln_together_team_2_en",
+    "es": "ln_together_team_2_es"
+   }
+  ],
+  "outside_in": {
+   "en": "ln_outside_in_en",
+   "es": "ln_outside_in_es"
+  },
+  "radio_in": {
+   "en": "ln_radio_in_en",
+   "es": "ln_radio_in_es"
+  },
+  "radio_you": {
+   "en": "ln_radio_you_en",
+   "es": "ln_radio_you_es"
+  },
+  "radio_mic": {
+   "en": "ln_radio_mic_en",
+   "es": "ln_radio_mic_es"
+  },
+  "peek_title": {
+   "en": "ln_peek_title_en",
+   "es": "ln_peek_title_es"
+  },
+  "peek_points": {
+   "en": "ln_peek_points_en",
+   "es": "ln_peek_points_es"
+  },
+  "peek_belts": {
+   "en": "ln_peek_belts_en",
+   "es": "ln_peek_belts_es"
+  },
+  "peek_battles": {
+   "en": "ln_peek_battles_en",
+   "es": "ln_peek_battles_es"
+  },
+  "peek_working": {
+   "en": "ln_peek_working_en",
+   "es": "ln_peek_working_es"
+  },
+  "peek_books": {
+   "en": "ln_peek_books_en",
+   "es": "ln_peek_books_es"
+  },
+  "peek_nopicture": {
+   "en": "ln_peek_nopicture_en",
+   "es": "ln_peek_nopicture_es"
   }
  },
  "classroom": {
@@ -22307,5 +24147,961 @@
     "book": 10
    }
   ]
- }
+ },
+ "outside_books": [
+  {
+   "id": "tortoise",
+   "flower": "🐢",
+   "name": {
+    "en": "The Tortoise and the Hare",
+    "es": "La tortuga y la liebre"
+   },
+   "cover": "out-tortoise-cover",
+   "panels": [
+    {
+     "icon": "🐰",
+     "art": "out-tortoise-p0",
+     "en": "Hare was very fast. He loved to run, and he loved to brag.",
+     "es": "La liebre era muy rápida. Le encantaba correr y le encantaba presumir.",
+     "clipEn": "out_tortoise_p0_en",
+     "clipEs": "out_tortoise_p0_es"
+    },
+    {
+     "icon": "🐢",
+     "art": "out-tortoise-p1",
+     "en": "“You are so slow, Tortoise!” laughed Hare.",
+     "es": "—¡Eres muy lenta, Tortuga! —se rio la liebre.",
+     "clipEn": "out_tortoise_p1_en",
+     "clipEs": "out_tortoise_p1_es"
+    },
+    {
+     "icon": "🏁",
+     "art": "out-tortoise-p2",
+     "en": "“Let’s race,” said Tortoise. “Slow and steady, step by step.”",
+     "es": "—Corramos una carrera —dijo la tortuga—. Lenta pero segura, paso a paso.",
+     "clipEn": "out_tortoise_p2_en",
+     "clipEs": "out_tortoise_p2_es"
+    },
+    {
+     "icon": "💤",
+     "art": "out-tortoise-p3",
+     "en": "Hare ran fast, fast, fast! Then he stopped under a tree for a nap.",
+     "es": "La liebre corrió rápido, ¡rápido, rápido! Después se detuvo bajo un árbol a dormir una siesta.",
+     "clipEn": "out_tortoise_p3_en",
+     "clipEs": "out_tortoise_p3_es"
+    },
+    {
+     "icon": "🚶",
+     "art": "out-tortoise-p4",
+     "en": "Tortoise walked and walked. She did not stop. She passed the sleeping Hare.",
+     "es": "La tortuga caminó y caminó. No se detuvo. Pasó junto a la liebre dormida.",
+     "clipEn": "out_tortoise_p4_en",
+     "clipEs": "out_tortoise_p4_es"
+    },
+    {
+     "icon": "🏆",
+     "art": "out-tortoise-p5",
+     "en": "Tortoise won the race! Slow and steady wins the race.",
+     "es": "¡La tortuga ganó la carrera! Lento pero seguro se gana la carrera.",
+     "clipEn": "out_tortoise_p5_en",
+     "clipEs": "out_tortoise_p5_es"
+    }
+   ],
+   "words": [
+    {
+     "en": "tortoise",
+     "es": "tortuga",
+     "clipEn": "out_tortoise_w0_en",
+     "clipEs": "out_tortoise_w0_es"
+    },
+    {
+     "en": "hare",
+     "es": "liebre",
+     "clipEn": "out_tortoise_w1_en",
+     "clipEs": "out_tortoise_w1_es"
+    },
+    {
+     "en": "race",
+     "es": "carrera",
+     "clipEn": "out_tortoise_w2_en",
+     "clipEs": "out_tortoise_w2_es"
+    },
+    {
+     "en": "fast",
+     "es": "rápido",
+     "clipEn": "out_tortoise_w3_en",
+     "clipEs": "out_tortoise_w3_es"
+    },
+    {
+     "en": "slow",
+     "es": "lento",
+     "clipEn": "out_tortoise_w4_en",
+     "clipEs": "out_tortoise_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Who won the race?",
+     "es": "¿Quién ganó la carrera?",
+     "clipEn": "out_tortoise_q0_en",
+     "clipEs": "out_tortoise_q0_es",
+     "choices": [
+      {
+       "icon": "🐢",
+       "en": "The tortoise",
+       "es": "La tortuga",
+       "clipEn": "out_tortoise_q0c0_en",
+       "clipEs": "out_tortoise_q0c0_es"
+      },
+      {
+       "icon": "🐰",
+       "en": "The hare",
+       "es": "La liebre",
+       "clipEn": "out_tortoise_q0c1_en",
+       "clipEs": "out_tortoise_q0c1_es"
+      },
+      {
+       "icon": "🦊",
+       "en": "The fox",
+       "es": "El zorro",
+       "clipEn": "out_tortoise_q0c2_en",
+       "clipEs": "out_tortoise_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "One animal never stopped walking.",
+      "es": "Un animal nunca dejó de caminar."
+     },
+     "hint2": {
+      "en": "The tortoise! Slow and steady.",
+      "es": "¡La tortuga! Lenta pero segura."
+     }
+    },
+    {
+     "en": "What did Hare do in the middle of the race?",
+     "es": "¿Qué hizo la liebre en medio de la carrera?",
+     "clipEn": "out_tortoise_q1_en",
+     "clipEs": "out_tortoise_q1_es",
+     "choices": [
+      {
+       "icon": "💤",
+       "en": "He took a nap",
+       "es": "Durmió una siesta",
+       "clipEn": "out_tortoise_q1c0_en",
+       "clipEs": "out_tortoise_q1c0_es"
+      },
+      {
+       "icon": "💧",
+       "en": "He drank some water",
+       "es": "Tomó un poco de agua",
+       "clipEn": "out_tortoise_q1c1_en",
+       "clipEs": "out_tortoise_q1c1_es"
+      },
+      {
+       "icon": "🏠",
+       "en": "He went home",
+       "es": "Se fue a su casa",
+       "clipEn": "out_tortoise_q1c2_en",
+       "clipEs": "out_tortoise_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Hare stopped under a big tree.",
+      "es": "La liebre se detuvo bajo un árbol grande."
+     },
+     "hint2": {
+      "en": "He took a nap under the tree!",
+      "es": "¡Durmió una siesta bajo el árbol!"
+     }
+    },
+    {
+     "en": "What does this story teach us?",
+     "es": "¿Qué nos enseña este cuento?",
+     "clipEn": "out_tortoise_q2_en",
+     "clipEs": "out_tortoise_q2_es",
+     "choices": [
+      {
+       "icon": "🐾",
+       "en": "Keep going, step by step",
+       "es": "Sigue adelante, paso a paso",
+       "clipEn": "out_tortoise_q2c0_en",
+       "clipEs": "out_tortoise_q2c0_es"
+      },
+      {
+       "icon": "⚡",
+       "en": "Always run very fast",
+       "es": "Corre siempre muy rápido",
+       "clipEn": "out_tortoise_q2c1_en",
+       "clipEs": "out_tortoise_q2c1_es"
+      },
+      {
+       "icon": "🛏️",
+       "en": "Naps win races",
+       "es": "Las siestas ganan carreras",
+       "clipEn": "out_tortoise_q2c2_en",
+       "clipEs": "out_tortoise_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about how Tortoise walked.",
+      "es": "Piensa en cómo caminó la tortuga."
+     },
+     "hint2": {
+      "en": "Keep going, step by step — like Tortoise!",
+      "es": "Sigue adelante, paso a paso, ¡como la tortuga!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "lionmouse",
+   "flower": "🦁",
+   "name": {
+    "en": "The Lion and the Mouse",
+    "es": "El león y el ratón"
+   },
+   "cover": "out-lionmouse-cover",
+   "panels": [
+    {
+     "icon": "🦁",
+     "art": "out-lionmouse-p0",
+     "en": "A big lion slept under a tree.",
+     "es": "Un león grande dormía bajo un árbol.",
+     "clipEn": "out_lionmouse_p0_en",
+     "clipEs": "out_lionmouse_p0_es"
+    },
+    {
+     "icon": "🐭",
+     "art": "out-lionmouse-p1",
+     "en": "A little mouse ran over his paw. “ROAR!” said the lion.",
+     "es": "Un ratoncito corrió sobre su pata. —¡GRRR! —rugió el león.",
+     "clipEn": "out_lionmouse_p1_en",
+     "clipEs": "out_lionmouse_p1_es"
+    },
+    {
+     "icon": "🙏",
+     "art": "out-lionmouse-p2",
+     "en": "“Please let me go,” said Mouse. “One day I can help you!”",
+     "es": "—Por favor, déjame ir —dijo el ratón—. ¡Un día yo podré ayudarte!",
+     "clipEn": "out_lionmouse_p2_en",
+     "clipEs": "out_lionmouse_p2_es"
+    },
+    {
+     "icon": "😄",
+     "art": "out-lionmouse-p3",
+     "en": "The lion laughed, but he let the little mouse go.",
+     "es": "El león se rio, pero dejó ir al ratoncito.",
+     "clipEn": "out_lionmouse_p3_en",
+     "clipEs": "out_lionmouse_p3_es"
+    },
+    {
+     "icon": "🪢",
+     "art": "out-lionmouse-p4",
+     "en": "Later, the lion was trapped in a big net. He could not get out!",
+     "es": "Después, el león quedó atrapado en una red grande. ¡No podía salir!",
+     "clipEn": "out_lionmouse_p4_en",
+     "clipEs": "out_lionmouse_p4_es"
+    },
+    {
+     "icon": "🐭",
+     "art": "out-lionmouse-p5",
+     "en": "Mouse chewed and chewed the ropes. The lion was free! Little friends can be big helpers.",
+     "es": "El ratón mordió y mordió las cuerdas. ¡El león quedó libre! Los amigos pequeños pueden ser grandes ayudantes.",
+     "clipEn": "out_lionmouse_p5_en",
+     "clipEs": "out_lionmouse_p5_es"
+    }
+   ],
+   "words": [
+    {
+     "en": "lion",
+     "es": "león",
+     "clipEn": "out_lionmouse_w0_en",
+     "clipEs": "out_lionmouse_w0_es"
+    },
+    {
+     "en": "mouse",
+     "es": "ratón",
+     "clipEn": "out_lionmouse_w1_en",
+     "clipEs": "out_lionmouse_w1_es"
+    },
+    {
+     "en": "net",
+     "es": "red",
+     "clipEn": "out_lionmouse_w2_en",
+     "clipEs": "out_lionmouse_w2_es"
+    },
+    {
+     "en": "rope",
+     "es": "cuerda",
+     "clipEn": "out_lionmouse_w3_en",
+     "clipEs": "out_lionmouse_w3_es"
+    },
+    {
+     "en": "help",
+     "es": "ayudar",
+     "clipEn": "out_lionmouse_w4_en",
+     "clipEs": "out_lionmouse_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Who helped the lion get free?",
+     "es": "¿Quién ayudó al león a liberarse?",
+     "clipEn": "out_lionmouse_q0_en",
+     "clipEs": "out_lionmouse_q0_es",
+     "choices": [
+      {
+       "icon": "🐭",
+       "en": "The little mouse",
+       "es": "El ratoncito",
+       "clipEn": "out_lionmouse_q0c0_en",
+       "clipEs": "out_lionmouse_q0c0_es"
+      },
+      {
+       "icon": "🐦",
+       "en": "A bird",
+       "es": "Un pájaro",
+       "clipEn": "out_lionmouse_q0c1_en",
+       "clipEs": "out_lionmouse_q0c1_es"
+      },
+      {
+       "icon": "🌬️",
+       "en": "The wind",
+       "es": "El viento",
+       "clipEn": "out_lionmouse_q0c2_en",
+       "clipEs": "out_lionmouse_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "A very small friend came back.",
+      "es": "Un amigo muy pequeño regresó."
+     },
+     "hint2": {
+      "en": "The little mouse chewed the ropes!",
+      "es": "¡El ratoncito mordió las cuerdas!"
+     }
+    },
+    {
+     "en": "Why did the lion let the mouse go?",
+     "es": "¿Por qué el león dejó ir al ratón?",
+     "clipEn": "out_lionmouse_q1_en",
+     "clipEs": "out_lionmouse_q1_es",
+     "choices": [
+      {
+       "icon": "🤝",
+       "en": "The mouse promised to help one day",
+       "es": "El ratón prometió ayudar un día",
+       "clipEn": "out_lionmouse_q1c0_en",
+       "clipEs": "out_lionmouse_q1c0_es"
+      },
+      {
+       "icon": "🏃",
+       "en": "The mouse ran away fast",
+       "es": "El ratón se escapó corriendo",
+       "clipEn": "out_lionmouse_q1c1_en",
+       "clipEs": "out_lionmouse_q1c1_es"
+      },
+      {
+       "icon": "🍽️",
+       "en": "The lion was not hungry",
+       "es": "El león no tenía hambre",
+       "clipEn": "out_lionmouse_q1c2_en",
+       "clipEs": "out_lionmouse_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Mouse said something special to the lion.",
+      "es": "El ratón le dijo algo especial al león."
+     },
+     "hint2": {
+      "en": "“One day I can help you!”",
+      "es": "«¡Un día yo podré ayudarte!»"
+     }
+    },
+    {
+     "en": "What does this story teach us?",
+     "es": "¿Qué nos enseña este cuento?",
+     "clipEn": "out_lionmouse_q2_en",
+     "clipEs": "out_lionmouse_q2_es",
+     "choices": [
+      {
+       "icon": "❤️",
+       "en": "Even little friends can help",
+       "es": "Hasta los amigos pequeños pueden ayudar",
+       "clipEn": "out_lionmouse_q2c0_en",
+       "clipEs": "out_lionmouse_q2c0_es"
+      },
+      {
+       "icon": "🦁",
+       "en": "Big is always better",
+       "es": "Lo grande siempre es mejor",
+       "clipEn": "out_lionmouse_q2c1_en",
+       "clipEs": "out_lionmouse_q2c1_es"
+      },
+      {
+       "icon": "🌙",
+       "en": "Never go to sleep",
+       "es": "Nunca duermas",
+       "clipEn": "out_lionmouse_q2c2_en",
+       "clipEs": "out_lionmouse_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about the tiny mouse and the big lion.",
+      "es": "Piensa en el ratoncito y en el león grande."
+     },
+     "hint2": {
+      "en": "Even little friends can be big helpers!",
+      "es": "¡Hasta los amigos pequeños pueden ser grandes ayudantes!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "wolfboy",
+   "flower": "🐺",
+   "name": {
+    "en": "The Boy Who Cried Wolf",
+    "es": "El pastorcito mentiroso"
+   },
+   "cover": "out-wolfboy-cover",
+   "panels": [
+    {
+     "icon": "🐑",
+     "art": "out-wolfboy-p0",
+     "en": "A young shepherd watched the sheep on the hill.",
+     "es": "Un pastorcito cuidaba las ovejas en la colina.",
+     "clipEn": "out_wolfboy_p0_en",
+     "clipEs": "out_wolfboy_p0_es"
+    },
+    {
+     "icon": "📣",
+     "art": "out-wolfboy-p1",
+     "en": "He was bored. “Wolf! Wolf!” he cried. “The wolf is coming!”",
+     "es": "Estaba aburrido. —¡El lobo! ¡El lobo! —gritó—. ¡Viene el lobo!",
+     "clipEn": "out_wolfboy_p1_en",
+     "clipEs": "out_wolfboy_p1_es"
+    },
+    {
+     "icon": "🏃",
+     "art": "out-wolfboy-p2",
+     "en": "The people ran to help. But there was no wolf! The boy laughed.",
+     "es": "La gente corrió a ayudar. ¡Pero no había ningún lobo! El pastorcito se rio.",
+     "clipEn": "out_wolfboy_p2_en",
+     "clipEs": "out_wolfboy_p2_es"
+    },
+    {
+     "icon": "📣",
+     "art": "out-wolfboy-p3",
+     "en": "The next day he cried again: “Wolf! Wolf!” The people ran. No wolf again!",
+     "es": "Al día siguiente gritó otra vez: —¡El lobo! ¡El lobo! La gente corrió. ¡Otra vez no había lobo!",
+     "clipEn": "out_wolfboy_p3_en",
+     "clipEs": "out_wolfboy_p3_es"
+    },
+    {
+     "icon": "🐺",
+     "art": "out-wolfboy-p4",
+     "en": "Then one day, a real wolf came! “Wolf! Wolf! Help!” cried the boy.",
+     "es": "Entonces, un día, ¡vino un lobo de verdad! —¡El lobo! ¡Ayuda! —gritó el pastorcito.",
+     "clipEn": "out_wolfboy_p4_en",
+     "clipEs": "out_wolfboy_p4_es"
+    },
+    {
+     "icon": "😢",
+     "art": "out-wolfboy-p5",
+     "en": "But no one came. No one believed him. Always tell the truth.",
+     "es": "Pero nadie vino. Nadie le creyó. Di siempre la verdad.",
+     "clipEn": "out_wolfboy_p5_en",
+     "clipEs": "out_wolfboy_p5_es"
+    }
+   ],
+   "words": [
+    {
+     "en": "wolf",
+     "es": "lobo",
+     "clipEn": "out_wolfboy_w0_en",
+     "clipEs": "out_wolfboy_w0_es"
+    },
+    {
+     "en": "sheep",
+     "es": "oveja",
+     "clipEn": "out_wolfboy_w1_en",
+     "clipEs": "out_wolfboy_w1_es"
+    },
+    {
+     "en": "shepherd",
+     "es": "pastor",
+     "clipEn": "out_wolfboy_w2_en",
+     "clipEs": "out_wolfboy_w2_es"
+    },
+    {
+     "en": "truth",
+     "es": "verdad",
+     "clipEn": "out_wolfboy_w3_en",
+     "clipEs": "out_wolfboy_w3_es"
+    },
+    {
+     "en": "lie",
+     "es": "mentira",
+     "clipEn": "out_wolfboy_w4_en",
+     "clipEs": "out_wolfboy_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Why did the people stop coming?",
+     "es": "¿Por qué la gente dejó de venir?",
+     "clipEn": "out_wolfboy_q0_en",
+     "clipEs": "out_wolfboy_q0_es",
+     "choices": [
+      {
+       "icon": "🤥",
+       "en": "The boy lied many times",
+       "es": "El pastorcito mintió muchas veces",
+       "clipEn": "out_wolfboy_q0c0_en",
+       "clipEs": "out_wolfboy_q0c0_es"
+      },
+      {
+       "icon": "😴",
+       "en": "They were sleeping",
+       "es": "Estaban durmiendo",
+       "clipEn": "out_wolfboy_q0c1_en",
+       "clipEs": "out_wolfboy_q0c1_es"
+      },
+      {
+       "icon": "🚚",
+       "en": "They moved away",
+       "es": "Se mudaron lejos",
+       "clipEn": "out_wolfboy_q0c2_en",
+       "clipEs": "out_wolfboy_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The boy played the same trick again and again.",
+      "es": "El pastorcito hizo la misma broma una y otra vez."
+     },
+     "hint2": {
+      "en": "He lied many times, so no one believed him.",
+      "es": "Mintió muchas veces, y nadie le creyó."
+     }
+    },
+    {
+     "en": "What came at the end of the story?",
+     "es": "¿Qué vino al final del cuento?",
+     "clipEn": "out_wolfboy_q1_en",
+     "clipEs": "out_wolfboy_q1_es",
+     "choices": [
+      {
+       "icon": "🐺",
+       "en": "A real wolf",
+       "es": "Un lobo de verdad",
+       "clipEn": "out_wolfboy_q1c0_en",
+       "clipEs": "out_wolfboy_q1c0_es"
+      },
+      {
+       "icon": "⛈️",
+       "en": "A big storm",
+       "es": "Una tormenta grande",
+       "clipEn": "out_wolfboy_q1c1_en",
+       "clipEs": "out_wolfboy_q1c1_es"
+      },
+      {
+       "icon": "🐑",
+       "en": "More sheep",
+       "es": "Más ovejas",
+       "clipEn": "out_wolfboy_q1c2_en",
+       "clipEs": "out_wolfboy_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "This time it was NOT a trick.",
+      "es": "Esta vez NO fue una broma."
+     },
+     "hint2": {
+      "en": "A real wolf came to the hill!",
+      "es": "¡Un lobo de verdad vino a la colina!"
+     }
+    },
+    {
+     "en": "What does this story teach us?",
+     "es": "¿Qué nos enseña este cuento?",
+     "clipEn": "out_wolfboy_q2_en",
+     "clipEs": "out_wolfboy_q2_es",
+     "choices": [
+      {
+       "icon": "💬",
+       "en": "Always tell the truth",
+       "es": "Di siempre la verdad",
+       "clipEn": "out_wolfboy_q2c0_en",
+       "clipEs": "out_wolfboy_q2c0_es"
+      },
+      {
+       "icon": "📢",
+       "en": "Shout very loud",
+       "es": "Grita muy fuerte",
+       "clipEn": "out_wolfboy_q2c1_en",
+       "clipEs": "out_wolfboy_q2c1_es"
+      },
+      {
+       "icon": "🚫",
+       "en": "Never help friends",
+       "es": "Nunca ayudes a tus amigos",
+       "clipEn": "out_wolfboy_q2c2_en",
+       "clipEs": "out_wolfboy_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about what the boy did wrong.",
+      "es": "Piensa en lo que el pastorcito hizo mal."
+     },
+     "hint2": {
+      "en": "Always tell the truth!",
+      "es": "¡Di siempre la verdad!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "6-8"
+    ],
+    "level": 2,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "antgrass",
+   "flower": "🐜",
+   "name": {
+    "en": "The Ant and the Grasshopper",
+    "es": "La cigarra y la hormiga"
+   },
+   "cover": "out-antgrass-cover",
+   "panels": [
+    {
+     "icon": "☀️",
+     "art": "out-antgrass-p0",
+     "en": "All summer, Grasshopper sang and played in the sun.",
+     "es": "Todo el verano, la cigarra cantó y jugó bajo el sol.",
+     "clipEn": "out_antgrass_p0_en",
+     "clipEs": "out_antgrass_p0_es"
+    },
+    {
+     "icon": "🐜",
+     "art": "out-antgrass-p1",
+     "en": "Ant worked and worked. She carried food to her home.",
+     "es": "La hormiga trabajó y trabajó. Llevó comida a su casa.",
+     "clipEn": "out_antgrass_p1_en",
+     "clipEs": "out_antgrass_p1_es"
+    },
+    {
+     "icon": "🎵",
+     "art": "out-antgrass-p2",
+     "en": "“Come and sing with me!” said Grasshopper. “Winter is far away.”",
+     "es": "—¡Ven a cantar conmigo! —dijo la cigarra—. El invierno está lejos.",
+     "clipEn": "out_antgrass_p2_en",
+     "clipEs": "out_antgrass_p2_es"
+    },
+    {
+     "icon": "🌾",
+     "art": "out-antgrass-p3",
+     "en": "But Ant kept working. “I am getting ready for winter,” she said.",
+     "es": "Pero la hormiga siguió trabajando. —Me preparo para el invierno —dijo.",
+     "clipEn": "out_antgrass_p3_en",
+     "clipEs": "out_antgrass_p3_es"
+    },
+    {
+     "icon": "❄️",
+     "art": "out-antgrass-p4",
+     "en": "Then winter came. Snow covered everything. Grasshopper was cold and hungry.",
+     "es": "Después llegó el invierno. La nieve cubrió todo. La cigarra tenía frío y hambre.",
+     "clipEn": "out_antgrass_p4_en",
+     "clipEs": "out_antgrass_p4_es"
+    },
+    {
+     "icon": "🍲",
+     "art": "out-antgrass-p5",
+     "en": "Ant shared her food with Grasshopper. Work first, then play — and share with friends.",
+     "es": "La hormiga compartió su comida con la cigarra. Primero el trabajo, después el juego… y a compartir con los amigos.",
+     "clipEn": "out_antgrass_p5_en",
+     "clipEs": "out_antgrass_p5_es"
+    }
+   ],
+   "words": [
+    {
+     "en": "ant",
+     "es": "hormiga",
+     "clipEn": "out_antgrass_w0_en",
+     "clipEs": "out_antgrass_w0_es"
+    },
+    {
+     "en": "grasshopper",
+     "es": "cigarra",
+     "clipEn": "out_antgrass_w1_en",
+     "clipEs": "out_antgrass_w1_es"
+    },
+    {
+     "en": "summer",
+     "es": "verano",
+     "clipEn": "out_antgrass_w2_en",
+     "clipEs": "out_antgrass_w2_es"
+    },
+    {
+     "en": "winter",
+     "es": "invierno",
+     "clipEn": "out_antgrass_w3_en",
+     "clipEs": "out_antgrass_w3_es"
+    },
+    {
+     "en": "share",
+     "es": "compartir",
+     "clipEn": "out_antgrass_w4_en",
+     "clipEs": "out_antgrass_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What did Ant do all summer?",
+     "es": "¿Qué hizo la hormiga todo el verano?",
+     "clipEn": "out_antgrass_q0_en",
+     "clipEs": "out_antgrass_q0_es",
+     "choices": [
+      {
+       "icon": "🐜",
+       "en": "She worked and saved food",
+       "es": "Trabajó y guardó comida",
+       "clipEn": "out_antgrass_q0c0_en",
+       "clipEs": "out_antgrass_q0c0_es"
+      },
+      {
+       "icon": "🎵",
+       "en": "She sang songs",
+       "es": "Cantó canciones",
+       "clipEn": "out_antgrass_q0c1_en",
+       "clipEs": "out_antgrass_q0c1_es"
+      },
+      {
+       "icon": "💤",
+       "en": "She slept all day",
+       "es": "Durmió todo el día",
+       "clipEn": "out_antgrass_q0c2_en",
+       "clipEs": "out_antgrass_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Ant carried food to her home, again and again.",
+      "es": "La hormiga llevó comida a su casa, una y otra vez."
+     },
+     "hint2": {
+      "en": "She worked and saved food for winter.",
+      "es": "Trabajó y guardó comida para el invierno."
+     }
+    },
+    {
+     "en": "What happened when winter came?",
+     "es": "¿Qué pasó cuando llegó el invierno?",
+     "clipEn": "out_antgrass_q1_en",
+     "clipEs": "out_antgrass_q1_es",
+     "choices": [
+      {
+       "icon": "❄️",
+       "en": "Grasshopper was cold and hungry",
+       "es": "La cigarra tenía frío y hambre",
+       "clipEn": "out_antgrass_q1c0_en",
+       "clipEs": "out_antgrass_q1c0_es"
+      },
+      {
+       "icon": "🌽",
+       "en": "Grasshopper found lots of food",
+       "es": "La cigarra encontró mucha comida",
+       "clipEn": "out_antgrass_q1c1_en",
+       "clipEs": "out_antgrass_q1c1_es"
+      },
+      {
+       "icon": "☀️",
+       "en": "The sun came out",
+       "es": "Salió el sol",
+       "clipEn": "out_antgrass_q1c2_en",
+       "clipEs": "out_antgrass_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Grasshopper had no food saved.",
+      "es": "La cigarra no tenía comida guardada."
+     },
+     "hint2": {
+      "en": "She was cold and hungry in the snow.",
+      "es": "Tenía frío y hambre en la nieve."
+     }
+    },
+    {
+     "en": "What does this story teach us?",
+     "es": "¿Qué nos enseña este cuento?",
+     "clipEn": "out_antgrass_q2_en",
+     "clipEs": "out_antgrass_q2_es",
+     "choices": [
+      {
+       "icon": "🌟",
+       "en": "Work first, then play",
+       "es": "Primero el trabajo, después el juego",
+       "clipEn": "out_antgrass_q2c0_en",
+       "clipEs": "out_antgrass_q2c0_es"
+      },
+      {
+       "icon": "🎈",
+       "en": "Never work at all",
+       "es": "No trabajes nunca",
+       "clipEn": "out_antgrass_q2c1_en",
+       "clipEs": "out_antgrass_q2c1_es"
+      },
+      {
+       "icon": "🎤",
+       "en": "Sing all day long",
+       "es": "Canta todo el día",
+       "clipEn": "out_antgrass_q2c2_en",
+       "clipEs": "out_antgrass_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about what Ant did first.",
+      "es": "Piensa en lo que la hormiga hizo primero."
+     },
+     "hint2": {
+      "en": "Work first, then play!",
+      "es": "¡Primero el trabajo, después el juego!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "6-8"
+    ],
+    "level": 2,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  }
+ ],
+ "outside_doors": [
+  {
+   "id": "epic",
+   "icon": "🚪",
+   "color": "#1565C0",
+   "name": {
+    "en": "Epic",
+    "es": "Epic"
+   },
+   "note": {
+    "en": "A giant library of kids' books, videos and audiobooks.",
+    "es": "Una biblioteca gigante de libros, videos y audiolibros para niños."
+   },
+   "url": "https://www.getepic.com",
+   "formats": [
+    "book",
+    "video",
+    "audio"
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "levels": [
+     1,
+     2
+    ],
+    "kind": "both",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "storyline",
+   "icon": "🎬",
+   "color": "#B34700",
+   "name": {
+    "en": "Storyline Online",
+    "es": "Storyline Online"
+   },
+   "note": {
+    "en": "Actors read picture books aloud in videos.",
+    "es": "Actores leen libros ilustrados en voz alta en videos."
+   },
+   "url": "https://www.storylineonline.net",
+   "formats": [
+    "video"
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "levels": [
+     1,
+     2
+    ],
+    "kind": "fiction",
+    "lang": "en"
+   }
+  },
+  {
+   "id": "unite",
+   "icon": "🌍",
+   "color": "#0E7C7B",
+   "name": {
+    "en": "Unite for Literacy",
+    "es": "Unite for Literacy"
+   },
+   "note": {
+    "en": "Picture books you can read and hear in many languages.",
+    "es": "Libros ilustrados para leer y escuchar en muchos idiomas."
+   },
+   "url": "https://www.uniteforliteracy.com",
+   "formats": [
+    "book",
+    "audio"
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "levels": [
+     1,
+     2
+    ],
+    "kind": "both",
+    "lang": "bilingual"
+   }
+  }
+ ]
 }
