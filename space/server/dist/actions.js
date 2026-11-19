@@ -6723,7 +6723,7 @@ var Actions = {
     response: object({ seeded: number2(), total: number2(), already: boolean2(), done: boolean2() }),
     privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const AUDIO_PACK_VERSION = "2026-11-19-familypeek1";
+      const AUDIO_PACK_VERSION = "2026-11-19-storyweaver-e1";
       const store = await getStore(ctx);
       const flag = await store.metaGet("audio_seeded");
       const ver = await store.metaGet("audio_pack_version");

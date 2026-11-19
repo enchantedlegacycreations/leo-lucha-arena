@@ -25010,6 +25010,4610 @@
     "kind": "fiction",
     "lang": "bilingual"
    }
+  },
+  {
+   "id": "dinosaur-big-tree",
+   "flower": "🦕",
+   "name": {
+    "en": "The Dinosaur and the Big Tree",
+    "es": "El dinosaurio y el árbol grande"
+   },
+   "cover": "out-dinosaur-big-tree-cover",
+   "panels": [
+    {
+     "icon": "🌱",
+     "art": "out-dinosaur-big-tree-p0",
+     "en": "One day the tree began to sprout and it grew grew grew and grew.",
+     "es": "Un día, al árbol le creció un brote y creció, creció, creció y creció.",
+     "clipEn": "out_dino_p0_en",
+     "clipEs": "out_dino_p0_es"
+    },
+    {
+     "icon": "🥥",
+     "art": "out-dinosaur-big-tree-p1",
+     "en": "The coconut tree had a coconut.",
+     "es": "El árbol de coco tenía un coco.",
+     "clipEn": "out_dino_p1_en",
+     "clipEs": "out_dino_p1_es"
+    },
+    {
+     "icon": "🦕",
+     "art": "out-dinosaur-big-tree-p2",
+     "en": "Dinosaur saw the coconut and he ate it.",
+     "es": "El dinosaurio vio el coco y se lo comió.",
+     "clipEn": "out_dino_p2_en",
+     "clipEs": "out_dino_p2_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-dinosaur-big-tree-cover",
+     "en": "\"The Dinosaur and the Big Tree\" by Leon Lopez, illustrated by Nimret Handa, Yulianto Qin and tanvi dhanecha. Spanish translation by Vanessa Herrera. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«El dinosaurio y el árbol grande», de Leon Lopez, ilustrado por Nimret Handa, Yulianto Qin y tanvi dhanecha. Traducción al español de Vanessa Herrera. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_dino_credits_en",
+     "clipEs": "out_dino_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "tree",
+     "es": "árbol",
+     "art": "out-dinosaur-big-tree-w0",
+     "clipEn": "out_dino_w0_en",
+     "clipEs": "out_dino_w0_es"
+    },
+    {
+     "en": "coconut",
+     "es": "coco",
+     "art": "out-dinosaur-big-tree-w1",
+     "clipEn": "out_dino_w1_en",
+     "clipEs": "out_dino_w1_es"
+    },
+    {
+     "en": "dinosaur",
+     "es": "dinosaurio",
+     "art": "out-dinosaur-big-tree-w2",
+     "clipEn": "out_dino_w2_en",
+     "clipEs": "out_dino_w2_es"
+    },
+    {
+     "en": "grow",
+     "es": "crecer",
+     "art": "out-dinosaur-big-tree-w3",
+     "clipEn": "out_dino_w3_en",
+     "clipEs": "out_dino_w3_es"
+    },
+    {
+     "en": "eat",
+     "es": "comer",
+     "art": "out-dinosaur-big-tree-w4",
+     "clipEn": "out_dino_w4_en",
+     "clipEs": "out_dino_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What grew and grew and grew?",
+     "es": "¿Qué creció, creció y creció?",
+     "clipEn": "out_dino_q0_en",
+     "clipEs": "out_dino_q0_es",
+     "choices": [
+      {
+       "icon": "🌳",
+       "en": "The tree",
+       "es": "El árbol",
+       "clipEn": "out_dino_q0c0_en",
+       "clipEs": "out_dino_q0c0_es"
+      },
+      {
+       "icon": "🦕",
+       "en": "The dinosaur",
+       "es": "El dinosaurio",
+       "clipEn": "out_dino_q0c1_en",
+       "clipEs": "out_dino_q0c1_es"
+      },
+      {
+       "icon": "🥥",
+       "en": "The coconut",
+       "es": "El coco",
+       "clipEn": "out_dino_q0c2_en",
+       "clipEs": "out_dino_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "It began as a tiny sprout.",
+      "es": "Comenzó como un brote pequeño."
+     },
+     "hint2": {
+      "en": "The tree! It grew and grew.",
+      "es": "¡El árbol! Creció y creció."
+     }
+    },
+    {
+     "en": "What did the coconut tree have?",
+     "es": "¿Qué tenía el árbol de coco?",
+     "clipEn": "out_dino_q1_en",
+     "clipEs": "out_dino_q1_es",
+     "choices": [
+      {
+       "icon": "🥥",
+       "en": "A coconut",
+       "es": "Un coco",
+       "clipEn": "out_dino_q1c0_en",
+       "clipEs": "out_dino_q1c0_es"
+      },
+      {
+       "icon": "🍃",
+       "en": "Green leaves",
+       "es": "Hojas verdes",
+       "clipEn": "out_dino_q1c1_en",
+       "clipEs": "out_dino_q1c1_es"
+      },
+      {
+       "icon": "🌱",
+       "en": "A tiny sprout",
+       "es": "Un brote pequeño",
+       "clipEn": "out_dino_q1c2_en",
+       "clipEs": "out_dino_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Look at the top of the tree.",
+      "es": "Mira arriba del árbol."
+     },
+     "hint2": {
+      "en": "A coconut! And Dinosaur ate it.",
+      "es": "¡Un coco! Y el dinosaurio se lo comió."
+     }
+    },
+    {
+     "en": "Who ate the coconut?",
+     "es": "¿Quién se comió el coco?",
+     "clipEn": "out_dino_q2_en",
+     "clipEs": "out_dino_q2_es",
+     "choices": [
+      {
+       "icon": "🦕",
+       "en": "The dinosaur",
+       "es": "El dinosaurio",
+       "clipEn": "out_dino_q2c0_en",
+       "clipEs": "out_dino_q2c0_es"
+      },
+      {
+       "icon": "🌳",
+       "en": "The tree",
+       "es": "El árbol",
+       "clipEn": "out_dino_q2c1_en",
+       "clipEs": "out_dino_q2c1_es"
+      },
+      {
+       "icon": "🥥",
+       "en": "No one — it is still on the tree",
+       "es": "Nadie: todavía está en el árbol",
+       "clipEn": "out_dino_q2c2_en",
+       "clipEs": "out_dino_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "He saw it and — yum!",
+      "es": "Lo vio y... ¡ñam!"
+     },
+     "hint2": {
+      "en": "The dinosaur ate the coconut!",
+      "es": "¡El dinosaurio se comió el coco!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "little-star",
+   "flower": "🌙",
+   "name": {
+    "en": "Little Star",
+    "es": "Estrellita"
+   },
+   "cover": "out-little-star-cover",
+   "panels": [
+    {
+     "icon": "🌙",
+     "art": "out-little-star-p0",
+     "en": "Dear little, little star.",
+     "es": "Querida estrellita.",
+     "clipEn": "out_star_p0_en",
+     "clipEs": "out_star_p0_es"
+    },
+    {
+     "icon": "🌌",
+     "art": "out-little-star-p1",
+     "en": "How you shine up in the sky?",
+     "es": "¿Cómo brillas arriba en el cielo?",
+     "clipEn": "out_star_p1_en",
+     "clipEs": "out_star_p1_es"
+    },
+    {
+     "icon": "🌙",
+     "art": "out-little-star-p2",
+     "en": "Oh! little, little star.",
+     "es": "¡Oh, estrellita!",
+     "clipEn": "out_star_p2_en",
+     "clipEs": "out_star_p2_es"
+    },
+    {
+     "icon": "🪄",
+     "art": "out-little-star-p3",
+     "en": "You cause brightness at the sky.",
+     "es": "¡Haces que el cielo brille!",
+     "clipEn": "out_star_p3_en",
+     "clipEs": "out_star_p3_es"
+    },
+    {
+     "icon": "🌙",
+     "art": "out-little-star-p4",
+     "en": "Dear little, little star.",
+     "es": "Querida estrellita.",
+     "clipEn": "out_star_p4_en",
+     "clipEs": "out_star_p4_es"
+    },
+    {
+     "icon": "👋",
+     "art": "out-little-star-p5",
+     "en": "Draw nearer, little, little star.",
+     "es": "¡Acércate más, estrellita!",
+     "clipEn": "out_star_p5_en",
+     "clipEs": "out_star_p5_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-little-star-cover",
+     "en": "\"Little Star\" by Adio Jacinta, illustrated by Helga Parekh and Mohit Kataria. Spanish translation by Vanessa Herrera. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Estrellita», de Adio Jacinta, ilustrado por Helga Parekh y Mohit Kataria. Traducción al español de Vanessa Herrera. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_star_credits_en",
+     "clipEs": "out_star_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "star",
+     "es": "estrella",
+     "art": "out-little-star-w0",
+     "clipEn": "out_star_w0_en",
+     "clipEs": "out_star_w0_es"
+    },
+    {
+     "en": "sky",
+     "es": "cielo",
+     "art": "out-little-star-w1",
+     "clipEn": "out_star_w1_en",
+     "clipEs": "out_star_w1_es"
+    },
+    {
+     "en": "shine",
+     "es": "brillar",
+     "art": "out-little-star-w2",
+     "clipEn": "out_star_w2_en",
+     "clipEs": "out_star_w2_es"
+    },
+    {
+     "en": "brightness",
+     "es": "brillo",
+     "art": "out-little-star-w3",
+     "clipEn": "out_star_w3_en",
+     "clipEs": "out_star_w3_es"
+    },
+    {
+     "en": "near",
+     "es": "cerca",
+     "art": "out-little-star-w4",
+     "clipEn": "out_star_w4_en",
+     "clipEs": "out_star_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Who is this song about?",
+     "es": "¿De quién es esta canción?",
+     "clipEn": "out_star_q0_en",
+     "clipEs": "out_star_q0_es",
+     "choices": [
+      {
+       "icon": "🔆",
+       "en": "A little star",
+       "es": "Una estrellita",
+       "clipEn": "out_star_q0c0_en",
+       "clipEs": "out_star_q0c0_es"
+      },
+      {
+       "icon": "☁️",
+       "en": "A cloud",
+       "es": "Una nube",
+       "clipEn": "out_star_q0c1_en",
+       "clipEs": "out_star_q0c1_es"
+      },
+      {
+       "icon": "🌸",
+       "en": "A flower",
+       "es": "Una flor",
+       "clipEn": "out_star_q0c2_en",
+       "clipEs": "out_star_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The song sings to someone small and shiny.",
+      "es": "La canción le canta a alguien pequeño y brillante."
+     },
+     "hint2": {
+      "en": "A little star! She shines in the sky.",
+      "es": "¡Una estrellita! Brilla en el cielo."
+     }
+    },
+    {
+     "en": "Where does the little star shine?",
+     "es": "¿Dónde brilla la estrellita?",
+     "clipEn": "out_star_q1_en",
+     "clipEs": "out_star_q1_es",
+     "choices": [
+      {
+       "icon": "🌌",
+       "en": "In the sky",
+       "es": "En el cielo",
+       "clipEn": "out_star_q1c0_en",
+       "clipEs": "out_star_q1c0_es"
+      },
+      {
+       "icon": "⛰️",
+       "en": "On the green hill",
+       "es": "En la loma verde",
+       "clipEn": "out_star_q1c1_en",
+       "clipEs": "out_star_q1c1_es"
+      },
+      {
+       "icon": "🤚",
+       "en": "In a big hand",
+       "es": "En una mano grande",
+       "clipEn": "out_star_q1c2_en",
+       "clipEs": "out_star_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Look up, up, up!",
+      "es": "¡Mira arriba, arriba, arriba!"
+     },
+     "hint2": {
+      "en": "In the sky, with the clouds.",
+      "es": "En el cielo, con las nubes."
+     }
+    },
+    {
+     "en": "What does the little star do?",
+     "es": "¿Qué hace la estrellita?",
+     "clipEn": "out_star_q2_en",
+     "clipEs": "out_star_q2_es",
+     "choices": [
+      {
+       "icon": "🔆",
+       "en": "It shines",
+       "es": "Brilla",
+       "clipEn": "out_star_q2c0_en",
+       "clipEs": "out_star_q2c0_es"
+      },
+      {
+       "icon": "☁️",
+       "en": "It hides behind a cloud",
+       "es": "Se esconde tras una nube",
+       "clipEn": "out_star_q2c1_en",
+       "clipEs": "out_star_q2c1_es"
+      },
+      {
+       "icon": "⬇️",
+       "en": "It falls down",
+       "es": "Se cae",
+       "clipEn": "out_star_q2c2_en",
+       "clipEs": "out_star_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The star is bright, bright, bright.",
+      "es": "La estrella brilla, brilla, brilla."
+     },
+     "hint2": {
+      "en": "It shines! It lights up the sky.",
+      "es": "¡Brilla! Ilumina el cielo."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "i-like-to-read",
+   "flower": "📖",
+   "name": {
+    "en": "I Like to Read",
+    "es": "Me gusta leer"
+   },
+   "cover": "out-i-like-to-read-cover",
+   "panels": [
+    {
+     "icon": "📖",
+     "art": "out-i-like-to-read-p0",
+     "en": "I like to read.",
+     "es": "Me gusta leer.",
+     "clipEn": "out_read_p0_en",
+     "clipEs": "out_read_p0_es"
+    },
+    {
+     "icon": "❓",
+     "art": "out-i-like-to-read-p1",
+     "en": "Who can I read to?",
+     "es": "¿A quién le puedo leer?",
+     "clipEn": "out_read_p1_en",
+     "clipEs": "out_read_p1_es"
+    },
+    {
+     "icon": "😴",
+     "art": "out-i-like-to-read-p2",
+     "en": "My sister is asleep.",
+     "es": "Mi hermana está dormida.",
+     "clipEn": "out_read_p2_en",
+     "clipEs": "out_read_p2_es"
+    },
+    {
+     "icon": "❓",
+     "art": "out-i-like-to-read-p3",
+     "en": "Who can I read to?",
+     "es": "¿A quién le puedo leer?",
+     "clipEn": "out_read_p3_en",
+     "clipEs": "out_read_p3_es"
+    },
+    {
+     "icon": "👩‍🍳",
+     "art": "out-i-like-to-read-p4",
+     "en": "My mother and grandmother are busy.",
+     "es": "Mi madre y mi abuela están ocupadas.",
+     "clipEn": "out_read_p4_en",
+     "clipEs": "out_read_p4_es"
+    },
+    {
+     "icon": "❓",
+     "art": "out-i-like-to-read-p5",
+     "en": "Who can I read to?",
+     "es": "¿A quién le puedo leer?",
+     "clipEn": "out_read_p5_en",
+     "clipEs": "out_read_p5_es"
+    },
+    {
+     "icon": "🚗",
+     "art": "out-i-like-to-read-p6",
+     "en": "My father and grandfather are busy.",
+     "es": "Mi padre y mi abuelo están ocupados.",
+     "clipEn": "out_read_p6_en",
+     "clipEs": "out_read_p6_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-i-like-to-read-p7",
+     "en": "Who can I read to? I can read to myself!",
+     "es": "¿A quién le puedo leer? ¡Puedo leer para mí!",
+     "clipEn": "out_read_p7_en",
+     "clipEs": "out_read_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-i-like-to-read-cover",
+     "en": "\"I Like to Read\" by Letta Machoga, illustrated by Wiehan de Jager. Spanish translation by Enrique Romero. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Me gusta leer», de Letta Machoga, ilustrado por Wiehan de Jager. Traducción al español de Enrique Romero. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_read_credits_en",
+     "clipEs": "out_read_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "read",
+     "es": "leer",
+     "art": "out-i-like-to-read-w0",
+     "clipEn": "out_read_w0_en",
+     "clipEs": "out_read_w0_es"
+    },
+    {
+     "en": "sister",
+     "es": "hermana",
+     "art": "out-i-like-to-read-w1",
+     "clipEn": "out_read_w1_en",
+     "clipEs": "out_read_w1_es"
+    },
+    {
+     "en": "mother",
+     "es": "madre",
+     "art": "out-i-like-to-read-w2",
+     "clipEn": "out_read_w2_en",
+     "clipEs": "out_read_w2_es"
+    },
+    {
+     "en": "grandmother",
+     "es": "abuela",
+     "art": "out-i-like-to-read-w3",
+     "clipEn": "out_read_w3_en",
+     "clipEs": "out_read_w3_es"
+    },
+    {
+     "en": "father",
+     "es": "padre",
+     "art": "out-i-like-to-read-w4",
+     "clipEn": "out_read_w4_en",
+     "clipEs": "out_read_w4_es"
+    },
+    {
+     "en": "grandfather",
+     "es": "abuelo",
+     "art": "out-i-like-to-read-w5",
+     "clipEn": "out_read_w5_en",
+     "clipEs": "out_read_w5_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What does the boy like to do?",
+     "es": "¿Qué le gusta hacer al niño?",
+     "clipEn": "out_read_q0_en",
+     "clipEs": "out_read_q0_es",
+     "choices": [
+      {
+       "icon": "📖",
+       "en": "Read",
+       "es": "Leer",
+       "clipEn": "out_read_q0c0_en",
+       "clipEs": "out_read_q0c0_es"
+      },
+      {
+       "icon": "😴",
+       "en": "Sleep",
+       "es": "Dormir",
+       "clipEn": "out_read_q0c1_en",
+       "clipEs": "out_read_q0c1_es"
+      },
+      {
+       "icon": "👩‍🍳",
+       "en": "Cook",
+       "es": "Cocinar",
+       "clipEn": "out_read_q0c2_en",
+       "clipEs": "out_read_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "He carries a book everywhere.",
+      "es": "Lleva un libro a todas partes."
+     },
+     "hint2": {
+      "en": "Read! He loves to read.",
+      "es": "¡Leer! Le encanta leer."
+     }
+    },
+    {
+     "en": "Why can't he read to his sister?",
+     "es": "¿Por qué no puede leerle a su hermana?",
+     "clipEn": "out_read_q1_en",
+     "clipEs": "out_read_q1_es",
+     "choices": [
+      {
+       "icon": "😴",
+       "en": "She is asleep",
+       "es": "Ella está dormida",
+       "clipEn": "out_read_q1c0_en",
+       "clipEs": "out_read_q1c0_es"
+      },
+      {
+       "icon": "👩‍🍳",
+       "en": "She is cooking",
+       "es": "Ella está cocinando",
+       "clipEn": "out_read_q1c1_en",
+       "clipEs": "out_read_q1c1_es"
+      },
+      {
+       "icon": "🚗",
+       "en": "She is fixing a car",
+       "es": "Ella está arreglando un carro",
+       "clipEn": "out_read_q1c2_en",
+       "clipEs": "out_read_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Shh... look at the crib.",
+      "es": "Shh... mira la cuna."
+     },
+     "hint2": {
+      "en": "She is asleep in her crib.",
+      "es": "Está dormida en su cuna."
+     }
+    },
+    {
+     "en": "Who does he read to at the end?",
+     "es": "¿A quién le lee al final?",
+     "clipEn": "out_read_q2_en",
+     "clipEs": "out_read_q2_es",
+     "choices": [
+      {
+       "icon": "📖",
+       "en": "Himself",
+       "es": "A sí mismo",
+       "clipEn": "out_read_q2c0_en",
+       "clipEs": "out_read_q2c0_es"
+      },
+      {
+       "icon": "🚗",
+       "en": "His father",
+       "es": "A su padre",
+       "clipEn": "out_read_q2c1_en",
+       "clipEs": "out_read_q2c1_es"
+      },
+      {
+       "icon": "👵",
+       "en": "His grandmother",
+       "es": "A su abuela",
+       "clipEn": "out_read_q2c2_en",
+       "clipEs": "out_read_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Everyone is busy... but he has an idea!",
+      "es": "Todos están ocupados... ¡pero él tiene una idea!"
+     },
+     "hint2": {
+      "en": "He reads to himself!",
+      "es": "¡Lee para sí mismo!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "who-is-it",
+   "flower": "🐘",
+   "name": {
+    "en": "Who Is It?",
+    "es": "¿Quién es?"
+   },
+   "cover": "out-who-is-it-cover",
+   "panels": [
+    {
+     "icon": "👂",
+     "art": "out-who-is-it-p0",
+     "en": "Priya hears a sound. Srrr... Srrr... Who is it?",
+     "es": "Priya escucha un sonido. Srrr... Srrr... ¿Quién es?",
+     "clipEn": "out_who_p0_en",
+     "clipEs": "out_who_p0_es"
+    },
+    {
+     "icon": "🐄",
+     "art": "out-who-is-it-p1",
+     "en": "Priya runs out. She sees the cow chewing grass. No, it is not the cow that is making the sound.",
+     "es": "Priya sale y ve la vaca que mastica hierba. No, no es la vaca la que está haciendo el sonido.",
+     "clipEn": "out_who_p1_en",
+     "clipEs": "out_who_p1_es"
+    },
+    {
+     "icon": "🐒",
+     "art": "out-who-is-it-p2",
+     "en": "Is it the monkey in the tree? No, it is not the monkey.",
+     "es": "¿Es el mono en el árbol? No, no es el mono.",
+     "clipEn": "out_who_p2_en",
+     "clipEs": "out_who_p2_es"
+    },
+    {
+     "icon": "🐸",
+     "art": "out-who-is-it-p3",
+     "en": "Is it the frog hopping in the grass? No, it is not the frog.",
+     "es": "¿Es la rana saltando en la hierba? No, no es la rana.",
+     "clipEn": "out_who_p3_en",
+     "clipEs": "out_who_p3_es"
+    },
+    {
+     "icon": "🦌",
+     "art": "out-who-is-it-p4",
+     "en": "Is it the deer jumping along? No, it is not the deer.",
+     "es": "¿Es el ciervo saltando? No, no es el ciervo.",
+     "clipEn": "out_who_p4_en",
+     "clipEs": "out_who_p4_es"
+    },
+    {
+     "icon": "🐟",
+     "art": "out-who-is-it-p5",
+     "en": "Is it the fish in the pond? No, it is not the fish.",
+     "es": "¿Es el pez en el estanque? No, no es el pez.",
+     "clipEn": "out_who_p5_en",
+     "clipEs": "out_who_p5_es"
+    },
+    {
+     "icon": "🐘",
+     "art": "out-who-is-it-p6",
+     "en": "Then Priya sees the elephant! The elephant is rubbing its back against a tree.",
+     "es": "¡Entonces Priya ve el elefante! El elefante se frota la espalda contra un árbol.",
+     "clipEn": "out_who_p6_en",
+     "clipEs": "out_who_p6_es"
+    },
+    {
+     "icon": "🔍",
+     "art": "out-who-is-it-p7",
+     "en": "Now Priya has her answer! Srrr... Srrr...",
+     "es": "¡Ahora Priya tiene su respuesta! Srrr... Srrr...",
+     "clipEn": "out_who_p7_en",
+     "clipEs": "out_who_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-who-is-it-cover",
+     "en": "\"Who Is It?\" by Kanchan Bannerjee, illustrated by Pratyush Gupta. Spanish translation by Carlos Tello. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "es": "«¿Quién es?», de Kanchan Bannerjee, ilustrado por Pratyush Gupta. Traducción al español de Carlos Tello. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "clipEn": "out_who_credits_en",
+     "clipEs": "out_who_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "cow",
+     "es": "vaca",
+     "art": "out-who-is-it-w0",
+     "clipEn": "out_who_w0_en",
+     "clipEs": "out_who_w0_es"
+    },
+    {
+     "en": "monkey",
+     "es": "mono",
+     "art": "out-who-is-it-w1",
+     "clipEn": "out_who_w1_en",
+     "clipEs": "out_who_w1_es"
+    },
+    {
+     "en": "frog",
+     "es": "rana",
+     "art": "out-who-is-it-w2",
+     "clipEn": "out_who_w2_en",
+     "clipEs": "out_who_w2_es"
+    },
+    {
+     "en": "deer",
+     "es": "ciervo",
+     "art": "out-who-is-it-w3",
+     "clipEn": "out_who_w3_en",
+     "clipEs": "out_who_w3_es"
+    },
+    {
+     "en": "fish",
+     "es": "pez",
+     "art": "out-who-is-it-w4",
+     "clipEn": "out_who_w4_en",
+     "clipEs": "out_who_w4_es"
+    },
+    {
+     "en": "elephant",
+     "es": "elefante",
+     "art": "out-who-is-it-w5",
+     "clipEn": "out_who_w5_en",
+     "clipEs": "out_who_w5_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What sound does Priya hear?",
+     "es": "¿Qué sonido escucha Priya?",
+     "clipEn": "out_who_q0_en",
+     "clipEs": "out_who_q0_es",
+     "choices": [
+      {
+       "icon": "👂",
+       "en": "Srrr... Srrr...",
+       "es": "Srrr... Srrr...",
+       "clipEn": "out_who_q0c0_en",
+       "clipEs": "out_who_q0c0_es"
+      },
+      {
+       "icon": "🐄",
+       "en": "Moo... Moo...",
+       "es": "Mu... Mu...",
+       "clipEn": "out_who_q0c1_en",
+       "clipEs": "out_who_q0c1_es"
+      },
+      {
+       "icon": "🐸",
+       "en": "Croak... Croak...",
+       "es": "Croac... Croac...",
+       "clipEn": "out_who_q0c2_en",
+       "clipEs": "out_who_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "It sounds like something rubbing: srrr, srrr.",
+      "es": "Suena como algo que se frota: srrr, srrr."
+     },
+     "hint2": {
+      "en": "Srrr... Srrr... That is the sound!",
+      "es": "Srrr... Srrr... ¡Ese es el sonido!"
+     }
+    },
+    {
+     "en": "Who is making the sound?",
+     "es": "¿Quién está haciendo el sonido?",
+     "clipEn": "out_who_q1_en",
+     "clipEs": "out_who_q1_es",
+     "choices": [
+      {
+       "icon": "🐘",
+       "en": "The elephant",
+       "es": "El elefante",
+       "clipEn": "out_who_q1c0_en",
+       "clipEs": "out_who_q1c0_es"
+      },
+      {
+       "icon": "🐄",
+       "en": "The cow",
+       "es": "La vaca",
+       "clipEn": "out_who_q1c1_en",
+       "clipEs": "out_who_q1c1_es"
+      },
+      {
+       "icon": "🐒",
+       "en": "The monkey",
+       "es": "El mono",
+       "clipEn": "out_who_q1c2_en",
+       "clipEs": "out_who_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "It is the biggest animal in the story.",
+      "es": "Es el animal más grande del cuento."
+     },
+     "hint2": {
+      "en": "The elephant! It rubs its back on the tree.",
+      "es": "¡El elefante! Se frota la espalda en el árbol."
+     }
+    },
+    {
+     "en": "What is the elephant doing?",
+     "es": "¿Qué está haciendo el elefante?",
+     "clipEn": "out_who_q2_en",
+     "clipEs": "out_who_q2_es",
+     "choices": [
+      {
+       "icon": "🌳",
+       "en": "Rubbing its back on a tree",
+       "es": "Frotándose la espalda en un árbol",
+       "clipEn": "out_who_q2c0_en",
+       "clipEs": "out_who_q2c0_es"
+      },
+      {
+       "icon": "🌿",
+       "en": "Chewing grass",
+       "es": "Masticando hierba",
+       "clipEn": "out_who_q2c1_en",
+       "clipEs": "out_who_q2c1_es"
+      },
+      {
+       "icon": "🐸",
+       "en": "Hopping in the grass",
+       "es": "Saltando en la hierba",
+       "clipEn": "out_who_q2c2_en",
+       "clipEs": "out_who_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Srrr... srrr... against the tree.",
+      "es": "Srrr... srrr... contra el árbol."
+     },
+     "hint2": {
+      "en": "It is rubbing its back on the tree!",
+      "es": "¡Se está frotando la espalda en el árbol!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "my-body",
+   "flower": "🏃",
+   "name": {
+    "en": "My Body",
+    "es": "Mi cuerpo"
+   },
+   "cover": "out-my-body-cover",
+   "panels": [
+    {
+     "icon": "🏃",
+     "art": "out-my-body-p0",
+     "en": "I can run with it.",
+     "es": "Puedo correr con él.",
+     "clipEn": "out_body_p0_en",
+     "clipEs": "out_body_p0_es"
+    },
+    {
+     "icon": "🦘",
+     "art": "out-my-body-p1",
+     "en": "I can jump with it.",
+     "es": "Puedo saltar con él.",
+     "clipEn": "out_body_p1_en",
+     "clipEs": "out_body_p1_es"
+    },
+    {
+     "icon": "💃",
+     "art": "out-my-body-p2",
+     "en": "I can dance with it.",
+     "es": "Puedo bailar con él.",
+     "clipEn": "out_body_p2_en",
+     "clipEs": "out_body_p2_es"
+    },
+    {
+     "icon": "🏊",
+     "art": "out-my-body-p3",
+     "en": "I can swim with it.",
+     "es": "Puedo nadar con él.",
+     "clipEn": "out_body_p3_en",
+     "clipEs": "out_body_p3_es"
+    },
+    {
+     "icon": "🪢",
+     "art": "out-my-body-p4",
+     "en": "I can skip with it.",
+     "es": "Puedo saltar la cuerda con él.",
+     "clipEn": "out_body_p4_en",
+     "clipEs": "out_body_p4_es"
+    },
+    {
+     "icon": "⚽",
+     "art": "out-my-body-p5",
+     "en": "I can kick with it.",
+     "es": "Puedo patear con él.",
+     "clipEn": "out_body_p5_en",
+     "clipEs": "out_body_p5_es"
+    },
+    {
+     "icon": "💨",
+     "art": "out-my-body-p6",
+     "en": "I can escape with it.",
+     "es": "Puedo escapar con él.",
+     "clipEn": "out_body_p6_en",
+     "clipEs": "out_body_p6_es"
+    },
+    {
+     "icon": "🕊️",
+     "art": "out-my-body-p7",
+     "en": "But I can never fly with it.",
+     "es": "Pero nunca puedo volar con él.",
+     "clipEn": "out_body_p7_en",
+     "clipEs": "out_body_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-my-body-cover",
+     "en": "\"My Body\" by Clare Verbeek, Thembani Dladla and Zanele Buthelezi, illustrated by Mlungisi Dlamini. Spanish translation by Jessica Hammer. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Mi cuerpo», de Clare Verbeek, Thembani Dladla y Zanele Buthelezi, ilustrado por Mlungisi Dlamini. Traducción al español de Jessica Hammer. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_body_credits_en",
+     "clipEs": "out_body_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "run",
+     "es": "correr",
+     "art": "out-my-body-w0",
+     "clipEn": "out_body_w0_en",
+     "clipEs": "out_body_w0_es"
+    },
+    {
+     "en": "jump",
+     "es": "saltar",
+     "art": "out-my-body-w1",
+     "clipEn": "out_body_w1_en",
+     "clipEs": "out_body_w1_es"
+    },
+    {
+     "en": "dance",
+     "es": "bailar",
+     "art": "out-my-body-w2",
+     "clipEn": "out_body_w2_en",
+     "clipEs": "out_body_w2_es"
+    },
+    {
+     "en": "swim",
+     "es": "nadar",
+     "art": "out-my-body-w3",
+     "clipEn": "out_body_w3_en",
+     "clipEs": "out_body_w3_es"
+    },
+    {
+     "en": "kick",
+     "es": "patear",
+     "art": "out-my-body-w4",
+     "clipEn": "out_body_w4_en",
+     "clipEs": "out_body_w4_es"
+    },
+    {
+     "en": "fly",
+     "es": "volar",
+     "art": "out-my-body-w5",
+     "clipEn": "out_body_w5_en",
+     "clipEs": "out_body_w5_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What can I never do with my body?",
+     "es": "¿Qué es lo que nunca puedo hacer con mi cuerpo?",
+     "clipEn": "out_body_q0_en",
+     "clipEs": "out_body_q0_es",
+     "choices": [
+      {
+       "icon": "🕊️",
+       "en": "Fly",
+       "es": "Volar",
+       "clipEn": "out_body_q0c0_en",
+       "clipEs": "out_body_q0c0_es"
+      },
+      {
+       "icon": "🏃",
+       "en": "Run",
+       "es": "Correr",
+       "clipEn": "out_body_q0c1_en",
+       "clipEs": "out_body_q0c1_es"
+      },
+      {
+       "icon": "🏊",
+       "en": "Swim",
+       "es": "Nadar",
+       "clipEn": "out_body_q0c2_en",
+       "clipEs": "out_body_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The bird can do it, but I cannot.",
+      "es": "El pájaro puede hacerlo, pero yo no."
+     },
+     "hint2": {
+      "en": "Fly! I can never fly with my body.",
+      "es": "¡Volar! Nunca puedo volar con mi cuerpo."
+     }
+    },
+    {
+     "en": "What can I do in the water with my body?",
+     "es": "¿Qué puedo hacer en el agua con mi cuerpo?",
+     "clipEn": "out_body_q1_en",
+     "clipEs": "out_body_q1_es",
+     "choices": [
+      {
+       "icon": "🏊",
+       "en": "Swim",
+       "es": "Nadar",
+       "clipEn": "out_body_q1c0_en",
+       "clipEs": "out_body_q1c0_es"
+      },
+      {
+       "icon": "💃",
+       "en": "Dance",
+       "es": "Bailar",
+       "clipEn": "out_body_q1c1_en",
+       "clipEs": "out_body_q1c1_es"
+      },
+      {
+       "icon": "⚽",
+       "en": "Kick",
+       "es": "Patear",
+       "clipEn": "out_body_q1c2_en",
+       "clipEs": "out_body_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think of the pool.",
+      "es": "Piensa en la piscina."
+     },
+     "hint2": {
+      "en": "Swim! I can swim with my body.",
+      "es": "¡Nadar! Puedo nadar con mi cuerpo."
+     }
+    },
+    {
+     "en": "What can I do with a rope?",
+     "es": "¿Qué puedo hacer con una cuerda?",
+     "clipEn": "out_body_q2_en",
+     "clipEs": "out_body_q2_es",
+     "choices": [
+      {
+       "icon": "🪢",
+       "en": "Skip",
+       "es": "Saltar la cuerda",
+       "clipEn": "out_body_q2c0_en",
+       "clipEs": "out_body_q2c0_es"
+      },
+      {
+       "icon": "🏊",
+       "en": "Swim",
+       "es": "Nadar",
+       "clipEn": "out_body_q2c1_en",
+       "clipEs": "out_body_q2c1_es"
+      },
+      {
+       "icon": "🕊️",
+       "en": "Fly",
+       "es": "Volar",
+       "clipEn": "out_body_q2c2_en",
+       "clipEs": "out_body_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The girl turns the rope and jumps.",
+      "es": "La niña gira la cuerda y salta."
+     },
+     "hint2": {
+      "en": "Skip! I can skip with my body.",
+      "es": "¡Saltar la cuerda! Puedo saltar la cuerda con mi cuerpo."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "busy-ants",
+   "flower": "🐜",
+   "name": {
+    "en": "Busy Ants",
+    "es": "Hormigas ocupadas"
+   },
+   "cover": "out-busy-ants-cover",
+   "panels": [
+    {
+     "icon": "🐜",
+     "art": "out-busy-ants-p0",
+     "en": "Hello, I am the fourth one in the line. Can you see me?",
+     "es": "Hola, soy la cuarta en la fila. ¿Puedes verme?",
+     "clipEn": "out_ants_p0_en",
+     "clipEs": "out_ants_p0_es"
+    },
+    {
+     "icon": "🚶",
+     "art": "out-busy-ants-p1",
+     "en": "Left, right, left, right. We walk silently in a line.",
+     "es": "Izquierda, derecha, izquierda, derecha. Caminamos silenciosamente en línea.",
+     "clipEn": "out_ants_p1_en",
+     "clipEs": "out_ants_p1_es"
+    },
+    {
+     "icon": "🛞",
+     "art": "out-busy-ants-p2",
+     "en": "I just got an idea. I am going to get a set of WHEELS to move faster!",
+     "es": "Tengo una idea. ¡Voy a conseguir un par de ruedas para moverme más rápido!",
+     "clipEn": "out_ants_p2_en",
+     "clipEs": "out_ants_p2_es"
+    },
+    {
+     "icon": "👃",
+     "art": "out-busy-ants-p3",
+     "en": "We are not noisy like other animals. Ours is a language of smells.",
+     "es": "No somos tan ruidosos como otros animales. Nuestro lenguaje es el de los olores.",
+     "clipEn": "out_ants_p3_en",
+     "clipEs": "out_ants_p3_es"
+    },
+    {
+     "icon": "🍰",
+     "art": "out-busy-ants-p4",
+     "en": "One kind of smell says, \"Follow me this way for a feast.\"",
+     "es": "Por ejemplo, un tipo de olor dice: \"Síganme, por este camino hay un banquete\".",
+     "clipEn": "out_ants_p4_en",
+     "clipEs": "out_ants_p4_es"
+    },
+    {
+     "icon": "⚠️",
+     "art": "out-busy-ants-p5",
+     "en": "Another smell says, \"Danger! Do not go there.\"",
+     "es": "Otro dice: \"¡Peligro! No vayas ahí.\"",
+     "clipEn": "out_ants_p5_en",
+     "clipEs": "out_ants_p5_es"
+    },
+    {
+     "icon": "🍬",
+     "art": "out-busy-ants-p6",
+     "en": "I love cakes and all kinds of sweets, just like you.",
+     "es": "Yo amo los pasteles y todo tipo de dulces, quizás como tú.",
+     "clipEn": "out_ants_p6_en",
+     "clipEs": "out_ants_p6_es"
+    },
+    {
+     "icon": "💪",
+     "art": "out-busy-ants-p7",
+     "en": "Want to see my muscles at work? I may look very tiny to you, but I am very strong.",
+     "es": "¿Quieres ver mis músculos en acción? Puedo parecer muy pequeña, pero soy muy fuerte.",
+     "clipEn": "out_ants_p7_en",
+     "clipEs": "out_ants_p7_es"
+    },
+    {
+     "icon": "🚪",
+     "art": "out-busy-ants-p8",
+     "en": "Never mind if the door is shut. I can slip through the smallest crack.",
+     "es": "No hay problema si la puerta está cerrada. Puedo entrar por los espacios más pequeños.",
+     "clipEn": "out_ants_p8_en",
+     "clipEs": "out_ants_p8_es"
+    },
+    {
+     "icon": "⛰️",
+     "art": "out-busy-ants-p9",
+     "en": "Believe it or not, hundreds of us live happily in a colony.",
+     "es": "Créanlo o no, cientos de nosotras vivimos felizmente en una colonia.",
+     "clipEn": "out_ants_p9_en",
+     "clipEs": "out_ants_p9_es"
+    },
+    {
+     "icon": "🔤",
+     "art": "out-busy-ants-p10",
+     "en": "LET US LEARN SOME NEW WORDS. Small - Big / Slow - Fast / Short - Tall / Thin - Fat / Hard - Soft / Noisy - Quiet / Here are some words with their opposites. Can you make a sentence for each pair of opposite words? For example, 'An ant is small; an elephant is big'. \"As busy as an ant\" is a nice way to describe someone who is very hard working.",
+     "es": "Aprendamos palabras nuevas / Pequeño - Grande / Lento - Rápido / Bajo - Alto / Delgado - Gordo / Duro - Blando / Ruidoso - Tranquilo / Esas son palabras con sus opuestos. ¿Puedes hacer una oración con ellas? Por ejemplo: \"Una hormiga es pequeña, un elefante es grande\". \"Tan ocupada como una hormiga\" es una bonita manera de describir a alguien que trabaja mucho.",
+     "clipEn": "out_ants_p10_en",
+     "clipEs": "out_ants_p10_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-busy-ants-cover",
+     "en": "\"Busy Ants\" by Kanchan Bannerjee, illustrated by Deepa Balsavar. Spanish translation by Ximena Daud. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Hormigas ocupadas», de Kanchan Bannerjee, ilustrado por Deepa Balsavar. Traducción al español de Ximena Daud. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_ants_credits_en",
+     "clipEs": "out_ants_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "ant",
+     "es": "hormiga",
+     "art": "out-busy-ants-w0",
+     "clipEn": "out_ants_w0_en",
+     "clipEs": "out_ants_w0_es"
+    },
+    {
+     "en": "line",
+     "es": "fila",
+     "art": "out-busy-ants-w1",
+     "clipEn": "out_ants_w1_en",
+     "clipEs": "out_ants_w1_es"
+    },
+    {
+     "en": "smell",
+     "es": "olor",
+     "art": "out-busy-ants-w2",
+     "clipEn": "out_ants_w2_en",
+     "clipEs": "out_ants_w2_es"
+    },
+    {
+     "en": "sweets",
+     "es": "dulces",
+     "art": "out-busy-ants-w3",
+     "clipEn": "out_ants_w3_en",
+     "clipEs": "out_ants_w3_es"
+    },
+    {
+     "en": "strong",
+     "es": "fuerte",
+     "art": "out-busy-ants-w4",
+     "clipEn": "out_ants_w4_en",
+     "clipEs": "out_ants_w4_es"
+    },
+    {
+     "en": "colony",
+     "es": "colonia",
+     "art": "out-busy-ants-w5",
+     "clipEn": "out_ants_w5_en",
+     "clipEs": "out_ants_w5_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "How do ants talk to each other?",
+     "es": "¿Cómo se comunican las hormigas?",
+     "clipEn": "out_ants_q0_en",
+     "clipEs": "out_ants_q0_es",
+     "choices": [
+      {
+       "icon": "👃",
+       "en": "With smells",
+       "es": "Con olores",
+       "clipEn": "out_ants_q0c0_en",
+       "clipEs": "out_ants_q0c0_es"
+      },
+      {
+       "icon": "🔊",
+       "en": "With loud sounds",
+       "es": "Con sonidos fuertes",
+       "clipEn": "out_ants_q0c1_en",
+       "clipEs": "out_ants_q0c1_es"
+      },
+      {
+       "icon": "💡",
+       "en": "With lights",
+       "es": "Con luces",
+       "clipEn": "out_ants_q0c2_en",
+       "clipEs": "out_ants_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Ants are not noisy. They use their noses.",
+      "es": "Las hormigas no son ruidosas. Usan su nariz."
+     },
+     "hint2": {
+      "en": "With smells! That is the ants' language.",
+      "es": "¡Con olores! Ese es el lenguaje de las hormigas."
+     }
+    },
+    {
+     "en": "What does one kind of smell say?",
+     "es": "¿Qué dice un tipo de olor?",
+     "clipEn": "out_ants_q1_en",
+     "clipEs": "out_ants_q1_es",
+     "choices": [
+      {
+       "icon": "🍰",
+       "en": "Follow me this way for a feast!",
+       "es": "¡Síganme, por este camino hay un banquete!",
+       "clipEn": "out_ants_q1c0_en",
+       "clipEs": "out_ants_q1c0_es"
+      },
+      {
+       "icon": "⚠️",
+       "en": "Danger! Do not go there!",
+       "es": "¡Peligro! No vayas ahí.",
+       "clipEn": "out_ants_q1c1_en",
+       "clipEs": "out_ants_q1c1_es"
+      },
+      {
+       "icon": "😴",
+       "en": "Time to sleep!",
+       "es": "¡A dormir!",
+       "clipEn": "out_ants_q1c2_en",
+       "clipEs": "out_ants_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "This smell leads to yummy food.",
+      "es": "Este olor lleva a comida rica."
+     },
+     "hint2": {
+      "en": "Follow me this way for a feast!",
+      "es": "¡Síganme, por este camino hay un banquete!"
+     }
+    },
+    {
+     "en": "Where do hundreds of ants live?",
+     "es": "¿Dónde viven cientos de hormigas?",
+     "clipEn": "out_ants_q2_en",
+     "clipEs": "out_ants_q2_es",
+     "choices": [
+      {
+       "icon": "⛰️",
+       "en": "In a colony",
+       "es": "En una colonia",
+       "clipEn": "out_ants_q2c0_en",
+       "clipEs": "out_ants_q2c0_es"
+      },
+      {
+       "icon": "🏠",
+       "en": "In a house",
+       "es": "En una casa",
+       "clipEn": "out_ants_q2c1_en",
+       "clipEs": "out_ants_q2c1_es"
+      },
+      {
+       "icon": "🌳",
+       "en": "In a tree",
+       "es": "En un árbol",
+       "clipEn": "out_ants_q2c2_en",
+       "clipEs": "out_ants_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "They all live together in one big home.",
+      "es": "Todas viven juntas en un hogar grande."
+     },
+     "hint2": {
+      "en": "In a colony! Hundreds live happily there.",
+      "es": "¡En una colonia! Cientos viven felices allí."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "the-race",
+   "flower": "🏁",
+   "name": {
+    "en": "The Race",
+    "es": "La carrera"
+   },
+   "cover": "out-the-race-cover",
+   "panels": [
+    {
+     "icon": "🏁",
+     "art": "out-the-race-p0",
+     "en": "Four friends want to have a race with their toys.",
+     "es": "Cuatro amigos quieren tener una carrera con sus juguetes.",
+     "clipEn": "out_race_p0_en",
+     "clipEs": "out_race_p0_es"
+    },
+    {
+     "icon": "🚗",
+     "art": "out-the-race-p1",
+     "en": "Veen has a green car. Meena has a yellow auto.",
+     "es": "Veen tiene un coche verde. Meena tiene un auto amarillo.",
+     "clipEn": "out_race_p1_en",
+     "clipEs": "out_race_p1_es"
+    },
+    {
+     "icon": "🚌",
+     "art": "out-the-race-p2",
+     "en": "Sanju has a red bus. Manju has a blue lorry.",
+     "es": "Sanju tiene un autobús rojo. Manju tiene un camión azul.",
+     "clipEn": "out_race_p2_en",
+     "clipEs": "out_race_p2_es"
+    },
+    {
+     "icon": "🚦",
+     "art": "out-the-race-p3",
+     "en": "Ready 1-2-3, GO! Here comes Lucky. Ha-ha, Lucky has joined the race.",
+     "es": "¡Listos, 1-2-3, ¡vamos! Aquí viene Lucky. Ja-ja, Lucky se ha unido a la carrera.",
+     "clipEn": "out_race_p3_en",
+     "clipEs": "out_race_p3_es"
+    },
+    {
+     "icon": "🐶",
+     "art": "out-the-race-p4",
+     "en": "Look, look! Lucky is the fastest of them all. Lucky wins the race.",
+     "es": "¡Mira, mira! Lucky es el más rápido de todos. Lucky gana la carrera.",
+     "clipEn": "out_race_p4_en",
+     "clipEs": "out_race_p4_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-the-race-cover",
+     "en": "\"The Race\" by Kanchan Bannerjee, illustrated by Kavya Singh and Natasha Mehra. Spanish translation by Jen Carter. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«La carrera», de Kanchan Bannerjee, ilustrado por Kavya Singh y Natasha Mehra. Traducción al español de Jen Carter. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_race_credits_en",
+     "clipEs": "out_race_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "race",
+     "es": "carrera",
+     "art": "out-the-race-w0",
+     "clipEn": "out_race_w0_en",
+     "clipEs": "out_race_w0_es"
+    },
+    {
+     "en": "car",
+     "es": "coche",
+     "art": "out-the-race-w1",
+     "clipEn": "out_race_w1_en",
+     "clipEs": "out_race_w1_es"
+    },
+    {
+     "en": "bus",
+     "es": "autobús",
+     "art": "out-the-race-w2",
+     "clipEn": "out_race_w2_en",
+     "clipEs": "out_race_w2_es"
+    },
+    {
+     "en": "dog",
+     "es": "perro",
+     "art": "out-the-race-w3",
+     "clipEn": "out_race_w3_en",
+     "clipEs": "out_race_w3_es"
+    },
+    {
+     "en": "fast",
+     "es": "rápido",
+     "art": "out-the-race-w4",
+     "clipEn": "out_race_w4_en",
+     "clipEs": "out_race_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What do the four friends want to have?",
+     "es": "¿Qué quieren tener los cuatro amigos?",
+     "clipEn": "out_race_q0_en",
+     "clipEs": "out_race_q0_es",
+     "choices": [
+      {
+       "icon": "🏁",
+       "en": "A race",
+       "es": "Una carrera",
+       "clipEn": "out_race_q0c0_en",
+       "clipEs": "out_race_q0c0_es"
+      },
+      {
+       "icon": "🎉",
+       "en": "A party",
+       "es": "Una fiesta",
+       "clipEn": "out_race_q0c1_en",
+       "clipEs": "out_race_q0c1_es"
+      },
+      {
+       "icon": "🧺",
+       "en": "A picnic",
+       "es": "Un picnic",
+       "clipEn": "out_race_q0c2_en",
+       "clipEs": "out_race_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "They line up their toys and say: Ready, GO!",
+      "es": "Alinean sus juguetes y dicen: ¡Listos, vamos!"
+     },
+     "hint2": {
+      "en": "A race! They race with their toys.",
+      "es": "¡Una carrera! Corren con sus juguetes."
+     }
+    },
+    {
+     "en": "What color is Sanju's bus?",
+     "es": "¿De qué color es el autobús de Sanju?",
+     "clipEn": "out_race_q1_en",
+     "clipEs": "out_race_q1_es",
+     "choices": [
+      {
+       "icon": "🟥",
+       "en": "Red",
+       "es": "Rojo",
+       "clipEn": "out_race_q1c0_en",
+       "clipEs": "out_race_q1c0_es"
+      },
+      {
+       "icon": "🟦",
+       "en": "Blue",
+       "es": "Azul",
+       "clipEn": "out_race_q1c1_en",
+       "clipEs": "out_race_q1c1_es"
+      },
+      {
+       "icon": "🟩",
+       "en": "Green",
+       "es": "Verde",
+       "clipEn": "out_race_q1c2_en",
+       "clipEs": "out_race_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Sanju holds his bus up high.",
+      "es": "Sanju levanta su autobús en alto."
+     },
+     "hint2": {
+      "en": "Red! Sanju has a red bus.",
+      "es": "¡Rojo! Sanju tiene un autobús rojo."
+     }
+    },
+    {
+     "en": "Who wins the race?",
+     "es": "¿Quién gana la carrera?",
+     "clipEn": "out_race_q2_en",
+     "clipEs": "out_race_q2_es",
+     "choices": [
+      {
+       "icon": "🐶",
+       "en": "Lucky",
+       "es": "Lucky",
+       "clipEn": "out_race_q2c0_en",
+       "clipEs": "out_race_q2c0_es"
+      },
+      {
+       "icon": "👧",
+       "en": "Veen",
+       "es": "Veen",
+       "clipEn": "out_race_q2c1_en",
+       "clipEs": "out_race_q2c1_es"
+      },
+      {
+       "icon": "👧",
+       "en": "Meena",
+       "es": "Meena",
+       "clipEn": "out_race_q2c2_en",
+       "clipEs": "out_race_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The winner has four legs and a tail.",
+      "es": "El ganador tiene cuatro patas y una cola."
+     },
+     "hint2": {
+      "en": "Lucky! Lucky is the fastest of them all.",
+      "es": "¡Lucky! Lucky es el más rápido de todos."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "two-hungry-boys",
+   "flower": "🧁",
+   "name": {
+    "en": "Two Hungry Boys",
+    "es": "Ben y Thabo"
+   },
+   "cover": "out-two-hungry-boys-cover",
+   "panels": [
+    {
+     "icon": "🧒",
+     "art": "out-two-hungry-boys-p0",
+     "en": "Ben and Thabo are two hungry boys.",
+     "es": "Ben y Thabo son dos niños hambrientos.",
+     "clipEn": "out_boys_p0_en",
+     "clipEs": "out_boys_p0_es"
+    },
+    {
+     "icon": "👵",
+     "art": "out-two-hungry-boys-p1",
+     "en": "Granny is making ten cupcakes. She puts them on a plate.",
+     "es": "La abuela está haciendo diez magdalenas. Las pone en un plato.",
+     "clipEn": "out_boys_p1_en",
+     "clipEs": "out_boys_p1_es"
+    },
+    {
+     "icon": "🧁",
+     "art": "out-two-hungry-boys-p2",
+     "en": "Ben takes one cupcake. Thabo takes two cupcakes.",
+     "es": "Ben toma una magdalena. Thabo toma dos magdalenas.",
+     "clipEn": "out_boys_p2_en",
+     "clipEs": "out_boys_p2_es"
+    },
+    {
+     "icon": "🧁",
+     "art": "out-two-hungry-boys-p3",
+     "en": "Ben takes four cupcakes. Thabo takes two cupcakes.",
+     "es": "Ben toma cuatro magdalenas. Thabo toma dos magdalenas.",
+     "clipEn": "out_boys_p3_en",
+     "clipEs": "out_boys_p3_es"
+    },
+    {
+     "icon": "❓",
+     "art": "out-two-hungry-boys-p4",
+     "en": "How many cupcakes did Ben eat? How many cupcakes did Thabo eat? How many cupcakes are left for granny?",
+     "es": "¿Cuántas magdalenas comió Ben? ¿Cuántas magdalenas comió Thabo? ¿Cuántas magdalenas quedan para la abuela?",
+     "clipEn": "out_boys_p4_en",
+     "clipEs": "out_boys_p4_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-two-hungry-boys-cover",
+     "en": "\"Two Hungry Boys\" by Clare Verbeek, Thembani Dladla and Zanele Buthelezi, illustrated by Bronwen Heath. Spanish translation by Manisha Singh. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Ben y Thabo», de Clare Verbeek, Thembani Dladla y Zanele Buthelezi, ilustrado por Bronwen Heath. Traducción al español de Manisha Singh. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_boys_credits_en",
+     "clipEs": "out_boys_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "hungry",
+     "es": "hambriento",
+     "art": "out-two-hungry-boys-w0",
+     "clipEn": "out_boys_w0_en",
+     "clipEs": "out_boys_w0_es"
+    },
+    {
+     "en": "cupcake",
+     "es": "magdalena",
+     "art": "out-two-hungry-boys-w1",
+     "clipEn": "out_boys_w1_en",
+     "clipEs": "out_boys_w1_es"
+    },
+    {
+     "en": "granny",
+     "es": "abuela",
+     "art": "out-two-hungry-boys-w2",
+     "clipEn": "out_boys_w2_en",
+     "clipEs": "out_boys_w2_es"
+    },
+    {
+     "en": "plate",
+     "es": "plato",
+     "art": "out-two-hungry-boys-w3",
+     "clipEn": "out_boys_w3_en",
+     "clipEs": "out_boys_w3_es"
+    },
+    {
+     "en": "ten",
+     "es": "diez",
+     "art": "out-two-hungry-boys-w4",
+     "clipEn": "out_boys_w4_en",
+     "clipEs": "out_boys_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "How many cupcakes did Ben eat?",
+     "es": "¿Cuántas magdalenas comió Ben?",
+     "clipEn": "out_boys_q0_en",
+     "clipEs": "out_boys_q0_es",
+     "choices": [
+      {
+       "icon": "5️⃣",
+       "en": "Five",
+       "es": "Cinco",
+       "clipEn": "out_boys_q0c0_en",
+       "clipEs": "out_boys_q0c0_es"
+      },
+      {
+       "icon": "4️⃣",
+       "en": "Four",
+       "es": "Cuatro",
+       "clipEn": "out_boys_q0c1_en",
+       "clipEs": "out_boys_q0c1_es"
+      },
+      {
+       "icon": "1️⃣",
+       "en": "One",
+       "es": "Una",
+       "clipEn": "out_boys_q0c2_en",
+       "clipEs": "out_boys_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Ben takes one, and then he takes four. Count them!",
+      "es": "Ben toma una, y después toma cuatro. ¡Cuéntalas!"
+     },
+     "hint2": {
+      "en": "Five! Ben ate five cupcakes.",
+      "es": "¡Cinco! Ben comió cinco magdalenas."
+     }
+    },
+    {
+     "en": "How many cupcakes did Thabo eat?",
+     "es": "¿Cuántas magdalenas comió Thabo?",
+     "clipEn": "out_boys_q1_en",
+     "clipEs": "out_boys_q1_es",
+     "choices": [
+      {
+       "icon": "4️⃣",
+       "en": "Four",
+       "es": "Cuatro",
+       "clipEn": "out_boys_q1c0_en",
+       "clipEs": "out_boys_q1c0_es"
+      },
+      {
+       "icon": "5️⃣",
+       "en": "Five",
+       "es": "Cinco",
+       "clipEn": "out_boys_q1c1_en",
+       "clipEs": "out_boys_q1c1_es"
+      },
+      {
+       "icon": "🔟",
+       "en": "Ten",
+       "es": "Diez",
+       "clipEn": "out_boys_q1c2_en",
+       "clipEs": "out_boys_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Thabo takes two, and then he takes two more.",
+      "es": "Thabo toma dos, y después toma dos más."
+     },
+     "hint2": {
+      "en": "Four! Thabo ate four cupcakes.",
+      "es": "¡Cuatro! Thabo comió cuatro magdalenas."
+     }
+    },
+    {
+     "en": "How many cupcakes are left for Granny?",
+     "es": "¿Cuántas magdalenas quedan para la abuela?",
+     "clipEn": "out_boys_q2_en",
+     "clipEs": "out_boys_q2_es",
+     "choices": [
+      {
+       "icon": "1️⃣",
+       "en": "One",
+       "es": "Una",
+       "clipEn": "out_boys_q2c0_en",
+       "clipEs": "out_boys_q2c0_es"
+      },
+      {
+       "icon": "3️⃣",
+       "en": "Three",
+       "es": "Tres",
+       "clipEn": "out_boys_q2c1_en",
+       "clipEs": "out_boys_q2c1_es"
+      },
+      {
+       "icon": "5️⃣",
+       "en": "Five",
+       "es": "Cinco",
+       "clipEn": "out_boys_q2c2_en",
+       "clipEs": "out_boys_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Ten cupcakes. Ben ate five and Thabo ate four.",
+      "es": "Diez magdalenas. Ben comió cinco y Thabo comió cuatro."
+     },
+     "hint2": {
+      "en": "One! One cupcake is left for Granny.",
+      "es": "¡Una! Queda una magdalena para la abuela."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "incredible-insects",
+   "flower": "🐞",
+   "name": {
+    "en": "Incredible Insects: A Counting Book",
+    "es": "Insectos increíbles: un libro para contar"
+   },
+   "cover": "out-incredible-insects-cover",
+   "panels": [
+    {
+     "icon": "🦗",
+     "art": "out-incredible-insects-p0",
+     "en": "1 Grasshopper",
+     "es": "1 Saltamontes",
+     "clipEn": "out_insect_p0_en",
+     "clipEs": "out_insect_p0_es"
+    },
+    {
+     "icon": "🦋",
+     "art": "out-incredible-insects-p1",
+     "en": "2 Butterflies",
+     "es": "2 Mariposas",
+     "clipEn": "out_insect_p1_en",
+     "clipEs": "out_insect_p1_es"
+    },
+    {
+     "icon": "🍃",
+     "art": "out-incredible-insects-p2",
+     "en": "3 Leaf insects",
+     "es": "3 Insectos hoja",
+     "clipEn": "out_insect_p2_en",
+     "clipEs": "out_insect_p2_es"
+    },
+    {
+     "icon": "🪰",
+     "art": "out-incredible-insects-p3",
+     "en": "4 Dragonflies",
+     "es": "4 Libélulas",
+     "clipEn": "out_insect_p3_en",
+     "clipEs": "out_insect_p3_es"
+    },
+    {
+     "icon": "🌙",
+     "art": "out-incredible-insects-p4",
+     "en": "5 Moths",
+     "es": "5 Polillas",
+     "clipEn": "out_insect_p4_en",
+     "clipEs": "out_insect_p4_es"
+    },
+    {
+     "icon": "🔴",
+     "art": "out-incredible-insects-p5",
+     "en": "6 Red cotton stainers",
+     "es": "6 Chinches rojas del algodón",
+     "clipEn": "out_insect_p5_en",
+     "clipEs": "out_insect_p5_es"
+    },
+    {
+     "icon": "🐝",
+     "art": "out-incredible-insects-p6",
+     "en": "7 Bumble bees",
+     "es": "7 Abejorros",
+     "clipEn": "out_insect_p6_en",
+     "clipEs": "out_insect_p6_es"
+    },
+    {
+     "icon": "🪲",
+     "art": "out-incredible-insects-p7",
+     "en": "8 Jewel bugs",
+     "es": "8 Escarabajos joya",
+     "clipEn": "out_insect_p7_en",
+     "clipEs": "out_insect_p7_es"
+    },
+    {
+     "icon": "✨",
+     "art": "out-incredible-insects-p8",
+     "en": "9 Fireflies",
+     "es": "9 Luciérnagas",
+     "clipEn": "out_insect_p8_en",
+     "clipEs": "out_insect_p8_es"
+    },
+    {
+     "icon": "🐞",
+     "art": "out-incredible-insects-p9",
+     "en": "10 Ladybirds",
+     "es": "10 Mariquitas",
+     "clipEn": "out_insect_p9_en",
+     "clipEs": "out_insect_p9_es"
+    },
+    {
+     "icon": "🌼",
+     "art": "out-incredible-insects-p10",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "📖",
+     "art": "out-incredible-insects-cover",
+     "en": "\"Incredible Insects: A Counting Book\" by Sheena Deviah, illustrated by Sheena Deviah. Spanish translation by MiPrimeraBiblioteca SOB. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Insectos increíbles: un libro para contar», de Sheena Deviah, ilustrado por Sheena Deviah. Traducción al español de MiPrimeraBiblioteca SOB. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_insect_credits_en",
+     "clipEs": "out_insect_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "grasshopper",
+     "es": "saltamontes",
+     "art": "out-incredible-insects-w0",
+     "clipEn": "out_insect_w0_en",
+     "clipEs": "out_insect_w0_es"
+    },
+    {
+     "en": "butterfly",
+     "es": "mariposa",
+     "art": "out-incredible-insects-w1",
+     "clipEn": "out_insect_w1_en",
+     "clipEs": "out_insect_w1_es"
+    },
+    {
+     "en": "dragonfly",
+     "es": "libélula",
+     "art": "out-incredible-insects-w2",
+     "clipEn": "out_insect_w2_en",
+     "clipEs": "out_insect_w2_es"
+    },
+    {
+     "en": "firefly",
+     "es": "luciérnaga",
+     "art": "out-incredible-insects-w3",
+     "clipEn": "out_insect_w3_en",
+     "clipEs": "out_insect_w3_es"
+    },
+    {
+     "en": "ladybird",
+     "es": "mariquita",
+     "art": "out-incredible-insects-w4",
+     "clipEn": "out_insect_w4_en",
+     "clipEs": "out_insect_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "How many grasshoppers are there?",
+     "es": "¿Cuántos saltamontes hay?",
+     "clipEn": "out_insect_q0_en",
+     "clipEs": "out_insect_q0_es",
+     "choices": [
+      {
+       "icon": "1️⃣",
+       "en": "One",
+       "es": "Uno",
+       "clipEn": "out_insect_q0c0_en",
+       "clipEs": "out_insect_q0c0_es"
+      },
+      {
+       "icon": "2️⃣",
+       "en": "Two",
+       "es": "Dos",
+       "clipEn": "out_insect_q0c1_en",
+       "clipEs": "out_insect_q0c1_es"
+      },
+      {
+       "icon": "🔟",
+       "en": "Ten",
+       "es": "Diez",
+       "clipEn": "out_insect_q0c2_en",
+       "clipEs": "out_insect_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Look at the first page. Count the grasshoppers!",
+      "es": "Mira la primera página. ¡Cuenta los saltamontes!"
+     },
+     "hint2": {
+      "en": "One! There is one grasshopper.",
+      "es": "¡Uno! Hay un saltamontes."
+     }
+    },
+    {
+     "en": "How many butterflies are there?",
+     "es": "¿Cuántas mariposas hay?",
+     "clipEn": "out_insect_q1_en",
+     "clipEs": "out_insect_q1_es",
+     "choices": [
+      {
+       "icon": "2️⃣",
+       "en": "Two",
+       "es": "Dos",
+       "clipEn": "out_insect_q1c0_en",
+       "clipEs": "out_insect_q1c0_es"
+      },
+      {
+       "icon": "3️⃣",
+       "en": "Three",
+       "es": "Tres",
+       "clipEn": "out_insect_q1c1_en",
+       "clipEs": "out_insect_q1c1_es"
+      },
+      {
+       "icon": "5️⃣",
+       "en": "Five",
+       "es": "Cinco",
+       "clipEn": "out_insect_q1c2_en",
+       "clipEs": "out_insect_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Count the butterflies on their page!",
+      "es": "¡Cuenta las mariposas en su página!"
+     },
+     "hint2": {
+      "en": "Two! There are two butterflies.",
+      "es": "¡Dos! Hay dos mariposas."
+     }
+    },
+    {
+     "en": "How many ladybirds are there?",
+     "es": "¿Cuántas mariquitas hay?",
+     "clipEn": "out_insect_q2_en",
+     "clipEs": "out_insect_q2_es",
+     "choices": [
+      {
+       "icon": "🔟",
+       "en": "Ten",
+       "es": "Diez",
+       "clipEn": "out_insect_q2c0_en",
+       "clipEs": "out_insect_q2c0_es"
+      },
+      {
+       "icon": "9️⃣",
+       "en": "Nine",
+       "es": "Nueve",
+       "clipEn": "out_insect_q2c1_en",
+       "clipEs": "out_insect_q2c1_es"
+      },
+      {
+       "icon": "1️⃣",
+       "en": "One",
+       "es": "Uno",
+       "clipEn": "out_insect_q2c2_en",
+       "clipEs": "out_insect_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Count the ladybirds on the last counting page!",
+      "es": "¡Cuenta las mariquitas en la última página de contar!"
+     },
+     "hint2": {
+      "en": "Ten! There are ten ladybirds.",
+      "es": "¡Diez! Hay diez mariquitas."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "silkworm",
+   "flower": "🐛",
+   "name": {
+    "en": "Silkworm",
+    "es": "Gusano de seda"
+   },
+   "cover": "out-silkworm-cover",
+   "panels": [
+    {
+     "icon": "🥚",
+     "art": "out-silkworm-p0",
+     "en": "The worms laid small eggs on the leaves.",
+     "es": "Los gusanos ponían pequeños huevos en las hojas.",
+     "clipEn": "out_silk_p0_en",
+     "clipEs": "out_silk_p0_es"
+    },
+    {
+     "icon": "🌿",
+     "art": "out-silkworm-p1",
+     "en": "We fed them mulberry leaves.",
+     "es": "Los alimentamos con hojas de morera.",
+     "clipEn": "out_silk_p1_en",
+     "clipEs": "out_silk_p1_es"
+    },
+    {
+     "icon": "🐛",
+     "art": "out-silkworm-p2",
+     "en": "They grew bigger and became fatter.",
+     "es": "Crecieron y se hicieron más gordos.",
+     "clipEn": "out_silk_p2_en",
+     "clipEs": "out_silk_p2_es"
+    },
+    {
+     "icon": "🧵",
+     "art": "out-silkworm-p3",
+     "en": "The larvae made silk cocoons.",
+     "es": "Las larvas hicieron capullos de seda.",
+     "clipEn": "out_silk_p3_en",
+     "clipEs": "out_silk_p3_es"
+    },
+    {
+     "icon": "🌰",
+     "art": "out-silkworm-p4",
+     "en": "Inside the cocoons, the worms turned into pupae.",
+     "es": "Dentro de los capullos, los gusanos se convirtieron en pupas.",
+     "clipEn": "out_silk_p4_en",
+     "clipEs": "out_silk_p4_es"
+    },
+    {
+     "icon": "👩‍🌾",
+     "art": "out-silkworm-p5",
+     "en": "Some people breed silkworms for a certain purpose.",
+     "es": "Algunas personas crían gusanos de seda para un propósito específico.",
+     "clipEn": "out_silk_p5_en",
+     "clipEs": "out_silk_p5_es"
+    },
+    {
+     "icon": "🇨🇳",
+     "art": "out-silkworm-p6",
+     "en": "In China, they keep thousands of kinds of silkworms.",
+     "es": "En China, tienen miles de tipos de gusanos de seda.",
+     "clipEn": "out_silk_p6_en",
+     "clipEs": "out_silk_p6_es"
+    },
+    {
+     "icon": "👕",
+     "art": "out-silkworm-p7",
+     "en": "They make silk cloths using their cocoons.",
+     "es": "Hacen telas de seda usando sus capullos.",
+     "clipEn": "out_silk_p7_en",
+     "clipEs": "out_silk_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-silkworm-cover",
+     "en": "\"Silkworm\" by Clare Verbeek, Thembani Dladla and Zanele Buthelezi, illustrated by Cathy Feek. Spanish translation by Jessica Hammer. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Gusano de seda», de Clare Verbeek, Thembani Dladla y Zanele Buthelezi, ilustrado por Cathy Feek. Traducción al español de Jessica Hammer. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_silk_credits_en",
+     "clipEs": "out_silk_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "eggs",
+     "es": "huevos",
+     "art": "out-silkworm-w0",
+     "clipEn": "out_silk_w0_en",
+     "clipEs": "out_silk_w0_es"
+    },
+    {
+     "en": "leaves",
+     "es": "hojas",
+     "art": "out-silkworm-w1",
+     "clipEn": "out_silk_w1_en",
+     "clipEs": "out_silk_w1_es"
+    },
+    {
+     "en": "silk",
+     "es": "seda",
+     "art": "out-silkworm-w2",
+     "clipEn": "out_silk_w2_en",
+     "clipEs": "out_silk_w2_es"
+    },
+    {
+     "en": "cocoon",
+     "es": "capullo",
+     "art": "out-silkworm-w3",
+     "clipEn": "out_silk_w3_en",
+     "clipEs": "out_silk_w3_es"
+    },
+    {
+     "en": "cloth",
+     "es": "tela",
+     "art": "out-silkworm-w4",
+     "clipEn": "out_silk_w4_en",
+     "clipEs": "out_silk_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What do the worms lay on the leaves?",
+     "es": "¿Qué ponen los gusanos en las hojas?",
+     "clipEn": "out_silk_q0_en",
+     "clipEs": "out_silk_q0_es",
+     "choices": [
+      {
+       "icon": "🥚",
+       "en": "Small eggs",
+       "es": "Pequeños huevos",
+       "clipEn": "out_silk_q0c0_en",
+       "clipEs": "out_silk_q0c0_es"
+      },
+      {
+       "icon": "👕",
+       "en": "Silk cloths",
+       "es": "Telas de seda",
+       "clipEn": "out_silk_q0c1_en",
+       "clipEs": "out_silk_q0c1_es"
+      },
+      {
+       "icon": "🌰",
+       "en": "Cocoons",
+       "es": "Capullos",
+       "clipEn": "out_silk_q0c2_en",
+       "clipEs": "out_silk_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about the first page of the book.",
+      "es": "Piensa en la primera página del libro."
+     },
+     "hint2": {
+      "en": "Small eggs! The worms lay small eggs on the leaves.",
+      "es": "¡Pequeños huevos! Los gusanos ponen pequeños huevos en las hojas."
+     }
+    },
+    {
+     "en": "What do the larvae make?",
+     "es": "¿Qué hacen las larvas?",
+     "clipEn": "out_silk_q1_en",
+     "clipEs": "out_silk_q1_es",
+     "choices": [
+      {
+       "icon": "🌰",
+       "en": "Silk cocoons",
+       "es": "Capullos de seda",
+       "clipEn": "out_silk_q1c0_en",
+       "clipEs": "out_silk_q1c0_es"
+      },
+      {
+       "icon": "🥚",
+       "en": "Small eggs",
+       "es": "Pequeños huevos",
+       "clipEn": "out_silk_q1c1_en",
+       "clipEs": "out_silk_q1c1_es"
+      },
+      {
+       "icon": "🌿",
+       "en": "Mulberry leaves",
+       "es": "Hojas de morera",
+       "clipEn": "out_silk_q1c2_en",
+       "clipEs": "out_silk_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The larvae spin something with silk.",
+      "es": "Las larvas tejen algo con seda."
+     },
+     "hint2": {
+      "en": "Silk cocoons! The larvae make silk cocoons.",
+      "es": "¡Capullos de seda! Las larvas hacen capullos de seda."
+     }
+    },
+    {
+     "en": "What do people make with the cocoons?",
+     "es": "¿Qué hacen las personas con los capullos?",
+     "clipEn": "out_silk_q2_en",
+     "clipEs": "out_silk_q2_es",
+     "choices": [
+      {
+       "icon": "👕",
+       "en": "Silk cloths",
+       "es": "Telas de seda",
+       "clipEn": "out_silk_q2c0_en",
+       "clipEs": "out_silk_q2c0_es"
+      },
+      {
+       "icon": "🥚",
+       "en": "Small eggs",
+       "es": "Pequeños huevos",
+       "clipEn": "out_silk_q2c1_en",
+       "clipEs": "out_silk_q2c1_es"
+      },
+      {
+       "icon": "🐛",
+       "en": "Pupae",
+       "es": "Pupas",
+       "clipEn": "out_silk_q2c2_en",
+       "clipEs": "out_silk_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about the last page of the book.",
+      "es": "Piensa en la última página del libro."
+     },
+     "hint2": {
+      "en": "Silk cloths! They make silk cloths using their cocoons.",
+      "es": "¡Telas de seda! Hacen telas de seda usando sus capullos."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "palm-tree",
+   "flower": "🌴",
+   "name": {
+    "en": "Palm Tree",
+    "es": "Palmera"
+   },
+   "cover": "out-palm-tree-cover",
+   "panels": [
+    {
+     "icon": "🌴",
+     "art": "out-palm-tree-p0",
+     "en": "Let me tell you about the palm tree.",
+     "es": "Déjame hablarte de la palmera.",
+     "clipEn": "out_palm_p0_en",
+     "clipEs": "out_palm_p0_es"
+    },
+    {
+     "icon": "☀️",
+     "art": "out-palm-tree-p1",
+     "en": "This tree lives when everything else is dry.",
+     "es": "Este árbol vive cuando todo lo demás está seco.",
+     "clipEn": "out_palm_p1_en",
+     "clipEs": "out_palm_p1_es"
+    },
+    {
+     "icon": "⛱️",
+     "art": "out-palm-tree-p2",
+     "en": "The shade from a palm tree is always cool.",
+     "es": "La sombra de una palmera es siempre fresca.",
+     "clipEn": "out_palm_p2_en",
+     "clipEs": "out_palm_p2_es"
+    },
+    {
+     "icon": "🍈",
+     "art": "out-palm-tree-p3",
+     "en": "We eat fruit from the palm tree.",
+     "es": "Comemos fruta de la palmera.",
+     "clipEn": "out_palm_p3_en",
+     "clipEs": "out_palm_p3_es"
+    },
+    {
+     "icon": "🏠",
+     "art": "out-palm-tree-p4",
+     "en": "We use palm leaves to thatch our houses.",
+     "es": "Usamos hojas de palma para cubrir nuestras casas.",
+     "clipEn": "out_palm_p4_en",
+     "clipEs": "out_palm_p4_es"
+    },
+    {
+     "icon": "🧹",
+     "art": "out-palm-tree-p5",
+     "en": "We make brooms and mats from palm leaves.",
+     "es": "Fabricamos escobas y alfombras de hojas de palma.",
+     "clipEn": "out_palm_p5_en",
+     "clipEs": "out_palm_p5_es"
+    },
+    {
+     "icon": "🔥",
+     "art": "out-palm-tree-p6",
+     "en": "We use palm tree seeds for fuel.",
+     "es": "Utilizamos semillas de palmera como combustible.",
+     "clipEn": "out_palm_p6_en",
+     "clipEs": "out_palm_p6_es"
+    },
+    {
+     "icon": "💚",
+     "art": "out-palm-tree-p7",
+     "en": "Do you see why the palm tree is important?",
+     "es": "¿Ves por qué la palmera es tan importante?",
+     "clipEn": "out_palm_p7_en",
+     "clipEs": "out_palm_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-palm-tree-cover",
+     "en": "\"Palm Tree\" by Simon Ipoo, illustrated by Rob Owen. Spanish translation by Javier Sánchez Martín. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "es": "«Palmera», de Simon Ipoo, ilustrado por Rob Owen. Traducción al español de Javier Sánchez Martín. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "clipEn": "out_palm_credits_en",
+     "clipEs": "out_palm_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "palm tree",
+     "es": "palmera",
+     "art": "out-palm-tree-w0",
+     "clipEn": "out_palm_w0_en",
+     "clipEs": "out_palm_w0_es"
+    },
+    {
+     "en": "shade",
+     "es": "sombra",
+     "art": "out-palm-tree-w1",
+     "clipEn": "out_palm_w1_en",
+     "clipEs": "out_palm_w1_es"
+    },
+    {
+     "en": "fruit",
+     "es": "fruta",
+     "art": "out-palm-tree-w2",
+     "clipEn": "out_palm_w2_en",
+     "clipEs": "out_palm_w2_es"
+    },
+    {
+     "en": "leaves",
+     "es": "hojas",
+     "art": "out-palm-tree-w3",
+     "clipEn": "out_palm_w3_en",
+     "clipEs": "out_palm_w3_es"
+    },
+    {
+     "en": "seeds",
+     "es": "semillas",
+     "art": "out-palm-tree-w4",
+     "clipEn": "out_palm_w4_en",
+     "clipEs": "out_palm_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What is always cool under a palm tree?",
+     "es": "¿Qué es siempre fresco bajo una palmera?",
+     "clipEn": "out_palm_q0_en",
+     "clipEs": "out_palm_q0_es",
+     "choices": [
+      {
+       "icon": "⛱️",
+       "en": "The shade",
+       "es": "La sombra",
+       "clipEn": "out_palm_q0c0_en",
+       "clipEs": "out_palm_q0c0_es"
+      },
+      {
+       "icon": "🍈",
+       "en": "The fruit",
+       "es": "La fruta",
+       "clipEn": "out_palm_q0c1_en",
+       "clipEs": "out_palm_q0c1_es"
+      },
+      {
+       "icon": "🌱",
+       "en": "The seeds",
+       "es": "Las semillas",
+       "clipEn": "out_palm_q0c2_en",
+       "clipEs": "out_palm_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "We rest under the tree, out of the sun.",
+      "es": "Descansamos bajo el árbol, fuera del sol."
+     },
+     "hint2": {
+      "en": "The shade! The shade from a palm tree is always cool.",
+      "es": "¡La sombra! La sombra de una palmera es siempre fresca."
+     }
+    },
+    {
+     "en": "What do we make from palm leaves?",
+     "es": "¿Qué fabricamos con hojas de palma?",
+     "clipEn": "out_palm_q1_en",
+     "clipEs": "out_palm_q1_es",
+     "choices": [
+      {
+       "icon": "🧹",
+       "en": "Brooms and mats",
+       "es": "Escobas y alfombras",
+       "clipEn": "out_palm_q1c0_en",
+       "clipEs": "out_palm_q1c0_es"
+      },
+      {
+       "icon": "🍈",
+       "en": "The fruit",
+       "es": "La fruta",
+       "clipEn": "out_palm_q1c1_en",
+       "clipEs": "out_palm_q1c1_es"
+      },
+      {
+       "icon": "🔥",
+       "en": "Fuel",
+       "es": "Combustible",
+       "clipEn": "out_palm_q1c2_en",
+       "clipEs": "out_palm_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Think about cleaning and sitting.",
+      "es": "Piensa en limpiar y sentarse."
+     },
+     "hint2": {
+      "en": "Brooms and mats! We make brooms and mats from palm leaves.",
+      "es": "¡Escobas y alfombras! Fabricamos escobas y alfombras de hojas de palma."
+     }
+    },
+    {
+     "en": "What do we use palm tree seeds for?",
+     "es": "¿Para qué usamos las semillas de palmera?",
+     "clipEn": "out_palm_q2_en",
+     "clipEs": "out_palm_q2_es",
+     "choices": [
+      {
+       "icon": "🔥",
+       "en": "Fuel",
+       "es": "Combustible",
+       "clipEn": "out_palm_q2c0_en",
+       "clipEs": "out_palm_q2c0_es"
+      },
+      {
+       "icon": "🍈",
+       "en": "Fruit",
+       "es": "Fruta",
+       "clipEn": "out_palm_q2c1_en",
+       "clipEs": "out_palm_q2c1_es"
+      },
+      {
+       "icon": "🏠",
+       "en": "Houses",
+       "es": "Casas",
+       "clipEn": "out_palm_q2c2_en",
+       "clipEs": "out_palm_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The seeds help us cook.",
+      "es": "Las semillas nos ayudan a cocinar."
+     },
+     "hint2": {
+      "en": "Fuel! We use palm tree seeds for fuel.",
+      "es": "¡Combustible! Utilizamos semillas de palmera como combustible."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "tiger-is-here",
+   "flower": "🐯",
+   "name": {
+    "en": "Watch Out! The Tiger is Here!",
+    "es": "¡El tigre está aquí!"
+   },
+   "cover": "out-tiger-is-here-cover",
+   "panels": [
+    {
+     "icon": "🐯",
+     "art": "out-tiger-is-here-p0",
+     "en": "It's not easy being a tiger. Yes, tigers are beautiful and fierce.",
+     "es": "No es fácil ser un tigre. Sí, los tigres son hermosos y feroces.",
+     "clipEn": "out_tiger_p0_en",
+     "clipEs": "out_tiger_p0_es"
+    },
+    {
+     "icon": "🍖",
+     "art": "out-tiger-is-here-p1",
+     "en": "But tigers are also big and heavy. This makes it difficult for them to hunt for food.",
+     "es": "Pero también son grandotes y pesados. Por eso les resulta difícil cazar su comida.",
+     "clipEn": "out_tiger_p1_en",
+     "clipEs": "out_tiger_p1_es"
+    },
+    {
+     "icon": "🍽️",
+     "art": "out-tiger-is-here-p2",
+     "en": "Out of every twenty times a tiger hunts, it eats only once.",
+     "es": "De cada 20 veces que un tigre caza, solo atrapa su alimento 1 vez.",
+     "clipEn": "out_tiger_p2_en",
+     "clipEs": "out_tiger_p2_es"
+    },
+    {
+     "icon": "🐒",
+     "art": "out-tiger-is-here-p3",
+     "en": "When a tiger moves through the forest, KHAU! KHAU! KHAK! The langur calls, just like an old man coughing! KHAU! KHAU! KHAK!",
+     "es": "Cuando un tigre atraviesa la selva, \"¡KHAU! ¡KHAU! ¡KHAK!\", grita el langur. ¡Suena como un hombre con tos! \"¡KHAU! ¡KHAU! ¡KHAK!\"",
+     "clipEn": "out_tiger_p3_en",
+     "clipEs": "out_tiger_p3_es"
+    },
+    {
+     "icon": "🦌",
+     "art": "out-tiger-is-here-p4",
+     "en": "AWOOOO! HAWOOOO! The barking deer calls, like a scared dog! AWOOOO! HAWOOOO!",
+     "es": "\"¡AWUUU! ¡HAWUUUU!\", grita el venado muntjac. ¡Suena como un perrito asustado! \"¡AWUUU! ¡HAWUUUU!\"",
+     "clipEn": "out_tiger_p4_en",
+     "clipEs": "out_tiger_p4_es"
+    },
+    {
+     "icon": "🦌",
+     "art": "out-tiger-is-here-p5",
+     "en": "OOW! OOW! OOW! The spotted deer calls, like a little bird! OOW! OOW! OOW!",
+     "es": "\"¡UWW! ¡UWW! ¡UWW!\", grita un ciervo moteado. ¡Suena como un pajarito! \"¡UWW! ¡UWW! ¡UWW!\"",
+     "clipEn": "out_tiger_p5_en",
+     "clipEs": "out_tiger_p5_es"
+    },
+    {
+     "icon": "🌳",
+     "art": "out-tiger-is-here-p6",
+     "en": "The whole forest knows the tiger is here! AHUUUN? AHUUUN? The tiger wonders, where has everyone gone?",
+     "es": "¡Todo el bosque sabe que el tigre está aquí! \"¿GRRRRR? ¿GRRRRR?\" El tigre se pregunta: \"¿A dónde se fueron todos?\"",
+     "clipEn": "out_tiger_p6_en",
+     "clipEs": "out_tiger_p6_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-tiger-is-here-cover",
+     "en": "\"Watch Out! The Tiger is Here!\" by Sejal Mehta, illustrated by Rohan Chakravarty. Spanish translation by Paola Benedetti. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "es": "«¡El tigre está aquí!», de Sejal Mehta, ilustrado por Rohan Chakravarty. Traducción al español de Paola Benedetti. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "clipEn": "out_tiger_credits_en",
+     "clipEs": "out_tiger_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "tiger",
+     "es": "tigre",
+     "art": "out-tiger-is-here-w0",
+     "clipEn": "out_tiger_w0_en",
+     "clipEs": "out_tiger_w0_es"
+    },
+    {
+     "en": "forest",
+     "es": "bosque",
+     "art": "out-tiger-is-here-w1",
+     "clipEn": "out_tiger_w1_en",
+     "clipEs": "out_tiger_w1_es"
+    },
+    {
+     "en": "hunt",
+     "es": "cazar",
+     "art": "out-tiger-is-here-w2",
+     "clipEn": "out_tiger_w2_en",
+     "clipEs": "out_tiger_w2_es"
+    },
+    {
+     "en": "langur",
+     "es": "langur",
+     "art": "out-tiger-is-here-w3",
+     "clipEn": "out_tiger_w3_en",
+     "clipEs": "out_tiger_w3_es"
+    },
+    {
+     "en": "deer",
+     "es": "ciervo",
+     "art": "out-tiger-is-here-w4",
+     "clipEn": "out_tiger_w4_en",
+     "clipEs": "out_tiger_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Out of every twenty times a tiger hunts, how many times does it eat?",
+     "es": "De cada 20 veces que un tigre caza, ¿cuántas veces atrapa su alimento?",
+     "clipEn": "out_tiger_q0_en",
+     "clipEs": "out_tiger_q0_es",
+     "choices": [
+      {
+       "icon": "1️⃣",
+       "en": "Only once",
+       "es": "Solo 1 vez",
+       "clipEn": "out_tiger_q0c0_en",
+       "clipEs": "out_tiger_q0c0_es"
+      },
+      {
+       "icon": "🔟",
+       "en": "Ten times",
+       "es": "10 veces",
+       "clipEn": "out_tiger_q0c1_en",
+       "clipEs": "out_tiger_q0c1_es"
+      },
+      {
+       "icon": "⭐",
+       "en": "Every time",
+       "es": "Todas las veces",
+       "clipEn": "out_tiger_q0c2_en",
+       "clipEs": "out_tiger_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Hunting is hard for a tiger. It almost never eats.",
+      "es": "Cazar es difícil para un tigre. Casi nunca come."
+     },
+     "hint2": {
+      "en": "Only once! Out of twenty hunts, it eats only once.",
+      "es": "¡Solo 1 vez! De 20 cacerías, solo atrapa su alimento 1 vez."
+     }
+    },
+    {
+     "en": "Which animal calls like an old man coughing?",
+     "es": "¿Qué animal grita como un hombre con tos?",
+     "clipEn": "out_tiger_q1_en",
+     "clipEs": "out_tiger_q1_es",
+     "choices": [
+      {
+       "icon": "🐒",
+       "en": "The langur",
+       "es": "El langur",
+       "clipEn": "out_tiger_q1c0_en",
+       "clipEs": "out_tiger_q1c0_es"
+      },
+      {
+       "icon": "🦌",
+       "en": "The barking deer",
+       "es": "El venado muntjac",
+       "clipEn": "out_tiger_q1c1_en",
+       "clipEs": "out_tiger_q1c1_es"
+      },
+      {
+       "icon": "🦌",
+       "en": "The spotted deer",
+       "es": "El ciervo moteado",
+       "clipEn": "out_tiger_q1c2_en",
+       "clipEs": "out_tiger_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "KHAU! KHAU! KHAK! Who calls like that?",
+      "es": "¡KHAU! ¡KHAU! ¡KHAK! ¿Quién grita así?"
+     },
+     "hint2": {
+      "en": "The langur! The langur calls like an old man coughing.",
+      "es": "¡El langur! El langur grita como un hombre con tos."
+     }
+    },
+    {
+     "en": "What does the whole forest know?",
+     "es": "¿Qué sabe todo el bosque?",
+     "clipEn": "out_tiger_q2_en",
+     "clipEs": "out_tiger_q2_es",
+     "choices": [
+      {
+       "icon": "🐯",
+       "en": "The tiger is here",
+       "es": "Que el tigre está aquí",
+       "clipEn": "out_tiger_q2c0_en",
+       "clipEs": "out_tiger_q2c0_es"
+      },
+      {
+       "icon": "💤",
+       "en": "The tiger is sleeping",
+       "es": "Que el tigre está durmiendo",
+       "clipEn": "out_tiger_q2c1_en",
+       "clipEs": "out_tiger_q2c1_es"
+      },
+      {
+       "icon": "🍖",
+       "en": "The tiger is eating",
+       "es": "Que el tigre está comiendo",
+       "clipEn": "out_tiger_q2c2_en",
+       "clipEs": "out_tiger_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The animals call out a warning.",
+      "es": "Los animales gritan una advertencia."
+     },
+     "hint2": {
+      "en": "The tiger is here! The whole forest knows the tiger is here!",
+      "es": "¡El tigre está aquí! ¡Todo el bosque sabe que el tigre está aquí!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "rainbow-colours",
+   "flower": "🌈",
+   "name": {
+    "en": "7 Colours of a Rainbow",
+    "es": "¿Cuáles son los colores?"
+   },
+   "cover": "out-rainbow-colours-cover",
+   "panels": [
+    {
+     "icon": "🌈",
+     "art": "out-rainbow-colours-p0",
+     "en": "What are the 7 colours of a rainbow?",
+     "es": "¿Cuáles son los siete colores del arcoíris?",
+     "clipEn": "out_rainbow_p0_en",
+     "clipEs": "out_rainbow_p0_es"
+    },
+    {
+     "icon": "🔴",
+     "art": "out-rainbow-colours-p1",
+     "en": "1. Red",
+     "es": "1. Rojo",
+     "clipEn": "out_rainbow_p1_en",
+     "clipEs": "out_rainbow_p1_es"
+    },
+    {
+     "icon": "👕",
+     "art": "out-rainbow-colours-p2",
+     "en": "He wears a red shirt.",
+     "es": "Él lleva una camisa roja.",
+     "clipEn": "out_rainbow_p2_en",
+     "clipEs": "out_rainbow_p2_es"
+    },
+    {
+     "icon": "🟠",
+     "art": "out-rainbow-colours-p3",
+     "en": "2. Orange",
+     "es": "2. Naranja",
+     "clipEn": "out_rainbow_p3_en",
+     "clipEs": "out_rainbow_p3_es"
+    },
+    {
+     "icon": "🟠",
+     "art": "out-rainbow-colours-p4",
+     "en": "What is orange in this picture?",
+     "es": "¿Qué es de color naranja en esta imagen?",
+     "clipEn": "out_rainbow_p4_en",
+     "clipEs": "out_rainbow_p4_es"
+    },
+    {
+     "icon": "🟡",
+     "art": "out-rainbow-colours-p5",
+     "en": "3. Yellow",
+     "es": "3. Amarillo",
+     "clipEn": "out_rainbow_p5_en",
+     "clipEs": "out_rainbow_p5_es"
+    },
+    {
+     "icon": "🟡",
+     "art": "out-rainbow-colours-p6",
+     "en": "What is yellow in this picture?",
+     "es": "¿Qué es de color amarillo en esta imagen?",
+     "clipEn": "out_rainbow_p6_en",
+     "clipEs": "out_rainbow_p6_es"
+    },
+    {
+     "icon": "🟢",
+     "art": "out-rainbow-colours-p7",
+     "en": "4. Green",
+     "es": "4. Verde",
+     "clipEn": "out_rainbow_p7_en",
+     "clipEs": "out_rainbow_p7_es"
+    },
+    {
+     "icon": "🟢",
+     "art": "out-rainbow-colours-p8",
+     "en": "What is green in this picture?",
+     "es": "¿Qué es de color verde en esta imagen?",
+     "clipEn": "out_rainbow_p8_en",
+     "clipEs": "out_rainbow_p8_es"
+    },
+    {
+     "icon": "🔵",
+     "art": "out-rainbow-colours-p9",
+     "en": "5. Blue",
+     "es": "5. Azul",
+     "clipEn": "out_rainbow_p9_en",
+     "clipEs": "out_rainbow_p9_es"
+    },
+    {
+     "icon": "🔵",
+     "art": "out-rainbow-colours-p10",
+     "en": "What is blue in this picture?",
+     "es": "¿Qué es de color azul en esta imagen?",
+     "clipEn": "out_rainbow_p10_en",
+     "clipEs": "out_rainbow_p10_es"
+    },
+    {
+     "icon": "🟣",
+     "art": "out-rainbow-colours-p11",
+     "en": "6. Indigo",
+     "es": "6. Índigo",
+     "clipEn": "out_rainbow_p11_en",
+     "clipEs": "out_rainbow_p11_es"
+    },
+    {
+     "icon": "🟣",
+     "art": "out-rainbow-colours-p12",
+     "en": "What is indigo in this picture?",
+     "es": "¿Qué es de color índigo en esta imagen?",
+     "clipEn": "out_rainbow_p12_en",
+     "clipEs": "out_rainbow_p12_es"
+    },
+    {
+     "icon": "🟣",
+     "art": "out-rainbow-colours-p13",
+     "en": "7. Violet",
+     "es": "7. Violeta",
+     "clipEn": "out_rainbow_p13_en",
+     "clipEs": "out_rainbow_p13_es"
+    },
+    {
+     "icon": "💜",
+     "art": "out-rainbow-colours-p14",
+     "en": "Violet is the best colour! What colour do you like?",
+     "es": "¡El violeta es el mejor color! ¿Cuál es tu color favorito?",
+     "clipEn": "out_rainbow_p14_en",
+     "clipEs": "out_rainbow_p14_es"
+    },
+    {
+     "icon": "🌈",
+     "art": "out-rainbow-colours-p15",
+     "en": "What are the 7 colours of a rainbow?",
+     "es": "¿Cuáles son los siete colores del arcoíris?",
+     "clipEn": "out_rainbow_p15_en",
+     "clipEs": "out_rainbow_p15_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-rainbow-colours-cover",
+     "en": "\"7 Colours of a Rainbow\" by Caren Echesa, illustrated by Jesse Breytenbach. Spanish translation by Maggie Peng. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«¿Cuáles son los colores?», de Caren Echesa, ilustrado por Jesse Breytenbach. Traducción al español de Maggie Peng. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_rainbow_credits_en",
+     "clipEs": "out_rainbow_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "rainbow",
+     "es": "arcoíris",
+     "art": "out-rainbow-colours-w0",
+     "clipEn": "out_rainbow_w0_en",
+     "clipEs": "out_rainbow_w0_es"
+    },
+    {
+     "en": "red",
+     "es": "rojo",
+     "art": "out-rainbow-colours-w1",
+     "clipEn": "out_rainbow_w1_en",
+     "clipEs": "out_rainbow_w1_es"
+    },
+    {
+     "en": "orange",
+     "es": "naranja",
+     "art": "out-rainbow-colours-w2",
+     "clipEn": "out_rainbow_w2_en",
+     "clipEs": "out_rainbow_w2_es"
+    },
+    {
+     "en": "yellow",
+     "es": "amarillo",
+     "art": "out-rainbow-colours-w3",
+     "clipEn": "out_rainbow_w3_en",
+     "clipEs": "out_rainbow_w3_es"
+    },
+    {
+     "en": "green",
+     "es": "verde",
+     "art": "out-rainbow-colours-w4",
+     "clipEn": "out_rainbow_w4_en",
+     "clipEs": "out_rainbow_w4_es"
+    },
+    {
+     "en": "blue",
+     "es": "azul",
+     "art": "out-rainbow-colours-w5",
+     "clipEn": "out_rainbow_w5_en",
+     "clipEs": "out_rainbow_w5_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "How many colours are in a rainbow?",
+     "es": "¿Cuántos colores hay en el arcoíris?",
+     "clipEn": "out_rainbow_q0_en",
+     "clipEs": "out_rainbow_q0_es",
+     "choices": [
+      {
+       "icon": "7️⃣",
+       "en": "Seven",
+       "es": "Siete",
+       "clipEn": "out_rainbow_q0c0_en",
+       "clipEs": "out_rainbow_q0c0_es"
+      },
+      {
+       "icon": "5️⃣",
+       "en": "Five",
+       "es": "Cinco",
+       "clipEn": "out_rainbow_q0c1_en",
+       "clipEs": "out_rainbow_q0c1_es"
+      },
+      {
+       "icon": "🔟",
+       "en": "Ten",
+       "es": "Diez",
+       "clipEn": "out_rainbow_q0c2_en",
+       "clipEs": "out_rainbow_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Count them: red, orange, yellow, green, blue, indigo, violet.",
+      "es": "Cuéntalos: rojo, naranja, amarillo, verde, azul, índigo, violeta."
+     },
+     "hint2": {
+      "en": "Seven! A rainbow has seven colours.",
+      "es": "¡Siete! El arcoíris tiene siete colores."
+     }
+    },
+    {
+     "en": "What colour is his shirt?",
+     "es": "¿De qué color es su camisa?",
+     "clipEn": "out_rainbow_q1_en",
+     "clipEs": "out_rainbow_q1_es",
+     "choices": [
+      {
+       "icon": "🔴",
+       "en": "Red",
+       "es": "Rojo",
+       "clipEn": "out_rainbow_q1c0_en",
+       "clipEs": "out_rainbow_q1c0_es"
+      },
+      {
+       "icon": "🔵",
+       "en": "Blue",
+       "es": "Azul",
+       "clipEn": "out_rainbow_q1c1_en",
+       "clipEs": "out_rainbow_q1c1_es"
+      },
+      {
+       "icon": "🟢",
+       "en": "Green",
+       "es": "Verde",
+       "clipEn": "out_rainbow_q1c2_en",
+       "clipEs": "out_rainbow_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Look at the boy in the picture. His shirt is the first colour.",
+      "es": "Mira al niño en la imagen. Su camisa es del primer color."
+     },
+     "hint2": {
+      "en": "Red! He wears a red shirt.",
+      "es": "¡Rojo! Él lleva una camisa roja."
+     }
+    },
+    {
+     "en": "Which colour is the best colour in the book?",
+     "es": "¿Cuál es el mejor color en el libro?",
+     "clipEn": "out_rainbow_q2_en",
+     "clipEs": "out_rainbow_q2_es",
+     "choices": [
+      {
+       "icon": "💜",
+       "en": "Violet",
+       "es": "Violeta",
+       "clipEn": "out_rainbow_q2c0_en",
+       "clipEs": "out_rainbow_q2c0_es"
+      },
+      {
+       "icon": "🟠",
+       "en": "Orange",
+       "es": "Naranja",
+       "clipEn": "out_rainbow_q2c1_en",
+       "clipEs": "out_rainbow_q2c1_es"
+      },
+      {
+       "icon": "🟡",
+       "en": "Yellow",
+       "es": "Amarillo",
+       "clipEn": "out_rainbow_q2c2_en",
+       "clipEs": "out_rainbow_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "It is the last colour of the rainbow.",
+      "es": "Es el último color del arcoíris."
+     },
+     "hint2": {
+      "en": "Violet! Violet is the best colour!",
+      "es": "¡Violeta! ¡El violeta es el mejor color!"
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "nonfiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "come-stay-with-me",
+   "flower": "🐢",
+   "name": {
+    "en": "Come Stay With Me",
+    "es": "Ven a quedarte conmigo"
+   },
+   "cover": "out-come-stay-with-me-cover",
+   "panels": [
+    {
+     "icon": "🐢",
+     "art": "out-come-stay-with-me-p0",
+     "en": "Tendai Turtle lives in the water.",
+     "es": "La tortuga Tendai vive en el agua.",
+     "clipEn": "out_stay_p0_en",
+     "clipEs": "out_stay_p0_es"
+    },
+    {
+     "icon": "🐰",
+     "art": "out-come-stay-with-me-p1",
+     "en": "Tendai's best friend is Bunny Busi. She lives in a tree.",
+     "es": "La mejor amiga de Tendai es la coneja Busi. Ella vive en un árbol.",
+     "clipEn": "out_stay_p1_en",
+     "clipEs": "out_stay_p1_es"
+    },
+    {
+     "icon": "🐢",
+     "art": "out-come-stay-with-me-p2",
+     "en": "Granny Turtle has hurt her shell.",
+     "es": "La abuela tortuga se ha lastimado la concha.",
+     "clipEn": "out_stay_p2_en",
+     "clipEs": "out_stay_p2_es"
+    },
+    {
+     "icon": "🐢",
+     "art": "out-come-stay-with-me-p3",
+     "en": "\"We have to go to help Granny,\" says Mum.",
+     "es": "\"Tenemos que ir a ayudar a la abuela\", dice mamá.",
+     "clipEn": "out_stay_p3_en",
+     "clipEs": "out_stay_p3_es"
+    },
+    {
+     "icon": "🐰",
+     "art": "out-come-stay-with-me-p4",
+     "en": "\"Come stay with me,\" calls Busi.",
+     "es": "\"Ven a quedarte conmigo\", llama Busi.",
+     "clipEn": "out_stay_p4_en",
+     "clipEs": "out_stay_p4_es"
+    },
+    {
+     "icon": "🌳",
+     "art": "out-come-stay-with-me-p5",
+     "en": "Tendai stays with Bunny Busi in the tree.",
+     "es": "Tendai se queda con la coneja Busi en el árbol.",
+     "clipEn": "out_stay_p5_en",
+     "clipEs": "out_stay_p5_es"
+    },
+    {
+     "icon": "🎨",
+     "art": "out-come-stay-with-me-p6",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "🎲",
+     "art": "out-come-stay-with-me-p7",
+     "en": "They play all day.",
+     "es": "Juegan todo el día.",
+     "clipEn": "out_stay_p7_en",
+     "clipEs": "out_stay_p7_es"
+    },
+    {
+     "icon": "🎨",
+     "art": "out-come-stay-with-me-p8",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "🎨",
+     "art": "out-come-stay-with-me-p9",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "🎨",
+     "art": "out-come-stay-with-me-p10",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "🌙",
+     "art": "out-come-stay-with-me-p11",
+     "en": "They sleep all night.",
+     "es": "Duermen toda la noche.",
+     "clipEn": "out_stay_p11_en",
+     "clipEs": "out_stay_p11_es"
+    },
+    {
+     "icon": "🐢",
+     "art": "out-come-stay-with-me-p12",
+     "en": "Mum and Dad come back with Granny.",
+     "es": "Mamá y papá regresan con la abuela.",
+     "clipEn": "out_stay_p12_en",
+     "clipEs": "out_stay_p12_es"
+    },
+    {
+     "icon": "💬",
+     "art": "out-come-stay-with-me-p13",
+     "en": "\"How are you, Granny?\" asks Tendai.",
+     "es": "\"¿Cómo estás, abuelita?\" pregunta Tendai.",
+     "clipEn": "out_stay_p13_en",
+     "clipEs": "out_stay_p13_es"
+    },
+    {
+     "icon": "😊",
+     "art": "out-come-stay-with-me-p14",
+     "en": "\"I am better now,\" says Granny with a smile.",
+     "es": "\"Ahora estoy mejor\", dice la abuela con una sonrisa.",
+     "clipEn": "out_stay_p14_en",
+     "clipEs": "out_stay_p14_es"
+    },
+    {
+     "icon": "🩹",
+     "art": "out-come-stay-with-me-p15",
+     "en": "\"We fixed her shell,\" answers Mum.",
+     "es": "\"Le arreglamos la concha\", responde mamá.",
+     "clipEn": "out_stay_p15_en",
+     "clipEs": "out_stay_p15_es"
+    },
+    {
+     "icon": "🎵",
+     "art": "out-come-stay-with-me-p16",
+     "en": "Granny gives Tendai her favourite flute.",
+     "es": "La abuela le da a Tendai su flauta favorita.",
+     "clipEn": "out_stay_p16_en",
+     "clipEs": "out_stay_p16_es"
+    },
+    {
+     "icon": "💃",
+     "art": "out-come-stay-with-me-p17",
+     "en": "Tendai plays the flute and everybody dances.",
+     "es": "Tendai toca la flauta y todos bailan.",
+     "clipEn": "out_stay_p17_en",
+     "clipEs": "out_stay_p17_es"
+    },
+    {
+     "icon": "🎨",
+     "art": "out-come-stay-with-me-p18",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "🎨",
+     "art": "out-come-stay-with-me-p19",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "📖",
+     "art": "out-come-stay-with-me-cover",
+     "en": "\"Come Stay With Me\" by Nasrin Siege, illustrated by Subi Bosa. Spanish translation by David Carrillo. Published by Book Dash and shared on Pratham Books' StoryWeaver. © Book Dash, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Ven a quedarte conmigo», de Nasrin Siege, ilustrado por Subi Bosa. Traducción al español de David Carrillo. Publicado por Book Dash y compartido en StoryWeaver de Pratham Books. © Book Dash, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_stay_credits_en",
+     "clipEs": "out_stay_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "turtle",
+     "es": "tortuga",
+     "art": "out-come-stay-with-me-w0",
+     "clipEn": "out_stay_w0_en",
+     "clipEs": "out_stay_w0_es"
+    },
+    {
+     "en": "tree",
+     "es": "árbol",
+     "art": "out-come-stay-with-me-w1",
+     "clipEn": "out_stay_w1_en",
+     "clipEs": "out_stay_w1_es"
+    },
+    {
+     "en": "shell",
+     "es": "concha",
+     "art": "out-come-stay-with-me-w2",
+     "clipEn": "out_stay_w2_en",
+     "clipEs": "out_stay_w2_es"
+    },
+    {
+     "en": "flute",
+     "es": "flauta",
+     "art": "out-come-stay-with-me-w3",
+     "clipEn": "out_stay_w3_en",
+     "clipEs": "out_stay_w3_es"
+    },
+    {
+     "en": "friend",
+     "es": "amiga",
+     "art": "out-come-stay-with-me-w4",
+     "clipEn": "out_stay_w4_en",
+     "clipEs": "out_stay_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Where does Tendai Turtle live?",
+     "es": "¿Dónde vive la tortuga Tendai?",
+     "clipEn": "out_stay_q0_en",
+     "clipEs": "out_stay_q0_es",
+     "choices": [
+      {
+       "icon": "💧",
+       "en": "In the water",
+       "es": "En el agua",
+       "clipEn": "out_stay_q0c0_en",
+       "clipEs": "out_stay_q0c0_es"
+      },
+      {
+       "icon": "🌳",
+       "en": "In a tree",
+       "es": "En un árbol",
+       "clipEn": "out_stay_q0c1_en",
+       "clipEs": "out_stay_q0c1_es"
+      },
+      {
+       "icon": "🏠",
+       "en": "In a house",
+       "es": "En una casa",
+       "clipEn": "out_stay_q0c2_en",
+       "clipEs": "out_stay_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Tendai is a turtle. Think about the first page.",
+      "es": "Tendai es una tortuga. Piensa en la primera página."
+     },
+     "hint2": {
+      "en": "In the water! Tendai Turtle lives in the water.",
+      "es": "¡En el agua! La tortuga Tendai vive en el agua."
+     }
+    },
+    {
+     "en": "Why do Mum and Dad leave?",
+     "es": "¿Por qué se van mamá y papá?",
+     "clipEn": "out_stay_q1_en",
+     "clipEs": "out_stay_q1_es",
+     "choices": [
+      {
+       "icon": "🐢",
+       "en": "To help Granny",
+       "es": "A ayudar a la abuela",
+       "clipEn": "out_stay_q1c0_en",
+       "clipEs": "out_stay_q1c0_es"
+      },
+      {
+       "icon": "🛒",
+       "en": "To buy food",
+       "es": "A comprar comida",
+       "clipEn": "out_stay_q1c1_en",
+       "clipEs": "out_stay_q1c1_es"
+      },
+      {
+       "icon": "🎲",
+       "en": "To play",
+       "es": "A jugar",
+       "clipEn": "out_stay_q1c2_en",
+       "clipEs": "out_stay_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Granny Turtle hurt something. Mum and Dad go to help her.",
+      "es": "La abuela tortuga se lastimó algo. Mamá y papá van a ayudarla."
+     },
+     "hint2": {
+      "en": "To help Granny! Granny hurt her shell.",
+      "es": "¡A ayudar a la abuela! La abuela se lastimó la concha."
+     }
+    },
+    {
+     "en": "What does Granny give Tendai?",
+     "es": "¿Qué le da la abuela a Tendai?",
+     "clipEn": "out_stay_q2_en",
+     "clipEs": "out_stay_q2_es",
+     "choices": [
+      {
+       "icon": "🎵",
+       "en": "Her favourite flute",
+       "es": "Su flauta favorita",
+       "clipEn": "out_stay_q2c0_en",
+       "clipEs": "out_stay_q2c0_es"
+      },
+      {
+       "icon": "📖",
+       "en": "A book",
+       "es": "Un libro",
+       "clipEn": "out_stay_q2c1_en",
+       "clipEs": "out_stay_q2c1_es"
+      },
+      {
+       "icon": "⚽",
+       "en": "A ball",
+       "es": "Una pelota",
+       "clipEn": "out_stay_q2c2_en",
+       "clipEs": "out_stay_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Tendai plays it and everybody dances.",
+      "es": "Tendai la toca y todos bailan."
+     },
+     "hint2": {
+      "en": "Her favourite flute! Granny gives Tendai her favourite flute.",
+      "es": "¡Su flauta favorita! La abuela le da a Tendai su flauta favorita."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "cats-fault",
+   "flower": "🐱",
+   "name": {
+    "en": "It's All the Cat's Fault!",
+    "es": "¡Todo por culpa de la gata!"
+   },
+   "cover": "out-cats-fault-cover",
+   "panels": [
+    {
+     "icon": "🐱",
+     "art": "out-cats-fault-p0",
+     "en": "Why haven't you done your homework? Miss, it's all the cat's fault.",
+     "es": "¿Por qué no has hecho los deberes? Ha sido culpa de mi gata, profe.",
+     "clipEn": "out_cat_p0_en",
+     "clipEs": "out_cat_p0_es"
+    },
+    {
+     "icon": "🌳",
+     "art": "out-cats-fault-p1",
+     "en": "If she had not got stuck on the tree, I would not have taken the ladder to climb it.",
+     "es": "Si no se hubiera quedado atrapada en el árbol, no habría tenido que agarrar la escalera para subirme a él.",
+     "clipEn": "out_cat_p1_en",
+     "clipEs": "out_cat_p1_es"
+    },
+    {
+     "icon": "🪜",
+     "art": "out-cats-fault-p2",
+     "en": "If I had not taken the ladder to climb it, I would not have needed to fix it. If I had not needed to fix it, I wouldn't have woken up the baby.",
+     "es": "Si no hubiera tenido que agarrar la escalera para subir, no habría tenido que arreglarla. Si no hubiera tenido que arreglarla, no habría despertado al bebé.",
+     "clipEn": "out_cat_p2_en",
+     "clipEs": "out_cat_p2_es"
+    },
+    {
+     "icon": "👶",
+     "art": "out-cats-fault-p3",
+     "en": "If I had not woken up the baby, my mother would not have rushed out of the kitchen. If my mother had not rushed out of the kitchen, the monkey would not have got in.",
+     "es": "Si no hubiera despertado al bebé, mi madre no habría salido corriendo de la cocina. Si mi madre no hubiera salido corriendo de la cocina, el mono no habría entrado.",
+     "clipEn": "out_cat_p3_en",
+     "clipEs": "out_cat_p3_es"
+    },
+    {
+     "icon": "🐒",
+     "art": "out-cats-fault-p4",
+     "en": "If the monkey had not got in, he would not have eaten up all the food. If he had not eaten up all the food, my father would not have bought rotis and chicken curry at the tea-shop.",
+     "es": "Si el mono no hubiera entrado, no se habría comido toda la comida. Si no se hubiera comido toda la comida, mi padre no habría comprado rotis y pollo al curry en el puesto de té.",
+     "clipEn": "out_cat_p4_en",
+     "clipEs": "out_cat_p4_es"
+    },
+    {
+     "icon": "🍛",
+     "art": "out-cats-fault-p5",
+     "en": "If my father had not bought rotis and chicken curry at the tea-shop, the dog would not have followed him home.",
+     "es": "Si mi padre no hubiera comprado rotis y pollo al curry en el puesto de té, el perro no lo habría seguido hasta casa.",
+     "clipEn": "out_cat_p5_en",
+     "clipEs": "out_cat_p5_es"
+    },
+    {
+     "icon": "🐶",
+     "art": "out-cats-fault-p6",
+     "en": "If the dog had not followed him home, he would not have eaten my homework.",
+     "es": "Si el perro no lo hubiera seguido hasta casa, no se habría comido mis deberes.",
+     "clipEn": "out_cat_p6_en",
+     "clipEs": "out_cat_p6_es"
+    },
+    {
+     "icon": "❓",
+     "art": "out-cats-fault-p7",
+     "en": "So, you're saying the dog ate your homework?",
+     "es": "¿Así que el perro se comió los deberes?",
+     "clipEn": "out_cat_p7_en",
+     "clipEs": "out_cat_p7_es"
+    },
+    {
+     "icon": "🐱",
+     "art": "out-cats-fault-p8",
+     "en": "Yes, Miss, it's all the cat's fault!",
+     "es": "Sí, profe. ¡Todo por culpa de la gata!",
+     "clipEn": "out_cat_p8_en",
+     "clipEs": "out_cat_p8_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-cats-fault-cover",
+     "en": "\"It's All the Cat's Fault!\" by Anushka Ravishankar, illustrated by Priya Kuriyan. Spanish translation by Sandra Alguacil Medina. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«¡Todo por culpa de la gata!», de Anushka Ravishankar, ilustrado por Priya Kuriyan. Traducción al español de Sandra Alguacil Medina. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_cat_credits_en",
+     "clipEs": "out_cat_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "cat",
+     "es": "gata",
+     "art": "out-cats-fault-w0",
+     "clipEn": "out_cat_w0_en",
+     "clipEs": "out_cat_w0_es"
+    },
+    {
+     "en": "tree",
+     "es": "árbol",
+     "art": "out-cats-fault-w1",
+     "clipEn": "out_cat_w1_en",
+     "clipEs": "out_cat_w1_es"
+    },
+    {
+     "en": "ladder",
+     "es": "escalera",
+     "art": "out-cats-fault-w2",
+     "clipEn": "out_cat_w2_en",
+     "clipEs": "out_cat_w2_es"
+    },
+    {
+     "en": "monkey",
+     "es": "mono",
+     "art": "out-cats-fault-w3",
+     "clipEn": "out_cat_w3_en",
+     "clipEs": "out_cat_w3_es"
+    },
+    {
+     "en": "dog",
+     "es": "perro",
+     "art": "out-cats-fault-w4",
+     "clipEn": "out_cat_w4_en",
+     "clipEs": "out_cat_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "Why didn't the boy do his homework?",
+     "es": "¿Por qué no hizo el niño los deberes?",
+     "clipEn": "out_cat_q0_en",
+     "clipEs": "out_cat_q0_es",
+     "choices": [
+      {
+       "icon": "🐶",
+       "en": "The dog ate it",
+       "es": "El perro se lo comió",
+       "clipEn": "out_cat_q0c0_en",
+       "clipEs": "out_cat_q0c0_es"
+      },
+      {
+       "icon": "🐱",
+       "en": "The cat ate it",
+       "es": "La gata se lo comió",
+       "clipEn": "out_cat_q0c1_en",
+       "clipEs": "out_cat_q0c1_es"
+      },
+      {
+       "icon": "🙈",
+       "en": "He forgot it",
+       "es": "Se le olvidó",
+       "clipEn": "out_cat_q0c2_en",
+       "clipEs": "out_cat_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "An animal followed Father home and found the homework.",
+      "es": "Un animal siguió a papá hasta casa y encontró los deberes."
+     },
+     "hint2": {
+      "en": "The dog ate it! The dog followed Father home and ate the homework.",
+      "es": "¡El perro se lo comió! El perro siguió a papá hasta casa y se comió los deberes."
+     }
+    },
+    {
+     "en": "Where was the cat stuck?",
+     "es": "¿Dónde estaba atrapada la gata?",
+     "clipEn": "out_cat_q1_en",
+     "clipEs": "out_cat_q1_es",
+     "choices": [
+      {
+       "icon": "🌳",
+       "en": "On the tree",
+       "es": "En el árbol",
+       "clipEn": "out_cat_q1c0_en",
+       "clipEs": "out_cat_q1c0_es"
+      },
+      {
+       "icon": "🍳",
+       "en": "In the kitchen",
+       "es": "En la cocina",
+       "clipEn": "out_cat_q1c1_en",
+       "clipEs": "out_cat_q1c1_es"
+      },
+      {
+       "icon": "🍵",
+       "en": "At the tea-shop",
+       "es": "En el puesto de té",
+       "clipEn": "out_cat_q1c2_en",
+       "clipEs": "out_cat_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The boy needed a ladder to climb up and help her.",
+      "es": "El niño necesitó una escalera para subir a ayudarla."
+     },
+     "hint2": {
+      "en": "On the tree! The cat got stuck on the tree.",
+      "es": "¡En el árbol! La gata se quedó atrapada en el árbol."
+     }
+    },
+    {
+     "en": "Who ate up all the food?",
+     "es": "¿Quién se comió toda la comida?",
+     "clipEn": "out_cat_q2_en",
+     "clipEs": "out_cat_q2_es",
+     "choices": [
+      {
+       "icon": "🐒",
+       "en": "The monkey",
+       "es": "El mono",
+       "clipEn": "out_cat_q2c0_en",
+       "clipEs": "out_cat_q2c0_es"
+      },
+      {
+       "icon": "🐶",
+       "en": "The dog",
+       "es": "El perro",
+       "clipEn": "out_cat_q2c1_en",
+       "clipEs": "out_cat_q2c1_es"
+      },
+      {
+       "icon": "👶",
+       "en": "The baby",
+       "es": "El bebé",
+       "clipEn": "out_cat_q2c2_en",
+       "clipEs": "out_cat_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "This animal got in when Mother rushed out of the kitchen.",
+      "es": "Este animal entró cuando mamá salió corriendo de la cocina."
+     },
+     "hint2": {
+      "en": "The monkey! The monkey got in and ate up all the food.",
+      "es": "¡El mono! El mono entró y se comió toda la comida."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "6-8"
+    ],
+    "level": 2,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "flying-high",
+   "flower": "🌤️",
+   "name": {
+    "en": "Flying High",
+    "es": "Volando alto"
+   },
+   "cover": "out-flying-high-cover",
+   "panels": [
+    {
+     "icon": "🌙",
+     "art": "out-flying-high-p0",
+     "en": "Mother's song was soft and sweet. Chandu was listening to it. Chandu fell asleep. In his dream, he was flying.",
+     "es": "La canción de mamá era suave y dulce. Chandu la estaba escuchando. Chandu se quedó dormido. En su sueño, estaba volando.",
+     "clipEn": "out_fly_p0_en",
+     "clipEs": "out_fly_p0_es"
+    },
+    {
+     "icon": "🦋",
+     "art": "out-flying-high-p1",
+     "en": "Flying, flying into a garden. Look! A butterfly, so pretty. The butterfly said, \"Well, hello! How are you?\" \"Fine, thank you,\" Chandu replied.",
+     "es": "Volando y volando en un jardín. ¡Miren! Una mariposa, tan bonita. La mariposa dijo: \"¡Bueno, hola! ¿Qué tal estás?\" \"Bien, gracias\", respondió Chandu.",
+     "clipEn": "out_fly_p1_en",
+     "clipEs": "out_fly_p1_es"
+    },
+    {
+     "icon": "🐦",
+     "art": "out-flying-high-p2",
+     "en": "Chandu flew a bit higher. Flying, flying. He flew into a sparrow. \"Hi there! How do you do?\" she asked. \"Very well, thank you,\" Chandu said.",
+     "es": "Chandu voló un poco más alto. Volando y volando, voló hasta un gorrión. \"¡Hola! ¿Cómo estás?\", preguntó el gorrión. \"Muy bien, gracias\", dijo Chandu.",
+     "clipEn": "out_fly_p2_en",
+     "clipEs": "out_fly_p2_es"
+    },
+    {
+     "icon": "🦅",
+     "art": "out-flying-high-p3",
+     "en": "Then Chandu soared still higher. Flying, still flying, he met an eagle. \"Hello friend! How are you?\" the eagle asked. \"I feel good,\" replied Chandu.",
+     "es": "Después, Chandu se elevó aún más alto. Volando, todavía volando, se encontró con un águila. \"¡Hola, amigo! ¿Cómo estás?\", preguntó el águila. \"Me siento bien\", respondió Chandu.",
+     "clipEn": "out_fly_p3_en",
+     "clipEs": "out_fly_p3_es"
+    },
+    {
+     "icon": "✈️",
+     "art": "out-flying-high-p4",
+     "en": "Chandu was flying higher and higher. It seemed so easy. Flying, flying. So high that he came up to an aeroplane. \"Hey, Chandu, how do you do?\" the aeroplane asked. \"Fine. And safe journey!\" Chandu quickly replied.",
+     "es": "Chandu volaba más y más alto. Parecía tan fácil. Volaba y volaba. Tan alto que llegó hasta un avión. \"Hola, Chandu, ¿cómo va todo?\", preguntó el avión. \"Bien. ¡Y buen viaje!\", respondió Chandu rápidamente.",
+     "clipEn": "out_fly_p4_en",
+     "clipEs": "out_fly_p4_es"
+    },
+    {
+     "icon": "🚀",
+     "art": "out-flying-high-p5",
+     "en": "Soon Chandu climbed higher than before. Flying and still flying. A rocket came to meet him. \"Hello sir, how do you do?\" the rocket shouted. \"Very well,\" Chandu smiled.",
+     "es": "Pronto, Chandu subió más alto que antes. Volaba y volaba. Un cohete vino a su encuentro. \"Hola, señor, ¿cómo estás?\", gritó el cohete. \"Muy bien\", sonrió Chandu.",
+     "clipEn": "out_fly_p5_en",
+     "clipEs": "out_fly_p5_es"
+    },
+    {
+     "icon": "⭐",
+     "art": "out-flying-high-p6",
+     "en": "Still, Chandu was flying higher and higher. Now the stars were twinkling all around. They were smiling at Chandu, as though he were a part of them. \"How are you feeling Chandu?\" one star asked him. \"I am feeling great!\" he said. Suddenly, the stars began to wobble. And shake.",
+     "es": "Chandu volaba todavía más y más alto. Ahora las estrellas centelleaban alrededor. Le sonreían a Chandu, como si él fuera parte de ellas. \"¿Cómo te sientes, Chandu?\", le preguntó una estrella. \"¡Me siento genial!\", dijo. De repente, las estrellas comenzaron a tambalearse. Y a temblar.",
+     "clipEn": "out_fly_p6_en",
+     "clipEs": "out_fly_p6_es"
+    },
+    {
+     "icon": "🌅",
+     "art": "out-flying-high-p7",
+     "en": "It was Mother, shaking Chandu awake. \"Good morning, how are you?\" He hugged her hard and said, \"Oh, now I feel better than ever before!\"",
+     "es": "Era mamá, sacudiendo a Chandu para despertarlo. \"Buenos días, ¿cómo estás?\" Él la abrazó fuerte y dijo: \"¡Oh, ahora me siento mejor que nunca!\"",
+     "clipEn": "out_fly_p7_en",
+     "clipEs": "out_fly_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-flying-high-cover",
+     "en": "\"Flying High\" by Vidya Tiware, illustrated by Rijuta Ghate. English translation by Rohini Nilekani. Spanish translation by Luis Dinis. Originally published by Pratham Books on StoryWeaver. © Pratham Books, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«Volando alto», de Vidya Tiware, ilustrado por Rijuta Ghate. Traducción al inglés de Rohini Nilekani. Traducción al español de Luis Dinis. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_fly_credits_en",
+     "clipEs": "out_fly_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "dream",
+     "es": "sueño",
+     "art": "out-flying-high-w0",
+     "clipEn": "out_fly_w0_en",
+     "clipEs": "out_fly_w0_es"
+    },
+    {
+     "en": "butterfly",
+     "es": "mariposa",
+     "art": "out-flying-high-w1",
+     "clipEn": "out_fly_w1_en",
+     "clipEs": "out_fly_w1_es"
+    },
+    {
+     "en": "sparrow",
+     "es": "gorrión",
+     "art": "out-flying-high-w2",
+     "clipEn": "out_fly_w2_en",
+     "clipEs": "out_fly_w2_es"
+    },
+    {
+     "en": "eagle",
+     "es": "águila",
+     "art": "out-flying-high-w3",
+     "clipEn": "out_fly_w3_en",
+     "clipEs": "out_fly_w3_es"
+    },
+    {
+     "en": "rocket",
+     "es": "cohete",
+     "art": "out-flying-high-w4",
+     "clipEn": "out_fly_w4_en",
+     "clipEs": "out_fly_w4_es"
+    },
+    {
+     "en": "star",
+     "es": "estrella",
+     "art": "out-flying-high-w5",
+     "clipEn": "out_fly_w5_en",
+     "clipEs": "out_fly_w5_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What was Chandu doing in his dream?",
+     "es": "¿Qué estaba haciendo Chandu en su sueño?",
+     "clipEn": "out_fly_q0_en",
+     "clipEs": "out_fly_q0_es",
+     "choices": [
+      {
+       "icon": "🪽",
+       "en": "Flying",
+       "es": "Volando",
+       "clipEn": "out_fly_q0c0_en",
+       "clipEs": "out_fly_q0c0_es"
+      },
+      {
+       "icon": "🏊",
+       "en": "Swimming",
+       "es": "Nadando",
+       "clipEn": "out_fly_q0c1_en",
+       "clipEs": "out_fly_q0c1_es"
+      },
+      {
+       "icon": "🏃",
+       "en": "Running",
+       "es": "Corriendo",
+       "clipEn": "out_fly_q0c2_en",
+       "clipEs": "out_fly_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "In his dream, Chandu went up, up, up into the sky.",
+      "es": "En su sueño, Chandu subió muy alto en el cielo."
+     },
+     "hint2": {
+      "en": "Flying! In his dream, Chandu was flying.",
+      "es": "¡Volando! En su sueño, Chandu estaba volando."
+     }
+    },
+    {
+     "en": "Who did Chandu meet first?",
+     "es": "¿A quién conoció Chandu primero?",
+     "clipEn": "out_fly_q1_en",
+     "clipEs": "out_fly_q1_es",
+     "choices": [
+      {
+       "icon": "🦋",
+       "en": "A butterfly",
+       "es": "Una mariposa",
+       "clipEn": "out_fly_q1c0_en",
+       "clipEs": "out_fly_q1c0_es"
+      },
+      {
+       "icon": "🦅",
+       "en": "An eagle",
+       "es": "Un águila",
+       "clipEn": "out_fly_q1c1_en",
+       "clipEs": "out_fly_q1c1_es"
+      },
+      {
+       "icon": "🚀",
+       "en": "A rocket",
+       "es": "Un cohete",
+       "clipEn": "out_fly_q1c2_en",
+       "clipEs": "out_fly_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "It was small and pretty, in a garden.",
+      "es": "Era pequeña y bonita, en un jardín."
+     },
+     "hint2": {
+      "en": "A butterfly! Chandu met a butterfly first.",
+      "es": "¡Una mariposa! Chandu conoció primero a una mariposa."
+     }
+    },
+    {
+     "en": "Who woke Chandu up?",
+     "es": "¿Quién despertó a Chandu?",
+     "clipEn": "out_fly_q2_en",
+     "clipEs": "out_fly_q2_es",
+     "choices": [
+      {
+       "icon": "👩",
+       "en": "His mother",
+       "es": "Su mamá",
+       "clipEn": "out_fly_q2c0_en",
+       "clipEs": "out_fly_q2c0_es"
+      },
+      {
+       "icon": "⭐",
+       "en": "A star",
+       "es": "Una estrella",
+       "clipEn": "out_fly_q2c1_en",
+       "clipEs": "out_fly_q2c1_es"
+      },
+      {
+       "icon": "✈️",
+       "en": "The aeroplane",
+       "es": "El avión",
+       "clipEn": "out_fly_q2c2_en",
+       "clipEs": "out_fly_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Someone was shaking him gently and saying good morning.",
+      "es": "Alguien lo sacudía suavemente y le decía buenos días."
+     },
+     "hint2": {
+      "en": "His mother! Mother was shaking Chandu awake.",
+      "es": "¡Su mamá! Mamá sacudía a Chandu para despertarlo."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "6-8"
+    ],
+    "level": 2,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "new-pussy-cat",
+   "flower": "🐾",
+   "name": {
+    "en": "New Pussy Cat",
+    "es": "Nuevo gatito"
+   },
+   "cover": "out-new-pussy-cat-cover",
+   "panels": [
+    {
+     "icon": "🐱",
+     "art": "out-new-pussy-cat-p0",
+     "en": "Prosy wanted a pussy cat.",
+     "es": "Prosy quería un gatito.",
+     "clipEn": "out_kitty_p0_en",
+     "clipEs": "out_kitty_p0_es"
+    },
+    {
+     "icon": "🐈",
+     "art": "out-new-pussy-cat-p1",
+     "en": "Prosy's family went to visit the pussy cats.",
+     "es": "La familia de Prosy fue a visitar a los gatitos.",
+     "clipEn": "out_kitty_p1_en",
+     "clipEs": "out_kitty_p1_es"
+    },
+    {
+     "icon": "🐱",
+     "art": "out-new-pussy-cat-p2",
+     "en": "Prosy wanted this cat. It was too big for her.",
+     "es": "Prosy quería este gato. Era demasiado grande para ella.",
+     "clipEn": "out_kitty_p2_en",
+     "clipEs": "out_kitty_p2_es"
+    },
+    {
+     "icon": "🐈",
+     "art": "out-new-pussy-cat-p3",
+     "en": "Tim wanted this kitten. It was too small for him.",
+     "es": "Tim quería este minino. Era demasiado pequeño para él.",
+     "clipEn": "out_kitty_p3_en",
+     "clipEs": "out_kitty_p3_es"
+    },
+    {
+     "icon": "🐱",
+     "art": "out-new-pussy-cat-p4",
+     "en": "Mum wanted this kitten. It was too quick for her.",
+     "es": "Mamá quería este gatito. Era demasiado rápido para ella.",
+     "clipEn": "out_kitty_p4_en",
+     "clipEs": "out_kitty_p4_es"
+    },
+    {
+     "icon": "❤️",
+     "art": "out-new-pussy-cat-p5",
+     "en": "Everyone liked this kitten.",
+     "es": "A todo el mundo le gustaba este gatito.",
+     "clipEn": "out_kitty_p5_en",
+     "clipEs": "out_kitty_p5_es"
+    },
+    {
+     "icon": "🏠",
+     "art": "out-new-pussy-cat-p6",
+     "en": "They took the kitten.",
+     "es": "Se llevaron al gatito.",
+     "clipEn": "out_kitty_p6_en",
+     "clipEs": "out_kitty_p6_es"
+    },
+    {
+     "icon": "😊",
+     "art": "out-new-pussy-cat-p7",
+     "en": "Everyone is happy with the new pussy cat.",
+     "es": "Todo el mundo está feliz con el nuevo gatito.",
+     "clipEn": "out_kitty_p7_en",
+     "clipEs": "out_kitty_p7_es"
+    },
+    {
+     "icon": "📖",
+     "art": "out-new-pussy-cat-cover",
+     "en": "\"New Pussy Cat\" by Ritah Katetemera, illustrated by Marion Drew. Spanish translation by Javier Sánchez Martín. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "es": "«Nuevo gatito», de Ritah Katetemera, ilustrado por Marion Drew. Traducción al español de Javier Sánchez Martín. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0.",
+     "clipEn": "out_kitty_credits_en",
+     "clipEs": "out_kitty_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "cat",
+     "es": "gato",
+     "art": "out-new-pussy-cat-w0",
+     "clipEn": "out_kitty_w0_en",
+     "clipEs": "out_kitty_w0_es"
+    },
+    {
+     "en": "kitten",
+     "es": "gatito",
+     "art": "out-new-pussy-cat-w1",
+     "clipEn": "out_kitty_w1_en",
+     "clipEs": "out_kitty_w1_es"
+    },
+    {
+     "en": "big",
+     "es": "grande",
+     "art": "out-new-pussy-cat-w2",
+     "clipEn": "out_kitty_w2_en",
+     "clipEs": "out_kitty_w2_es"
+    },
+    {
+     "en": "small",
+     "es": "pequeño",
+     "art": "out-new-pussy-cat-w3",
+     "clipEn": "out_kitty_w3_en",
+     "clipEs": "out_kitty_w3_es"
+    },
+    {
+     "en": "happy",
+     "es": "feliz",
+     "art": "out-new-pussy-cat-w4",
+     "clipEn": "out_kitty_w4_en",
+     "clipEs": "out_kitty_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What did Prosy want?",
+     "es": "¿Qué quería Prosy?",
+     "clipEn": "out_kitty_q0_en",
+     "clipEs": "out_kitty_q0_es",
+     "choices": [
+      {
+       "icon": "🐱",
+       "en": "A pussy cat",
+       "es": "Un gatito",
+       "clipEn": "out_kitty_q0c0_en",
+       "clipEs": "out_kitty_q0c0_es"
+      },
+      {
+       "icon": "🐶",
+       "en": "A dog",
+       "es": "Un perro",
+       "clipEn": "out_kitty_q0c1_en",
+       "clipEs": "out_kitty_q0c1_es"
+      },
+      {
+       "icon": "🐦",
+       "en": "A bird",
+       "es": "Un pájaro",
+       "clipEn": "out_kitty_q0c2_en",
+       "clipEs": "out_kitty_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "The whole story is about the animal Prosy wanted.",
+      "es": "Todo el cuento trata del animal que Prosy quería."
+     },
+     "hint2": {
+      "en": "A pussy cat! Prosy wanted a pussy cat.",
+      "es": "¡Un gatito! Prosy quería un gatito."
+     }
+    },
+    {
+     "en": "The cat Prosy wanted was too…",
+     "es": "El gato que Prosy quería era demasiado…",
+     "clipEn": "out_kitty_q1_en",
+     "clipEs": "out_kitty_q1_es",
+     "choices": [
+      {
+       "icon": "🐘",
+       "en": "Big",
+       "es": "Grande",
+       "clipEn": "out_kitty_q1c0_en",
+       "clipEs": "out_kitty_q1c0_es"
+      },
+      {
+       "icon": "🐜",
+       "en": "Small",
+       "es": "Pequeño",
+       "clipEn": "out_kitty_q1c1_en",
+       "clipEs": "out_kitty_q1c1_es"
+      },
+      {
+       "icon": "💨",
+       "en": "Quick",
+       "es": "Rápido",
+       "clipEn": "out_kitty_q1c2_en",
+       "clipEs": "out_kitty_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Prosy is small. The cat was not right for her size.",
+      "es": "Prosy es pequeña. El gato no era adecuado para su tamaño."
+     },
+     "hint2": {
+      "en": "Big! The cat was too big for her.",
+      "es": "¡Grande! El gato era demasiado grande para ella."
+     }
+    },
+    {
+     "en": "How does everyone feel at the end?",
+     "es": "¿Cómo se siente todo el mundo al final?",
+     "clipEn": "out_kitty_q2_en",
+     "clipEs": "out_kitty_q2_es",
+     "choices": [
+      {
+       "icon": "😊",
+       "en": "Happy",
+       "es": "Felices",
+       "clipEn": "out_kitty_q2c0_en",
+       "clipEs": "out_kitty_q2c0_es"
+      },
+      {
+       "icon": "😢",
+       "en": "Sad",
+       "es": "Tristes",
+       "clipEn": "out_kitty_q2c1_en",
+       "clipEs": "out_kitty_q2c1_es"
+      },
+      {
+       "icon": "😴",
+       "en": "Tired",
+       "es": "Cansados",
+       "clipEn": "out_kitty_q2c2_en",
+       "clipEs": "out_kitty_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Look at the last page. Everyone is smiling.",
+      "es": "Mira la última página. Todo el mundo sonríe."
+     },
+     "hint2": {
+      "en": "Happy! Everyone is happy with the new pussy cat.",
+      "es": "¡Felices! Todo el mundo está feliz con el nuevo gatito."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
+  },
+  {
+   "id": "have-you-seen-sundari",
+   "flower": "🐸",
+   "name": {
+    "en": "Have You Seen Sundari?",
+    "es": "¿Dónde está Sapito?"
+   },
+   "cover": "out-have-you-seen-sundari-cover",
+   "panels": [
+    {
+     "icon": "🐸",
+     "art": "out-have-you-seen-sundari-p0",
+     "en": "Have you seen Sundari?",
+     "es": "¿Dónde está Sapito?",
+     "clipEn": "out_sundari_p0_en",
+     "clipEs": "out_sundari_p0_es"
+    },
+    {
+     "icon": "💚",
+     "art": "out-have-you-seen-sundari-p1",
+     "en": "Sundari is green and loves to hide.",
+     "es": "Sapito es verde y le encanta esconderse.",
+     "clipEn": "out_sundari_p1_en",
+     "clipEs": "out_sundari_p1_es"
+    },
+    {
+     "icon": "🌸",
+     "art": "out-have-you-seen-sundari-p2",
+     "en": "Is Sundari hiding among the water lilies?",
+     "es": "¿Será que Sapito está escondido entre los nenúfares?",
+     "clipEn": "out_sundari_p2_en",
+     "clipEs": "out_sundari_p2_es"
+    },
+    {
+     "icon": "🌺",
+     "art": "out-have-you-seen-sundari-p3",
+     "en": "Or between the skyflowers?",
+     "es": "¿O entre la duranta?",
+     "clipEn": "out_sundari_p3_en",
+     "clipEs": "out_sundari_p3_es"
+    },
+    {
+     "icon": "🐱",
+     "art": "out-have-you-seen-sundari-p4",
+     "en": "Is Sundari hiding with the fishing cat?",
+     "es": "¿Será que Sapito está escondido con el gato pescador?",
+     "clipEn": "out_sundari_p4_en",
+     "clipEs": "out_sundari_p4_es"
+    },
+    {
+     "icon": "🦀",
+     "art": "out-have-you-seen-sundari-p5",
+     "en": "Or with the mud crabs?",
+     "es": "¿O está con los cangrejos?",
+     "clipEn": "out_sundari_p5_en",
+     "clipEs": "out_sundari_p5_es"
+    },
+    {
+     "icon": "🌴",
+     "art": "out-have-you-seen-sundari-p6",
+     "en": "Is Sundari hiding in the mangrove?",
+     "es": "¿Será que Sapito está escondido en el manglar?",
+     "clipEn": "out_sundari_p6_en",
+     "clipEs": "out_sundari_p6_es"
+    },
+    {
+     "icon": "🌊",
+     "art": "out-have-you-seen-sundari-p7",
+     "en": "Or in the salty water?",
+     "es": "¿O en el agua salada?",
+     "clipEn": "out_sundari_p7_en",
+     "clipEs": "out_sundari_p7_es"
+    },
+    {
+     "icon": "🪺",
+     "art": "out-have-you-seen-sundari-p8",
+     "en": "Is Sundari hiding inside the weaver bird's nest?",
+     "es": "¿Será que Sapito está escondido dentro del nido del pájaro tejedor?",
+     "clipEn": "out_sundari_p8_en",
+     "clipEs": "out_sundari_p8_es"
+    },
+    {
+     "icon": "🎉",
+     "art": "out-have-you-seen-sundari-p9",
+     "en": "\"There you are, Sundari!\"",
+     "es": "¡Te encontré, Sapito!",
+     "clipEn": "out_sundari_p9_en",
+     "clipEs": "out_sundari_p9_es"
+    },
+    {
+     "icon": "💚",
+     "art": "out-have-you-seen-sundari-p10",
+     "en": "\"Oh, I missed you so much. Where have you been?\"",
+     "es": "Te extrañé mucho. ¿Dónde has estado?",
+     "clipEn": "out_sundari_p10_en",
+     "clipEs": "out_sundari_p10_es"
+    },
+    {
+     "icon": "🐸",
+     "art": "out-have-you-seen-sundari-p11",
+     "en": "",
+     "es": "",
+     "clipEn": "",
+     "clipEs": ""
+    },
+    {
+     "icon": "📖",
+     "art": "out-have-you-seen-sundari-cover",
+     "en": "\"Have You Seen Sundari?\" by Aindri C, illustrated by Aindri C. Spanish version by Sigo leyendo. Originally published by Pratham Books on StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Spanish text reviewed and corrected for this edition.",
+     "es": "«¿Dónde está Sapito?», de Aindri C, ilustrado por Aindri C. Versión en español de Sigo leyendo. Publicado originalmente por Pratham Books en StoryWeaver. © Pratham Books / StoryWeaver, CC BY 4.0. Texto en español revisado y corregido para esta edición.",
+     "clipEn": "out_sundari_credits_en",
+     "clipEs": "out_sundari_credits_es",
+     "credits": true
+    }
+   ],
+   "words": [
+    {
+     "en": "frog",
+     "es": "rana",
+     "art": "out-have-you-seen-sundari-w0",
+     "clipEn": "out_sundari_w0_en",
+     "clipEs": "out_sundari_w0_es"
+    },
+    {
+     "en": "green",
+     "es": "verde",
+     "art": "out-have-you-seen-sundari-w1",
+     "clipEn": "out_sundari_w1_en",
+     "clipEs": "out_sundari_w1_es"
+    },
+    {
+     "en": "hide",
+     "es": "esconderse",
+     "art": "out-have-you-seen-sundari-w2",
+     "clipEn": "out_sundari_w2_en",
+     "clipEs": "out_sundari_w2_es"
+    },
+    {
+     "en": "nest",
+     "es": "nido",
+     "art": "out-have-you-seen-sundari-w3",
+     "clipEn": "out_sundari_w3_en",
+     "clipEs": "out_sundari_w3_es"
+    },
+    {
+     "en": "water lilies",
+     "es": "nenúfares",
+     "art": "out-have-you-seen-sundari-w4",
+     "clipEn": "out_sundari_w4_en",
+     "clipEs": "out_sundari_w4_es"
+    }
+   ],
+   "questions": [
+    {
+     "en": "What colour is Sundari?",
+     "es": "¿De qué color es Sapito?",
+     "clipEn": "out_sundari_q0_en",
+     "clipEs": "out_sundari_q0_es",
+     "choices": [
+      {
+       "icon": "💚",
+       "en": "Green",
+       "es": "Verde",
+       "clipEn": "out_sundari_q0c0_en",
+       "clipEs": "out_sundari_q0c0_es"
+      },
+      {
+       "icon": "💙",
+       "en": "Blue",
+       "es": "Azul",
+       "clipEn": "out_sundari_q0c1_en",
+       "clipEs": "out_sundari_q0c1_es"
+      },
+      {
+       "icon": "❤️",
+       "en": "Red",
+       "es": "Rojo",
+       "clipEn": "out_sundari_q0c2_en",
+       "clipEs": "out_sundari_q0c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "Sundari is the same colour as the leaves.",
+      "es": "Sapito es del mismo color que las hojas."
+     },
+     "hint2": {
+      "en": "Green! Sundari is green.",
+      "es": "¡Verde! Sapito es verde."
+     }
+    },
+    {
+     "en": "What does Sundari love to do?",
+     "es": "¿Qué le encanta hacer a Sapito?",
+     "clipEn": "out_sundari_q1_en",
+     "clipEs": "out_sundari_q1_es",
+     "choices": [
+      {
+       "icon": "🙈",
+       "en": "Hide",
+       "es": "Esconderse",
+       "clipEn": "out_sundari_q1c0_en",
+       "clipEs": "out_sundari_q1c0_es"
+      },
+      {
+       "icon": "🏊",
+       "en": "Swim",
+       "es": "Nadar",
+       "clipEn": "out_sundari_q1c1_en",
+       "clipEs": "out_sundari_q1c1_es"
+      },
+      {
+       "icon": "🎵",
+       "en": "Sing",
+       "es": "Cantar",
+       "clipEn": "out_sundari_q1c2_en",
+       "clipEs": "out_sundari_q1c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "That is why we cannot find her in the story.",
+      "es": "Por eso no podemos encontrarlo en el cuento."
+     },
+     "hint2": {
+      "en": "Hide! Sundari loves to hide.",
+      "es": "¡Esconderse! A Sapito le encanta esconderse."
+     }
+    },
+    {
+     "en": "What is Sundari?",
+     "es": "¿Qué es Sapito?",
+     "clipEn": "out_sundari_q2_en",
+     "clipEs": "out_sundari_q2_es",
+     "choices": [
+      {
+       "icon": "🐸",
+       "en": "A frog",
+       "es": "Una rana",
+       "clipEn": "out_sundari_q2c0_en",
+       "clipEs": "out_sundari_q2c0_es"
+      },
+      {
+       "icon": "🐱",
+       "en": "A cat",
+       "es": "Un gato",
+       "clipEn": "out_sundari_q2c1_en",
+       "clipEs": "out_sundari_q2c1_es"
+      },
+      {
+       "icon": "🐦",
+       "en": "A bird",
+       "es": "Un pájaro",
+       "clipEn": "out_sundari_q2c2_en",
+       "clipEs": "out_sundari_q2c2_es"
+      }
+     ],
+     "answer": 0,
+     "hint1": {
+      "en": "She is small and green, and she hops.",
+      "es": "Es pequeño y verde, y salta."
+     },
+     "hint2": {
+      "en": "A frog! Sundari is a frog.",
+      "es": "¡Una rana! Sapito es una rana."
+     }
+    }
+   ],
+   "meta": {
+    "ages": [
+     "4-6",
+     "6-8"
+    ],
+    "level": 1,
+    "kind": "fiction",
+    "lang": "bilingual"
+   }
   }
  ],
  "outside_doors": [
