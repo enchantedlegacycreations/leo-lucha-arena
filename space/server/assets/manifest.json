@@ -53990,5 +53990,32 @@
   "voice": "avocado_v2:MAI_01",
   "speed": 82,
   "file": "clips/out_sundari_q2c2_es.mp3"
+ },
+ {
+  "id": "en_w_tall",
+  "lang": "en",
+  "say": "tall",
+  "show": "tall",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_tall.mp3"
+ },
+ {
+  "id": "en_w_bee",
+  "lang": "en",
+  "say": "bee",
+  "show": "bee",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_bee.mp3"
+ },
+ {
+  "id": "en_w_fun",
+  "lang": "en",
+  "say": "fun",
+  "show": "fun",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/en_w_fun.mp3"
  }
 ]

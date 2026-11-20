@@ -1,7 +1,7 @@
 {
   "inputs": {
     "server/src/privileged.ts": {
-      "bytes": 51833,
+      "bytes": 52304,
       "imports": [
         {
           "path": "node_modules/@hatch/space-sdk/dist/index.js",
@@ -294,17 +294,6 @@
       ],
       "format": "esm"
     },
-    "node_modules/zod/v4/core/util.js": {
-      "bytes": 22018,
-      "imports": [
-        {
-          "path": "node_modules/zod/v4/core/core.js",
-          "kind": "import-statement",
-          "original": "./core.js"
-        }
-      ],
-      "format": "esm"
-    },
     "node_modules/zod/v4/core/core.js": {
       "bytes": 2578,
       "imports": [
@@ -403,6 +392,17 @@
       ],
       "format": "esm"
     },
+    "node_modules/zod/v4/core/util.js": {
+      "bytes": 22018,
+      "imports": [
+        {
+          "path": "node_modules/zod/v4/core/core.js",
+          "kind": "import-statement",
+          "original": "./core.js"
+        }
+      ],
+      "format": "esm"
+    },
     "node_modules/zod/v4/core/api.js": {
       "bytes": 28054,
       "imports": [
@@ -484,7 +484,7 @@
   },
   "outputs": {
     "./privileged.js": {
-      "bytes": 185748,
+      "bytes": 185907,
       "inputs": {
         "node_modules/zod/v4/core/core.js": {
           "bytesInOutput": 1935
@@ -553,7 +553,7 @@
           "bytesInOutput": 41
         },
         "server/src/privileged.ts": {
-          "bytesInOutput": 46228
+          "bytesInOutput": 46387
         }
       },
       "imports": [

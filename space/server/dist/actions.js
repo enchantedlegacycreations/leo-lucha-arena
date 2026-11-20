@@ -6342,6 +6342,7 @@ function defaultState(lang, grade = "") {
     battlesWon: 0,
     owned: ["mask_red", "suit_red", "cape_none"],
     equipped: { mask: "mask_red", suit: "suit_red", cape: "cape_none", gear: "", trim: "" },
+    person: { skin: "medium", hair: "brown", face: "natural" },
     cognates: [],
     eventCounts: {},
     eventBadges: [],
@@ -6428,6 +6429,12 @@ function parseState(json, lang = "es") {
     if (typeof eq.trim !== "string")
       eq.trim = "";
     merged.equipped = eq;
+    const pp = parsed.person ?? {};
+    merged.person = {
+      skin: typeof pp.skin === "string" && pp.skin ? pp.skin : "medium",
+      hair: typeof pp.hair === "string" && pp.hair ? pp.hair : "brown",
+      face: typeof pp.face === "string" && pp.face ? pp.face : "natural"
+    };
     const dq = defaultState(lang).quest;
     const pq = parsed.quest ?? {};
     const trail = (v, d) => {
@@ -6723,7 +6730,7 @@ var Actions = {
     response: object({ seeded: number2(), total: number2(), already: boolean2(), done: boolean2() }),
     privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const AUDIO_PACK_VERSION = "2026-11-19-storyweaver-e1";
+      const AUDIO_PACK_VERSION = "2026-11-20-rhyme1";
       const store = await getStore(ctx);
       const flag = await store.metaGet("audio_seeded");
       const ver = await store.metaGet("audio_pack_version");
