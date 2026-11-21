@@ -1,4 +1,4 @@
-# Leo's Lucha Learning Arena — standalone deploy package (v4)
+# Leo's Lucha Learning Arena — standalone deploy package (v8)
 
 This folder is the Arena packaged to run outside Muse, so it can live at
 **https://play.enchantedlegacycreations.com** (the school Wi-Fi blocks the
@@ -12,6 +12,26 @@ exactly like the live site), the teacher gate reports itself configured,
 and the game data serves. The bundled content pack — now **5,031 audio
 clips**, art, and lesson videos — is the same pack verified clip-by-clip
 during the v4 build.
+
+## Current package — v8 (2026-11-21)
+
+**Current:** `leo-lucha-arena-v8-jc-review-fixes-2026-11-21.zip` — the
+package to download and push. It carries JC's Nov 21 review fixes on top
+of v7: the letter-sound clips re-recorded and loudness-normalized to
+narration level (the Spanish "i" clip now says a true Spanish "ee"),
+single-tap answer select everywhere (no more double-tap), the mission
+question card capped to a readable width with Counting the Stones
+scaled up to meet it, a hardened sound check, and the Home Base
+feelings check-in moved to the very top with the assignment button
+directly under it (shown only when an assignment is actually pinned).
+The roster privacy gate is unchanged and re-verified: a cold visitor
+sees only the welcome screen and the doors.
+
+**Previous (history):** `leo-lucha-arena-v7-four-doors-2026-11-21.zip`
+— kept for reference; do not push it. The deploy steps below (GitHub
+push, then the database connection) are unchanged from v4 — if the
+database is already connected, just push v8 the same way and Render
+redeploys on its own.
 
 ## What's inside
 

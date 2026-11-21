@@ -6749,7 +6749,7 @@ var Actions = {
     response: object({ seeded: number2(), total: number2(), already: boolean2(), done: boolean2() }),
     privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const AUDIO_PACK_VERSION = "2026-11-21-music1";
+      const AUDIO_PACK_VERSION = "2026-11-21-letters1";
       const store = await getStore(ctx);
       const flag = await store.metaGet("audio_seeded");
       const ver = await store.metaGet("audio_pack_version");
@@ -6903,6 +6903,84 @@ var Actions = {
         "en_fpass_3",
         "ln_revancha_es",
         "ln_brave_es"
+      ];
+      const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS });
+      const out = [];
+      for (const clip of clips) {
+        const bytes = Uint8Array.from(Buffer.from(clip.base64, "base64"));
+        const key = `audio/${clip.id}`;
+        await ctx.blobs.put(key, bytes, { contentType: "audio/mpeg" });
+        const head = await ctx.blobs.head(key);
+        out.push({ id: clip.id, bytes: head?.sizeBytes ?? head?.size ?? bytes.length });
+      }
+      return { refreshed: out.length, clips: out };
+    }
+  }),
+  refreshLetterSoundClips: defineAction({
+    description: "Force-refresh the re-recorded and loudness-normalized letter-sound clips over the seeded blobs.",
+    request: object({}),
+    response: object({
+      refreshed: number2(),
+      clips: array(object({ id: string2(), bytes: number2() }))
+    }),
+    privileged: [privileged.readClipsBatch],
+    async handler(ctx) {
+      const IDS = [
+        "en_ls_a",
+        "en_ls_b",
+        "en_ls_c",
+        "en_ls_d",
+        "en_ls_e",
+        "en_ls_f",
+        "en_ls_g",
+        "en_ls_h",
+        "en_ls_i",
+        "en_ls_j",
+        "en_ls_l",
+        "en_ls_m",
+        "en_ls_n",
+        "en_ls_o",
+        "en_ls_p",
+        "en_ls_q",
+        "en_ls_r",
+        "en_ls_s",
+        "en_ls_t",
+        "en_ls_u",
+        "en_ls_v",
+        "en_ls_w",
+        "en_ls_x",
+        "en_ls_y",
+        "en_ls_z",
+        "en_ln_a",
+        "en_ln_b",
+        "en_ln_c",
+        "en_ln_d",
+        "en_ln_e",
+        "en_ln_f",
+        "en_ln_g",
+        "en_ln_h",
+        "en_ln_i",
+        "en_ln_j",
+        "en_ln_k",
+        "en_ln_l",
+        "en_ln_m",
+        "en_ln_n",
+        "en_ln_p",
+        "en_ln_q",
+        "en_ln_r",
+        "en_ln_s",
+        "en_ln_t",
+        "en_ln_u",
+        "en_ln_v",
+        "en_ln_w",
+        "en_ln_x",
+        "en_ln_y",
+        "en_ln_z",
+        "es_syl_a",
+        "es_syl_e",
+        "es_syl_i",
+        "es_syl_o",
+        "es_syl_u"
       ];
       const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS });
       const out = [];
