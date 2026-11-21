@@ -6165,6 +6165,7 @@ async function readEventSettings(ctx) {
   return { preview: get("event_preview"), off: get("event_off") };
 }
 var RADIO_LEO_MASTER_KEY = "radio_leo_master";
+var RELAUNCH_KEY = "arena_relaunched_v1";
 async function readRadioLeoMaster(ctx) {
   const store = await getStore(ctx);
   return await store.metaGet(RADIO_LEO_MASTER_KEY) === "1";
@@ -6392,6 +6393,22 @@ function defaultState(lang, grade = "") {
     }
   };
 }
+var BADGE_PALETTE = ["#C1272D", "#1565C0", "#2E7D32", "#EF6C00", "#7C4DBC", "#E85D9E", "#00838F", "#AD1457", "#0E7C7B", "#B97E04", "#283593", "#558B2F"];
+function pickBadgeColor(roster) {
+  const counts = new Map;
+  for (const r of roster)
+    counts.set(r.badgeColor, (counts.get(r.badgeColor) ?? 0) + 1);
+  let best = BADGE_PALETTE[0];
+  let bestN = Number.POSITIVE_INFINITY;
+  for (const c of BADGE_PALETTE) {
+    const n = counts.get(c) ?? 0;
+    if (n < bestN) {
+      bestN = n;
+      best = c;
+    }
+  }
+  return best;
+}
 var DEMO_ROSTER = [
   { id: "st-sofia", name: "Sof\xEDa", groupName: "Sol", badgeColor: "#E85D9E", lang: "es" },
   { id: "st-mateo", name: "Mateo", groupName: "Sol", badgeColor: "#0E7C7B", lang: "es" },
@@ -6405,6 +6422,8 @@ var DEMO_ROSTER = [
 async function ensureRoster(ctx) {
   const store = await getStore(ctx);
   if (await store.studentsAny())
+    return;
+  if (await store.metaGet(RELAUNCH_KEY) === "1")
     return;
   const grade = await readClassGrade(ctx);
   for (const s of DEMO_ROSTER) {
@@ -6730,7 +6749,7 @@ var Actions = {
     response: object({ seeded: number2(), total: number2(), already: boolean2(), done: boolean2() }),
     privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const AUDIO_PACK_VERSION = "2026-11-20-rhyme1";
+      const AUDIO_PACK_VERSION = "2026-11-21-music1";
       const store = await getStore(ctx);
       const flag = await store.metaGet("audio_seeded");
       const ver = await store.metaGet("audio_pack_version");
@@ -7272,6 +7291,28 @@ var Actions = {
         "ln_home_welcome_en",
         "ln_home_welcome_es"
       ];
+      const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS });
+      const out = [];
+      for (const clip of clips) {
+        const bytes = Uint8Array.from(Buffer.from(clip.base64, "base64"));
+        const key = `audio/${clip.id}`;
+        await ctx.blobs.put(key, bytes, { contentType: "audio/mpeg" });
+        const head = await ctx.blobs.head(key);
+        out.push({ id: clip.id, bytes: head?.sizeBytes ?? head?.size ?? bytes.length });
+      }
+      return { refreshed: out.length, clips: out };
+    }
+  }),
+  refreshMusicClips: defineAction({
+    description: "Force-refresh the three Music Area synth songs (chant sing-along + two instrumental loops) over the seeded blobs.",
+    request: object({}),
+    response: object({
+      refreshed: number2(),
+      clips: array(object({ id: string2(), bytes: number2() }))
+    }),
+    privileged: [privileged.readClipsBatch],
+    async handler(ctx) {
+      const IDS = ["song_chant", "song_fiesta", "song_sol"];
       const { clips } = await ctx.executePrivileged(privileged.readClipsBatch, { ids: IDS });
       const out = [];
       for (const clip of clips) {
@@ -10291,8 +10332,7 @@ var Actions = {
       const grade = await readClassGrade(ctx);
       const fresh = defaultState("es", grade);
       fresh.joinedViaCodeAt = new Date().toISOString();
-      const colors = ["#C1272D", "#0E7C7B", "#E85D9E", "#1565C0", "#2E7D32", "#EF6C00"];
-      const badgeColor = colors[roster.length % colors.length] ?? "#C1272D";
+      const badgeColor = pickBadgeColor(roster);
       const id = `st-${Date.now().toString(36)}-${randomHex(4)}`;
       await store.studentInsert({
         id,
@@ -10779,13 +10819,12 @@ var Actions = {
       await ensureRoster(ctx);
       const store = await getStore(ctx);
       const id = `st-${Date.now().toString(36)}-${randomHex(4)}`;
-      const colors = ["#C1272D", "#0E7C7B", "#E85D9E", "#1565C0", "#2E7D32", "#EF6C00"];
       const grade = await readClassGrade(ctx);
       await store.studentInsert({
         id,
         name: args.name,
         groupName: args.groupName,
-        badgeColor: colors[Math.floor(Math.random() * colors.length)] ?? "#C1272D",
+        badgeColor: pickBadgeColor(await store.studentsAll()),
         stateJson: JSON.stringify(defaultState("es", grade))
       });
       ctx.invalidateQueries();
@@ -10801,8 +10840,9 @@ var Actions = {
       await requireTeacher(ctx, args.teacherToken);
       await ensureRoster(ctx);
       const store = await getStore(ctx);
-      const existing = new Set((await store.studentsAll()).map((r) => r.name));
-      const colors = ["#C1272D", "#0E7C7B", "#E85D9E", "#1565C0", "#2E7D32", "#EF6C00"];
+      const rosterRows = await store.studentsAll();
+      const existing = new Set(rosterRows.map((r) => r.name));
+      const colorPool = rosterRows.map((r) => ({ badgeColor: r.badgeColor }));
       const grade = await readClassGrade(ctx);
       let added = 0;
       let skipped = 0;
@@ -10818,7 +10858,11 @@ var Actions = {
           id,
           name,
           groupName: args.groupName,
-          badgeColor: colors[Math.floor(Math.random() * colors.length)] ?? "#C1272D",
+          badgeColor: (() => {
+            const c = pickBadgeColor(colorPool);
+            colorPool.push({ badgeColor: c });
+            return c;
+          })(),
           stateJson: JSON.stringify(defaultState("es", grade))
         });
         existing.add(name);
@@ -11680,6 +11724,87 @@ var Actions = {
       }
       ctx.invalidateQueries();
       return { ok: true };
+    }
+  }),
+  chooseSecretPicture: defineAction({
+    description: "Set a student's OWN first secret picture during the first-entry setup; only works while the student has no picture set (an existing picture can never be overwritten from the student side).",
+    request: object({ studentId: string2().min(1).max(60), pictureId: string2().min(1).max(40) }),
+    response: object({ ok: boolean2(), reason: string2(), student: studentOut.nullable() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      if (!isSecretPictureId(args.pictureId))
+        return { ok: false, reason: "bad-picture", student: null };
+      const store = await getStore(ctx);
+      const row = await store.studentById(args.studentId);
+      if (!row)
+        return { ok: false, reason: "no-student", student: null };
+      if (isSecretPictureId(row.secretPicture))
+        return { ok: false, reason: "already-set", student: null };
+      await store.studentUpdateSecretPicture(args.studentId, args.pictureId);
+      const fresh = await store.studentById(args.studentId);
+      if (!fresh)
+        return { ok: false, reason: "no-student", student: null };
+      const radioMaster = await readRadioLeoMaster(ctx);
+      ctx.invalidateQueries();
+      return { ok: true, reason: "", student: studentRowOut(fresh, { teacher: false, radioMaster }) };
+    }
+  }),
+  relaunchClass: defineAction({
+    description: "Erase ALL student data for a clean relaunch \u2014 students, progress, assignments, recordings and live sessions \u2014 while keeping the teacher account, class code and all content (teacher session required).",
+    request: object({ teacherToken: teacherTokenField }),
+    response: object({ ok: literal(true), studentsRemoved: number2(), recordingsRemoved: number2(), assignmentsRemoved: number2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx, args) {
+      await requireTeacher(ctx, args.teacherToken);
+      const store = await getStore(ctx);
+      await store.metaDelete("hosted_session");
+      await store.metaDelete("treasure_session");
+      await store.metaDelete("class_battle_wins");
+      for (const m of await store.metaAll()) {
+        if (m.key.startsWith("feelings_entries:") || m.key.startsWith("checkin_dismissed:")) {
+          await store.metaDelete(m.key);
+        }
+      }
+      const recs = await store.recordingsList();
+      for (const r of recs) {
+        try {
+          await ctx.blobs.delete(r.blobKey);
+        } catch {}
+      }
+      for (const r of recs)
+        await store.recordingDelete(r.id);
+      const assigns = await store.assignmentsAll();
+      for (const a of assigns)
+        await store.assignmentDelete(a.id);
+      const studs = await store.studentsAll();
+      for (const s of studs)
+        await store.studentDelete(s.id);
+      await store.metaSet(RELAUNCH_KEY, "1");
+      ctx.invalidateQueries();
+      return { ok: true, studentsRemoved: studs.length, recordingsRemoved: recs.length, assignmentsRemoved: assigns.length };
+    }
+  }),
+  getLiveBattleStatus: defineAction({
+    description: "Report whether a teacher-started hosted class battle (treasure or hosted game) is live right now, and which game \u2014 liveness and game id only, no codes or student data.",
+    request: object({}),
+    response: object({ treasureLive: boolean2(), hostedGameId: string2() }),
+    privileged: [privileged.pgMode, privileged.pgQuery],
+    async handler(ctx) {
+      const store = await getStore(ctx);
+      const now = Date.now();
+      const live = (raw) => {
+        if (!raw)
+          return { active: false, gameId: "" };
+        try {
+          const s = JSON.parse(raw);
+          return { active: s.active === true && s.ended !== true && typeof s.endsAt === "number" && s.endsAt > now, gameId: typeof s.gameId === "string" ? s.gameId : "" };
+        } catch {
+          return { active: false, gameId: "" };
+        }
+      };
+      const treasure = live(await store.metaGet("treasure_session"));
+      const hosted = live(await store.metaGet("hosted_session"));
+      return { treasureLive: treasure.active, hostedGameId: hosted.active ? hosted.gameId : "" };
     }
   })
 };

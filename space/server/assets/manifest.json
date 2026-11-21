@@ -54017,5 +54017,122 @@
   "voice": "avocado_v2:MAI_01",
   "speed": 95,
   "file": "clips/en_w_fun.mp3"
+ },
+ {
+  "id": "ln_door_aprender_en",
+  "lang": "en",
+  "say": "Learn. Math, science, and the map of all the worlds.",
+  "show": "Learn. Math, science, and the map of all the worlds.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_aprender_en.mp3"
+ },
+ {
+  "id": "ln_door_aprender_es",
+  "lang": "es",
+  "say": "Aprender. Matemáticas, ciencias y el mapa de todos los mundos.",
+  "show": "Aprender. Matemáticas, ciencias y el mapa de todos los mundos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_aprender_es.mp3"
+ },
+ {
+  "id": "ln_door_leer_en",
+  "lang": "en",
+  "say": "Read. The Library and the Reading Forest.",
+  "show": "Read. The Library and the Reading Forest.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_leer_en.mp3"
+ },
+ {
+  "id": "ln_door_leer_es",
+  "lang": "es",
+  "say": "Leer. La Biblioteca y el Bosque de Lectura.",
+  "show": "Leer. La Biblioteca y el Bosque de Lectura.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_leer_es.mp3"
+ },
+ {
+  "id": "ln_door_jugar_en",
+  "lang": "en",
+  "say": "Play. The Ring, the Play Corner, and Games Land.",
+  "show": "Play. The Ring, the Play Corner, and Games Land.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_jugar_en.mp3"
+ },
+ {
+  "id": "ln_door_jugar_es",
+  "lang": "es",
+  "say": "Jugar. El Cuadrilátero, el Rincón de Juegos y la Tierra de Juegos.",
+  "show": "Jugar. El Cuadrilátero, el Rincón de Juegos y la Tierra de Juegos.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_jugar_es.mp3"
+ },
+ {
+  "id": "ln_door_explorar_en",
+  "lang": "en",
+  "say": "Explore. Quests, feelings, music, and your luchador.",
+  "show": "Explore. Quests, feelings, music, and your luchador.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 86,
+  "file": "clips/ln_door_explorar_en.mp3"
+ },
+ {
+  "id": "ln_door_explorar_es",
+  "lang": "es",
+  "say": "Explorar. Misiones, emociones, música y tu luchador.",
+  "show": "Explorar. Misiones, emociones, música y tu luchador.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 82,
+  "file": "clips/ln_door_explorar_es.mp3"
+ },
+ {
+  "id": "ln_picchoose_en",
+  "lang": "en",
+  "say": "Pick your secret picture! Only you know it. Tap the picture you like best.",
+  "show": "Pick your secret picture! Only you know it. Tap the picture you like best.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_picchoose_en.mp3"
+ },
+ {
+  "id": "ln_picchoose_es",
+  "lang": "es",
+  "say": "¡Elige tu dibujo secreto! Solo tú lo sabes. Toca el dibujo que más te guste.",
+  "show": "¡Elige tu dibujo secreto! Solo tú lo sabes. Toca el dibujo que más te guste.",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_picchoose_es.mp3"
+ },
+ {
+  "id": "song_chant",
+  "lang": "music",
+  "say": "El Canto de la Clase — sing-along (code-composed synth track)",
+  "show": "El Canto de la Clase · The Classroom Chant — sing-along",
+  "voice": "code-synth",
+  "speed": 100,
+  "file": "clips/song_chant.mp3"
+ },
+ {
+  "id": "song_fiesta",
+  "lang": "music",
+  "say": "Fiesta en el Jardín — instrumental loop (code-composed synth track)",
+  "show": "Fiesta en el Jardín · Garden Fiesta — instrumental",
+  "voice": "code-synth",
+  "speed": 100,
+  "file": "clips/song_fiesta.mp3"
+ },
+ {
+  "id": "song_sol",
+  "lang": "music",
+  "say": "El Sol Sale — instrumental loop (code-composed synth track)",
+  "show": "El Sol Sale · The Sun Comes Up — instrumental",
+  "voice": "code-synth",
+  "speed": 100,
+  "file": "clips/song_sol.mp3"
  }
 ]

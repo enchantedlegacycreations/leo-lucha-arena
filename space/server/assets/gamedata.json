@@ -8136,6 +8136,26 @@
   "peek_nopicture": {
    "en": "ln_peek_nopicture_en",
    "es": "ln_peek_nopicture_es"
+  },
+  "door_aprender": {
+   "en": "ln_door_aprender_en",
+   "es": "ln_door_aprender_es"
+  },
+  "door_leer": {
+   "en": "ln_door_leer_en",
+   "es": "ln_door_leer_es"
+  },
+  "door_jugar": {
+   "en": "ln_door_jugar_en",
+   "es": "ln_door_jugar_es"
+  },
+  "door_explorar": {
+   "en": "ln_door_explorar_en",
+   "es": "ln_door_explorar_es"
+  },
+  "picture_choose": {
+   "en": "ln_picchoose_en",
+   "es": "ln_picchoose_es"
   }
  },
  "classroom": {
@@ -29706,6 +29726,62 @@
     "kind": "both",
     "lang": "bilingual"
    }
+  }
+ ],
+ "music_songs": [
+  {
+   "id": "song_chant",
+   "kind": "chant",
+   "en": "The Classroom Chant — Sing-Along",
+   "es": "El Canto de la Clase — ¡A cantar!",
+   "melody": [
+    "C",
+    "E",
+    "G",
+    "E",
+    "A",
+    "G",
+    "E",
+    "E",
+    "G",
+    "A",
+    "C5",
+    "A",
+    "G",
+    "E",
+    "F",
+    "A",
+    "G",
+    "E",
+    "F",
+    "D",
+    "E",
+    "E",
+    "G",
+    "A",
+    "G",
+    "E",
+    "D",
+    "C"
+   ],
+   "lineTimes": [
+    4.29,
+    8.57,
+    12.86,
+    17.14
+   ]
+  },
+  {
+   "id": "song_fiesta",
+   "kind": "song",
+   "en": "Garden Fiesta",
+   "es": "Fiesta en el Jardín"
+  },
+  {
+   "id": "song_sol",
+   "kind": "song",
+   "en": "The Sun Comes Up",
+   "es": "El Sol Sale"
   }
  ]
 }

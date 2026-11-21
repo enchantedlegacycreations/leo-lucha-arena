@@ -1,7 +1,7 @@
 {
   "inputs": {
     "server/src/privileged.ts": {
-      "bytes": 52304,
+      "bytes": 52660,
       "imports": [
         {
           "path": "node_modules/@hatch/space-sdk/dist/index.js",
@@ -484,7 +484,7 @@
   },
   "outputs": {
     "./privileged.js": {
-      "bytes": 185907,
+      "bytes": 185960,
       "inputs": {
         "node_modules/zod/v4/core/core.js": {
           "bytesInOutput": 1935
@@ -553,7 +553,7 @@
           "bytesInOutput": 41
         },
         "server/src/privileged.ts": {
-          "bytesInOutput": 46387
+          "bytesInOutput": 46440
         }
       },
       "imports": [
