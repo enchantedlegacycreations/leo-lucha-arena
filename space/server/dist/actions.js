@@ -6868,6 +6868,46 @@ var Actions = {
       return { copied, done, already: false };
     }
   }),
+  refreshMisionesArt: defineAction({
+    description: "Re-copy the rebuilt Misiones book art (real Master Zaz\xE1 / cured Leo) over the stored blobs, in bounded batches.",
+    request: object({}),
+    response: object({ copied: number2(), done: boolean2(), already: boolean2() }),
+    privileged: [privileged.listArtIds, privileged.readArtSizes, privileged.readArtBatch, privileged.pgMode, privileged.pgQuery],
+    async handler(ctx) {
+      const MISIONES_ART_VERSION = "2026-11-21-misiones-rebuild";
+      const store = await getStore(ctx);
+      if (await store.metaGet("art_misiones_version") === MISIONES_ART_VERSION) {
+        return { copied: 0, done: true, already: true };
+      }
+      const { ids } = await ctx.executePrivileged(privileged.listArtIds, {});
+      const misIds = ids.filter((id) => id.startsWith("mis-b"));
+      const stale = [];
+      for (let start = 0;start < misIds.length; start += 500) {
+        const chunk = misIds.slice(start, start + 500);
+        const { sizes } = await ctx.executePrivileged(privileged.readArtSizes, { ids: chunk });
+        for (const s of sizes) {
+          const head = await ctx.blobs.head(`art/${s.id}`);
+          if (!head || (head.sizeBytes ?? head.size) !== s.size)
+            stale.push(s.id);
+        }
+      }
+      const batch = stale.slice(0, 40);
+      let copied = 0;
+      for (let start = 0;start < batch.length; start += 20) {
+        const chunk = batch.slice(start, start + 20);
+        const { art } = await ctx.executePrivileged(privileged.readArtBatch, { ids: chunk });
+        for (const item of art) {
+          const bytes = Uint8Array.from(Buffer.from(item.base64, "base64"));
+          await ctx.blobs.put(`art/${item.id}`, bytes, { contentType: "image/webp" });
+          copied += 1;
+        }
+      }
+      const done = stale.length <= batch.length && copied === batch.length;
+      if (done)
+        await store.metaSet("art_misiones_version", MISIONES_ART_VERSION);
+      return { copied, done, already: false };
+    }
+  }),
   refreshPlaytestAudioClips: defineAction({
     description: "Force-refresh the playtest-wave replacement audio clips over the seeded blobs.",
     request: object({}),

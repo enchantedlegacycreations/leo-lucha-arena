@@ -305,6 +305,12 @@
       ],
       "format": "esm"
     },
+    "node_modules/zod/v4/core/registries.js": {
+      "bytes": 1512,
+      "imports": [
+      ],
+      "format": "esm"
+    },
     "node_modules/zod/v4/core/core.js": {
       "bytes": 2578,
       "imports": [
@@ -336,12 +342,6 @@
           "kind": "import-statement",
           "original": "./registries.js"
         }
-      ],
-      "format": "esm"
-    },
-    "node_modules/zod/v4/core/registries.js": {
-      "bytes": 1512,
-      "imports": [
       ],
       "format": "esm"
     },
