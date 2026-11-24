@@ -2464,6 +2464,23 @@ function handleReadonlyResult(payload) {
   payload.value = Object.freeze(payload.value);
   return payload;
 }
+var $ZodLazy = /* @__PURE__ */ $constructor("$ZodLazy", (inst, def) => {
+  $ZodType.init(inst, def);
+  defineLazy(inst._zod, "innerType", () => {
+    const d = def;
+    if (!d._cachedInner)
+      d._cachedInner = def.getter();
+    return d._cachedInner;
+  });
+  defineLazy(inst._zod, "pattern", () => inst._zod.innerType?._zod?.pattern);
+  defineLazy(inst._zod, "propValues", () => inst._zod.innerType?._zod?.propValues);
+  defineLazy(inst._zod, "optin", () => inst._zod.innerType?._zod?.optin ?? undefined);
+  defineLazy(inst._zod, "optout", () => inst._zod.innerType?._zod?.optout ?? undefined);
+  inst._zod.parse = (payload, ctx) => {
+    const inner = inst._zod.innerType;
+    return inner._zod.run(payload, ctx);
+  };
+});
 var $ZodCustom = /* @__PURE__ */ $constructor("$ZodCustom", (inst, def) => {
   $ZodCheck.init(inst, def);
   $ZodType.init(inst, def);
@@ -3641,6 +3658,12 @@ var optionalProcessor = (schema, ctx, _json, params) => {
   const seen = ctx.seen.get(schema);
   seen.ref = def.innerType;
 };
+var lazyProcessor = (schema, ctx, _json, params) => {
+  const innerType = schema._zod.innerType;
+  process2(innerType, ctx, params);
+  const seen = ctx.seen.get(schema);
+  seen.ref = innerType;
+};
 // node_modules/zod/v4/classic/iso.js
 var ZodISODateTime = /* @__PURE__ */ $constructor("ZodISODateTime", (inst, def) => {
   $ZodISODateTime.init(inst, def);
@@ -4493,6 +4516,18 @@ function readonly(innerType) {
     innerType
   });
 }
+var ZodLazy = /* @__PURE__ */ $constructor("ZodLazy", (inst, def) => {
+  $ZodLazy.init(inst, def);
+  ZodType.init(inst, def);
+  inst._zod.processJSONSchema = (ctx, json, params) => lazyProcessor(inst, ctx, json, params);
+  inst.unwrap = () => inst._zod.def.getter();
+});
+function lazy(getter) {
+  return new ZodLazy({
+    type: "lazy",
+    getter
+  });
+}
 var ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
   $ZodCustom.init(inst, def);
   ZodType.init(inst, def);
@@ -4503,6 +4538,12 @@ function refine(fn, _params = {}) {
 }
 function superRefine(fn, params) {
   return _superRefine(fn, params);
+}
+function json(params) {
+  const jsonSchema = lazy(() => {
+    return union([string2(params), number2(), boolean2(), _null3(), array(jsonSchema), record(string2(), jsonSchema)]);
+  });
+  return jsonSchema;
 }
 // node_modules/@hatch/space-sdk/dist/server-contract.js
 var PRIVILEGED_CONTRACT_BRAND = "@hatch/space-sdk/privileged-contract/v1";
@@ -4558,11 +4599,897 @@ function createDefineAction() {
     };
   };
 }
+// node_modules/drizzle-orm/entity.js
+var entityKind = Symbol.for("drizzle:entityKind");
+var hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
+function is(value, type) {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+  if (value instanceof type) {
+    return true;
+  }
+  if (!Object.prototype.hasOwnProperty.call(type, entityKind)) {
+    throw new Error(`Class "${type.name ?? "<unknown>"}" doesn't look like a Drizzle entity. If this is incorrect and the class is provided by Drizzle, please report this as a bug.`);
+  }
+  let cls = Object.getPrototypeOf(value).constructor;
+  if (cls) {
+    while (cls) {
+      if (entityKind in cls && cls[entityKind] === type[entityKind]) {
+        return true;
+      }
+      cls = Object.getPrototypeOf(cls);
+    }
+  }
+  return false;
+}
+
+// node_modules/drizzle-orm/column.js
+class Column {
+  constructor(table, config) {
+    this.table = table;
+    this.config = config;
+    this.name = config.name;
+    this.keyAsName = config.keyAsName;
+    this.notNull = config.notNull;
+    this.default = config.default;
+    this.defaultFn = config.defaultFn;
+    this.onUpdateFn = config.onUpdateFn;
+    this.hasDefault = config.hasDefault;
+    this.primary = config.primaryKey;
+    this.isUnique = config.isUnique;
+    this.uniqueName = config.uniqueName;
+    this.uniqueType = config.uniqueType;
+    this.dataType = config.dataType;
+    this.columnType = config.columnType;
+    this.generated = config.generated;
+    this.generatedIdentity = config.generatedIdentity;
+  }
+  static [entityKind] = "Column";
+  name;
+  keyAsName;
+  primary;
+  notNull;
+  default;
+  defaultFn;
+  onUpdateFn;
+  hasDefault;
+  isUnique;
+  uniqueName;
+  uniqueType;
+  dataType;
+  columnType;
+  enumValues = undefined;
+  generated = undefined;
+  generatedIdentity = undefined;
+  config;
+  mapFromDriverValue(value) {
+    return value;
+  }
+  mapToDriverValue(value) {
+    return value;
+  }
+  shouldDisableInsert() {
+    return this.config.generated !== undefined && this.config.generated.type !== "byDefault";
+  }
+}
+
+// node_modules/drizzle-orm/table.utils.js
+var TableName = Symbol.for("drizzle:Name");
+
+// node_modules/drizzle-orm/tracing-utils.js
+function iife(fn, ...args) {
+  return fn(...args);
+}
+
+// node_modules/drizzle-orm/pg-core/columns/enum.js
+var isPgEnumSym = Symbol.for("drizzle:isPgEnum");
+function isPgEnum(obj) {
+  return !!obj && typeof obj === "function" && isPgEnumSym in obj && obj[isPgEnumSym] === true;
+}
+
+// node_modules/drizzle-orm/subquery.js
+class Subquery {
+  static [entityKind] = "Subquery";
+  constructor(sql, fields, alias, isWith = false, usedTables = []) {
+    this._ = {
+      brand: "Subquery",
+      sql,
+      selectedFields: fields,
+      alias,
+      isWith,
+      usedTables
+    };
+  }
+}
+
+// node_modules/drizzle-orm/version.js
+var version2 = "0.45.2";
+
+// node_modules/drizzle-orm/tracing.js
+var otel;
+var rawTracer;
+var tracer = {
+  startActiveSpan(name, fn) {
+    if (!otel) {
+      return fn();
+    }
+    if (!rawTracer) {
+      rawTracer = otel.trace.getTracer("drizzle-orm", version2);
+    }
+    return iife((otel2, rawTracer2) => rawTracer2.startActiveSpan(name, (span) => {
+      try {
+        return fn(span);
+      } catch (e) {
+        span.setStatus({
+          code: otel2.SpanStatusCode.ERROR,
+          message: e instanceof Error ? e.message : "Unknown error"
+        });
+        throw e;
+      } finally {
+        span.end();
+      }
+    }), otel, rawTracer);
+  }
+};
+
+// node_modules/drizzle-orm/view-common.js
+var ViewBaseConfig = Symbol.for("drizzle:ViewBaseConfig");
+
+// node_modules/drizzle-orm/table.js
+var Schema = Symbol.for("drizzle:Schema");
+var Columns = Symbol.for("drizzle:Columns");
+var ExtraConfigColumns = Symbol.for("drizzle:ExtraConfigColumns");
+var OriginalName = Symbol.for("drizzle:OriginalName");
+var BaseName = Symbol.for("drizzle:BaseName");
+var IsAlias = Symbol.for("drizzle:IsAlias");
+var ExtraConfigBuilder = Symbol.for("drizzle:ExtraConfigBuilder");
+var IsDrizzleTable = Symbol.for("drizzle:IsDrizzleTable");
+
+class Table {
+  static [entityKind] = "Table";
+  static Symbol = {
+    Name: TableName,
+    Schema,
+    OriginalName,
+    Columns,
+    ExtraConfigColumns,
+    BaseName,
+    IsAlias,
+    ExtraConfigBuilder
+  };
+  [TableName];
+  [OriginalName];
+  [Schema];
+  [Columns];
+  [ExtraConfigColumns];
+  [BaseName];
+  [IsAlias] = false;
+  [IsDrizzleTable] = true;
+  [ExtraConfigBuilder] = undefined;
+  constructor(name, schema, baseName) {
+    this[TableName] = this[OriginalName] = name;
+    this[Schema] = schema;
+    this[BaseName] = baseName;
+  }
+}
+
+// node_modules/drizzle-orm/sql/sql.js
+function isSQLWrapper(value) {
+  return value !== null && value !== undefined && typeof value.getSQL === "function";
+}
+function mergeQueries(queries) {
+  const result = { sql: "", params: [] };
+  for (const query of queries) {
+    result.sql += query.sql;
+    result.params.push(...query.params);
+    if (query.typings?.length) {
+      if (!result.typings) {
+        result.typings = [];
+      }
+      result.typings.push(...query.typings);
+    }
+  }
+  return result;
+}
+
+class StringChunk {
+  static [entityKind] = "StringChunk";
+  value;
+  constructor(value) {
+    this.value = Array.isArray(value) ? value : [value];
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+}
+
+class SQL {
+  constructor(queryChunks) {
+    this.queryChunks = queryChunks;
+    for (const chunk of queryChunks) {
+      if (is(chunk, Table)) {
+        const schemaName = chunk[Table.Symbol.Schema];
+        this.usedTables.push(schemaName === undefined ? chunk[Table.Symbol.Name] : schemaName + "." + chunk[Table.Symbol.Name]);
+      }
+    }
+  }
+  static [entityKind] = "SQL";
+  decoder = noopDecoder;
+  shouldInlineParams = false;
+  usedTables = [];
+  append(query) {
+    this.queryChunks.push(...query.queryChunks);
+    return this;
+  }
+  toQuery(config) {
+    return tracer.startActiveSpan("drizzle.buildSQL", (span) => {
+      const query = this.buildQueryFromSourceParams(this.queryChunks, config);
+      span?.setAttributes({
+        "drizzle.query.text": query.sql,
+        "drizzle.query.params": JSON.stringify(query.params)
+      });
+      return query;
+    });
+  }
+  buildQueryFromSourceParams(chunks, _config) {
+    const config = Object.assign({}, _config, {
+      inlineParams: _config.inlineParams || this.shouldInlineParams,
+      paramStartIndex: _config.paramStartIndex || { value: 0 }
+    });
+    const {
+      casing,
+      escapeName,
+      escapeParam,
+      prepareTyping,
+      inlineParams,
+      paramStartIndex
+    } = config;
+    return mergeQueries(chunks.map((chunk) => {
+      if (is(chunk, StringChunk)) {
+        return { sql: chunk.value.join(""), params: [] };
+      }
+      if (is(chunk, Name)) {
+        return { sql: escapeName(chunk.value), params: [] };
+      }
+      if (chunk === undefined) {
+        return { sql: "", params: [] };
+      }
+      if (Array.isArray(chunk)) {
+        const result = [new StringChunk("(")];
+        for (const [i, p] of chunk.entries()) {
+          result.push(p);
+          if (i < chunk.length - 1) {
+            result.push(new StringChunk(", "));
+          }
+        }
+        result.push(new StringChunk(")"));
+        return this.buildQueryFromSourceParams(result, config);
+      }
+      if (is(chunk, SQL)) {
+        return this.buildQueryFromSourceParams(chunk.queryChunks, {
+          ...config,
+          inlineParams: inlineParams || chunk.shouldInlineParams
+        });
+      }
+      if (is(chunk, Table)) {
+        const schemaName = chunk[Table.Symbol.Schema];
+        const tableName = chunk[Table.Symbol.Name];
+        return {
+          sql: schemaName === undefined || chunk[IsAlias] ? escapeName(tableName) : escapeName(schemaName) + "." + escapeName(tableName),
+          params: []
+        };
+      }
+      if (is(chunk, Column)) {
+        const columnName = casing.getColumnCasing(chunk);
+        if (_config.invokeSource === "indexes") {
+          return { sql: escapeName(columnName), params: [] };
+        }
+        const schemaName = chunk.table[Table.Symbol.Schema];
+        return {
+          sql: chunk.table[IsAlias] || schemaName === undefined ? escapeName(chunk.table[Table.Symbol.Name]) + "." + escapeName(columnName) : escapeName(schemaName) + "." + escapeName(chunk.table[Table.Symbol.Name]) + "." + escapeName(columnName),
+          params: []
+        };
+      }
+      if (is(chunk, View)) {
+        const schemaName = chunk[ViewBaseConfig].schema;
+        const viewName = chunk[ViewBaseConfig].name;
+        return {
+          sql: schemaName === undefined || chunk[ViewBaseConfig].isAlias ? escapeName(viewName) : escapeName(schemaName) + "." + escapeName(viewName),
+          params: []
+        };
+      }
+      if (is(chunk, Param)) {
+        if (is(chunk.value, Placeholder)) {
+          return { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk], typings: ["none"] };
+        }
+        const mappedValue = chunk.value === null ? null : chunk.encoder.mapToDriverValue(chunk.value);
+        if (is(mappedValue, SQL)) {
+          return this.buildQueryFromSourceParams([mappedValue], config);
+        }
+        if (inlineParams) {
+          return { sql: this.mapInlineParam(mappedValue, config), params: [] };
+        }
+        let typings = ["none"];
+        if (prepareTyping) {
+          typings = [prepareTyping(chunk.encoder)];
+        }
+        return { sql: escapeParam(paramStartIndex.value++, mappedValue), params: [mappedValue], typings };
+      }
+      if (is(chunk, Placeholder)) {
+        return { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk], typings: ["none"] };
+      }
+      if (is(chunk, SQL.Aliased) && chunk.fieldAlias !== undefined) {
+        return { sql: escapeName(chunk.fieldAlias), params: [] };
+      }
+      if (is(chunk, Subquery)) {
+        if (chunk._.isWith) {
+          return { sql: escapeName(chunk._.alias), params: [] };
+        }
+        return this.buildQueryFromSourceParams([
+          new StringChunk("("),
+          chunk._.sql,
+          new StringChunk(") "),
+          new Name(chunk._.alias)
+        ], config);
+      }
+      if (isPgEnum(chunk)) {
+        if (chunk.schema) {
+          return { sql: escapeName(chunk.schema) + "." + escapeName(chunk.enumName), params: [] };
+        }
+        return { sql: escapeName(chunk.enumName), params: [] };
+      }
+      if (isSQLWrapper(chunk)) {
+        if (chunk.shouldOmitSQLParens?.()) {
+          return this.buildQueryFromSourceParams([chunk.getSQL()], config);
+        }
+        return this.buildQueryFromSourceParams([
+          new StringChunk("("),
+          chunk.getSQL(),
+          new StringChunk(")")
+        ], config);
+      }
+      if (inlineParams) {
+        return { sql: this.mapInlineParam(chunk, config), params: [] };
+      }
+      return { sql: escapeParam(paramStartIndex.value++, chunk), params: [chunk], typings: ["none"] };
+    }));
+  }
+  mapInlineParam(chunk, { escapeString }) {
+    if (chunk === null) {
+      return "null";
+    }
+    if (typeof chunk === "number" || typeof chunk === "boolean") {
+      return chunk.toString();
+    }
+    if (typeof chunk === "string") {
+      return escapeString(chunk);
+    }
+    if (typeof chunk === "object") {
+      const mappedValueAsString = chunk.toString();
+      if (mappedValueAsString === "[object Object]") {
+        return escapeString(JSON.stringify(chunk));
+      }
+      return escapeString(mappedValueAsString);
+    }
+    throw new Error("Unexpected param value: " + chunk);
+  }
+  getSQL() {
+    return this;
+  }
+  as(alias) {
+    if (alias === undefined) {
+      return this;
+    }
+    return new SQL.Aliased(this, alias);
+  }
+  mapWith(decoder) {
+    this.decoder = typeof decoder === "function" ? { mapFromDriverValue: decoder } : decoder;
+    return this;
+  }
+  inlineParams() {
+    this.shouldInlineParams = true;
+    return this;
+  }
+  if(condition) {
+    return condition ? this : undefined;
+  }
+}
+
+class Name {
+  constructor(value) {
+    this.value = value;
+  }
+  static [entityKind] = "Name";
+  brand;
+  getSQL() {
+    return new SQL([this]);
+  }
+}
+var noopDecoder = {
+  mapFromDriverValue: (value) => value
+};
+var noopEncoder = {
+  mapToDriverValue: (value) => value
+};
+var noopMapper = {
+  ...noopDecoder,
+  ...noopEncoder
+};
+
+class Param {
+  constructor(value, encoder = noopEncoder) {
+    this.value = value;
+    this.encoder = encoder;
+  }
+  static [entityKind] = "Param";
+  brand;
+  getSQL() {
+    return new SQL([this]);
+  }
+}
+function sql(strings, ...params) {
+  const queryChunks = [];
+  if (params.length > 0 || strings.length > 0 && strings[0] !== "") {
+    queryChunks.push(new StringChunk(strings[0]));
+  }
+  for (const [paramIndex, param2] of params.entries()) {
+    queryChunks.push(param2, new StringChunk(strings[paramIndex + 1]));
+  }
+  return new SQL(queryChunks);
+}
+((sql2) => {
+  function empty() {
+    return new SQL([]);
+  }
+  sql2.empty = empty;
+  function fromList(list) {
+    return new SQL(list);
+  }
+  sql2.fromList = fromList;
+  function raw(str) {
+    return new SQL([new StringChunk(str)]);
+  }
+  sql2.raw = raw;
+  function join(chunks, separator) {
+    const result = [];
+    for (const [i, chunk] of chunks.entries()) {
+      if (i > 0 && separator !== undefined) {
+        result.push(separator);
+      }
+      result.push(chunk);
+    }
+    return new SQL(result);
+  }
+  sql2.join = join;
+  function identifier(value) {
+    return new Name(value);
+  }
+  sql2.identifier = identifier;
+  function placeholder2(name2) {
+    return new Placeholder(name2);
+  }
+  sql2.placeholder = placeholder2;
+  function param2(value, encoder) {
+    return new Param(value, encoder);
+  }
+  sql2.param = param2;
+})(sql || (sql = {}));
+((SQL2) => {
+
+  class Aliased {
+    constructor(sql2, fieldAlias) {
+      this.sql = sql2;
+      this.fieldAlias = fieldAlias;
+    }
+    static [entityKind] = "SQL.Aliased";
+    isSelectionField = false;
+    getSQL() {
+      return this.sql;
+    }
+    clone() {
+      return new Aliased(this.sql, this.fieldAlias);
+    }
+  }
+  SQL2.Aliased = Aliased;
+})(SQL || (SQL = {}));
+
+class Placeholder {
+  constructor(name2) {
+    this.name = name2;
+  }
+  static [entityKind] = "Placeholder";
+  getSQL() {
+    return new SQL([this]);
+  }
+}
+var IsDrizzleView = Symbol.for("drizzle:IsDrizzleView");
+
+class View {
+  static [entityKind] = "View";
+  [ViewBaseConfig];
+  [IsDrizzleView] = true;
+  constructor({ name: name2, schema, selectedFields, query }) {
+    this[ViewBaseConfig] = {
+      name: name2,
+      originalName: name2,
+      schema,
+      selectedFields,
+      query,
+      isExisting: !query,
+      isAlias: false
+    };
+  }
+  getSQL() {
+    return new SQL([this]);
+  }
+}
+Column.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+Table.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+Subquery.prototype.getSQL = function() {
+  return new SQL([this]);
+};
+
+// node_modules/@hatch/space-sdk/dist/saved_product_lists.js
+var SAVED_PRODUCT_LISTS_OWNER_ONLY_CODE = "saved_product_lists_owner_only";
+var SAVED_PRODUCT_LISTS_UNAVAILABLE_BRAND = "@hatch/space-sdk/SavedProductListsUnavailableError/v1";
+
+class SavedProductListsUnavailableError extends Error {
+  __brand = SAVED_PRODUCT_LISTS_UNAVAILABLE_BRAND;
+  code = SAVED_PRODUCT_LISTS_OWNER_ONLY_CODE;
+  constructor(message = "Live saved products are available only to the Space owner", options) {
+    super(message, options);
+    this.name = "SavedProductListsUnavailableError";
+  }
+  static is(value) {
+    if (value instanceof SavedProductListsUnavailableError)
+      return true;
+    return typeof value === "object" && value !== null && value.__brand === SAVED_PRODUCT_LISTS_UNAVAILABLE_BRAND;
+  }
+}
+var CHECKED_FIELDS = ["name", "price", "sale_price", "currency"];
+function sameSave(a, b) {
+  return a.product.citation_id !== undefined && a.product.citation_id === b.product.citation_id && a.product.url === b.product.url && a.savedAt !== null && a.savedAt === b.savedAt;
+}
+function mergeSavedProductListsCache(previous, next) {
+  if (!previous)
+    return next;
+  return {
+    lists: next.lists.map((list) => {
+      const earlier = previous.lists.find((candidate) => candidate.list === list.list);
+      if (!earlier)
+        return list;
+      return {
+        ...list,
+        items: list.items.map((item) => {
+          if (item.product.type !== "catalog" || item.price !== "saved" && item.price !== "refreshing") {
+            return item;
+          }
+          const checked = earlier.items.find((candidate) => (candidate.price === "current" || candidate.price === "cached") && sameSave(candidate, item));
+          if (!checked)
+            return item;
+          const product = { ...item.product };
+          for (const field of CHECKED_FIELDS) {
+            if (checked.product[field] === undefined)
+              delete product[field];
+            else
+              product[field] = checked.product[field];
+          }
+          return { ...item, product, price: "cached" };
+        })
+      };
+    })
+  };
+}
+
+// node_modules/@hatch/space-sdk/dist/saved_products_action.js
+var MAX_LISTS = 20;
+var MAX_LIST_NAME_BYTES = 256;
+var CACHE_TABLE = "hatch_saved_products";
+var IMAGE_KEY = /^saved-products\/[0-9a-f]{64}\.img$/;
+var IMAGE_CONTENT_TYPES = new Set(["image/png", "image/jpeg", "image/gif", "image/webp"]);
+var MAX_COMMIT_ATTEMPTS = 5;
+var displayMessage = string2().refine((message) => message.trim().length > 0);
+var savedProductsMessagesSchema = object({
+  currentPrice: displayMessage,
+  lastCheckedPrice: displayMessage,
+  savedPrice: displayMessage,
+  snapshotNotice: displayMessage,
+  unavailableNotice: displayMessage,
+  ownerSharedCopyNotice: displayMessage
+});
+var ENGLISH_MESSAGES = {
+  currentPrice: "Current price",
+  lastCheckedPrice: "Last checked price",
+  savedPrice: "Saved price",
+  snapshotNotice: "These are the saved products from the owner's last visit; prices may have changed since.",
+  unavailableNotice: "Saved products aren't available in this copy.",
+  ownerSharedCopyNotice: "This is your shared copy. Open the original Space in Muse to see live saved products."
+};
+var SAVED_PRODUCTS_REQUEST_SCHEMA = object({}).strict();
+var PRODUCT_SCHEMA = object({
+  type: _enum(["catalog", "marketplace", "browser"]),
+  url: string2(),
+  name: string2(),
+  image_url: string2().nullable().optional(),
+  citation_id: string2().optional(),
+  product_id: string2().optional(),
+  provider: string2().optional(),
+  retailer_name: string2().optional(),
+  brand: string2().optional(),
+  price: string2().optional(),
+  sale_price: string2().optional(),
+  currency: string2().optional()
+}).catchall(json());
+var SAVED_PRODUCTS_RESPONSE_SCHEMA = object({
+  lists: array(object({
+    list: string2(),
+    missing: boolean2(),
+    items: array(object({
+      product: PRODUCT_SCHEMA,
+      image: string2().nullable(),
+      priceLabel: string2().nullable()
+    }))
+  })),
+  snapshotAt: string2().nullable(),
+  notice: string2().nullable()
+});
+function savedProductsActionFor() {
+  const defineAction = createDefineAction();
+  return function savedProductsAction(options) {
+    const configured = options?.messages;
+    const messages = configured === "en" ? ENGLISH_MESSAGES : authoredMessages(configured);
+    const selection = selectionOf(options);
+    return defineAction({
+      request: SAVED_PRODUCTS_REQUEST_SCHEMA,
+      response: SAVED_PRODUCTS_RESPONSE_SCHEMA,
+      description: "Returns the owner's saved product lists for this page: live for the owner, and the owner's last saved copy for anyone else.",
+      handler: (ctx) => readSavedProducts(ctx, selection, messages)
+    });
+  };
+}
+function authoredMessages(configured) {
+  const result = savedProductsMessagesSchema.safeParse(configured);
+  if (!result.success) {
+    throw new TypeError(`savedProductsAction requires messages: "en" for an English Space or all six display messages in the Space's language`);
+  }
+  return result.data;
+}
+function selectionOf(options) {
+  if (options.lists === undefined)
+    return { key: "declared", lists: [] };
+  const lists = [...options.lists];
+  if (lists.length === 0 || lists.length > MAX_LISTS) {
+    throw new TypeError("savedProductsAction takes 1 to 20 list names");
+  }
+  const encoder = new TextEncoder;
+  for (const name of lists) {
+    if (typeof name !== "string" || name.length === 0 || encoder.encode(name).length > MAX_LIST_NAME_BYTES) {
+      throw new TypeError("savedProductsAction takes list names of 1 to 256 UTF-8 bytes");
+    }
+  }
+  if (new Set(lists).size !== lists.length) {
+    throw new TypeError("savedProductsAction takes unique list names");
+  }
+  return { key: `lists:${JSON.stringify(lists)}`, lists };
+}
+async function readSavedProducts(ctx, selection, messages) {
+  const startedMs = Date.now();
+  let live;
+  try {
+    live = await ctx.tool.saved_product_lists(selection.lists);
+  } catch (error) {
+    if (!SavedProductListsUnavailableError.is(error))
+      throw error;
+    return savedCopy(ctx, selection, messages);
+  }
+  const lists = await commitLiveRead(ctx, selection, live, startedMs);
+  return {
+    lists: await publicLists(ctx, lists, { live: true, messages }),
+    snapshotAt: null,
+    notice: null
+  };
+}
+async function savedCopy(ctx, selection, messages) {
+  const ownerCopy = ctx.viewer?.source === "cloudflare" && ctx.viewer.isOwner === true;
+  const unavailable = { lists: [], snapshotAt: null, notice: ownerCopy ? messages.ownerSharedCopyNotice : messages.unavailableNotice };
+  const declared = ctx.savedProductLists;
+  const names = selection.lists.length === 0 ? declared : selection.lists;
+  if (declared === undefined || names === undefined || names.some((name) => !declared.includes(name))) {
+    return unavailable;
+  }
+  const db = ctx.db();
+  const row = await cacheTableExists(db) ? await readRow(db, selection) : null;
+  if (row === null)
+    return unavailable;
+  const saved = new Map(row.lists.lists.map((list) => [list.list, list]));
+  const lists = names.flatMap((name) => saved.get(name) ?? []);
+  if (lists.length === 0)
+    return unavailable;
+  return {
+    lists: await publicLists(ctx, { lists }, { live: false, messages }),
+    snapshotAt: row.readAt,
+    notice: ownerCopy ? messages.ownerSharedCopyNotice : messages.snapshotNotice
+  };
+}
+async function commitLiveRead(ctx, selection, live, startedMs) {
+  const db = ctx.db();
+  await db.run(sql`CREATE TABLE IF NOT EXISTS hatch_saved_products (
+      selection TEXT PRIMARY KEY NOT NULL,
+      revision INTEGER NOT NULL,
+      started_ms INTEGER NOT NULL,
+      read_at TEXT NOT NULL,
+      fingerprint TEXT NOT NULL,
+      lists TEXT NOT NULL
+    )`);
+  const readAt = new Date().toISOString();
+  const fresh = withoutPhotoUrls(live);
+  for (let attempt = 0;attempt < MAX_COMMIT_ATTEMPTS; attempt += 1) {
+    const row = await readRow(db, selection);
+    if (row !== null && row.startedMs > startedMs)
+      return row.lists;
+    const merged = mergeSavedProductListsCache(row?.lists, fresh);
+    const fingerprint = await fingerprintOf(merged);
+    const body = JSON.stringify(merged);
+    const committed = row === null ? await db.all(sql`INSERT INTO hatch_saved_products (selection, revision, started_ms, read_at, fingerprint, lists)
+              VALUES (${selection.key}, 1, ${startedMs}, ${readAt}, ${fingerprint}, ${body})
+              ON CONFLICT(selection) DO NOTHING RETURNING revision`) : await db.all(sql`UPDATE hatch_saved_products
+              SET revision = revision + 1, started_ms = ${startedMs}, read_at = ${readAt},
+                fingerprint = ${fingerprint}, lists = ${body}
+              WHERE selection = ${selection.key} AND revision = ${row.revision} RETURNING revision`);
+    if (committed.length === 0)
+      continue;
+    if (row?.fingerprint !== fingerprint)
+      ctx.invalidateQueries();
+    return merged;
+  }
+  throw new Error("the saved products cache kept changing during this read; try again");
+}
+async function cacheTableExists(db) {
+  const rows = await db.all(sql`SELECT name FROM sqlite_master WHERE type = 'table' AND name = ${CACHE_TABLE}`);
+  return rows.length > 0;
+}
+var STORED_ITEM = object({
+  product: PRODUCT_SCHEMA,
+  image: _null3(),
+  imageKey: string2().regex(IMAGE_KEY).nullable(),
+  imageVersion: string2().min(1).nullable(),
+  savedAt: string2().nullable(),
+  price: _enum(["current", "saved", "refreshing", "cached"])
+});
+var STORED_LISTS = object({
+  lists: array(object({ list: string2(), missing: boolean2(), items: array(STORED_ITEM) }))
+});
+var STORED_ROW = object({
+  revision: number2().int(),
+  started_ms: number2().int(),
+  read_at: string2(),
+  fingerprint: string2(),
+  lists: string2()
+});
+async function readRow(db, selection) {
+  const rows = await db.all(sql`SELECT revision, started_ms, read_at, fingerprint, lists FROM hatch_saved_products
+      WHERE selection = ${selection.key}`);
+  if (rows.length === 0)
+    return null;
+  const row = STORED_ROW.safeParse(rows[0]);
+  let lists;
+  try {
+    lists = row.success ? JSON.parse(row.data.lists) : undefined;
+  } catch {
+    lists = undefined;
+  }
+  const parsed = STORED_LISTS.safeParse(lists);
+  if (!row.success || !parsed.success) {
+    throw new Error("the saved products cache in this Space's database is unreadable");
+  }
+  return {
+    revision: row.data.revision,
+    startedMs: row.data.started_ms,
+    readAt: row.data.read_at,
+    fingerprint: row.data.fingerprint,
+    lists: parsed.data
+  };
+}
+function withoutPhotoUrls(lists) {
+  return {
+    lists: lists.lists.map((list) => ({
+      ...list,
+      items: list.items.map((item) => ({ ...item, image: null }))
+    }))
+  };
+}
+async function fingerprintOf(lists) {
+  const shown = lists.lists.map((list) => ({
+    list: list.list,
+    missing: list.missing,
+    items: list.items.map((item) => {
+      const { image_url: _expiring, ...product } = item.product;
+      return {
+        product,
+        imageKey: item.imageKey,
+        imageVersion: item.imageVersion,
+        savedAt: item.savedAt,
+        price: item.price === "current" || item.price === "cached" ? "checked" : "saved"
+      };
+    })
+  }));
+  const bytes = new TextEncoder().encode(canonicalJson(shown));
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+function canonicalJson(value) {
+  if (Array.isArray(value))
+    return `[${value.map(canonicalJson).join(",")}]`;
+  if (value !== null && typeof value === "object") {
+    const entries = Object.entries(value).filter(([, field]) => field !== undefined).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0);
+    return `{${entries.map(([key, field]) => `${JSON.stringify(key)}:${canonicalJson(field)}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+async function publicLists(ctx, lists, { live, messages }) {
+  const photos = new Map;
+  const photo = (item) => {
+    const { imageKey: key, imageVersion: version } = item;
+    if (key === null || version === null)
+      return Promise.resolve(null);
+    const cacheKey = `${key}
+${version}`;
+    let url = photos.get(cacheKey);
+    if (url === undefined) {
+      url = live ? versionedUrl(ctx, key, version) : storedPhotoUrl(ctx, key);
+      photos.set(cacheKey, url);
+    }
+    return url;
+  };
+  return Promise.all(lists.lists.map(async (list) => ({
+    list: list.list,
+    missing: list.missing,
+    items: await Promise.all(list.items.map(async (item) => ({
+      product: item.product,
+      image: await photo(item),
+      priceLabel: priceLabel(item, live, messages)
+    })))
+  })));
+}
+async function storedPhotoUrl(ctx, key) {
+  const stored = await ctx.blobs.head(key);
+  if (stored === null || stored.key !== key || !IMAGE_CONTENT_TYPES.has(stored.contentType) || stored.size <= 0 || stored.etag.length === 0) {
+    return null;
+  }
+  return versionedUrl(ctx, key, stored.etag);
+}
+async function versionedUrl(ctx, key, version) {
+  const url = await ctx.blobs.getUrl(key);
+  const hash = url.indexOf("#");
+  const [base, fragment] = hash === -1 ? [url, ""] : [url.slice(0, hash), url.slice(hash)];
+  return `${base}${base.includes("?") ? "&" : "?"}v=${encodeURIComponent(version)}${fragment}`;
+}
+function priceLabel(item, live, messages) {
+  const { price, sale_price: sale } = item.product;
+  if (!price && !sale)
+    return null;
+  switch (item.price) {
+    case "current":
+      return live ? messages.currentPrice : messages.lastCheckedPrice;
+    case "cached":
+      return messages.lastCheckedPrice;
+    case "saved":
+    case "refreshing":
+      return messages.savedPrice;
+  }
+}
+
 // node_modules/@hatch/space-sdk/dist/index.js
 var defineAction = createDefineAction();
+var savedProductsAction = savedProductsActionFor();
 
 // server/src/privileged.ts
-var {SQL } = globalThis.Bun;
+var {SQL: SQL2 } = globalThis.Bun;
 import { existsSync } from "fs";
 import { readFile, stat } from "fs/promises";
 import { join } from "path";
@@ -4657,6 +5584,11 @@ var ART_IDS = [
   "avatar-hair-red",
   "avatar-face-freckles",
   "avatar-face-rosy",
+  "avatar-skin-lighter",
+  "avatar-skin-richdeep",
+  "avatar-hair-pink",
+  "avatar-hair-teal",
+  "avatar-face-dimples",
   "rudo-atajo",
   "rudo-revuelto",
   "rudo-niebla",
@@ -6442,7 +7374,7 @@ var pgClient = null;
 var pgInitPromise = null;
 function pgEnsureReady(url) {
   pgInitPromise ??= (async () => {
-    pgClient = new SQL(url, { max: 4, idleTimeout: 20, connectionTimeout: 15, prepare: false });
+    pgClient = new SQL2(url, { max: 4, idleTimeout: 20, connectionTimeout: 15, prepare: false });
     for (const stmt of PG_DDL)
       await pgClient.unsafe(stmt);
   })().catch((err) => {

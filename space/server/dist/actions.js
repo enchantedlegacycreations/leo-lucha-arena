@@ -2486,6 +2486,23 @@ function handleReadonlyResult(payload) {
   payload.value = Object.freeze(payload.value);
   return payload;
 }
+var $ZodLazy = /* @__PURE__ */ $constructor("$ZodLazy", (inst, def) => {
+  $ZodType.init(inst, def);
+  defineLazy(inst._zod, "innerType", () => {
+    const d = def;
+    if (!d._cachedInner)
+      d._cachedInner = def.getter();
+    return d._cachedInner;
+  });
+  defineLazy(inst._zod, "pattern", () => inst._zod.innerType?._zod?.pattern);
+  defineLazy(inst._zod, "propValues", () => inst._zod.innerType?._zod?.propValues);
+  defineLazy(inst._zod, "optin", () => inst._zod.innerType?._zod?.optin ?? undefined);
+  defineLazy(inst._zod, "optout", () => inst._zod.innerType?._zod?.optout ?? undefined);
+  inst._zod.parse = (payload, ctx) => {
+    const inner = inst._zod.innerType;
+    return inner._zod.run(payload, ctx);
+  };
+});
 var $ZodCustom = /* @__PURE__ */ $constructor("$ZodCustom", (inst, def) => {
   $ZodCheck.init(inst, def);
   $ZodType.init(inst, def);
@@ -3701,6 +3718,12 @@ var optionalProcessor = (schema, ctx, _json, params) => {
   const seen = ctx.seen.get(schema);
   seen.ref = def.innerType;
 };
+var lazyProcessor = (schema, ctx, _json, params) => {
+  const innerType = schema._zod.innerType;
+  process(innerType, ctx, params);
+  const seen = ctx.seen.get(schema);
+  seen.ref = innerType;
+};
 // ../node_modules/zod/v4/classic/iso.js
 var ZodISODateTime = /* @__PURE__ */ $constructor("ZodISODateTime", (inst, def) => {
   $ZodISODateTime.init(inst, def);
@@ -4574,6 +4597,18 @@ function readonly(innerType) {
     innerType
   });
 }
+var ZodLazy = /* @__PURE__ */ $constructor("ZodLazy", (inst, def) => {
+  $ZodLazy.init(inst, def);
+  ZodType.init(inst, def);
+  inst._zod.processJSONSchema = (ctx, json, params) => lazyProcessor(inst, ctx, json, params);
+  inst.unwrap = () => inst._zod.def.getter();
+});
+function lazy(getter) {
+  return new ZodLazy({
+    type: "lazy",
+    getter
+  });
+}
 var ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
   $ZodCustom.init(inst, def);
   ZodType.init(inst, def);
@@ -4584,6 +4619,12 @@ function refine(fn, _params = {}) {
 }
 function superRefine(fn, params) {
   return _superRefine(fn, params);
+}
+function json(params) {
+  const jsonSchema = lazy(() => {
+    return union([string2(params), number2(), boolean2(), _null3(), array(jsonSchema), record(string2(), jsonSchema)]);
+  });
+  return jsonSchema;
 }
 // ../node_modules/@hatch/space-sdk/dist/server-contract.js
 var PRIVILEGED_CONTRACT_BRAND = "@hatch/space-sdk/privileged-contract/v1";
@@ -4615,71 +4656,6 @@ function createDefineAction() {
     };
   };
 }
-// ../node_modules/@hatch/space-sdk/dist/index.js
-var defineAction = createDefineAction();
-
-// .generated/privileged.contract.ts
-var privileged = definePrivilegedContracts({
-  readGameData: {
-    request: object({}),
-    response: object({ json: string2() })
-  },
-  readManifest: {
-    request: object({}),
-    response: object({ json: string2() })
-  },
-  readClipsBatch: {
-    request: object({ ids: array(string2().min(1).max(80)).max(100) }),
-    response: object({
-      clips: array(object({ id: string2(), base64: string2() })),
-      missing: array(string2())
-    })
-  },
-  readClipSizes: {
-    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
-    response: object({
-      sizes: array(object({ id: string2(), size: number2() })),
-      missing: array(string2())
-    })
-  },
-  readArtBatch: {
-    request: object({ ids: array(string2().min(1).max(80)).max(20) }),
-    response: object({
-      art: array(object({ id: string2(), base64: string2() })),
-      missing: array(string2())
-    })
-  },
-  readArtSizes: {
-    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
-    response: object({
-      sizes: array(object({ id: string2(), size: number2() })),
-      missing: array(string2())
-    })
-  },
-  listArtIds: {
-    request: object({}),
-    response: object({ ids: array(string2()) })
-  },
-  readVideoBatch: {
-    request: object({ ids: array(string2().min(1).max(80)).max(5) }),
-    response: object({
-      videos: array(object({ id: string2(), base64: string2() })),
-      missing: array(string2())
-    })
-  },
-  pgMode: {
-    request: object({}),
-    response: object({ external: boolean2() })
-  },
-  pgQuery: {
-    request: object({
-      sql: string2().min(1).max(20000),
-      params: array(union([string2(), number2(), boolean2(), _null3()])).max(64)
-    }),
-    response: object({ rows: array(record(string2(), unknown())) })
-  }
-});
-
 // ../node_modules/drizzle-orm/entity.js
 var entityKind = Symbol.for("drizzle:entityKind");
 var hasOwnEntityKind = Symbol.for("drizzle:hasOwnEntityKind");
@@ -5301,6 +5277,422 @@ function asc(column) {
 function desc(column) {
   return sql`${column} desc`;
 }
+
+// ../node_modules/@hatch/space-sdk/dist/saved_product_lists.js
+var SAVED_PRODUCT_LISTS_OWNER_ONLY_CODE = "saved_product_lists_owner_only";
+var SAVED_PRODUCT_LISTS_UNAVAILABLE_BRAND = "@hatch/space-sdk/SavedProductListsUnavailableError/v1";
+
+class SavedProductListsUnavailableError extends Error {
+  __brand = SAVED_PRODUCT_LISTS_UNAVAILABLE_BRAND;
+  code = SAVED_PRODUCT_LISTS_OWNER_ONLY_CODE;
+  constructor(message = "Live saved products are available only to the Space owner", options) {
+    super(message, options);
+    this.name = "SavedProductListsUnavailableError";
+  }
+  static is(value) {
+    if (value instanceof SavedProductListsUnavailableError)
+      return true;
+    return typeof value === "object" && value !== null && value.__brand === SAVED_PRODUCT_LISTS_UNAVAILABLE_BRAND;
+  }
+}
+var CHECKED_FIELDS = ["name", "price", "sale_price", "currency"];
+function sameSave(a, b) {
+  return a.product.citation_id !== undefined && a.product.citation_id === b.product.citation_id && a.product.url === b.product.url && a.savedAt !== null && a.savedAt === b.savedAt;
+}
+function mergeSavedProductListsCache(previous, next) {
+  if (!previous)
+    return next;
+  return {
+    lists: next.lists.map((list) => {
+      const earlier = previous.lists.find((candidate) => candidate.list === list.list);
+      if (!earlier)
+        return list;
+      return {
+        ...list,
+        items: list.items.map((item) => {
+          if (item.product.type !== "catalog" || item.price !== "saved" && item.price !== "refreshing") {
+            return item;
+          }
+          const checked = earlier.items.find((candidate) => (candidate.price === "current" || candidate.price === "cached") && sameSave(candidate, item));
+          if (!checked)
+            return item;
+          const product = { ...item.product };
+          for (const field of CHECKED_FIELDS) {
+            if (checked.product[field] === undefined)
+              delete product[field];
+            else
+              product[field] = checked.product[field];
+          }
+          return { ...item, product, price: "cached" };
+        })
+      };
+    })
+  };
+}
+
+// ../node_modules/@hatch/space-sdk/dist/saved_products_action.js
+var MAX_LISTS = 20;
+var MAX_LIST_NAME_BYTES = 256;
+var CACHE_TABLE = "hatch_saved_products";
+var IMAGE_KEY = /^saved-products\/[0-9a-f]{64}\.img$/;
+var IMAGE_CONTENT_TYPES = new Set(["image/png", "image/jpeg", "image/gif", "image/webp"]);
+var MAX_COMMIT_ATTEMPTS = 5;
+var displayMessage = string2().refine((message) => message.trim().length > 0);
+var savedProductsMessagesSchema = object({
+  currentPrice: displayMessage,
+  lastCheckedPrice: displayMessage,
+  savedPrice: displayMessage,
+  snapshotNotice: displayMessage,
+  unavailableNotice: displayMessage,
+  ownerSharedCopyNotice: displayMessage
+});
+var ENGLISH_MESSAGES = {
+  currentPrice: "Current price",
+  lastCheckedPrice: "Last checked price",
+  savedPrice: "Saved price",
+  snapshotNotice: "These are the saved products from the owner's last visit; prices may have changed since.",
+  unavailableNotice: "Saved products aren't available in this copy.",
+  ownerSharedCopyNotice: "This is your shared copy. Open the original Space in Muse to see live saved products."
+};
+var SAVED_PRODUCTS_REQUEST_SCHEMA = object({}).strict();
+var PRODUCT_SCHEMA = object({
+  type: _enum(["catalog", "marketplace", "browser"]),
+  url: string2(),
+  name: string2(),
+  image_url: string2().nullable().optional(),
+  citation_id: string2().optional(),
+  product_id: string2().optional(),
+  provider: string2().optional(),
+  retailer_name: string2().optional(),
+  brand: string2().optional(),
+  price: string2().optional(),
+  sale_price: string2().optional(),
+  currency: string2().optional()
+}).catchall(json());
+var SAVED_PRODUCTS_RESPONSE_SCHEMA = object({
+  lists: array(object({
+    list: string2(),
+    missing: boolean2(),
+    items: array(object({
+      product: PRODUCT_SCHEMA,
+      image: string2().nullable(),
+      priceLabel: string2().nullable()
+    }))
+  })),
+  snapshotAt: string2().nullable(),
+  notice: string2().nullable()
+});
+function savedProductsActionFor() {
+  const defineAction = createDefineAction();
+  return function savedProductsAction(options) {
+    const configured = options?.messages;
+    const messages = configured === "en" ? ENGLISH_MESSAGES : authoredMessages(configured);
+    const selection = selectionOf(options);
+    return defineAction({
+      request: SAVED_PRODUCTS_REQUEST_SCHEMA,
+      response: SAVED_PRODUCTS_RESPONSE_SCHEMA,
+      description: "Returns the owner's saved product lists for this page: live for the owner, and the owner's last saved copy for anyone else.",
+      handler: (ctx) => readSavedProducts(ctx, selection, messages)
+    });
+  };
+}
+function authoredMessages(configured) {
+  const result = savedProductsMessagesSchema.safeParse(configured);
+  if (!result.success) {
+    throw new TypeError(`savedProductsAction requires messages: "en" for an English Space or all six display messages in the Space's language`);
+  }
+  return result.data;
+}
+function selectionOf(options) {
+  if (options.lists === undefined)
+    return { key: "declared", lists: [] };
+  const lists = [...options.lists];
+  if (lists.length === 0 || lists.length > MAX_LISTS) {
+    throw new TypeError("savedProductsAction takes 1 to 20 list names");
+  }
+  const encoder = new TextEncoder;
+  for (const name of lists) {
+    if (typeof name !== "string" || name.length === 0 || encoder.encode(name).length > MAX_LIST_NAME_BYTES) {
+      throw new TypeError("savedProductsAction takes list names of 1 to 256 UTF-8 bytes");
+    }
+  }
+  if (new Set(lists).size !== lists.length) {
+    throw new TypeError("savedProductsAction takes unique list names");
+  }
+  return { key: `lists:${JSON.stringify(lists)}`, lists };
+}
+async function readSavedProducts(ctx, selection, messages) {
+  const startedMs = Date.now();
+  let live;
+  try {
+    live = await ctx.tool.saved_product_lists(selection.lists);
+  } catch (error) {
+    if (!SavedProductListsUnavailableError.is(error))
+      throw error;
+    return savedCopy(ctx, selection, messages);
+  }
+  const lists = await commitLiveRead(ctx, selection, live, startedMs);
+  return {
+    lists: await publicLists(ctx, lists, { live: true, messages }),
+    snapshotAt: null,
+    notice: null
+  };
+}
+async function savedCopy(ctx, selection, messages) {
+  const ownerCopy = ctx.viewer?.source === "cloudflare" && ctx.viewer.isOwner === true;
+  const unavailable = { lists: [], snapshotAt: null, notice: ownerCopy ? messages.ownerSharedCopyNotice : messages.unavailableNotice };
+  const declared = ctx.savedProductLists;
+  const names = selection.lists.length === 0 ? declared : selection.lists;
+  if (declared === undefined || names === undefined || names.some((name) => !declared.includes(name))) {
+    return unavailable;
+  }
+  const db = ctx.db();
+  const row = await cacheTableExists(db) ? await readRow(db, selection) : null;
+  if (row === null)
+    return unavailable;
+  const saved = new Map(row.lists.lists.map((list) => [list.list, list]));
+  const lists = names.flatMap((name) => saved.get(name) ?? []);
+  if (lists.length === 0)
+    return unavailable;
+  return {
+    lists: await publicLists(ctx, { lists }, { live: false, messages }),
+    snapshotAt: row.readAt,
+    notice: ownerCopy ? messages.ownerSharedCopyNotice : messages.snapshotNotice
+  };
+}
+async function commitLiveRead(ctx, selection, live, startedMs) {
+  const db = ctx.db();
+  await db.run(sql`CREATE TABLE IF NOT EXISTS hatch_saved_products (
+      selection TEXT PRIMARY KEY NOT NULL,
+      revision INTEGER NOT NULL,
+      started_ms INTEGER NOT NULL,
+      read_at TEXT NOT NULL,
+      fingerprint TEXT NOT NULL,
+      lists TEXT NOT NULL
+    )`);
+  const readAt = new Date().toISOString();
+  const fresh = withoutPhotoUrls(live);
+  for (let attempt = 0;attempt < MAX_COMMIT_ATTEMPTS; attempt += 1) {
+    const row = await readRow(db, selection);
+    if (row !== null && row.startedMs > startedMs)
+      return row.lists;
+    const merged = mergeSavedProductListsCache(row?.lists, fresh);
+    const fingerprint = await fingerprintOf(merged);
+    const body = JSON.stringify(merged);
+    const committed = row === null ? await db.all(sql`INSERT INTO hatch_saved_products (selection, revision, started_ms, read_at, fingerprint, lists)
+              VALUES (${selection.key}, 1, ${startedMs}, ${readAt}, ${fingerprint}, ${body})
+              ON CONFLICT(selection) DO NOTHING RETURNING revision`) : await db.all(sql`UPDATE hatch_saved_products
+              SET revision = revision + 1, started_ms = ${startedMs}, read_at = ${readAt},
+                fingerprint = ${fingerprint}, lists = ${body}
+              WHERE selection = ${selection.key} AND revision = ${row.revision} RETURNING revision`);
+    if (committed.length === 0)
+      continue;
+    if (row?.fingerprint !== fingerprint)
+      ctx.invalidateQueries();
+    return merged;
+  }
+  throw new Error("the saved products cache kept changing during this read; try again");
+}
+async function cacheTableExists(db) {
+  const rows = await db.all(sql`SELECT name FROM sqlite_master WHERE type = 'table' AND name = ${CACHE_TABLE}`);
+  return rows.length > 0;
+}
+var STORED_ITEM = object({
+  product: PRODUCT_SCHEMA,
+  image: _null3(),
+  imageKey: string2().regex(IMAGE_KEY).nullable(),
+  imageVersion: string2().min(1).nullable(),
+  savedAt: string2().nullable(),
+  price: _enum(["current", "saved", "refreshing", "cached"])
+});
+var STORED_LISTS = object({
+  lists: array(object({ list: string2(), missing: boolean2(), items: array(STORED_ITEM) }))
+});
+var STORED_ROW = object({
+  revision: number2().int(),
+  started_ms: number2().int(),
+  read_at: string2(),
+  fingerprint: string2(),
+  lists: string2()
+});
+async function readRow(db, selection) {
+  const rows = await db.all(sql`SELECT revision, started_ms, read_at, fingerprint, lists FROM hatch_saved_products
+      WHERE selection = ${selection.key}`);
+  if (rows.length === 0)
+    return null;
+  const row = STORED_ROW.safeParse(rows[0]);
+  let lists;
+  try {
+    lists = row.success ? JSON.parse(row.data.lists) : undefined;
+  } catch {
+    lists = undefined;
+  }
+  const parsed = STORED_LISTS.safeParse(lists);
+  if (!row.success || !parsed.success) {
+    throw new Error("the saved products cache in this Space's database is unreadable");
+  }
+  return {
+    revision: row.data.revision,
+    startedMs: row.data.started_ms,
+    readAt: row.data.read_at,
+    fingerprint: row.data.fingerprint,
+    lists: parsed.data
+  };
+}
+function withoutPhotoUrls(lists) {
+  return {
+    lists: lists.lists.map((list) => ({
+      ...list,
+      items: list.items.map((item) => ({ ...item, image: null }))
+    }))
+  };
+}
+async function fingerprintOf(lists) {
+  const shown = lists.lists.map((list) => ({
+    list: list.list,
+    missing: list.missing,
+    items: list.items.map((item) => {
+      const { image_url: _expiring, ...product } = item.product;
+      return {
+        product,
+        imageKey: item.imageKey,
+        imageVersion: item.imageVersion,
+        savedAt: item.savedAt,
+        price: item.price === "current" || item.price === "cached" ? "checked" : "saved"
+      };
+    })
+  }));
+  const bytes = new TextEncoder().encode(canonicalJson(shown));
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+function canonicalJson(value) {
+  if (Array.isArray(value))
+    return `[${value.map(canonicalJson).join(",")}]`;
+  if (value !== null && typeof value === "object") {
+    const entries = Object.entries(value).filter(([, field]) => field !== undefined).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0);
+    return `{${entries.map(([key, field]) => `${JSON.stringify(key)}:${canonicalJson(field)}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+async function publicLists(ctx, lists, { live, messages }) {
+  const photos = new Map;
+  const photo = (item) => {
+    const { imageKey: key, imageVersion: version } = item;
+    if (key === null || version === null)
+      return Promise.resolve(null);
+    const cacheKey = `${key}
+${version}`;
+    let url = photos.get(cacheKey);
+    if (url === undefined) {
+      url = live ? versionedUrl(ctx, key, version) : storedPhotoUrl(ctx, key);
+      photos.set(cacheKey, url);
+    }
+    return url;
+  };
+  return Promise.all(lists.lists.map(async (list) => ({
+    list: list.list,
+    missing: list.missing,
+    items: await Promise.all(list.items.map(async (item) => ({
+      product: item.product,
+      image: await photo(item),
+      priceLabel: priceLabel(item, live, messages)
+    })))
+  })));
+}
+async function storedPhotoUrl(ctx, key) {
+  const stored = await ctx.blobs.head(key);
+  if (stored === null || stored.key !== key || !IMAGE_CONTENT_TYPES.has(stored.contentType) || stored.size <= 0 || stored.etag.length === 0) {
+    return null;
+  }
+  return versionedUrl(ctx, key, stored.etag);
+}
+async function versionedUrl(ctx, key, version) {
+  const url = await ctx.blobs.getUrl(key);
+  const hash = url.indexOf("#");
+  const [base, fragment] = hash === -1 ? [url, ""] : [url.slice(0, hash), url.slice(hash)];
+  return `${base}${base.includes("?") ? "&" : "?"}v=${encodeURIComponent(version)}${fragment}`;
+}
+function priceLabel(item, live, messages) {
+  const { price, sale_price: sale } = item.product;
+  if (!price && !sale)
+    return null;
+  switch (item.price) {
+    case "current":
+      return live ? messages.currentPrice : messages.lastCheckedPrice;
+    case "cached":
+      return messages.lastCheckedPrice;
+    case "saved":
+    case "refreshing":
+      return messages.savedPrice;
+  }
+}
+
+// ../node_modules/@hatch/space-sdk/dist/index.js
+var defineAction = createDefineAction();
+var savedProductsAction = savedProductsActionFor();
+
+// .generated/privileged.contract.ts
+var privileged = definePrivilegedContracts({
+  readGameData: {
+    request: object({}),
+    response: object({ json: string2() })
+  },
+  readManifest: {
+    request: object({}),
+    response: object({ json: string2() })
+  },
+  readClipsBatch: {
+    request: object({ ids: array(string2().min(1).max(80)).max(100) }),
+    response: object({
+      clips: array(object({ id: string2(), base64: string2() })),
+      missing: array(string2())
+    })
+  },
+  readClipSizes: {
+    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
+    response: object({
+      sizes: array(object({ id: string2(), size: number2() })),
+      missing: array(string2())
+    })
+  },
+  readArtBatch: {
+    request: object({ ids: array(string2().min(1).max(80)).max(20) }),
+    response: object({
+      art: array(object({ id: string2(), base64: string2() })),
+      missing: array(string2())
+    })
+  },
+  readArtSizes: {
+    request: object({ ids: array(string2().min(1).max(80)).max(500) }),
+    response: object({
+      sizes: array(object({ id: string2(), size: number2() })),
+      missing: array(string2())
+    })
+  },
+  listArtIds: {
+    request: object({}),
+    response: object({ ids: array(string2()) })
+  },
+  readVideoBatch: {
+    request: object({ ids: array(string2().min(1).max(80)).max(5) }),
+    response: object({
+      videos: array(object({ id: string2(), base64: string2() })),
+      missing: array(string2())
+    })
+  },
+  pgMode: {
+    request: object({}),
+    response: object({ external: boolean2() })
+  },
+  pgQuery: {
+    request: object({
+      sql: string2().min(1).max(20000),
+      params: array(union([string2(), number2(), boolean2(), _null3()])).max(64)
+    }),
+    response: object({ rows: array(record(string2(), unknown())) })
+  }
+});
 
 // ../node_modules/drizzle-orm/sqlite-core/foreign-keys.js
 class ForeignKeyBuilder {
@@ -6320,6 +6712,19 @@ async function requireTeacher(ctx, token) {
   }
 }
 var teacherTokenField = string2().max(200).optional();
+async function gateAccess(ctx, token, classCode) {
+  const teacher = await isTeacher(ctx, token);
+  if (teacher)
+    return { teacher: true, authorized: true };
+  if (classCode) {
+    const store = await getStore(ctx);
+    const want = (await store.metaGet("class_code") ?? "").trim().toUpperCase();
+    const got = classCode.trim().toUpperCase().replace(/[\s-]/g, "");
+    if (want && got === want)
+      return { teacher: false, authorized: true };
+  }
+  return { teacher: false, authorized: false };
+}
 function defaultState(lang, grade = "") {
   const start = gradeStart(grade);
   return {
@@ -9877,8 +10282,10 @@ var Actions = {
     }
   }),
   saveFeelingsEntry: defineAction({
-    description: "Save one student's feelings-journal entry from El Rinc\xF3n de las Emociones.",
+    description: "Save one student's feelings-journal entry from El Rinc\xF3n de las Emociones. Requires a teacher session or the current class code (the student's own device presents its stored code).",
     request: object({
+      teacherToken: teacherTokenField,
+      classCode: string2().max(12).optional(),
       studentId: string2().max(60).default(""),
       feelingId: string2().min(1).max(60),
       dateISO: string2().max(40).optional()
@@ -9886,6 +10293,9 @@ var Actions = {
     response: object({ ok: boolean2(), count: number2() }),
     privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
+      const gate = await gateAccess(ctx, args.teacherToken, args.classCode);
+      if (!gate.authorized)
+        return { ok: false, count: 0 };
       const store = await getStore(ctx);
       const sid = args.studentId.trim();
       if (!sid)
@@ -9911,14 +10321,22 @@ var Actions = {
     }
   }),
   getFeelingsEntries: defineAction({
-    description: "List saved feelings-journal entries for the teacher view.",
-    request: object({ studentId: string2().max(60).default("") }),
+    description: "List saved feelings-journal entries for one student. Requires a teacher session or the current class code (the student's own Diario presents its stored code); a cold call returns authorized:false and no entries.",
+    request: object({
+      teacherToken: teacherTokenField,
+      classCode: string2().max(12).optional(),
+      studentId: string2().max(60).default("")
+    }),
     response: object({
+      authorized: boolean2(),
       entries: array(object({ dateISO: string2(), feelingId: string2() })),
       count: number2()
     }),
     privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
+      const gate = await gateAccess(ctx, args.teacherToken, args.classCode);
+      if (!gate.authorized)
+        return { authorized: false, entries: [], count: 0 };
       const store = await getStore(ctx);
       const sid = args.studentId.trim() || "guest";
       const key = `feelings_entries:${sid}`;
@@ -9933,7 +10351,7 @@ var Actions = {
         entries = [];
       }
       const newestFirst = [...entries].reverse();
-      return { entries: newestFirst.slice(0, 30), count: entries.length };
+      return { authorized: true, entries: newestFirst.slice(0, 30), count: entries.length };
     }
   }),
   saveMorningCheckin: defineAction({
@@ -11280,13 +11698,23 @@ var Actions = {
     }
   }),
   awardClassBattle: defineAction({
-    description: "Record a class battle win in the shared class tally.",
-    request: object({ rayos: number2().int().min(1).max(50) }),
-    response: okResponse,
+    description: "Award a Class Battle win's Rayos to every student. Teacher session required, and each battle instance (battleId) can be awarded exactly once \u2014 repeat or unauthenticated calls award nothing.",
+    request: object({
+      teacherToken: teacherTokenField,
+      rayos: number2().int().min(1).max(50),
+      battleId: string2().min(1).max(80)
+    }),
+    response: object({ ok: boolean2() }),
     privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
-      await ensureRoster(ctx);
+      if (!await isTeacher(ctx, args.teacherToken))
+        return { ok: false };
       const store = await getStore(ctx);
+      const guardKey = `class_battle_awarded:${args.battleId}`;
+      if (await store.metaGet(guardKey) === "1")
+        return { ok: false };
+      await store.metaSet(guardKey, "1");
+      await ensureRoster(ctx);
       const rows = await store.studentsAll();
       for (const r of rows) {
         const st = parseState(r.stateJson);
@@ -11302,11 +11730,14 @@ var Actions = {
     }
   }),
   listAssignments: defineAction({
-    description: "List teacher assignments (class, group, or student targeted) with their windows.",
-    request: object({}),
+    description: "List teacher assignments (class, group, or student targeted) with their windows. Requires a teacher session or the current class code (students read their assignments from gate-passed devices); a cold call returns no assignment data.",
+    request: object({ teacherToken: teacherTokenField, classCode: string2().max(12).optional() }),
     response: object({ assignments: array(assignmentOut), classBattleWins: number2(), classGrade: string2() }),
     privileged: [privileged.pgMode, privileged.pgQuery],
-    async handler(ctx) {
+    async handler(ctx, args) {
+      const gate = await gateAccess(ctx, args.teacherToken, args.classCode);
+      if (!gate.authorized)
+        return { assignments: [], classBattleWins: 0, classGrade: "" };
       const store = await getStore(ctx);
       const rows = await store.assignmentsAll();
       const winsVal = await store.metaGet("class_battle_wins");
