@@ -7459,14 +7459,14 @@
    "slot": "mask",
    "en": "Champion Blue Mask",
    "es": "Máscara Azul Campeón",
-   "cost": 60
+   "cost": 0
   },
   {
    "id": "mask_green",
    "slot": "mask",
    "en": "Jungle Green Mask",
    "es": "Máscara Verde Selva",
-   "cost": 60
+   "cost": 0
   },
   {
    "id": "mask_purple",
@@ -7503,14 +7503,14 @@
    "slot": "suit",
    "en": "Blue Suit",
    "es": "Traje Azul",
-   "cost": 70
+   "cost": 0
   },
   {
    "id": "suit_green",
    "slot": "suit",
    "en": "Green Suit",
    "es": "Traje Verde",
-   "cost": 70
+   "cost": 0
   },
   {
    "id": "suit_black",
@@ -7532,14 +7532,14 @@
    "slot": "cape",
    "en": "Blue Cape",
    "es": "Capa Azul",
-   "cost": 50
+   "cost": 0
   },
   {
    "id": "cape_green",
    "slot": "cape",
    "en": "Green Cape",
    "es": "Capa Verde",
-   "cost": 50
+   "cost": 0
   },
   {
    "id": "cape_gold",
@@ -7613,6 +7613,90 @@
    "en": "Bolt Belt",
    "es": "Cinturón de Rayo",
    "cost": 120
+  },
+  {
+   "id": "gloves_red",
+   "slot": "gear",
+   "en": "Red Gloves",
+   "es": "Guantes Rojos",
+   "cost": 0
+  },
+  {
+   "id": "bands_teal",
+   "slot": "gear",
+   "en": "Teal Wristbands",
+   "es": "Muñequeras Turquesa",
+   "cost": 0
+  },
+  {
+   "id": "trim_bolt",
+   "slot": "trim",
+   "en": "Bolt Trim",
+   "es": "Adorno de Rayo",
+   "cost": 0
+  },
+  {
+   "id": "trim_flor",
+   "slot": "trim",
+   "en": "Flower Trim",
+   "es": "Adorno de Flores",
+   "cost": 0
+  },
+  {
+   "id": "suit_flame",
+   "slot": "suit",
+   "en": "Flame Suit",
+   "es": "Traje de Fuego",
+   "cost": 150
+  },
+  {
+   "id": "suit_bolt",
+   "slot": "suit",
+   "en": "Lightning Suit",
+   "es": "Traje Relámpago",
+   "cost": 150
+  },
+  {
+   "id": "suit_charro",
+   "slot": "suit",
+   "en": "Charro Suit",
+   "es": "Traje Charro",
+   "cost": 160
+  },
+  {
+   "id": "suit_toro",
+   "slot": "suit",
+   "en": "Toro Grande Suit",
+   "es": "Traje Toro Grande",
+   "cost": 170
+  },
+  {
+   "id": "suit_jaguar",
+   "slot": "suit",
+   "en": "Jaguar Suit",
+   "es": "Traje Jaguar",
+   "cost": 180
+  },
+  {
+   "id": "suit_aguila",
+   "slot": "suit",
+   "en": "Eagle Suit",
+   "es": "Traje Águila",
+   "cost": 180
+  },
+  {
+   "id": "suit_calavera",
+   "slot": "suit",
+   "en": "Calavera Suit",
+   "es": "Traje Calavera",
+   "cost": 200
+  },
+  {
+   "id": "suit_astro",
+   "slot": "suit",
+   "en": "Astronaut Suit",
+   "es": "Traje Astronauta",
+   "cost": 200
   }
  ],
  "belt_names": [
@@ -8156,6 +8240,10 @@
   "picture_choose": {
    "en": "ln_picchoose_en",
    "es": "ln_picchoose_es"
+  },
+  "need_rayos": {
+   "en": "ln_need_rayos_en",
+   "es": "ln_need_rayos_es"
   }
  },
  "classroom": {

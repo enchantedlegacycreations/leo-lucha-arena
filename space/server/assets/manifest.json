@@ -54134,5 +54134,23 @@
   "voice": "code-synth",
   "speed": 100,
   "file": "clips/song_sol.mp3"
+ },
+ {
+  "id": "ln_need_rayos_en",
+  "lang": "en",
+  "say": "You need more Rayos",
+  "show": "You need more Rayos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_need_rayos_en.mp3"
+ },
+ {
+  "id": "ln_need_rayos_es",
+  "lang": "es",
+  "say": "Necesitas más Rayos",
+  "show": "Necesitas más Rayos",
+  "voice": "avocado_v2:MAI_01",
+  "speed": 95,
+  "file": "clips/ln_need_rayos_es.mp3"
  }
 ]

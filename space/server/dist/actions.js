@@ -6749,6 +6749,7 @@ function defaultState(lang, grade = "") {
     owned: ["mask_red", "suit_red", "cape_none"],
     equipped: { mask: "mask_red", suit: "suit_red", cape: "cape_none", gear: "", trim: "" },
     person: { skin: "medium", hair: "brown", face: "natural" },
+    character: "",
     cognates: [],
     eventCounts: {},
     eventBadges: [],
@@ -6960,7 +6961,7 @@ var familyPeekSummary = object({
   name: string2(),
   badgeColor: string2(),
   lang: string2(),
-  avatar: object({ mask: string2(), suit: string2(), cape: string2(), gear: string2(), trim: string2() }),
+  avatar: object({ mask: string2(), suit: string2(), cape: string2(), gear: string2(), trim: string2(), character: string2() }),
   puntos: number2(),
   rayos: number2(),
   battlesWon: number2(),
@@ -7154,7 +7155,7 @@ var Actions = {
     response: object({ seeded: number2(), total: number2(), already: boolean2(), done: boolean2() }),
     privileged: [privileged.readManifest, privileged.readClipsBatch, privileged.readClipSizes, privileged.pgMode, privileged.pgQuery],
     async handler(ctx) {
-      const AUDIO_PACK_VERSION = "2026-11-21-letters1";
+      const AUDIO_PACK_VERSION = "2026-11-24-rayos1";
       const store = await getStore(ctx);
       const flag = await store.metaGet("audio_seeded");
       const ver = await store.metaGet("audio_pack_version");
@@ -11640,7 +11641,8 @@ var Actions = {
             suit: st.equipped.suit,
             cape: st.equipped.cape,
             gear: st.equipped.gear,
-            trim: st.equipped.trim
+            trim: st.equipped.trim,
+            character: typeof st.character === "string" ? st.character : ""
           },
           puntos: st.puntosTotal,
           rayos: st.rayos,
@@ -11848,18 +11850,62 @@ var Actions = {
     }
   }),
   getTreasureSession: defineAction({
-    description: "Return the live state of the current treasure session.",
-    request: object({}),
-    response: object({ session: unknown() }),
+    description: "Return the live state of the current treasure session. Requires a valid teacher session or the current class code for the full record (including per-student tallies); an unauthenticated caller gets authorized:false and only the names-and-session-gold scoreboard projection.",
+    request: object({ teacherToken: teacherTokenField, classCode: string2().max(12).optional() }),
+    response: object({ authorized: boolean2(), session: unknown() }),
     privileged: [privileged.pgMode, privileged.pgQuery],
-    async handler(ctx) {
+    async handler(ctx, args) {
       const store = await getStore(ctx);
       const raw = await store.metaGet("treasure_session");
+      let s = null;
       try {
-        return { session: raw ? JSON.parse(raw) : null };
+        s = raw ? JSON.parse(raw) : null;
       } catch {
-        return { session: null };
+        s = null;
       }
+      if (!s)
+        return { authorized: false, session: null };
+      const gate = await gateAccess(ctx, args.teacherToken, args.classCode);
+      if (gate.authorized)
+        return { authorized: true, session: s };
+      const per = s.perStudent ?? {};
+      const scoreboard = Object.values(per).map((p) => ({ name: p.name, gold: p.gold })).sort((a, b) => b.gold - a.gold || a.name.localeCompare(b.name));
+      return {
+        authorized: false,
+        session: {
+          gameId: "tesoro",
+          code: s.code,
+          bank: s.bank,
+          lang: s.lang,
+          shape: s.shape,
+          durationMin: s.durationMin,
+          startedAt: s.startedAt,
+          endsAt: s.endsAt,
+          endedAt: s.endedAt,
+          active: s.active,
+          ended: s.ended,
+          classPool: s.classPool,
+          rivalStash: s.rudoStash,
+          rudoStash: s.rudoStash,
+          signal: s.respiraSignal,
+          signalKind: "",
+          totalQuestions: s.totalQuestions,
+          totalScore: s.totalGold,
+          totalGold: s.totalGold,
+          summary: s.summary && typeof s.summary === "object" ? (() => {
+            const sm = s.summary;
+            return {
+              players: sm.players ?? 0,
+              totalGold: sm.totalGold ?? 0,
+              totalQuestions: sm.totalQuestions ?? 0,
+              classPool: sm.classPool ?? 0,
+              rudoStash: sm.rudoStash ?? 0,
+              coopWin: sm.coopWin ?? false
+            };
+          })() : null,
+          scoreboard
+        }
+      };
     }
   }),
   joinTreasureSession: defineAction({
@@ -12053,51 +12099,67 @@ var Actions = {
     }
   }),
   getHostedSession: defineAction({
-    description: "Return the live hosted session state, including the names-and-gold-only scoreboard projection.",
-    request: object({}),
-    response: object({ session: unknown() }),
+    description: "Return the live hosted session state. The shared payload carries the names-and-gold-only scoreboard projection; a caller with a valid teacher session or the current class code also receives the full per-student tallies (authorized:true).",
+    request: object({ teacherToken: teacherTokenField, classCode: string2().max(12).optional() }),
+    response: object({ authorized: boolean2(), session: unknown() }),
     privileged: [privileged.pgMode, privileged.pgQuery],
-    async handler(ctx) {
+    async handler(ctx, args) {
       const store = await getStore(ctx);
       const raw = await store.metaGet("hosted_session");
       try {
         if (!raw)
-          return { session: null };
+          return { authorized: false, session: null };
         const s = JSON.parse(raw);
         const scoreboard = Object.values(s.perStudent ?? {}).map((p) => ({ name: p.name, gold: p.gold })).sort((a, b) => b.gold - a.gold || a.name.localeCompare(b.name));
+        const gate = await gateAccess(ctx, args.teacherToken, args.classCode);
+        const coldSummary = s.summary && typeof s.summary === "object" ? (() => {
+          const sm = s.summary;
+          return {
+            players: sm.players ?? 0,
+            totalGold: sm.totalGold ?? 0,
+            totalQuestions: sm.totalQuestions ?? 0,
+            classPool: sm.classPool ?? 0,
+            rudoStash: sm.rudoStash ?? 0,
+            coopWin: sm.coopWin ?? false
+          };
+        })() : null;
+        const shared = {
+          gameId: s.gameId ?? "tesoro",
+          themeId: s.themeId ?? "oro",
+          code: s.code,
+          bank: s.bank,
+          lang: s.lang,
+          shape: s.shape,
+          durationMin: s.durationMin,
+          startedAt: s.startedAt,
+          endsAt: s.endsAt,
+          endedAt: s.endedAt,
+          active: s.active,
+          ended: s.ended,
+          classPool: s.classPool,
+          rivalStash: s.rivalStash,
+          rudoStash: s.rivalStash,
+          signal: s.signal,
+          signalKind: s.signalKind,
+          totalQuestions: s.totalQuestions,
+          totalScore: s.totalScore,
+          totalGold: s.totalScore,
+          summary: gate.authorized ? s.summary ?? null : coldSummary,
+          scoreboard
+        };
+        if (!gate.authorized)
+          return { authorized: false, session: shared };
         return {
-          session: {
-            gameId: s.gameId ?? "tesoro",
-            themeId: s.themeId ?? "oro",
-            code: s.code,
-            bank: s.bank,
-            lang: s.lang,
-            shape: s.shape,
-            durationMin: s.durationMin,
-            startedAt: s.startedAt,
-            endsAt: s.endsAt,
-            endedAt: s.endedAt,
-            active: s.active,
-            ended: s.ended,
-            classPool: s.classPool,
-            rivalStash: s.rivalStash,
-            rudoStash: s.rivalStash,
-            signal: s.signal,
-            signalKind: s.signalKind,
-            totalQuestions: s.totalQuestions,
-            totalScore: s.totalScore,
-            totalGold: s.totalScore,
-            summary: s.summary ?? null,
-            scoreboard
-          }
+          authorized: true,
+          session: { ...shared, perStudent: s.perStudent ?? {} }
         };
       } catch {
-        return { session: null };
+        return { authorized: false, session: null };
       }
     }
   }),
   getHostedOwnRow: defineAction({
-    description: "Return one student's own hosted-session row (their gold and tallies) for their private celebration screen.",
+    description: "Return one student's own hosted-session row (their gold and tallies) for their private celebration screen \u2014 from the generic hosted store, or from the treasure store when the session is a La Lucha del Tesoro session.",
     request: object({ studentId: string2().min(1).max(60) }),
     response: object({
       row: object({
@@ -12113,18 +12175,22 @@ var Actions = {
     privileged: [privileged.pgMode, privileged.pgQuery],
     async handler(ctx, args) {
       const store = await getStore(ctx);
-      const raw = await store.metaGet("hosted_session");
-      try {
+      const pick = (raw) => {
         if (!raw)
-          return { row: null };
-        const s = JSON.parse(raw);
-        const me = s.perStudent?.[args.studentId];
-        return {
-          row: me ? { name: me.name, gold: me.gold, correct: me.correct, answered: me.answered, respira: me.respira, puente: me.puente, comebacks: me.comebacks } : null
-        };
-      } catch {
-        return { row: null };
-      }
+          return null;
+        try {
+          const s = JSON.parse(raw);
+          const me = s.perStudent?.[args.studentId];
+          return me ? { name: me.name, gold: me.gold, correct: me.correct, answered: me.answered, respira: me.respira, puente: me.puente, comebacks: me.comebacks } : null;
+        } catch {
+          return null;
+        }
+      };
+      const hosted = pick(await store.metaGet("hosted_session"));
+      if (hosted)
+        return { row: hosted };
+      const treasure = pick(await store.metaGet("treasure_session"));
+      return { row: treasure };
     }
   }),
   joinHostedSession: defineAction({
